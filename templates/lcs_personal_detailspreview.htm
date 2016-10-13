@@ -1,0 +1,75 @@
+<div {$pageattrs}>
+
+{BEGIN container_dcount}
+<div class="rnr-c rnr-cv rnr-c-dcount">
+
+
+<div  class="rnr-brickcontents style1 rnr-b-detailspreviewheader {$brickclass_detailspreviewheader}">	<h1>{$pagetitlelabel lcs_personal detailspreview}</h1>
+</div>
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-detailspreviewdetailsfount {$brickclass_detailspreviewdetailsfount}">Detalles encontrados: <strong>{$row_count}.</strong>
+</div>
+
+
+{BEGIN display_first}
+<div  class="rnr-brickcontents style1 rnr-b-detailspreviewdispfirst {$brickclass_detailspreviewdispfirst}">Mostrando primero: <strong>{$display_count}</strong>.
+</div>{END display_first}
+
+
+</div>
+{END container_dcount}
+
+
+
+{BEGIN container_detailspreviewgrid}
+
+
+{BEGIN details_data}
+<table class="rnr-c rnr-cont rnr-c--detailspreviewgrid rnr-b-detailspreviewgrid rnr-gridtable">
+{BEGIN details_row_header}
+	<thead>
+		<tr class="rnr-toprow style1 {$gridHeader_class}" >
+			<th class="{$idUsuario_class}">{$label lcs_personal idUsuario}</th>
+			<th class="{$TipoUsuario_class}">{$label lcs_personal TipoUsuario}</th>
+			<th class="{$Nombre_class}">{$label lcs_personal Nombre}</th>
+			<th class="{$Apellido_class}">{$label lcs_personal Apellido}</th>
+			<th class="{$Telefono_class}">{$label lcs_personal Telefono}</th>
+			<th class="{$Email_class}">{$label lcs_personal Email}</th>
+			<th class="{$Password_class}">{$label lcs_personal Password}</th>
+			<th class="{$celular_class}">{$label lcs_personal celular}</th>
+			<th class="{$Voluntario_class}">{$label lcs_personal Voluntario}</th>
+			<th class="{$Ingresado_class}">{$label lcs_personal Ingresado}</th>
+			<th class="{$_idCentro_class}">{$label lcs_personal _idCentro}</th>
+			<th class="rnr-edge">&nbsp;</th>
+		</tr>
+	</thead>
+{END details_row_header}
+	<tbody>
+{BEGIN details_row}
+		<tr class="rnr-row style1">
+			<td class="{$idUsuario_class}">{$idUsuario_value}</td>
+			<td class="{$TipoUsuario_class}">{$TipoUsuario_value}</td>
+			<td class="{$Nombre_class}">{$Nombre_value}</td>
+			<td class="{$Apellido_class}">{$Apellido_value}</td>
+			<td class="{$Telefono_class}">{$Telefono_value}</td>
+			<td class="{$Email_class}">{$Email_value}</td>
+			<td class="{$Password_class}">{$Password_value}</td>
+			<td class="{$celular_class}">{$celular_value}</td>
+			<td class="{$Voluntario_class}">{$Voluntario_value}</td>
+			<td class="{$Ingresado_class}">{$Ingresado_value}</td>
+			<td class="{$_idCentro_class}">{$_idCentro_value}</td>
+			<td class="rnr-edge">&nbsp;</td>
+		</tr>
+{END details_row}	
+	</tbody>
+</table>
+
+{END details_data}
+
+
+
+{END container_detailspreviewgrid}
+
+</div>

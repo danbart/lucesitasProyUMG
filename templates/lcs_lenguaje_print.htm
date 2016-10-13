@@ -1,0 +1,227 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-print" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_pdf}
+<div class="rnr-c rnr-ch rnr-c-pdf">
+
+{BEGIN printbuttons}
+<div  class="style1 rnr-bl rnr-b-printbuttons {$brickclass_printbuttons}">{BEGIN divideintopages_block}
+<a href="#" class="divideintopages rnr-button button" {$divideintopages_attrs}>Prepare for printing</a>
+{END divideintopages_block}
+{BEGIN pdflink_block}
+<a href="#" class="pdflink rnr-button button" {$pdflink_attrs}>Vista PDF</a>
+{END pdflink_block}
+</div>
+{END printbuttons}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_pdf}
+
+
+
+{BEGIN container_master}
+<div class="rnr-c rnr-ch rnr-c-master">
+
+{BEGIN mastertable_block}
+<div  class="style1 rnr-bl rnr-b-masterinfoprint {$brickclass_masterinfoprint}">{$showmasterfile}
+</div>
+{END mastertable_block}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_master}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+
+{BEGIN container_pageheader}
+<div class="rnr-c rnr-cv rnr-c-pageheader">
+
+
+<div  class="rnr-brickcontents style1 rnr-b-printheader {$brickclass_printheader}">	<h1>{$pagetitlelabel lcs_lenguaje print}</h1>
+</div>
+
+
+{BEGIN page_number}
+<div  class="rnr-brickcontents style1 rnr-b-page_of_print {$brickclass_page_of_print}"><h1>Página <span class="rp-pageno">{$pageno}</span> / <span class="rp-pagecount">{$pagecount}</span></h1></div>{END page_number}
+
+
+</div>
+{END container_pageheader}
+
+
+
+{BEGIN container_grid}
+
+
+{BEGIN grid_block}
+	<table class="rnr-c rnr-c-grid rnr-b-grid rnr-gridtable rp-maintable" cellpadding="0">
+	<thead>
+	{BEGIN grid_header}
+<tr class="rnr-toprow style1 {$gridHeader_class}" >
+{BEGIN record_header}
+		{BEGIN idLenguaje_fieldheadercolumn}
+<th class="runner-cc {$idLenguaje_class}" {$idLenguaje_style}>
+	{BEGIN idLenguaje_fieldheader}
+	<b>{$label lcs_lenguaje idLenguaje}</b>
+	{END idLenguaje_fieldheader}
+</th>
+{END idLenguaje_fieldheadercolumn}
+	{BEGIN Balbucea_fieldheadercolumn}
+<th class="runner-cc {$Balbucea_class}" {$Balbucea_style}>
+	{BEGIN Balbucea_fieldheader}
+	<b>{$label lcs_lenguaje Balbucea}</b>
+	{END Balbucea_fieldheader}
+</th>
+{END Balbucea_fieldheadercolumn}
+	{BEGIN Edad1Palabra_fieldheadercolumn}
+<th class="runner-cc {$Edad1Palabra_class}" {$Edad1Palabra_style}>
+	{BEGIN Edad1Palabra_fieldheader}
+	<b>{$label lcs_lenguaje Edad1Palabra}</b>
+	{END Edad1Palabra_fieldheader}
+</th>
+{END Edad1Palabra_fieldheadercolumn}
+	{BEGIN EdadMesVocalizo_fieldheadercolumn}
+<th class="runner-cc {$EdadMesVocalizo_class}" {$EdadMesVocalizo_style}>
+	{BEGIN EdadMesVocalizo_fieldheader}
+	<b>{$label lcs_lenguaje EdadMesVocalizo}</b>
+	{END EdadMesVocalizo_fieldheader}
+</th>
+{END EdadMesVocalizo_fieldheadercolumn}
+	{BEGIN AdaptSocial_fieldheadercolumn}
+<th class="runner-cc {$AdaptSocial_class}" {$AdaptSocial_style}>
+	{BEGIN AdaptSocial_fieldheader}
+	<b>{$label lcs_lenguaje AdaptSocial}</b>
+	{END AdaptSocial_fieldheader}
+</th>
+{END AdaptSocial_fieldheadercolumn}
+	{BEGIN Ingresado_fieldheadercolumn}
+<th class="runner-cc {$Ingresado_class}" {$Ingresado_style}>
+	{BEGIN Ingresado_fieldheader}
+	<b>{$label lcs_lenguaje Ingresado}</b>
+	{END Ingresado_fieldheader}
+</th>
+{END Ingresado_fieldheadercolumn}
+	{BEGIN _idEstudiante_fieldheadercolumn}
+<th class="runner-cc {$_idEstudiante_class}" {$_idEstudiante_style}>
+	{BEGIN _idEstudiante_fieldheader}
+	<b>{$label lcs_lenguaje _idEstudiante}</b>
+	{END _idEstudiante_fieldheader}
+</th>
+{END _idEstudiante_fieldheadercolumn}
+		
+	<th class="rnr-edge">&nbsp;</th>
+	{BEGIN endrecordheader_block}
+	<th class="rnr-cs">&nbsp;</th>
+	{END endrecordheader_block}
+	{END record_header}
+</tr>
+{END grid_header}
+
+	</thead>
+	<tbody>	
+	{BEGIN grid_row}
+	<tr class="rnr-row style1 {$rowclass}" {$rowattrs} {$rowstyle}>
+		{BEGIN grid_record}
+				{BEGIN idLenguaje_fieldcolumn}
+<td  class="runner-cc {$idLenguaje_class}" {$idLenguaje_style} {$recordattrs}>
+	{$idLenguaje_value}
+</td>
+{END idLenguaje_fieldcolumn}
+	{BEGIN Balbucea_fieldcolumn}
+<td  class="runner-cc {$Balbucea_class}" {$Balbucea_style} {$recordattrs}>
+	{$Balbucea_value}
+</td>
+{END Balbucea_fieldcolumn}
+	{BEGIN Edad1Palabra_fieldcolumn}
+<td  class="runner-cc {$Edad1Palabra_class}" {$Edad1Palabra_style} {$recordattrs}>
+	{$Edad1Palabra_value}
+</td>
+{END Edad1Palabra_fieldcolumn}
+	{BEGIN EdadMesVocalizo_fieldcolumn}
+<td  class="runner-cc {$EdadMesVocalizo_class}" {$EdadMesVocalizo_style} {$recordattrs}>
+	{$EdadMesVocalizo_value}
+</td>
+{END EdadMesVocalizo_fieldcolumn}
+	{BEGIN AdaptSocial_fieldcolumn}
+<td  class="runner-cc {$AdaptSocial_class}" {$AdaptSocial_style} {$recordattrs}>
+	{$AdaptSocial_value}
+</td>
+{END AdaptSocial_fieldcolumn}
+	{BEGIN Ingresado_fieldcolumn}
+<td  class="runner-cc {$Ingresado_class}" {$Ingresado_style} {$recordattrs}>
+	{$Ingresado_value}
+</td>
+{END Ingresado_fieldcolumn}
+	{BEGIN _idEstudiante_fieldcolumn}
+<td  class="runner-cc {$_idEstudiante_class}" {$_idEstudiante_style} {$recordattrs}>
+	{$_idEstudiante_value}
+</td>
+{END _idEstudiante_fieldcolumn}
+
+		<td class="rnr-edge" {$recordattrs}>&nbsp;</td>
+		{BEGIN endrecord_block}
+		<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
+		{END endrecord_block}
+										
+		{END grid_record}
+
+	</tr>
+{END grid_row}
+
+
+	
+	</tbody>
+</table>
+
+{END grid_block}
+
+
+
+{END container_grid}
+
+
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			<!--%%bottom%%-->
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

@@ -1,0 +1,58 @@
+<div {$pageattrs}>
+
+{BEGIN container_masterlistheader}
+<div class="rnr-c rnr-ch rnr-c-masterlistheader">
+
+
+<div  class="style1 rnr-bl rnr-b-masterprintheader {$brickclass_masterprintheader}">	<h1>{$pagetitlelabel Reporte_Estudiantes masterprint}</h1>
+</div>
+
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_masterlistheader}
+
+
+
+{BEGIN container_mastergrid}
+
+
+
+<table class="rnr-c rnr-cont rnr-c-mastergrid rnr-b-masterprintfields rnr-gridtable" cellpadding="0" >
+	<thead>
+		<tr class="rnr-toprow style1 {$gridHeader_class}" >
+			<th class="{$fecha_class}">{$label Reporte_Estudiantes fecha}</th>
+			<th class="{$hora_class}">{$label Reporte_Estudiantes hora}</th>
+			<th class="{$Estudiante_class}">{$label Reporte_Estudiantes Estudiante}</th>
+			<th class="{$edad_class}">{$label Reporte_Estudiantes edad}</th>
+			<th class="{$FotoRostro_class}">{$label Reporte_Estudiantes FotoRostro}</th>
+			<th class="{$TipoTerapia_class}">{$label Reporte_Estudiantes TipoTerapia}</th>
+			<th class="{$Nombre_Terapista_class}">{$label Reporte_Estudiantes Nombre_Terapista}</th>
+			<th class="{$Telefono_class}">{$label Reporte_Estudiantes Telefono}</th>
+			<th class="{$Direccion_class}">{$label Reporte_Estudiantes Direccion}</th>
+			<th class="rnr-edge">&nbsp;</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="rnr-row style1">
+			<td class="{$fecha_class}">{$fecha_mastervalue}</td>
+			<td class="{$hora_class}">{$hora_mastervalue}</td>
+			<td class="{$Estudiante_class}">{$Estudiante_mastervalue}</td>
+			<td class="{$edad_class}">{$edad_mastervalue}</td>
+			<td class="{$FotoRostro_class}">{$FotoRostro_mastervalue}</td>
+			<td class="{$TipoTerapia_class}">{$TipoTerapia_mastervalue}</td>
+			<td class="{$Nombre_Terapista_class}">{$Nombre_Terapista_mastervalue}</td>
+			<td class="{$Telefono_class}">{$Telefono_mastervalue}</td>
+			<td class="{$Direccion_class}">{$Direccion_mastervalue}</td>
+			<td class="rnr-edge">&nbsp;</td>
+		</tr>
+	</tbody>
+</table> 
+
+
+
+
+
+{END container_mastergrid}
+
+</div>

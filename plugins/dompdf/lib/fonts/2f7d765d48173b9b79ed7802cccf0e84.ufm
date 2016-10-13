@@ -1,0 +1,38 @@
+StartFontMetrics 4.1
+Notice Converted by PHP-font-lib
+Comment https://github.com/PhenX/php-font-lib
+EncodingScheme FontSpecific
+FontName runner2
+FontSubfamily Regular
+UniqueID FontForge 2.0 : runner2 : 12-9-2013
+FullName runner2
+Version Version 1.0
+PostScriptName runner2
+Weight Medium
+ItalicAngle 0
+IsFixedPitch false
+UnderlineThickness 0
+UnderlinePosition 0
+FontHeightOffset 90
+Ascender 938
+Descender -63
+FontBBox -21 -78 1002 943
+StartCharMetrics 20
+U 33 ; WX 1000 ; N exclam ; G 3
+U 70 ; WX 1000 ; N F ; G 4
+U 71 ; WX 1000 ; N G ; G 5
+U 76 ; WX 1000 ; N L ; G 6
+U 91 ; WX 1000 ; N bracketleft ; G 7
+U 92 ; WX 1000 ; N backslash ; G 8
+U 96 ; WX 1000 ; N grave ; G 9
+U 97 ; WX 1000 ; N a ; G 10
+U 100 ; WX 1000 ; N d ; G 11
+U 103 ; WX 1000 ; N g ; G 12
+U 104 ; WX 1000 ; N h ; G 13
+U 112 ; WX 984 ; N p ; G 14
+U 116 ; WX 1000 ; N t ; G 15
+U 117 ; WX 643 ; N u ; G 16
+U 118 ; WX 643 ; N v ; G 17
+U 119 ; WX 1000 ; N w ; G 18
+EndCharMetrics
+EndFontMetrics

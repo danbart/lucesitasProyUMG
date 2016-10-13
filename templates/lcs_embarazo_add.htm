@@ -1,0 +1,231 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-add" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_all}
+<div class="rnr-c rnr-cv rnr-c-all">
+
+
+<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_add} rnr-wrapper rnr-cbw-add">
+
+{BEGIN container_add}
+<div class="rnr-c rnr-cv rnr-c-add">
+
+{BEGIN addheader}
+<div  class="rnr-brickcontents style2 rnr-b-addheader {$brickclass_addheader}"><span>	<h1>{$pagetitlelabel lcs_embarazo add}</h1>
+</span></div>{END addheader}
+
+
+{BEGIN message_block}
+<div  class="rnr-brickcontents style1 rnr-b-message {$brickclass_message}"><div class="rnr-message">{$message}</div></div>{END message_block}
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_fields} rnr-wrapper rnr-cbw-fields">
+
+{BEGIN container_fields}
+<div class="rnr-c rnr-cv rnr-c-fields">
+
+
+<div  class="rnr-brickcontents style1 rnr-b-addfields {$brickclass_addfields}"><table class="fieldGrid">
+	{BEGIN MesesNac_fieldblock}
+<tr class="{$fielddispclass_MesesNac}" data-fieldname="MesesNac">
+	<td class="rnr-label">
+		{BEGIN MesesNac_label}{$label lcs_embarazo MesesNac}{END MesesNac_label}
+	</td>
+	<td class="rnr-control style3">
+		{$MesesNac_editcontrol}&nbsp;
+	</td>
+</tr>
+{END MesesNac_fieldblock}
+	{BEGIN TipoParto_fieldblock}
+<tr class="{$fielddispclass_TipoParto}" data-fieldname="TipoParto">
+	<td class="rnr-label">
+		{BEGIN TipoParto_label}{$label lcs_embarazo TipoParto}{END TipoParto_label}
+	</td>
+	<td class="rnr-control style3">
+		{$TipoParto_editcontrol}&nbsp;
+	</td>
+</tr>
+{END TipoParto_fieldblock}
+	{BEGIN AbortosAnt_fieldblock}
+<tr class="{$fielddispclass_AbortosAnt}" data-fieldname="AbortosAnt">
+	<td class="rnr-label">
+		{BEGIN AbortosAnt_label}{$label lcs_embarazo AbortosAnt}{END AbortosAnt_label}
+	</td>
+	<td class="rnr-control style3">
+		{$AbortosAnt_editcontrol}&nbsp;
+	</td>
+</tr>
+{END AbortosAnt_fieldblock}
+	{BEGIN Emorragias_fieldblock}
+<tr class="{$fielddispclass_Emorragias}" data-fieldname="Emorragias">
+	<td class="rnr-label">
+		{BEGIN Emorragias_label}{$label lcs_embarazo Emorragias}{END Emorragias_label}
+	</td>
+	<td class="rnr-control style3">
+		{$Emorragias_editcontrol}&nbsp;
+	</td>
+</tr>
+{END Emorragias_fieldblock}
+	{BEGIN infecciones_fieldblock}
+<tr class="{$fielddispclass_infecciones}" data-fieldname="infecciones">
+	<td class="rnr-label">
+		{BEGIN infecciones_label}{$label lcs_embarazo infecciones}{END infecciones_label}
+	</td>
+	<td class="rnr-control style3">
+		{$infecciones_editcontrol}&nbsp;
+	</td>
+</tr>
+{END infecciones_fieldblock}
+	{BEGIN LloroPronto_fieldblock}
+<tr class="{$fielddispclass_LloroPronto}" data-fieldname="LloroPronto">
+	<td class="rnr-label">
+		{BEGIN LloroPronto_label}{$label lcs_embarazo LloroPronto}{END LloroPronto_label}
+	</td>
+	<td class="rnr-control style3">
+		{$LloroPronto_editcontrol}&nbsp;
+	</td>
+</tr>
+{END LloroPronto_fieldblock}
+	{BEGIN RespiroPronto_fieldblock}
+<tr class="{$fielddispclass_RespiroPronto}" data-fieldname="RespiroPronto">
+	<td class="rnr-label">
+		{BEGIN RespiroPronto_label}{$label lcs_embarazo RespiroPronto}{END RespiroPronto_label}
+	</td>
+	<td class="rnr-control style3">
+		{$RespiroPronto_editcontrol}&nbsp;
+	</td>
+</tr>
+{END RespiroPronto_fieldblock}
+	{BEGIN ColorNacido_fieldblock}
+<tr class="{$fielddispclass_ColorNacido}" data-fieldname="ColorNacido">
+	<td class="rnr-label">
+		{BEGIN ColorNacido_label}{$label lcs_embarazo ColorNacido}{END ColorNacido_label}
+	</td>
+	<td class="rnr-control style3">
+		{$ColorNacido_editcontrol}&nbsp;
+	</td>
+</tr>
+{END ColorNacido_fieldblock}
+	{BEGIN SufrimientoFetal_fieldblock}
+<tr class="{$fielddispclass_SufrimientoFetal}" data-fieldname="SufrimientoFetal">
+	<td class="rnr-label">
+		{BEGIN SufrimientoFetal_label}{$label lcs_embarazo SufrimientoFetal}{END SufrimientoFetal_label}
+	</td>
+	<td class="rnr-control style3">
+		{$SufrimientoFetal_editcontrol}&nbsp;
+	</td>
+</tr>
+{END SufrimientoFetal_fieldblock}
+	{BEGIN EmbDeseado_fieldblock}
+<tr class="{$fielddispclass_EmbDeseado}" data-fieldname="EmbDeseado">
+	<td class="rnr-label">
+		{BEGIN EmbDeseado_label}{$label lcs_embarazo EmbDeseado}{END EmbDeseado_label}
+	</td>
+	<td class="rnr-control style3">
+		{$EmbDeseado_editcontrol}&nbsp;
+	</td>
+</tr>
+{END EmbDeseado_fieldblock}
+	{BEGIN Embarazocol_fieldblock}
+<tr class="{$fielddispclass_Embarazocol}" data-fieldname="Embarazocol">
+	<td class="rnr-label">
+		{BEGIN Embarazocol_label}{$label lcs_embarazo Embarazocol}{END Embarazocol_label}
+	</td>
+	<td class="rnr-control style3">
+		{$Embarazocol_editcontrol}&nbsp;
+	</td>
+</tr>
+{END Embarazocol_fieldblock}
+	{BEGIN _idEstudiante_fieldblock}
+<tr class="{$fielddispclass__idEstudiante}" data-fieldname="_idEstudiante">
+	<td class="rnr-label">
+		{BEGIN _idEstudiante_label}{$label lcs_embarazo _idEstudiante}{END _idEstudiante_label}
+	</td>
+	<td class="rnr-control style3">
+		{$_idEstudiante_editcontrol}&nbsp;
+	</td>
+</tr>
+{END _idEstudiante_fieldblock}
+</table></div>
+
+
+{BEGIN addbuttons}
+<div  class="rnr-brickcontents style2 rnr-b-addbuttons {$brickclass_addbuttons}">{BEGIN save_button}
+<a href="#" class="rnr-button main" id="saveButton{$id}">Guardar</a>
+{END save_button}
+{BEGIN reset_button}
+<a href="#" class="rnr-button" id="resetButton{$id}">Reiniciar</a>
+{END reset_button}
+{BEGIN cancel_button}
+<a href="#" class="rnr-button" id="cancelButton{$id}">Cancelar</a>
+{END cancel_button}
+{BEGIN back_button}
+<a href="#" class="rnr-button" id="backButton{$id}">Volver a la lista</a>
+{END back_button}
+{BEGIN backToMenu_button}
+<a href="#" class="rnr-button" id="backToMenuButton{$id}">Regresar al menú</a>
+{END backToMenu_button}</div>{END addbuttons}
+
+
+</div>
+{END container_fields}
+
+</div>
+
+
+</div>
+{END container_add}
+
+</div>
+
+
+
+</div>
+{END container_all}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			<!--%%bottom%%-->
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

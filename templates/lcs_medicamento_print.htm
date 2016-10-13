@@ -1,0 +1,239 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-print" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_pdf}
+<div class="rnr-c rnr-ch rnr-c-pdf">
+
+{BEGIN printbuttons}
+<div  class="style1 rnr-bl rnr-b-printbuttons {$brickclass_printbuttons}">{BEGIN divideintopages_block}
+<a href="#" class="divideintopages rnr-button button" {$divideintopages_attrs}>Prepare for printing</a>
+{END divideintopages_block}
+{BEGIN pdflink_block}
+<a href="#" class="pdflink rnr-button button" {$pdflink_attrs}>Vista PDF</a>
+{END pdflink_block}
+</div>
+{END printbuttons}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_pdf}
+
+
+
+{BEGIN container_master}
+<div class="rnr-c rnr-ch rnr-c-master">
+
+{BEGIN mastertable_block}
+<div  class="style1 rnr-bl rnr-b-masterinfoprint {$brickclass_masterinfoprint}">{$showmasterfile}
+</div>
+{END mastertable_block}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_master}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+
+{BEGIN container_pageheader}
+<div class="rnr-c rnr-cv rnr-c-pageheader">
+
+
+<div  class="rnr-brickcontents style1 rnr-b-printheader {$brickclass_printheader}">	<h1>{$pagetitlelabel lcs_medicamento print}</h1>
+</div>
+
+
+{BEGIN page_number}
+<div  class="rnr-brickcontents style1 rnr-b-page_of_print {$brickclass_page_of_print}"><h1>Página <span class="rp-pageno">{$pageno}</span> / <span class="rp-pagecount">{$pagecount}</span></h1></div>{END page_number}
+
+
+</div>
+{END container_pageheader}
+
+
+
+{BEGIN container_grid}
+
+
+{BEGIN grid_block}
+	<table class="rnr-c rnr-c-grid rnr-b-grid rnr-gridtable rp-maintable" cellpadding="0">
+	<thead>
+	{BEGIN grid_header}
+<tr class="rnr-toprow style1 {$gridHeader_class}" >
+{BEGIN record_header}
+		{BEGIN idMedicamento_fieldheadercolumn}
+<th class="runner-cc {$idMedicamento_class}" {$idMedicamento_style}>
+	{BEGIN idMedicamento_fieldheader}
+	<b>{$label lcs_medicamento idMedicamento}</b>
+	{END idMedicamento_fieldheader}
+</th>
+{END idMedicamento_fieldheadercolumn}
+	{BEGIN TipoMedicamento_fieldheadercolumn}
+<th class="runner-cc {$TipoMedicamento_class}" {$TipoMedicamento_style}>
+	{BEGIN TipoMedicamento_fieldheader}
+	<b>{$label lcs_medicamento TipoMedicamento}</b>
+	{END TipoMedicamento_fieldheader}
+</th>
+{END TipoMedicamento_fieldheadercolumn}
+	{BEGIN NombreMed_fieldheadercolumn}
+<th class="runner-cc {$NombreMed_class}" {$NombreMed_style}>
+	{BEGIN NombreMed_fieldheader}
+	<b>{$label lcs_medicamento NombreMed}</b>
+	{END NombreMed_fieldheader}
+</th>
+{END NombreMed_fieldheadercolumn}
+	{BEGIN dias_fieldheadercolumn}
+<th class="runner-cc {$dias_class}" {$dias_style}>
+	{BEGIN dias_fieldheader}
+	<b>{$label lcs_medicamento dias}</b>
+	{END dias_fieldheader}
+</th>
+{END dias_fieldheadercolumn}
+	{BEGIN Hora_fieldheadercolumn}
+<th class="runner-cc {$Hora_class}" {$Hora_style}>
+	{BEGIN Hora_fieldheader}
+	<b>{$label lcs_medicamento Hora}</b>
+	{END Hora_fieldheader}
+</th>
+{END Hora_fieldheadercolumn}
+	{BEGIN Dosis_fieldheadercolumn}
+<th class="runner-cc {$Dosis_class}" {$Dosis_style}>
+	{BEGIN Dosis_fieldheader}
+	<b>{$label lcs_medicamento Dosis}</b>
+	{END Dosis_fieldheader}
+</th>
+{END Dosis_fieldheadercolumn}
+	{BEGIN Ingresado_fieldheadercolumn}
+<th class="runner-cc {$Ingresado_class}" {$Ingresado_style}>
+	{BEGIN Ingresado_fieldheader}
+	<b>{$label lcs_medicamento Ingresado}</b>
+	{END Ingresado_fieldheader}
+</th>
+{END Ingresado_fieldheadercolumn}
+	{BEGIN _idEnfermedades_fieldheadercolumn}
+<th class="runner-cc {$_idEnfermedades_class}" {$_idEnfermedades_style}>
+	{BEGIN _idEnfermedades_fieldheader}
+	<b>{$label lcs_medicamento _idEnfermedades}</b>
+	{END _idEnfermedades_fieldheader}
+</th>
+{END _idEnfermedades_fieldheadercolumn}
+		
+	<th class="rnr-edge">&nbsp;</th>
+	{BEGIN endrecordheader_block}
+	<th class="rnr-cs">&nbsp;</th>
+	{END endrecordheader_block}
+	{END record_header}
+</tr>
+{END grid_header}
+
+	</thead>
+	<tbody>	
+	{BEGIN grid_row}
+	<tr class="rnr-row style1 {$rowclass}" {$rowattrs} {$rowstyle}>
+		{BEGIN grid_record}
+				{BEGIN idMedicamento_fieldcolumn}
+<td  class="runner-cc {$idMedicamento_class}" {$idMedicamento_style} {$recordattrs}>
+	{$idMedicamento_value}
+</td>
+{END idMedicamento_fieldcolumn}
+	{BEGIN TipoMedicamento_fieldcolumn}
+<td  class="runner-cc {$TipoMedicamento_class}" {$TipoMedicamento_style} {$recordattrs}>
+	{$TipoMedicamento_value}
+</td>
+{END TipoMedicamento_fieldcolumn}
+	{BEGIN NombreMed_fieldcolumn}
+<td  class="runner-cc {$NombreMed_class}" {$NombreMed_style} {$recordattrs}>
+	{$NombreMed_value}
+</td>
+{END NombreMed_fieldcolumn}
+	{BEGIN dias_fieldcolumn}
+<td  class="runner-cc {$dias_class}" {$dias_style} {$recordattrs}>
+	{$dias_value}
+</td>
+{END dias_fieldcolumn}
+	{BEGIN Hora_fieldcolumn}
+<td  class="runner-cc {$Hora_class}" {$Hora_style} {$recordattrs}>
+	{$Hora_value}
+</td>
+{END Hora_fieldcolumn}
+	{BEGIN Dosis_fieldcolumn}
+<td  class="runner-cc {$Dosis_class}" {$Dosis_style} {$recordattrs}>
+	{$Dosis_value}
+</td>
+{END Dosis_fieldcolumn}
+	{BEGIN Ingresado_fieldcolumn}
+<td  class="runner-cc {$Ingresado_class}" {$Ingresado_style} {$recordattrs}>
+	{$Ingresado_value}
+</td>
+{END Ingresado_fieldcolumn}
+	{BEGIN _idEnfermedades_fieldcolumn}
+<td  class="runner-cc {$_idEnfermedades_class}" {$_idEnfermedades_style} {$recordattrs}>
+	{$_idEnfermedades_value}
+</td>
+{END _idEnfermedades_fieldcolumn}
+
+		<td class="rnr-edge" {$recordattrs}>&nbsp;</td>
+		{BEGIN endrecord_block}
+		<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
+		{END endrecord_block}
+										
+		{END grid_record}
+
+	</tr>
+{END grid_row}
+
+
+	
+	</tbody>
+</table>
+
+{END grid_block}
+
+
+
+{END container_grid}
+
+
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			<!--%%bottom%%-->
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

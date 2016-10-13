@@ -1,0 +1,69 @@
+<div {$pageattrs}>
+
+{BEGIN container_dcount}
+<div class="rnr-c rnr-cv rnr-c-dcount">
+
+
+<div  class="rnr-brickcontents style1 rnr-b-detailspreviewheader {$brickclass_detailspreviewheader}">	<h1>{$pagetitlelabel lcs_estudiante detailspreview}</h1>
+</div>
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-detailspreviewdetailsfount {$brickclass_detailspreviewdetailsfount}">Detalles encontrados: <strong>{$row_count}.</strong>
+</div>
+
+
+{BEGIN display_first}
+<div  class="rnr-brickcontents style1 rnr-b-detailspreviewdispfirst {$brickclass_detailspreviewdispfirst}">Mostrando primero: <strong>{$display_count}</strong>.
+</div>{END display_first}
+
+
+</div>
+{END container_dcount}
+
+
+
+{BEGIN container_detailspreviewgrid}
+
+
+{BEGIN details_data}
+<table class="rnr-c rnr-cont rnr-c--detailspreviewgrid rnr-b-detailspreviewgrid rnr-gridtable">
+{BEGIN details_row_header}
+	<thead>
+		<tr class="rnr-toprow style1 {$gridHeader_class}" >
+			<th class="{$idEstudiante_class}">{$label lcs_estudiante idEstudiante}</th>
+			<th class="{$Nombre_class}">{$label lcs_estudiante Nombre}</th>
+			<th class="{$Apellido_class}">{$label lcs_estudiante Apellido}</th>
+			<th class="{$Direcccion_class}">{$label lcs_estudiante Direcccion}</th>
+			<th class="{$FNacimiento_class}">{$label lcs_estudiante FNacimiento}</th>
+			<th class="{$FotoRostro_class}">{$label lcs_estudiante FotoRostro}</th>
+			<th class="{$Ingresado_class}">{$label lcs_estudiante Ingresado}</th>
+			<th class="{$_idCentro_class}">{$label lcs_estudiante _idCentro}</th>
+			<th class="rnr-edge">&nbsp;</th>
+		</tr>
+	</thead>
+{END details_row_header}
+	<tbody>
+{BEGIN details_row}
+		<tr class="rnr-row style1">
+			<td class="{$idEstudiante_class}">{$idEstudiante_value}</td>
+			<td class="{$Nombre_class}">{$Nombre_value}</td>
+			<td class="{$Apellido_class}">{$Apellido_value}</td>
+			<td class="{$Direcccion_class}">{$Direcccion_value}</td>
+			<td class="{$FNacimiento_class}">{$FNacimiento_value}</td>
+			<td class="{$FotoRostro_class}">{$FotoRostro_value}</td>
+			<td class="{$Ingresado_class}">{$Ingresado_value}</td>
+			<td class="{$_idCentro_class}">{$_idCentro_value}</td>
+			<td class="rnr-edge">&nbsp;</td>
+		</tr>
+{END details_row}	
+	</tbody>
+</table>
+
+{END details_data}
+
+
+
+{END container_detailspreviewgrid}
+
+</div>

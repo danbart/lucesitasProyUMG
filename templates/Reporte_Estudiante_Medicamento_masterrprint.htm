@@ -1,0 +1,56 @@
+<div {$pageattrs}>
+
+{BEGIN container_masterlistheader}
+<div class="rnr-c rnr-ch rnr-c-masterlistheader">
+
+
+<div  class="style1 rnr-bl rnr-b-masterprintheader {$brickclass_masterprintheader}">	<h1>{$pagetitlelabel Reporte_Estudiante_Medicamento masterrprint}</h1>
+</div>
+
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_masterlistheader}
+
+
+
+{BEGIN container_mastergrid}
+
+
+
+<table class="rnr-c rnr-cont rnr-c-mastergrid rnr-b-masterprintfields rnr-gridtable" cellpadding="0" >
+	<thead>
+		<tr class="rnr-toprow style1 {$gridHeader_class}" >
+			<th class="{$Estudiante_class}">{$label Reporte_Estudiante_Medicamento Estudiante}</th>
+			<th class="{$TipoMedicamento_class}">{$label Reporte_Estudiante_Medicamento TipoMedicamento}</th>
+			<th class="{$NombreMed_class}">{$label Reporte_Estudiante_Medicamento NombreMed}</th>
+			<th class="{$Hora_class}">{$label Reporte_Estudiante_Medicamento Hora}</th>
+			<th class="{$FotoRostro_class}">{$label Reporte_Estudiante_Medicamento FotoRostro}</th>
+			<th class="{$TipoEnfermedad_class}">{$label Reporte_Estudiante_Medicamento TipoEnfermedad}</th>
+			<th class="{$dias_class}">{$label Reporte_Estudiante_Medicamento dias}</th>
+			<th class="{$Dosis_class}">{$label Reporte_Estudiante_Medicamento Dosis}</th>
+			<th class="rnr-edge">&nbsp;</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="rnr-row style1">
+			<td class="{$Estudiante_class}">{$Estudiante_mastervalue}</td>
+			<td class="{$TipoMedicamento_class}">{$TipoMedicamento_mastervalue}</td>
+			<td class="{$NombreMed_class}">{$NombreMed_mastervalue}</td>
+			<td class="{$Hora_class}">{$Hora_mastervalue}</td>
+			<td class="{$FotoRostro_class}">{$FotoRostro_mastervalue}</td>
+			<td class="{$TipoEnfermedad_class}">{$TipoEnfermedad_mastervalue}</td>
+			<td class="{$dias_class}">{$dias_mastervalue}</td>
+			<td class="{$Dosis_class}">{$Dosis_mastervalue}</td>
+			<td class="rnr-edge">&nbsp;</td>
+		</tr>
+	</tbody>
+</table> 
+
+
+
+
+
+{END container_mastergrid}
+
+</div>

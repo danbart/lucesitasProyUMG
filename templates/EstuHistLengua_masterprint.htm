@@ -1,0 +1,56 @@
+<div {$pageattrs}>
+
+{BEGIN container_masterlistheader}
+<div class="rnr-c rnr-ch rnr-c-masterlistheader">
+
+
+<div  class="style1 rnr-bl rnr-b-masterprintheader {$brickclass_masterprintheader}">	<h1>{$pagetitlelabel EstuHistLengua masterprint}</h1>
+</div>
+
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_masterlistheader}
+
+
+
+{BEGIN container_mastergrid}
+
+
+
+<table class="rnr-c rnr-cont rnr-c-mastergrid rnr-b-masterprintfields rnr-gridtable" cellpadding="0" >
+	<thead>
+		<tr class="rnr-toprow style1 {$gridHeader_class}" >
+			<th class="{$Estudiante_class}">{$label EstuHistLengua Estudiante}</th>
+			<th class="{$FotoRostro_class}">{$label EstuHistLengua FotoRostro}</th>
+			<th class="{$edad_class}">{$label EstuHistLengua edad}</th>
+			<th class="{$Balbucea_class}">{$label EstuHistLengua Balbucea}</th>
+			<th class="{$Edad1Palabra_class}">{$label EstuHistLengua Edad1Palabra}</th>
+			<th class="{$EdadMesVocalizo_class}">{$label EstuHistLengua EdadMesVocalizo}</th>
+			<th class="{$AdaptSocial_class}">{$label EstuHistLengua AdaptSocial}</th>
+			<th class="{$Ingresado_class}">{$label EstuHistLengua Ingresado}</th>
+			<th class="rnr-edge">&nbsp;</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="rnr-row style1">
+			<td class="{$Estudiante_class}">{$Estudiante_mastervalue}</td>
+			<td class="{$FotoRostro_class}">{$FotoRostro_mastervalue}</td>
+			<td class="{$edad_class}">{$edad_mastervalue}</td>
+			<td class="{$Balbucea_class}">{$Balbucea_mastervalue}</td>
+			<td class="{$Edad1Palabra_class}">{$Edad1Palabra_mastervalue}</td>
+			<td class="{$EdadMesVocalizo_class}">{$EdadMesVocalizo_mastervalue}</td>
+			<td class="{$AdaptSocial_class}">{$AdaptSocial_mastervalue}</td>
+			<td class="{$Ingresado_class}">{$Ingresado_mastervalue}</td>
+			<td class="rnr-edge">&nbsp;</td>
+		</tr>
+	</tbody>
+</table> 
+
+
+
+
+
+{END container_mastergrid}
+
+</div>

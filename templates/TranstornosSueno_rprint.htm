@@ -1,0 +1,182 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-rprint" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_master}
+<div class="rnr-c rnr-ch rnr-c-master">
+
+{BEGIN mastertable_block}
+<div  class="style1 rnr-bl rnr-b-masterinfoprint {$brickclass_masterinfoprint}">{$showmasterfile}
+</div>
+{END mastertable_block}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_master}
+
+
+
+{BEGIN container_pdf}
+<div class="rnr-c rnr-ch rnr-c-pdf">
+
+{BEGIN printbuttons}
+<div  class="style1 rnr-bl rnr-b-printbuttons {$brickclass_printbuttons}">{BEGIN pdflink_block}
+<a href="#" class="pdflink rnr-button button" {$pdflink_attrs}>Vista PDF</a>
+{END pdflink_block}
+</div>
+{END printbuttons}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_pdf}
+
+
+
+{BEGIN container_grid}
+
+
+
+<style>
+	td.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary {background-color:#ffffbb;}
+	td.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary {background-color:#ffe0b0;}
+	.rnr-report {width: 100%;}
+	td {padding: 2px; 4px;}
+
+		td.group_1{background-color: #90EE90;}
+		td.nbgroup_1{background-color: #90EE90;}
+		td.header_1 {
+			background-color: #7ACA7A; 
+			font-size:120%;
+			padding: 2px 8px;
+			font-weight: bold;
+		}
+	td.blackshade {
+		font-size:140%;
+		padding: 4px 8px;
+	}
+	.summaryrow > * {
+		border:solid #808080 1px; 
+		border-left: none; 
+		border-right: none;
+	}
+	.grouptotalsrow + :not(.grouptotalsrow) > * {
+		border-top:solid #808080 1px; 
+	}
+
+</style>
+
+{BEGIN pages}
+<div class="rp-repeat">
+<h1>Transtornos Sueno</h1>
+	
+</div>
+<div id="grid_block{$id}" class="rnr-report-gridblock">
+		<div class="rnr-cw-grid rnr-s-empty asbuttons {$pageStyleName}">		
+						<div class="rnr-c rnr-cv rnr-c-grid">
+		<div class="rnr-brickcontents style1 rnr-b-report">		
+			<table class="rnr-report" cellspacing=0 cellpadding=0 border=0>
+			
+			
+			{BEGIN grid_row}
+			<!-------------------------------------  group headers ----------------------------------------->	
+			{BEGIN Estudiante_newgroup}
+								<tr class="group-headers">
+					<td class="blackshade">{$label TranstornosSueno Estudiante}</td>
+										<td class="blackshade">{$label TranstornosSueno Ingresado}</td>
+					<td class="blackshade">{$label TranstornosSueno FotoRostro}</td>
+					<td class="blackshade">{$label TranstornosSueno TipoTSue_o}</td>
+					<td class="blackshade">{$label TranstornosSueno edad}</td>
+				</tr>
+				<tr class="group-spliter-1" {$rowattrs}>
+																				<td colspan=5 class=header_1>
+								<font>
+									{$Estudiante_grval}
+								</font>
+							</td>
+				</tr>
+			{END Estudiante_newgroup}
+						<!-------------------------------------  data ----------------------------------------->
+			{BEGIN row_data}
+				<tr >
+										<td class=" group_1" >&nbsp;</td>
+									<td class=data>{$Ingresado_value}</td>
+					<td class=data>{$FotoRostro_value}</td>
+					<td class=data>{$TipoTSue_o_value}</td>
+					<td class=data>{$edad_value}</td>
+				</tr>
+			{END row_data}
+			<!-------------------------------------  group summary ----------------------------------------->
+						{BEGIN Estudiante_endgroup}
+				<tr class="summaryrow" >
+										<td  class="group_1" colspan=5 >
+				Resumen de {$label TranstornosSueno Estudiante} {$Estudiante_grval}
+					- <span class="summary-1" data-type="summary" data-value="{$groupEstudiante_total_cnt}">{$groupEstudiante_total_cnt}</span> Registros totales</td>
+				</tr>
+												<!--  Min -->
+				<tr class="grouptotalsrow" >
+										<td class=group_1>Min</td>
+										<td class=group_1>&nbsp;</td>
+										<td class=group_1>&nbsp;</td>
+										<td class=group_1>&nbsp;</td>
+										<td class=group_1><span class="summary-1" data-type="min" data-value="{$groupEstudiante_totaledad_min}" data-field="edad">{$groupEstudiante_totaledad_min}</span></td>
+				</tr>	
+						{END Estudiante_endgroup}
+			{END grid_row}
+
+										</table>
+		</div>
+	</div>
+
+	</div>
+</div>
+{END pages}
+
+
+
+
+{END container_grid}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			<!--%%bottom%%-->
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

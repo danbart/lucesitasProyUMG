@@ -1,0 +1,236 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-search" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_search}
+<div class="rnr-c rnr-cv rnr-c-search">
+
+{BEGIN searchheader}
+<div  class="rnr-brickcontents style2 rnr-b-srchheader {$brickclass_srchheader}"><span>	<h1>{$pagetitlelabel lcs_descsocial search}</h1>
+</span></div>{END searchheader}
+
+
+{BEGIN conditions_block}
+<div  class="rnr-brickcontents style1 rnr-b-srchconditions {$brickclass_srchconditions}">	<center>
+	<span class=fieldname>Criterio:&nbsp;</span>	
+	<input type="radio" class="rnr-radio-button" name="srchType{$id}" {$all_checkbox}><label for="all_checkbox"> Todas las condiciones</label>
+	&nbsp;&nbsp;&nbsp;
+	<input type="radio" class="rnr-radio-button" name="srchType{$id}" {$any_checkbox}><label for="any_checkbox"> Ninguna condición</label>
+	</center></div>{END conditions_block}
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_fields} rnr-wrapper rnr-cbw-fields">
+
+{BEGIN container_fields}
+<div class="rnr-c rnr-cv rnr-c-fields">
+
+
+<div  class="rnr-brickcontents style1 rnr-b-srchfields {$brickclass_srchfields}"><table class="fieldGrid">
+	<tr>
+		<td>&nbsp;</td>
+		<td>NO</td>
+		<td colspan=3>&nbsp; </td>
+	</tr>
+	<tr class="{$fielddispclass_idDescSocial}">
+	{BEGIN idDescSocial_fieldblock}		
+	<td>
+		{$label lcs_descsocial idDescSocial}
+	</td>
+	<td>
+		<input type="checkbox" {$idDescSocial_notbox}>
+	</td>
+	<td>
+		{$searchtype_idDescSocial}
+	</td>
+	<td>
+		{$idDescSocial_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$idDescSocial_editcontrol1}&nbsp;
+	</td>
+{END idDescSocial_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_RelacionHermano}">
+	{BEGIN RelacionHermano_fieldblock}		
+	<td>
+		{$label lcs_descsocial RelacionHermano}
+	</td>
+	<td>
+		<input type="checkbox" {$RelacionHermano_notbox}>
+	</td>
+	<td>
+		{$searchtype_RelacionHermano}
+	</td>
+	<td>
+		{$RelacionHermano_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$RelacionHermano_editcontrol1}&nbsp;
+	</td>
+{END RelacionHermano_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_RelacionCompaneros}">
+	{BEGIN RelacionCompaneros_fieldblock}		
+	<td>
+		{$label lcs_descsocial RelacionCompaneros}
+	</td>
+	<td>
+		<input type="checkbox" {$RelacionCompaneros_notbox}>
+	</td>
+	<td>
+		{$searchtype_RelacionCompaneros}
+	</td>
+	<td>
+		{$RelacionCompaneros_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$RelacionCompaneros_editcontrol1}&nbsp;
+	</td>
+{END RelacionCompaneros_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_CQuinJuega}">
+	{BEGIN CQuinJuega_fieldblock}		
+	<td>
+		{$label lcs_descsocial CQuinJuega}
+	</td>
+	<td>
+		<input type="checkbox" {$CQuinJuega_notbox}>
+	</td>
+	<td>
+		{$searchtype_CQuinJuega}
+	</td>
+	<td>
+		{$CQuinJuega_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$CQuinJuega_editcontrol1}&nbsp;
+	</td>
+{END CQuinJuega_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_CQueJuega}">
+	{BEGIN CQueJuega_fieldblock}		
+	<td>
+		{$label lcs_descsocial CQueJuega}
+	</td>
+	<td>
+		<input type="checkbox" {$CQueJuega_notbox}>
+	</td>
+	<td>
+		{$searchtype_CQueJuega}
+	</td>
+	<td>
+		{$CQueJuega_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$CQueJuega_editcontrol1}&nbsp;
+	</td>
+{END CQueJuega_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_ingresado}">
+	{BEGIN ingresado_fieldblock}		
+	<td>
+		{$label lcs_descsocial ingresado}
+	</td>
+	<td>
+		<input type="checkbox" {$ingresado_notbox}>
+	</td>
+	<td>
+		{$searchtype_ingresado}
+	</td>
+	<td>
+		{$ingresado_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$ingresado_editcontrol1}&nbsp;
+	</td>
+{END ingresado_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass__idEstudiante}">
+	{BEGIN _idEstudiante_fieldblock}		
+	<td>
+		{$label lcs_descsocial _idEstudiante}
+	</td>
+	<td>
+		<input type="checkbox" {$_idEstudiante_notbox}>
+	</td>
+	<td>
+		{$searchtype__idEstudiante}
+	</td>
+	<td>
+		{$_idEstudiante_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$_idEstudiante_editcontrol1}&nbsp;
+	</td>
+{END _idEstudiante_fieldblock}
+	</tr>
+
+</table></div>
+
+
+{BEGIN searchbuttons}
+<div  class="rnr-brickcontents style2 rnr-b-srchbuttons {$brickclass_srchbuttons}">{BEGIN search_button}
+<a href="#" class="rnr-button main" {$searchbutton_attrs}>Buscar</a>
+{END search_button} 
+{BEGIN reset_button}
+<a href="#" class="rnr-button" {$resetbutton_attrs}>Reiniciar</a>
+{END reset_button}
+{BEGIN back_button}
+<a href="#" class="rnr-button" {$backbutton_attrs}>Volver a la lista</a>
+{END back_button}</div>{END searchbuttons}
+
+
+</div>
+{END container_fields}
+
+</div>
+
+
+</div>
+{END container_search}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			<!--%%bottom%%-->
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

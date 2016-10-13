@@ -1,0 +1,239 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-print" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_pdf}
+<div class="rnr-c rnr-ch rnr-c-pdf">
+
+{BEGIN printbuttons}
+<div  class="style1 rnr-bl rnr-b-printbuttons {$brickclass_printbuttons}">{BEGIN divideintopages_block}
+<a href="#" class="divideintopages rnr-button button" {$divideintopages_attrs}>Prepare for printing</a>
+{END divideintopages_block}
+{BEGIN pdflink_block}
+<a href="#" class="pdflink rnr-button button" {$pdflink_attrs}>Vista PDF</a>
+{END pdflink_block}
+</div>
+{END printbuttons}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_pdf}
+
+
+
+{BEGIN container_master}
+<div class="rnr-c rnr-ch rnr-c-master">
+
+{BEGIN mastertable_block}
+<div  class="style1 rnr-bl rnr-b-masterinfoprint {$brickclass_masterinfoprint}">{$showmasterfile}
+</div>
+{END mastertable_block}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_master}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+
+{BEGIN container_pageheader}
+<div class="rnr-c rnr-cv rnr-c-pageheader">
+
+
+<div  class="rnr-brickcontents style1 rnr-b-printheader {$brickclass_printheader}">	<h1>{$pagetitlelabel lcs_estudiante print}</h1>
+</div>
+
+
+{BEGIN page_number}
+<div  class="rnr-brickcontents style1 rnr-b-page_of_print {$brickclass_page_of_print}"><h1>Página <span class="rp-pageno">{$pageno}</span> / <span class="rp-pagecount">{$pagecount}</span></h1></div>{END page_number}
+
+
+</div>
+{END container_pageheader}
+
+
+
+{BEGIN container_grid}
+
+
+{BEGIN grid_block}
+	<table class="rnr-c rnr-c-grid rnr-b-grid rnr-gridtable rp-maintable" cellpadding="0">
+	<thead>
+	{BEGIN grid_header}
+<tr class="rnr-toprow style1 {$gridHeader_class}" >
+{BEGIN record_header}
+		{BEGIN FotoRostro_fieldheadercolumn}
+<th class="runner-cc {$FotoRostro_class}" {$FotoRostro_style}>
+	{BEGIN FotoRostro_fieldheader}
+	<b>{$label lcs_estudiante FotoRostro}</b>
+	{END FotoRostro_fieldheader}
+</th>
+{END FotoRostro_fieldheadercolumn}
+	{BEGIN idEstudiante_fieldheadercolumn}
+<th class="runner-cc {$idEstudiante_class}" {$idEstudiante_style}>
+	{BEGIN idEstudiante_fieldheader}
+	<b>{$label lcs_estudiante idEstudiante}</b>
+	{END idEstudiante_fieldheader}
+</th>
+{END idEstudiante_fieldheadercolumn}
+	{BEGIN Nombre_fieldheadercolumn}
+<th class="runner-cc {$Nombre_class}" {$Nombre_style}>
+	{BEGIN Nombre_fieldheader}
+	<b>{$label lcs_estudiante Nombre}</b>
+	{END Nombre_fieldheader}
+</th>
+{END Nombre_fieldheadercolumn}
+	{BEGIN Apellido_fieldheadercolumn}
+<th class="runner-cc {$Apellido_class}" {$Apellido_style}>
+	{BEGIN Apellido_fieldheader}
+	<b>{$label lcs_estudiante Apellido}</b>
+	{END Apellido_fieldheader}
+</th>
+{END Apellido_fieldheadercolumn}
+	{BEGIN Direcccion_fieldheadercolumn}
+<th class="runner-cc {$Direcccion_class}" {$Direcccion_style}>
+	{BEGIN Direcccion_fieldheader}
+	<b>{$label lcs_estudiante Direcccion}</b>
+	{END Direcccion_fieldheader}
+</th>
+{END Direcccion_fieldheadercolumn}
+	{BEGIN FNacimiento_fieldheadercolumn}
+<th class="runner-cc {$FNacimiento_class}" {$FNacimiento_style}>
+	{BEGIN FNacimiento_fieldheader}
+	<b>{$label lcs_estudiante FNacimiento}</b>
+	{END FNacimiento_fieldheader}
+</th>
+{END FNacimiento_fieldheadercolumn}
+	{BEGIN Ingresado_fieldheadercolumn}
+<th class="runner-cc {$Ingresado_class}" {$Ingresado_style}>
+	{BEGIN Ingresado_fieldheader}
+	<b>{$label lcs_estudiante Ingresado}</b>
+	{END Ingresado_fieldheader}
+</th>
+{END Ingresado_fieldheadercolumn}
+	{BEGIN _idCentro_fieldheadercolumn}
+<th class="runner-cc {$_idCentro_class}" {$_idCentro_style}>
+	{BEGIN _idCentro_fieldheader}
+	<b>{$label lcs_estudiante _idCentro}</b>
+	{END _idCentro_fieldheader}
+</th>
+{END _idCentro_fieldheadercolumn}
+		
+	<th class="rnr-edge">&nbsp;</th>
+	{BEGIN endrecordheader_block}
+	<th class="rnr-cs">&nbsp;</th>
+	{END endrecordheader_block}
+	{END record_header}
+</tr>
+{END grid_header}
+
+	</thead>
+	<tbody>	
+	{BEGIN grid_row}
+	<tr class="rnr-row style1 {$rowclass}" {$rowattrs} {$rowstyle}>
+		{BEGIN grid_record}
+				{BEGIN FotoRostro_fieldcolumn}
+<td  class="runner-cc {$FotoRostro_class}" {$FotoRostro_style} {$recordattrs}>
+	{$FotoRostro_value}
+</td>
+{END FotoRostro_fieldcolumn}
+	{BEGIN idEstudiante_fieldcolumn}
+<td  class="runner-cc {$idEstudiante_class}" {$idEstudiante_style} {$recordattrs}>
+	{$idEstudiante_value}
+</td>
+{END idEstudiante_fieldcolumn}
+	{BEGIN Nombre_fieldcolumn}
+<td  class="runner-cc {$Nombre_class}" {$Nombre_style} {$recordattrs}>
+	{$Nombre_value}
+</td>
+{END Nombre_fieldcolumn}
+	{BEGIN Apellido_fieldcolumn}
+<td  class="runner-cc {$Apellido_class}" {$Apellido_style} {$recordattrs}>
+	{$Apellido_value}
+</td>
+{END Apellido_fieldcolumn}
+	{BEGIN Direcccion_fieldcolumn}
+<td  class="runner-cc {$Direcccion_class}" {$Direcccion_style} {$recordattrs}>
+	{$Direcccion_value}
+</td>
+{END Direcccion_fieldcolumn}
+	{BEGIN FNacimiento_fieldcolumn}
+<td  class="runner-cc {$FNacimiento_class}" {$FNacimiento_style} {$recordattrs}>
+	{$FNacimiento_value}
+</td>
+{END FNacimiento_fieldcolumn}
+	{BEGIN Ingresado_fieldcolumn}
+<td  class="runner-cc {$Ingresado_class}" {$Ingresado_style} {$recordattrs}>
+	{$Ingresado_value}
+</td>
+{END Ingresado_fieldcolumn}
+	{BEGIN _idCentro_fieldcolumn}
+<td  class="runner-cc {$_idCentro_class}" {$_idCentro_style} {$recordattrs}>
+	{$_idCentro_value}
+</td>
+{END _idCentro_fieldcolumn}
+
+		<td class="rnr-edge" {$recordattrs}>&nbsp;</td>
+		{BEGIN endrecord_block}
+		<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
+		{END endrecord_block}
+										
+		{END grid_record}
+
+	</tr>
+{END grid_row}
+
+
+	
+	</tbody>
+</table>
+
+{END grid_block}
+
+
+
+{END container_grid}
+
+
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			<!--%%bottom%%-->
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

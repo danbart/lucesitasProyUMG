@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<HTML {$html_attrs}><HEAD> 
+<META http-equiv="X-UA-Compatible" content="IE=Edge"> <TITLE>{$pagetitle}</TITLE> 
+<META http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+<LINK href="styles/default.css" rel="stylesheet" type="text/css"> {BEGIN rtlCSS}<LINK href="styles/defaultRTL.css" rel="stylesheet" type="text/css">{END rtlCSS} {BEGIN styleCSSFiles}<LINK href="{$stylepath}" rel="stylesheet" type="text/css">{END styleCSSFiles} {BEGIN pageCSSFiles}<LINK href="{$pagestylepath}" rel="stylesheet" type="text/css">{END pageCSSFiles} 
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD> 
+<BODY class="{$stylename} function-report" {$bodyattrs}>{BEGIN body}
+{$header} 
+<DIV class="rnr-page">
+<DIV class="rnr-top {$blockclass_top}">
+{BEGIN container_master}
+<DIV class="rnr-c rnr-ch rnr-c-master">
+{BEGIN mastertable_block}<DIV class="style1 rnr-bl rnr-b-masterinfo {$brickclass_masterinfo}">
+{$showmasterfile} <A class="runner-link" {$backtomasterlink_attrs}><B>Volver a 
+{$backtomasterlink_caption}</B> </A></DIV>
+{END mastertable_block}<DIV class="rnr-hfiller"></DIV></DIV>{END container_master}
+{BEGIN container_toplinks}
+<DIV class="rnr-c rnr-ch rnr-c-toplinks">
+<DIV class="rnr-hfiller"></DIV>
+{BEGIN prints_block}<DIV class="style1 rnr-br rnr-b-toplinks_print {$brickclass_toplinks_print}">{BEGIN print_link}<A class="rnr-button" href="EstuHistEmoci_print.php" target="_blank" {$printlink_attrs}>Impresora 
+versión amigable</A> {END print_link}{BEGIN printall_link}<A class="rnr-button" href="EstuHistEmoci_print.php?all=1" target="_blank" {$printalllink_attrs}>Imprimir 
+el informe entero</A> {END printall_link}</DIV>
+{END prints_block}{BEGIN asearch_link}<DIV class="style1 rnr-br rnr-b-toplinks_advsearch {$brickclass_toplinks_advsearch}"><A class="rnr-button" href="EstuHistEmoci_search.php" {$advsearchlink_attrs}>Búsqueda avanzada</A> </DIV>
+{END asearch_link}{BEGIN export_link}<DIV class="style1 rnr-br rnr-b-toplinks_export_links {$brickclass_toplinks_export_links}"><SPAN id="export_links{$id}"><A href="EstuHistEmoci_export.php?all=1&amp;format=excel" {$excellink_attrs}><IMG alt="Exportar a Excel" src="images/excel.gif" border="0"></A> <A href="EstuHistEmoci_export.php?all=1&amp;format=word" {$wordlink_attrs}><IMG alt="Exportar a Word " src="images/word.gif" border="0"></A> <A href="EstuHistEmoci_export.php?all=1&amp;format=pdf" {$pdflink_attrs}><IMG alt="Exportar a PDF" src="images/pdf.gif" border="0"></A> </SPAN> </DIV>{END export_link}</DIV>{END container_toplinks}
+{BEGIN container_search}
+<DIV class="rnr-c rnr-ch rnr-c-search">
+{BEGIN searchform_block}<DIV class="style1 rnr-bl rnr-b-search {$brickclass_search}"><SPAN>{BEGIN searchform_text}<INPUT type="text" size="25" {$searchfor_attrs}>{END searchform_text} 
+{BEGIN searchform_search}<A class="rnr-button img" href="#" data-icon="search" {$searchbutton_attrs}></A>	 {END searchform_search}{BEGIN searchform_showall}<A class="rnr-button" href="#" {$showAllCont_attrs} {$showallbutton_attrs}>Mostrar todo</A> {END searchform_showall}</SPAN> </DIV>
+{END searchform_block}{BEGIN searchformbuttons_block}<DIV class="style1 rnr-bl rnr-b-search_buttons {$brickclass_search_buttons}">{BEGIN searchPanelTopButtons}<SPAN><A class="rnr-button img" id="showSrchWin{$id}" href="#" data-icon="panelfloat" {$showHideSearchWin_attrs}></A> <A class="rnr-button img" id="showOptPanel{$id}" href="#" data-icon="paneldown" {$showHideSearchPanel_attrs}></A> </SPAN> {END searchPanelTopButtons}</DIV>
+{END searchformbuttons_block}{BEGIN searchsaving_block}<DIV class="style1 rnr-bl rnr-b-search_saving_buttons {$brickclass_search_saving_buttons}"></DIV>
+{END searchsaving_block}<DIV class="rnr-hfiller"></DIV>
+{BEGIN details_block}<DIV class="style1 rnr-br rnr-b-details_found {$brickclass_details_found}"><SPAN {$details_attrs}>	Grupos 
+encontrados: <B><SPAN class="rnr-details_found_count">
+{$records_found}</SPAN></B> </SPAN> </DIV>
+{END details_block}{BEGIN pages_block}<DIV class="style1 rnr-br rnr-b-page_of {$brickclass_page_of}"><SPAN {$pages_attrs}>	Página <B>
+{$page}</B> / <B>
+{$maxpages}</B> </SPAN> </DIV>
+{END pages_block}{BEGIN recordspp_block}<DIV class="style1 rnr-br rnr-b-recsperpage {$brickclass_recsperpage}"><SPAN id="recordspp_block{$id}" name="recordspp_block{$id}">	Grupos 
+por página:&nbsp;
+{$grpsPerPage} </SPAN>	</DIV>{END recordspp_block}</DIV>{END container_search}</DIV>
+<DIV class="rnr-middle">
+<DIV class="rnr-left {$blockclass_left}">
+{BEGIN container_left}
+<DIV class="rnr-c rnr-cv rnr-c-left">
+{BEGIN menu_block}{$menu main}{END menu_block}{BEGIN searchPanel}<DIV class="rnr-brickcontents style1 rnr-b-searchpanel {$brickclass_searchpanel}">
+<DIV class="searchPanelContainer">
+<DIV class="searchOptions bottomPanelBorder" {$srchOpt_attrs}><!-- Search panel content --> 
+<DIV class="srchCritTop" style="display: none;">	Criterio:&nbsp; <INPUT name="srchType{$id}" class="rnr-radio-button" type="radio" {$all_checkbox}>&nbsp;{BEGIN all_checkbox_label}<SPAN>todos</SPAN>{END all_checkbox_label}	&nbsp;&nbsp;&nbsp;<INPUT name="srchType{$id}" class="rnr-radio-button" type="radio" {$any_checkbox}>&nbsp;{BEGIN any_checkbox_label}<SPAN>alguno</SPAN> 
+{END any_checkbox_label}</DIV>
+<DIV class="addOption"><SPAN class="rnr-buttons-group"><A class="rnr-button" id="showHideControlChooseMenu{$id}" href="#" {$showHideCtrls_attrs}>Añadir 
+campo</A> </SPAN> <A class="rnr-button" id="showHideSearchType{$id}" href="#" {$showHideCtrlsOpt_attrs}>
+{$showHideOpt_mess}</A> </DIV>
+<TABLE class="controlsBlock {$controls_block_class}">{BEGIN searchCtrlBlock}
+  <TBODY>
+  <TR class="srchPanelRow" {$filterRow_attrs}>
+    <TD class="srchPanelCell">{$delCtrlButt}</TD>
+    <TD class="srchPanelCell">
+      {$fLabel}:&nbsp;</TD>
+    <TD class="srchPanelCell srchPanelCell2">
+      <DIV class="rnr-searchtype">
+      {$searchtype}</DIV>
+      <DIV class="rnr-searchcontrol">
+      {$searchcontrol}</DIV>
+      <DIV class="rnr-searchcontrol">
+      {$searchcontrol1}</DIV></TD></TR></TBODY>{END searchCtrlBlock}</TABLE>
+<DIV align="left" class="bottomSearchButt" {$bottomSearchButt_attrs}><A class="rnr-button" id="searchButton{$id}" href="#" {$searchbutton_attrs}>Buscar</A> 
+</DIV></DIV></DIV></DIV>{END searchPanel}</DIV>{END container_left}</DIV>
+<DIV class="rnr-center {$blockclass_center}">
+{BEGIN container_message}
+<DIV class="rnr-c rnr-ch rnr-c-message">
+{BEGIN message_block}<DIV class="style1 rnr-bc rnr-b-message {$brickclass_message}">
+<DIV class="rnr-message">
+{$message}</DIV></DIV>{END message_block}</DIV>{END container_message}
+{BEGIN container_grid}
+<STYLE>
+	td.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary {background-color:#ffffbb;}
+	td.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary {background-color:#ffe0b0;}
+	.rnr-report {width: 100%;}
+	td {padding: 2px; 4px;}
+
+		td.group_1{background-color: #AFEEEE;}
+		td.nbgroup_1{background-color: #AFEEEE;}
+		td.header_1 {
+			background-color: #94CACA; 
+			font-size:120%;
+			padding: 2px 8px;
+			font-weight: bold;
+		}
+	td.blackshade {
+		font-size:140%;
+		padding: 4px 8px;
+	}
+	.summaryrow > * {
+		border:solid #808080 1px; 
+		border-left: none; 
+		border-right: none;
+	}
+	.grouptotalsrow + :not(.grouptotalsrow) > * {
+		border-top:solid #808080 1px; 
+	}
+
+</STYLE>
+ 
+<DIV class="rnr-cw-grid rnr-s-2 asbuttons {$pageStyleName}">
+<DIV class="rnr-c rnr-cv rnr-c-grid">
+<DIV class="rnr-brickcontents style1 rnr-b-report">
+<TABLE class="rnr-report" border="0" cellspacing="0" cellpadding="0"><!-------------------------------------  group headers ----------------------------------------->	
+  <TBODY>
+  {BEGIN grid_row}{BEGIN Estudiante_newgroup}<TR class="group-headers">
+    <TD class="blackshade" rowspan="1" colspan="1">
+      {$label EstuHistEmoci Estudiante}</TD>
+    <TD class="blackshade" rowspan="1" colspan="1">
+      {$label EstuHistEmoci Ingresado}</TD>
+    <TD class="blackshade" rowspan="1" colspan="1">
+      {$label EstuHistEmoci TipoEmocion}</TD>
+    <TD class="blackshade" rowspan="1" colspan="1">
+      {$label EstuHistEmoci FotoRostro}</TD>
+    <TD class="blackshade" rowspan="1" colspan="1">
+      {$label EstuHistEmoci edad}</TD></TR>
+  <TR class="group-spliter-1">
+    <TD class="header_1" rowspan="1" colspan="5"><FONT>
+      {$Estudiante_grval}</FONT></TD></TR><!-------------------------------------  data -----------------------------------------> 
+  {END Estudiante_newgroup}{BEGIN row_data}<TR {$rowattrs}>
+    <TD class=" group_1" rowspan="1" 
+    colspan="1">&nbsp;</TD>
+    <TD class="data" rowspan="1" colspan="1">
+      {$Ingresado_value}</TD> 
+    <TD class="data" rowspan="1" colspan="1">
+      {$TipoEmocion_value}</TD>
+    <TD class="data" rowspan="1" colspan="1">
+      {$FotoRostro_value}</TD>
+    <TD class="data" rowspan="1" colspan="1">
+      {$edad_value}</TD></TR><!-------------------------------------  group summary -----------------------------------------> 
+  {END row_data}{BEGIN Estudiante_endgroup}<TR class="summaryrow">
+    <TD class="group_1" rowspan="1" colspan="5">	Resumen de 
+      {$label EstuHistEmoci Estudiante} 
+      {$Estudiante_grval}			- <SPAN class="summary-1" 
+      data-value="{$groupEstudiante_total_cnt}" data-type="summary">
+      {$groupEstudiante_total_cnt}</SPAN> Registros 
+  totales</TD></TR><!--------------------------------------page summary--------------------------------------------> 
+  {END Estudiante_endgroup}{END grid_row}<TR class="summaryrow summary-page">
+    <TD class="pagesummary" rowspan="1" colspan="5">Resumen de la pagina <SPAN 
+      class="page-summary" data-type="summary">
+      {$page_total_cnt}</SPAN> - Registros 
+  totales</TD></TR></TBODY></TABLE> </DIV></DIV></DIV>{END container_grid}
+{BEGIN container_pagination}
+<DIV class="rnr-c rnr-ch rnr-c-pagination">
+{BEGIN pagination_block}<DIV class="style1 rnr-bc rnr-b-pagination {$brickclass_pagination}">
+{$pagination}</DIV>{END pagination_block}</DIV>{END container_pagination}</DIV>
+<DIV class="rnr-right {$blockclass_right}"></DIV></DIV>
+<DIV class="rnr-bottom {$blockclass_bottom}"><!--%%bottom%%--> </DIV></DIV>
+{$footer}{END body} </BODY></HTML>

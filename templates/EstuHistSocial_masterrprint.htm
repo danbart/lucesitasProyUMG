@@ -1,0 +1,54 @@
+<div {$pageattrs}>
+
+{BEGIN container_masterlistheader}
+<div class="rnr-c rnr-ch rnr-c-masterlistheader">
+
+
+<div  class="style1 rnr-bl rnr-b-masterprintheader {$brickclass_masterprintheader}">	<h1>{$pagetitlelabel EstuHistSocial masterrprint}</h1>
+</div>
+
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_masterlistheader}
+
+
+
+{BEGIN container_mastergrid}
+
+
+
+<table class="rnr-c rnr-cont rnr-c-mastergrid rnr-b-masterprintfields rnr-gridtable" cellpadding="0" >
+	<thead>
+		<tr class="rnr-toprow style1 {$gridHeader_class}" >
+			<th class="{$Estudiante_class}">{$label EstuHistSocial Estudiante}</th>
+			<th class="{$FotoRostro_class}">{$label EstuHistSocial FotoRostro}</th>
+			<th class="{$edad_class}">{$label EstuHistSocial edad}</th>
+			<th class="{$RelacionHermano_class}">{$label EstuHistSocial RelacionHermano}</th>
+			<th class="{$RelacionCompaneros_class}">{$label EstuHistSocial RelacionCompaneros}</th>
+			<th class="{$CQuinJuega_class}">{$label EstuHistSocial CQuinJuega}</th>
+			<th class="{$CQueJuega_class}">{$label EstuHistSocial CQueJuega}</th>
+			<th class="rnr-edge">&nbsp;</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="rnr-row style1">
+			<td class="{$Estudiante_class}">{$Estudiante_mastervalue}</td>
+			<td class="{$FotoRostro_class}">{$FotoRostro_mastervalue}</td>
+			<td class="{$edad_class}">{$edad_mastervalue}</td>
+			<td class="{$RelacionHermano_class}">{$RelacionHermano_mastervalue}</td>
+			<td class="{$RelacionCompaneros_class}">{$RelacionCompaneros_mastervalue}</td>
+			<td class="{$CQuinJuega_class}">{$CQuinJuega_mastervalue}</td>
+			<td class="{$CQueJuega_class}">{$CQueJuega_mastervalue}</td>
+			<td class="rnr-edge">&nbsp;</td>
+		</tr>
+	</tbody>
+</table> 
+
+
+
+
+
+{END container_mastergrid}
+
+</div>

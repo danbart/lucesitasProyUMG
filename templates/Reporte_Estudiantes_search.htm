@@ -1,0 +1,274 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-search" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_search}
+<div class="rnr-c rnr-cv rnr-c-search">
+
+{BEGIN searchheader}
+<div  class="rnr-brickcontents style2 rnr-b-srchheader {$brickclass_srchheader}"><span>	<h1>{$pagetitlelabel Reporte_Estudiantes search}</h1>
+</span></div>{END searchheader}
+
+
+{BEGIN conditions_block}
+<div  class="rnr-brickcontents style1 rnr-b-srchconditions {$brickclass_srchconditions}">	<center>
+	<span class=fieldname>Criterio:&nbsp;</span>	
+	<input type="radio" class="rnr-radio-button" name="srchType{$id}" {$all_checkbox}><label for="all_checkbox"> Todas las condiciones</label>
+	&nbsp;&nbsp;&nbsp;
+	<input type="radio" class="rnr-radio-button" name="srchType{$id}" {$any_checkbox}><label for="any_checkbox"> Ninguna condición</label>
+	</center></div>{END conditions_block}
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_fields} rnr-wrapper rnr-cbw-fields">
+
+{BEGIN container_fields}
+<div class="rnr-c rnr-cv rnr-c-fields">
+
+
+<div  class="rnr-brickcontents style1 rnr-b-srchfields {$brickclass_srchfields}"><table class="fieldGrid">
+	<tr>
+		<td>&nbsp;</td>
+		<td>NO</td>
+		<td colspan=3>&nbsp; </td>
+	</tr>
+	<tr class="{$fielddispclass_fecha}">
+	{BEGIN fecha_fieldblock}		
+	<td>
+		{$label Reporte_Estudiantes fecha}
+	</td>
+	<td>
+		<input type="checkbox" {$fecha_notbox}>
+	</td>
+	<td>
+		{$searchtype_fecha}
+	</td>
+	<td>
+		{$fecha_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$fecha_editcontrol1}&nbsp;
+	</td>
+{END fecha_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_hora}">
+	{BEGIN hora_fieldblock}		
+	<td>
+		{$label Reporte_Estudiantes hora}
+	</td>
+	<td>
+		<input type="checkbox" {$hora_notbox}>
+	</td>
+	<td>
+		{$searchtype_hora}
+	</td>
+	<td>
+		{$hora_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$hora_editcontrol1}&nbsp;
+	</td>
+{END hora_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_Estudiante}">
+	{BEGIN Estudiante_fieldblock}		
+	<td>
+		{$label Reporte_Estudiantes Estudiante}
+	</td>
+	<td>
+		<input type="checkbox" {$Estudiante_notbox}>
+	</td>
+	<td>
+		{$searchtype_Estudiante}
+	</td>
+	<td>
+		{$Estudiante_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$Estudiante_editcontrol1}&nbsp;
+	</td>
+{END Estudiante_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_edad}">
+	{BEGIN edad_fieldblock}		
+	<td>
+		{$label Reporte_Estudiantes edad}
+	</td>
+	<td>
+		<input type="checkbox" {$edad_notbox}>
+	</td>
+	<td>
+		{$searchtype_edad}
+	</td>
+	<td>
+		{$edad_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$edad_editcontrol1}&nbsp;
+	</td>
+{END edad_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_FotoRostro}">
+	{BEGIN FotoRostro_fieldblock}		
+	<td>
+		{$label Reporte_Estudiantes FotoRostro}
+	</td>
+	<td>
+		<input type="checkbox" {$FotoRostro_notbox}>
+	</td>
+	<td>
+		{$searchtype_FotoRostro}
+	</td>
+	<td>
+		{$FotoRostro_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$FotoRostro_editcontrol1}&nbsp;
+	</td>
+{END FotoRostro_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_TipoTerapia}">
+	{BEGIN TipoTerapia_fieldblock}		
+	<td>
+		{$label Reporte_Estudiantes TipoTerapia}
+	</td>
+	<td>
+		<input type="checkbox" {$TipoTerapia_notbox}>
+	</td>
+	<td>
+		{$searchtype_TipoTerapia}
+	</td>
+	<td>
+		{$TipoTerapia_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$TipoTerapia_editcontrol1}&nbsp;
+	</td>
+{END TipoTerapia_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_Nombre_Terapista}">
+	{BEGIN Nombre_Terapista_fieldblock}		
+	<td>
+		{$label Reporte_Estudiantes Nombre_Terapista}
+	</td>
+	<td>
+		<input type="checkbox" {$Nombre_Terapista_notbox}>
+	</td>
+	<td>
+		{$searchtype_Nombre_Terapista}
+	</td>
+	<td>
+		{$Nombre_Terapista_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$Nombre_Terapista_editcontrol1}&nbsp;
+	</td>
+{END Nombre_Terapista_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_Telefono}">
+	{BEGIN Telefono_fieldblock}		
+	<td>
+		{$label Reporte_Estudiantes Telefono}
+	</td>
+	<td>
+		<input type="checkbox" {$Telefono_notbox}>
+	</td>
+	<td>
+		{$searchtype_Telefono}
+	</td>
+	<td>
+		{$Telefono_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$Telefono_editcontrol1}&nbsp;
+	</td>
+{END Telefono_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_Direccion}">
+	{BEGIN Direccion_fieldblock}		
+	<td>
+		{$label Reporte_Estudiantes Direccion}
+	</td>
+	<td>
+		<input type="checkbox" {$Direccion_notbox}>
+	</td>
+	<td>
+		{$searchtype_Direccion}
+	</td>
+	<td>
+		{$Direccion_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$Direccion_editcontrol1}&nbsp;
+	</td>
+{END Direccion_fieldblock}
+	</tr>
+
+</table></div>
+
+
+{BEGIN searchbuttons}
+<div  class="rnr-brickcontents style2 rnr-b-srchbuttons {$brickclass_srchbuttons}">{BEGIN search_button}
+<a href="#" class="rnr-button main" {$searchbutton_attrs}>Buscar</a>
+{END search_button} 
+{BEGIN reset_button}
+<a href="#" class="rnr-button" {$resetbutton_attrs}>Reiniciar</a>
+{END reset_button}
+{BEGIN back_button}
+<a href="#" class="rnr-button" {$backbutton_attrs}>Volver a la lista</a>
+{END back_button}</div>{END searchbuttons}
+
+
+</div>
+{END container_fields}
+
+</div>
+
+
+</div>
+{END container_search}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			<!--%%bottom%%-->
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

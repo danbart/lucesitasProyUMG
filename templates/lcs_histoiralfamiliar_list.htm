@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<HTML {$html_attrs}><HEAD> 
+<META http-equiv="X-UA-Compatible" content="IE=Edge"> <TITLE>{$pagetitle}</TITLE> 
+<META http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+<LINK href="styles/default.css" rel="stylesheet" type="text/css"> {BEGIN rtlCSS}<LINK href="styles/defaultRTL.css" rel="stylesheet" type="text/css">{END rtlCSS} {BEGIN styleCSSFiles}<LINK href="{$stylepath}" rel="stylesheet" type="text/css">{END styleCSSFiles} {BEGIN pageCSSFiles}<LINK href="{$pagestylepath}" rel="stylesheet" type="text/css">{END pageCSSFiles} 
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD> 
+<BODY class="{$stylename} function-list" {$bodyattrs}>{BEGIN body}
+{$header} 
+<DIV class="rnr-page">
+<DIV class="rnr-top {$blockclass_top}">
+{BEGIN container_master}
+<DIV class="rnr-c rnr-ch rnr-c-master">
+{BEGIN mastertable_block}<DIV class="style1 rnr-bl rnr-b-masterinfo {$brickclass_masterinfo}">
+{$showmasterfile} <A class="runner-link" {$backtomasterlink_attrs}><B>Volver a 
+{$backtomasterlink_caption}</B> </A></DIV>
+{END mastertable_block}<DIV class="rnr-hfiller"></DIV></DIV>{END container_master}
+{BEGIN container_hmenu}
+<DIV class="rnr-c rnr-ch rnr-c-hmenu">
+{BEGIN searchform_block}<DIV class="style1 rnr-bl rnr-b-search {$brickclass_search}"><SPAN>{BEGIN searchform_text}<INPUT type="text" size="25" {$searchfor_attrs}>{END searchform_text} 
+{BEGIN searchform_search}<A class="rnr-button img" href="#" data-icon="search" {$searchbutton_attrs}></A>	 {END searchform_search}{BEGIN searchform_showall}<A class="rnr-button" href="#" {$showAllCont_attrs} {$showallbutton_attrs}>Mostrar todo</A> {END searchform_showall}</SPAN> </DIV>
+{END searchform_block}{BEGIN searchformbuttons_block}<DIV class="style1 rnr-bl rnr-b-search_buttons {$brickclass_search_buttons}">{BEGIN searchPanelTopButtons}<SPAN><A class="rnr-button img" id="showSrchWin{$id}" href="#" data-icon="panelfloat" {$showHideSearchWin_attrs}></A> <A class="rnr-button img" id="showOptPanel{$id}" href="#" data-icon="paneldown" {$showHideSearchPanel_attrs}></A> </SPAN> {END searchPanelTopButtons}</DIV>
+{END searchformbuttons_block}{BEGIN searchsaving_block}<DIV class="style1 rnr-bl rnr-b-search_saving_buttons {$brickclass_search_saving_buttons}"></DIV>
+{END searchsaving_block}<DIV class="rnr-hfiller"></DIV></DIV>{END container_hmenu}</DIV>
+<DIV class="rnr-middle">
+<DIV class="rnr-left {$blockclass_left}">
+{BEGIN container_left}
+<DIV class="rnr-c rnr-cv rnr-c-left">
+{BEGIN menu_block}{$menu main}{END menu_block}{BEGIN searchPanel}<DIV class="rnr-brickcontents style1 rnr-b-searchpanel {$brickclass_searchpanel}">
+<DIV class="searchPanelContainer">
+<DIV class="searchOptions bottomPanelBorder" {$srchOpt_attrs}><!-- Search panel content --> 
+<DIV class="srchCritTop" style="display: none;">	Criterio:&nbsp; <INPUT name="srchType{$id}" class="rnr-radio-button" type="radio" {$all_checkbox}>&nbsp;{BEGIN all_checkbox_label}<SPAN>todos</SPAN>{END all_checkbox_label}	&nbsp;&nbsp;&nbsp;<INPUT name="srchType{$id}" class="rnr-radio-button" type="radio" {$any_checkbox}>&nbsp;{BEGIN any_checkbox_label}<SPAN>alguno</SPAN> 
+{END any_checkbox_label}</DIV>
+<DIV class="addOption"><SPAN class="rnr-buttons-group"><A class="rnr-button" id="showHideControlChooseMenu{$id}" href="#" {$showHideCtrls_attrs}>Añadir 
+campo</A> </SPAN> <A class="rnr-button" id="showHideSearchType{$id}" href="#" {$showHideCtrlsOpt_attrs}>
+{$showHideOpt_mess}</A> </DIV>
+<TABLE class="controlsBlock {$controls_block_class}">{BEGIN searchCtrlBlock}
+  <TBODY>
+  <TR class="srchPanelRow" {$filterRow_attrs}>
+    <TD class="srchPanelCell">{$delCtrlButt}</TD>
+    <TD class="srchPanelCell">
+      {$fLabel}:&nbsp;</TD>
+    <TD class="srchPanelCell srchPanelCell2">
+      <DIV class="rnr-searchtype">
+      {$searchtype}</DIV>
+      <DIV class="rnr-searchcontrol">
+      {$searchcontrol}</DIV>
+      <DIV class="rnr-searchcontrol">
+      {$searchcontrol1}</DIV></TD></TR></TBODY>{END searchCtrlBlock}</TABLE>
+<DIV align="left" class="bottomSearchButt" {$bottomSearchButt_attrs}><A class="rnr-button" id="searchButton{$id}" href="#" {$searchbutton_attrs}>Buscar</A> 
+</DIV></DIV></DIV></DIV>
+{END searchPanel}{BEGIN filterPanel}<DIV class="rnr-brickcontents  rnr-b-filterpanel {$brickclass_filterpanel}">
+<DIV class="filterPanelContainer {$filterPanelStateClass}">
+{BEGIN filter_control_CQNinio}<DIV class="filter-field filter-CQNinio-container">
+<DIV class="filter-expander rnr-bg style2"><SPAN class="filter-indicator">	▲ 
+</SPAN> 
+{$label lcs_histoiralfamiliar CQNinio} {BEGIN clearLink_CQNinio}<A class="filter-clear filter-clear-CQNinio" href="#">borrar</A> {END clearLink_CQNinio}</DIV>
+{BEGIN filterCtrlBlock_CQNinio}<DIV class="filter-values rnr-bg style1 {$collapsedClass_CQNinio} {$visibilityClass_CQNinio}">
+{$CQNinio_filter}	</DIV>{END filterCtrlBlock_CQNinio}</DIV>
+{END filter_control_CQNinio}{BEGIN filter_control_FProblematico}<DIV class="filter-field filter-FProblematico-container">
+<DIV class="filter-expander rnr-bg style2"><SPAN class="filter-indicator">	▲ 
+</SPAN> 
+{$label lcs_histoiralfamiliar FProblematico} {BEGIN clearLink_FProblematico}<A class="filter-clear filter-clear-FProblematico" href="#">borrar</A> {END clearLink_FProblematico}</DIV>
+{BEGIN filterCtrlBlock_FProblematico}<DIV class="filter-values rnr-bg style1 {$collapsedClass_FProblematico} {$visibilityClass_FProblematico}">
+{$FProblematico_filter}	</DIV>{END filterCtrlBlock_FProblematico}</DIV>
+{END filter_control_FProblematico}{BEGIN filter_control_DuermeSolo}<DIV class="filter-field filter-DuermeSolo-container">
+<DIV class="filter-expander rnr-bg style2"><SPAN class="filter-indicator">	▲ 
+</SPAN> 
+{$label lcs_histoiralfamiliar DuermeSolo} {BEGIN clearLink_DuermeSolo}<A class="filter-clear filter-clear-DuermeSolo" href="#">borrar</A> {END clearLink_DuermeSolo}</DIV>
+{BEGIN filterCtrlBlock_DuermeSolo}<DIV class="filter-values rnr-bg style1 {$collapsedClass_DuermeSolo} {$visibilityClass_DuermeSolo}">
+{$DuermeSolo_filter}	</DIV>{END filterCtrlBlock_DuermeSolo}</DIV>
+{END filter_control_DuermeSolo}{BEGIN filter_control_ComparteCuarto}<DIV class="filter-field filter-ComparteCuarto-container">
+<DIV class="filter-expander rnr-bg style2"><SPAN class="filter-indicator">	▲ 
+</SPAN> 
+{$label lcs_histoiralfamiliar ComparteCuarto} {BEGIN clearLink_ComparteCuarto}<A class="filter-clear filter-clear-ComparteCuarto" href="#">borrar</A> {END clearLink_ComparteCuarto}</DIV>
+{BEGIN filterCtrlBlock_ComparteCuarto}<DIV class="filter-values rnr-bg style1 {$collapsedClass_ComparteCuarto} {$visibilityClass_ComparteCuarto}">
+{$ComparteCuarto_filter}	</DIV>{END filterCtrlBlock_ComparteCuarto}</DIV>
+{END filter_control_ComparteCuarto}{BEGIN filter_control_ParineteIgual}<DIV class="filter-field filter-ParineteIgual-container">
+<DIV class="filter-expander rnr-bg style2"><SPAN class="filter-indicator">	▲ 
+</SPAN> 
+{$label lcs_histoiralfamiliar ParineteIgual} {BEGIN clearLink_ParineteIgual}<A class="filter-clear filter-clear-ParineteIgual" href="#">borrar</A> {END clearLink_ParineteIgual}</DIV>
+{BEGIN filterCtrlBlock_ParineteIgual}<DIV class="filter-values rnr-bg style1 {$collapsedClass_ParineteIgual} {$visibilityClass_ParineteIgual}">
+{$ParineteIgual_filter}	</DIV>{END filterCtrlBlock_ParineteIgual}</DIV>{END filter_control_ParineteIgual}</DIV></DIV>{END filterPanel}</DIV>{END container_left}</DIV>
+<DIV class="rnr-center {$blockclass_center}">
+{BEGIN container_recordcontrols}
+<DIV class="rnr-c rnr-ch rnr-c-recordcontrols">
+{BEGIN newrecord_controls_block}<DIV class="style1 rnr-bl rnr-b-recordcontrols_new {$brickclass_recordcontrols_new}">{BEGIN add_link}<A class="rnr-button" href="lcs_histoiralfamiliar_add.php" {$addlink_attrs}>Añadir nuevo</A> {END add_link}</DIV>
+{END newrecord_controls_block}{BEGIN record_controls_block}<DIV class="style1 rnr-bl rnr-b-recordcontrol {$brickclass_recordcontrol}">{BEGIN widhtSelected}<SPAN class="rnr-buttons-group"><A class="rnr-button {$withSelectedClass}" id="selectButtonsToggler{$id}" href="#">Con los seleccionados...</A> 
+<UL class="rnr-list" id="selectButtonsGroup{$id}">
+  {BEGIN deleteselected_link}<LI><A class="rnr-button link" href="#" {$deleteselectedlink_attrs} {$deleteselectedlink_span}>Borrar</A></LI>
+  {END deleteselected_link}{BEGIN exportselected_link}<LI><A class="rnr-button link" href="#" {$exportselectedlink_attrs} {$exportselectedlink_span}>Exportar</A></LI>
+  {END exportselected_link}{BEGIN printselected_link}<LI><A class="rnr-button link" href="#" {$printselectedlink_attrs} {$printselectedlink_span}>Imprimir</A></LI>{END printselected_link}</UL></SPAN> 
+{END widhtSelected}</DIV>
+{END record_controls_block}{BEGIN more_list}<DIV class="style1 rnr-bl rnr-b-toplinks {$brickclass_toplinks}"><SPAN class="rnr-buttons-group">{BEGIN moreButtons}<A class="rnr-button" id="extraButtonsToggler{$id}" href="#">Más...</A> 
+<UL class="rnr-list rnr-buttons-group" id="extraButtonsGroup{$id}">
+  {BEGIN print_link}<LI><A class="rnr-button link" href="lcs_histoiralfamiliar_print.php?{$crosstable_attrs}" target="_blank" {$printlink_attrs}>Imprimir esta 
+  página</A></LI>
+  {END print_link}{BEGIN printall_link}<LI><A class="rnr-button link" href="lcs_histoiralfamiliar_print.php?all=1&amp;{$crosstable_attrs}" target="_blank" {$printalllink_attrs}>Imprimir 
+  todas las páginas</A></LI>
+  {END printall_link}{BEGIN asearch_link}<LI><A class="rnr-button link" href="lcs_histoiralfamiliar_search.php" {$advsearchlink_attrs}>Búsqueda 
+avanzada</A></LI>
+  {END asearch_link}{BEGIN export_link}<LI><A class="rnr-button link" href="lcs_histoiralfamiliar_export.php" target="_blank" {$exportlink_attrs}>Exportar 
+  resultados</A></LI>
+  {END export_link}{BEGIN import_link}<LI><A class="rnr-button link" href="lcs_histoiralfamiliar_import.php?{$crosstable_attrs}" {$importlink_attrs}>Importar</A></LI>{END import_link}</UL>{END moreButtons}</SPAN></DIV>
+{END more_list}<DIV class="rnr-hfiller"></DIV></DIV>{END container_recordcontrols}
+{BEGIN container_message}
+<DIV class="rnr-c rnr-ch rnr-c-message">
+{BEGIN message_block}<DIV class="style1 rnr-bc rnr-b-message {$brickclass_message}">
+<DIV class="rnr-message">
+{$message}</DIV></DIV>{END message_block}</DIV>{END container_message}
+{BEGIN container_pagination}
+<DIV class="rnr-c rnr-ch rnr-multialign rnr-c-pagination">
+{BEGIN pagination_block}<DIV class="style1 rnr-bc rnr-b-pagination {$brickclass_pagination}">
+{$pagination}</DIV>
+{END pagination_block}<DIV class="rnr-leftbricks">
+{BEGIN details_block}<DIV class="style1 rnr-bl rnr-b-details_found {$brickclass_details_found}"><SPAN {$details_attrs}>	Detalles 
+encontrados: <B><SPAN class="rnr-details_found_count">
+{$records_found}</SPAN></B> </SPAN> </DIV>{END details_block}</DIV>
+<DIV class="rnr-rightbricks">
+{BEGIN pages_block}<DIV class="style1 rnr-br rnr-b-page_of {$brickclass_page_of}"><SPAN {$pages_attrs}>	Página <B>
+{$page}</B> / <B>
+{$maxpages}</B> </SPAN> </DIV>
+{END pages_block}{BEGIN recordspp_block}<DIV class="style1 rnr-br rnr-b-recsperpage {$brickclass_recsperpage}"><SPAN id="recordspp_block{$id}" name="recordspp_block{$id}">	Resultados 
+por página:&nbsp;
+{$recsPerPage} </SPAN>	</DIV>{END recordspp_block}</DIV></DIV>{END container_pagination}
+{BEGIN container_grid}
+{BEGIN grid_block}<TABLE class="rnr-c rnr-cont rnr-c-grid rnr-b-grid rnr-gridtable  hoverable " cellpadding="0">
+  <THEAD>{BEGIN grid_header}
+  <TR class="rnr-toprow style1 {$gridHeader_class}">{BEGIN record_header}
+    {BEGIN listIcons_column}<TH ieditcont="all">&nbsp;</TH>
+    {END listIcons_column}{BEGIN checkbox_column}<TH class="rnr-bc"><INPUT type="checkbox" {$checkboxheader_attrs}> </TH>
+    {END checkbox_column}{BEGIN idHistoiralFamiliar_fieldheadercolumn}<TH class="rnr-gridfieldlabel {$idHistoiralFamiliar_class}"><P align="right">
+      {$label lcs_histoiralfamiliar idHistoiralFamiliar} </P></TH>
+    {END idHistoiralFamiliar_fieldheadercolumn}{BEGIN CQNinio_fieldheadercolumn}<TH class="rnr-gridfieldlabel {$CQNinio_class}">{BEGIN CQNinio_fieldheader}<SPAN {$CQNinio_orderlinkattrs}>
+      {$label lcs_histoiralfamiliar CQNinio} </SPAN> {END CQNinio_fieldheader}</TH>
+    {END CQNinio_fieldheadercolumn}{BEGIN FProblematico_fieldheadercolumn}<TH class="rnr-gridfieldlabel {$FProblematico_class}">{BEGIN FProblematico_fieldheader}<SPAN {$FProblematico_orderlinkattrs}>
+      {$label lcs_histoiralfamiliar FProblematico} </SPAN> {END FProblematico_fieldheader}</TH>
+    {END FProblematico_fieldheadercolumn}{BEGIN DuermeSolo_fieldheadercolumn}<TH class="rnr-gridfieldlabel {$DuermeSolo_class}">{BEGIN DuermeSolo_fieldheader}<SPAN {$DuermeSolo_orderlinkattrs}>
+      {$label lcs_histoiralfamiliar DuermeSolo} </SPAN> {END DuermeSolo_fieldheader}</TH>
+    {END DuermeSolo_fieldheadercolumn}{BEGIN ComparteCuarto_fieldheadercolumn}<TH class="rnr-gridfieldlabel {$ComparteCuarto_class}">{BEGIN ComparteCuarto_fieldheader}<SPAN {$ComparteCuarto_orderlinkattrs}>
+      {$label lcs_histoiralfamiliar ComparteCuarto} </SPAN> {END ComparteCuarto_fieldheader}</TH>
+    {END ComparteCuarto_fieldheadercolumn}{BEGIN ParineteIgual_fieldheadercolumn}<TH class="rnr-gridfieldlabel {$ParineteIgual_class}">{BEGIN ParineteIgual_fieldheader}<SPAN {$ParineteIgual_orderlinkattrs}>
+      {$label lcs_histoiralfamiliar ParineteIgual} </SPAN> {END ParineteIgual_fieldheader}</TH>
+    {END ParineteIgual_fieldheadercolumn}{BEGIN Ingresado_fieldheadercolumn}<TH class="rnr-gridfieldlabel {$Ingresado_class}">{BEGIN Ingresado_fieldheader}<SPAN {$Ingresado_orderlinkattrs}>
+      {$label lcs_histoiralfamiliar Ingresado} </SPAN> {END Ingresado_fieldheader}</TH>
+    {END Ingresado_fieldheadercolumn}{BEGIN _idEstudiante_fieldheadercolumn}<TH class="rnr-gridfieldlabel {$_idEstudiante_class}">{BEGIN _idEstudiante_fieldheader}<SPAN {$_idEstudiante_orderlinkattrs}>
+      {$label lcs_histoiralfamiliar _idEstudiante} </SPAN> {END _idEstudiante_fieldheader}</TH>
+    {END _idEstudiante_fieldheadercolumn}<TH class="rnr-edge">&nbsp;</TH>
+    {BEGIN endrecordheader_block}<TH class="rnr-cs">&nbsp;</TH>{END endrecordheader_block}{END record_header}</TR>{END grid_header}</THEAD>
+  <TBODY>
+  {BEGIN grid_row}<TR class="rnr-row style1 {$rowclass}" {$rowattrs} {$rowstyle}>{BEGIN grid_record}
+    {BEGIN listIcons_column}<TD class="rnr-cc rnr-bc rnr-icons" ieditcont="all" {$rowstyle} {$recordattrs}>{BEGIN edit_column}{BEGIN edit_link}<A title="Editar" class="rnr-button-img" data-icon="edit" {$editlink_attrs}></A> {END edit_link}{END edit_column}{BEGIN view_column}{BEGIN view_link}<A title="Ver" class="rnr-button-img" data-icon="view" {$viewlink_attrs}></A> {END view_link}{END view_column}</TD>
+    {END listIcons_column}{BEGIN checkbox_column}<TD class="rnr-bc" ieditcont="checkBox" {$rowstyle} {$recordattrs}>{BEGIN checkbox}<INPUT type="checkbox" {$checkbox_attrs}>{END checkbox} 
+    </TD>
+    {END checkbox_column}{BEGIN idHistoiralFamiliar_fieldcolumn}<TD class="{$idHistoiralFamiliar_class}" {$idHistoiralFamiliar_style} {$recordattrs}>
+      <DIV>
+      {$idHistoiralFamiliar_value}</DIV></TD>
+    {END idHistoiralFamiliar_fieldcolumn}{BEGIN CQNinio_fieldcolumn}<TD class="{$CQNinio_class}" {$CQNinio_style} {$recordattrs}>
+      {$CQNinio_value} </TD>
+    {END CQNinio_fieldcolumn}{BEGIN FProblematico_fieldcolumn}<TD class="{$FProblematico_class}" {$FProblematico_style} {$recordattrs}>
+      {$FProblematico_value} </TD>
+    {END FProblematico_fieldcolumn}{BEGIN DuermeSolo_fieldcolumn}<TD class="{$DuermeSolo_class}" {$DuermeSolo_style} {$recordattrs}>
+      {$DuermeSolo_value} </TD>
+    {END DuermeSolo_fieldcolumn}{BEGIN ComparteCuarto_fieldcolumn}<TD class="{$ComparteCuarto_class}" {$ComparteCuarto_style} {$recordattrs}>
+      {$ComparteCuarto_value} </TD>
+    {END ComparteCuarto_fieldcolumn}{BEGIN ParineteIgual_fieldcolumn}<TD class="{$ParineteIgual_class}" {$ParineteIgual_style} {$recordattrs}>
+      {$ParineteIgual_value} </TD>
+    {END ParineteIgual_fieldcolumn}{BEGIN Ingresado_fieldcolumn}<TD class="{$Ingresado_class}" {$Ingresado_style} {$recordattrs}>
+      {$Ingresado_value} </TD>
+    {END Ingresado_fieldcolumn}{BEGIN _idEstudiante_fieldcolumn}<TD class="{$_idEstudiante_class}" {$_idEstudiante_style} {$recordattrs}>
+      {$_idEstudiante_value} </TD>
+    {END _idEstudiante_fieldcolumn}<TD class="rnr-edge" {$recordattrs}>&nbsp;</TD>
+    {BEGIN endrecord_block}<TD class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</TD>{END endrecord_block}{END grid_record}</TR>{END grid_row}</TBODY></TABLE>{END grid_block}{END container_grid}
+{BEGIN container_pagination_bottom}
+<DIV class="rnr-c rnr-ch rnr-multialign rnr-c-pagination_bottom">
+{BEGIN pagination_block}<DIV class="style1 rnr-bc rnr-b-pagination {$brickclass_pagination}">
+{$pagination}</DIV>
+{END pagination_block}<DIV class="rnr-leftbricks">
+{BEGIN details_block}<DIV class="style1 rnr-bl rnr-b-details_found {$brickclass_details_found}"><SPAN {$details_attrs}>	Detalles 
+encontrados: <B><SPAN class="rnr-details_found_count">
+{$records_found}</SPAN></B> </SPAN> </DIV>{END details_block}</DIV>
+<DIV class="rnr-rightbricks">
+{BEGIN pages_block}<DIV class="style1 rnr-br rnr-b-page_of {$brickclass_page_of}"><SPAN {$pages_attrs}>	Página <B>
+{$page}</B> / <B>
+{$maxpages}</B> </SPAN> </DIV>
+{END pages_block}{BEGIN recordspp_block}<DIV class="style1 rnr-br rnr-b-recsperpage {$brickclass_recsperpage}"><SPAN id="recordspp_block{$id}" name="recordspp_block{$id}">	Resultados 
+por página:&nbsp;
+{$recsPerPage} </SPAN>	</DIV>{END recordspp_block}</DIV></DIV>{END container_pagination_bottom}</DIV>
+<DIV class="rnr-right {$blockclass_right}"></DIV></DIV>
+<DIV class="rnr-bottom {$blockclass_bottom}"><!--%%bottom%%--> </DIV></DIV>
+{$footer}{END body} </BODY></HTML>

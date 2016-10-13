@@ -1,0 +1,61 @@
+<div {$pageattrs}>
+
+{BEGIN container_masterlistheader}
+<div class="rnr-c rnr-ch rnr-c-masterlistheader">
+
+
+<div  class="style1 rnr-bl rnr-b-masterlistheader {$brickclass_masterlistheader}">	<h1>{$pagetitlelabel lcs_personal masterlist}</h1>
+</div>
+
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_masterlistheader}
+
+
+
+{BEGIN container_mastergrid}
+
+
+
+<table class="rnr-c rnr-cont rnr-c-mastergrid rnr-b-mastergridfields rnr-gridtable" cellpadding="0" >
+	<thead>
+		<tr class="rnr-toprow style1 {$gridHeader_class}" >
+			<th class="{$idUsuario_class}">{$label lcs_personal idUsuario}</th>
+			<th class="{$TipoUsuario_class}">{$label lcs_personal TipoUsuario}</th>
+			<th class="{$Nombre_class}">{$label lcs_personal Nombre}</th>
+			<th class="{$Apellido_class}">{$label lcs_personal Apellido}</th>
+			<th class="{$Telefono_class}">{$label lcs_personal Telefono}</th>
+			<th class="{$Email_class}">{$label lcs_personal Email}</th>
+			<th class="{$Password_class}">{$label lcs_personal Password}</th>
+			<th class="{$celular_class}">{$label lcs_personal celular}</th>
+			<th class="{$Voluntario_class}">{$label lcs_personal Voluntario}</th>
+			<th class="{$Ingresado_class}">{$label lcs_personal Ingresado}</th>
+			<th class="{$_idCentro_class}">{$label lcs_personal _idCentro}</th>
+			<th class="rnr-edge">&nbsp;</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="rnr-row style1">
+			<td class="{$idUsuario_class}">{$idUsuario_mastervalue}</td>
+			<td class="{$TipoUsuario_class}">{$TipoUsuario_mastervalue}</td>
+			<td class="{$Nombre_class}">{$Nombre_mastervalue}</td>
+			<td class="{$Apellido_class}">{$Apellido_mastervalue}</td>
+			<td class="{$Telefono_class}">{$Telefono_mastervalue}</td>
+			<td class="{$Email_class}">{$Email_mastervalue}</td>
+			<td class="{$Password_class}">{$Password_mastervalue}</td>
+			<td class="{$celular_class}">{$celular_mastervalue}</td>
+			<td class="{$Voluntario_class}">{$Voluntario_mastervalue}</td>
+			<td class="{$Ingresado_class}">{$Ingresado_mastervalue}</td>
+			<td class="{$_idCentro_class}">{$_idCentro_mastervalue}</td>
+			<td class="rnr-edge">&nbsp;</td>
+		</tr>
+	</tbody>
+</table> 
+
+
+
+
+{END container_mastergrid}
+
+</div>

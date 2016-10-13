@@ -1,0 +1,355 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-rprint" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_master}
+<div class="rnr-c rnr-ch rnr-c-master">
+
+{BEGIN mastertable_block}
+<div  class="style1 rnr-bl rnr-b-masterinfoprint {$brickclass_masterinfoprint}">{$showmasterfile}
+</div>
+{END mastertable_block}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_master}
+
+
+
+{BEGIN container_pdf}
+<div class="rnr-c rnr-ch rnr-c-pdf">
+
+{BEGIN printbuttons}
+<div  class="style1 rnr-bl rnr-b-printbuttons {$brickclass_printbuttons}">{BEGIN pdflink_block}
+<a href="#" class="pdflink rnr-button button" {$pdflink_attrs}>Vista PDF</a>
+{END pdflink_block}
+</div>
+{END printbuttons}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_pdf}
+
+
+
+{BEGIN container_grid}
+
+
+
+<style>
+	td.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary {background-color:#ffffbb;}
+	td.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary {background-color:#ffe0b0;}
+	.rnr-report {width: 100%;}
+	td {padding: 2px; 4px;}
+
+		td.group_1{background-color: #AFEEEE;}
+		td.nbgroup_1{background-color: #AFEEEE;}
+		td.header_1 {
+			background-color: #94CACA; 
+			font-size:120%;
+			padding: 2px 8px;
+			font-weight: bold;
+		}
+	td.blackshade {
+		font-size:140%;
+		padding: 4px 8px;
+	}
+	.summaryrow > * {
+		border:solid #808080 1px; 
+		border-left: none; 
+		border-right: none;
+	}
+	.grouptotalsrow + :not(.grouptotalsrow) > * {
+		border-top:solid #808080 1px; 
+	}
+
+</style>
+
+{BEGIN pages}
+<div class="rp-repeat">
+<h1>Estu Hist Lengua</h1>
+	
+</div>
+<div id="grid_block{$id}" class="rnr-report-gridblock">
+		<div class="rnr-cw-grid rnr-s-empty asbuttons {$pageStyleName}">		
+						<div class="rnr-c rnr-cv rnr-c-grid">
+		<div class="rnr-brickcontents style1 rnr-b-report">		
+			<table class="rnr-report" cellspacing=0 cellpadding=0 border=0>
+			
+				
+				
+											
+									
+				
+				
+											
+									
+				
+				
+											
+									
+				
+				
+											
+									
+				
+				
+											
+									
+				
+				
+											
+									
+				
+				
+											
+									
+				
+				
+											
+									
+				
+				
+											
+									
+				
+				
+											
+									
+				
+				
+											
+									
+				
+				
+											
+									
+				
+				
+											
+									
+			
+			{BEGIN grid_row}
+			<!-------------------------------------  group headers ----------------------------------------->	
+			{BEGIN Estudiante_newgroup}
+								<tr class="group-headers">
+					<td class="blackshade">{$label EstuHistLengua Estudiante}</td>
+										<td class="blackshade"></td>
+					<td class="blackshade">{$label EstuHistLengua Ingresado}</td>
+					<td class="blackshade">{$label EstuHistLengua Balbucea}</td>
+					<td class="blackshade">{$label EstuHistLengua Edad1Palabra}</td>
+					<td class="blackshade">{$label EstuHistLengua EdadMesVocalizo}</td>
+					<td class="blackshade">{$label EstuHistLengua AdaptSocial}</td>
+					<td class="blackshade">{$label EstuHistLengua FotoRostro}</td>
+					<td class="blackshade">{$label EstuHistLengua edad}</td>
+				</tr>
+				<tr class="group-spliter-1" >
+																				<td colspan=9 class=header_1><font >{$Estudiante_grval}</font></td>
+				</tr>
+			{END Estudiante_newgroup}
+						<!-------------------------------------  data ----------------------------------------->
+			{BEGIN row_data}
+				<tr {$rowattrs}>
+										<td class=" group_1" >&nbsp;</td>
+								<td class=data>
+					{BEGIN lcs_descsocial_dtable_link}
+					<span>
+					<a {$lcs_descsocial_dtablelink_attrs}>
+						Descsocial
+												<span {$lcs_descsocial_childnumber_attr} dir="ltr">{BEGIN lcs_descsocial_childcount}({$lcs_descsocial_childnumber}){END lcs_descsocial_childcount}</span>
+					</a>
+										&nbsp;
+					</span>
+					{END lcs_descsocial_dtable_link}
+					{BEGIN lcs_embarazo_dtable_link}
+					<span>
+					<a {$lcs_embarazo_dtablelink_attrs}>
+						Embarazo
+												<span {$lcs_embarazo_childnumber_attr} dir="ltr">{BEGIN lcs_embarazo_childcount}({$lcs_embarazo_childnumber}){END lcs_embarazo_childcount}</span>
+					</a>
+										&nbsp;
+					</span>
+					{END lcs_embarazo_dtable_link}
+					{BEGIN lcs_emociones_dtable_link}
+					<span>
+					<a {$lcs_emociones_dtablelink_attrs}>
+						Emociones
+												<span {$lcs_emociones_childnumber_attr} dir="ltr">{BEGIN lcs_emociones_childcount}({$lcs_emociones_childnumber}){END lcs_emociones_childcount}</span>
+					</a>
+										&nbsp;
+					</span>
+					{END lcs_emociones_dtable_link}
+					{BEGIN lcs_encargado_dtable_link}
+					<span>
+					<a {$lcs_encargado_dtablelink_attrs}>
+						Encargado
+												<span {$lcs_encargado_childnumber_attr} dir="ltr">{BEGIN lcs_encargado_childcount}({$lcs_encargado_childnumber}){END lcs_encargado_childcount}</span>
+					</a>
+										&nbsp;
+					</span>
+					{END lcs_encargado_dtable_link}
+					{BEGIN lcs_enfermedades_dtable_link}
+					<span>
+					<a {$lcs_enfermedades_dtablelink_attrs}>
+						Enfermedades
+												<span {$lcs_enfermedades_childnumber_attr} dir="ltr">{BEGIN lcs_enfermedades_childcount}({$lcs_enfermedades_childnumber}){END lcs_enfermedades_childcount}</span>
+					</a>
+										&nbsp;
+					</span>
+					{END lcs_enfermedades_dtable_link}
+					{BEGIN lcs_histoiralfamiliar_dtable_link}
+					<span>
+					<a {$lcs_histoiralfamiliar_dtablelink_attrs}>
+						Histoiral Familiar
+												<span {$lcs_histoiralfamiliar_childnumber_attr} dir="ltr">{BEGIN lcs_histoiralfamiliar_childcount}({$lcs_histoiralfamiliar_childnumber}){END lcs_histoiralfamiliar_childcount}</span>
+					</a>
+										&nbsp;
+					</span>
+					{END lcs_histoiralfamiliar_dtable_link}
+					{BEGIN lcs_historialclinico_dtable_link}
+					<span>
+					<a {$lcs_historialclinico_dtablelink_attrs}>
+						Historial Clinico
+												<span {$lcs_historialclinico_childnumber_attr} dir="ltr">{BEGIN lcs_historialclinico_childcount}({$lcs_historialclinico_childnumber}){END lcs_historialclinico_childcount}</span>
+					</a>
+										&nbsp;
+					</span>
+					{END lcs_historialclinico_dtable_link}
+					{BEGIN lcs_lenguaje_dtable_link}
+					<span>
+					<a {$lcs_lenguaje_dtablelink_attrs}>
+						Lenguaje
+												<span {$lcs_lenguaje_childnumber_attr} dir="ltr">{BEGIN lcs_lenguaje_childcount}({$lcs_lenguaje_childnumber}){END lcs_lenguaje_childcount}</span>
+					</a>
+										&nbsp;
+					</span>
+					{END lcs_lenguaje_dtable_link}
+					{BEGIN lcs_terapias_dtable_link}
+					<span>
+					<a {$lcs_terapias_dtablelink_attrs}>
+						Terapias
+												<span {$lcs_terapias_childnumber_attr} dir="ltr">{BEGIN lcs_terapias_childcount}({$lcs_terapias_childnumber}){END lcs_terapias_childcount}</span>
+					</a>
+										&nbsp;
+					</span>
+					{END lcs_terapias_dtable_link}
+					{BEGIN lcs_tiposocial_dtable_link}
+					<span>
+					<a {$lcs_tiposocial_dtablelink_attrs}>
+						Tiposocial
+												<span {$lcs_tiposocial_childnumber_attr} dir="ltr">{BEGIN lcs_tiposocial_childcount}({$lcs_tiposocial_childnumber}){END lcs_tiposocial_childcount}</span>
+					</a>
+										&nbsp;
+					</span>
+					{END lcs_tiposocial_dtable_link}
+					{BEGIN lcs_transtornoalimenticio_dtable_link}
+					<span>
+					<a {$lcs_transtornoalimenticio_dtablelink_attrs}>
+						Transtorno Alimenticio
+												<span {$lcs_transtornoalimenticio_childnumber_attr} dir="ltr">{BEGIN lcs_transtornoalimenticio_childcount}({$lcs_transtornoalimenticio_childnumber}){END lcs_transtornoalimenticio_childcount}</span>
+					</a>
+										&nbsp;
+					</span>
+					{END lcs_transtornoalimenticio_dtable_link}
+					{BEGIN lcs_transtornoesfinteres_dtable_link}
+					<span>
+					<a {$lcs_transtornoesfinteres_dtablelink_attrs}>
+						Transtorno Esfinteres
+												<span {$lcs_transtornoesfinteres_childnumber_attr} dir="ltr">{BEGIN lcs_transtornoesfinteres_childcount}({$lcs_transtornoesfinteres_childnumber}){END lcs_transtornoesfinteres_childcount}</span>
+					</a>
+										&nbsp;
+					</span>
+					{END lcs_transtornoesfinteres_dtable_link}
+					{BEGIN lcs_trastornosuenio_dtable_link}
+					<span>
+					<a {$lcs_trastornosuenio_dtablelink_attrs}>
+						Trastorno sueño
+												<span {$lcs_trastornosuenio_childnumber_attr} dir="ltr">{BEGIN lcs_trastornosuenio_childcount}({$lcs_trastornosuenio_childnumber}){END lcs_trastornosuenio_childcount}</span>
+					</a>
+										&nbsp;
+					</span>
+					{END lcs_trastornosuenio_dtable_link}
+				</td>
+					<td class=data>{$Ingresado_value}</td>
+					<td class=data>{$Balbucea_value}</td>
+					<td class=data>{$Edad1Palabra_value}</td>
+					<td class=data>{$EdadMesVocalizo_value}</td>
+					<td class=data>{$AdaptSocial_value}</td>
+					<td class=data>{$FotoRostro_value}</td>
+					<td class=data>{$edad_value}</td>
+				</tr>
+			{END row_data}
+			<!-------------------------------------  group summary ----------------------------------------->
+						{BEGIN Estudiante_endgroup}
+				<tr class="summaryrow" >
+										<td  class="group_1" colspan=9 >
+				Resumen de {$label EstuHistLengua Estudiante} {$Estudiante_grval}
+					- <span class="summary-1" data-type="summary" data-value="{$groupEstudiante_total_cnt}">{$groupEstudiante_total_cnt}</span> Registros totales</td>
+				</tr>
+															{END Estudiante_endgroup}
+			{END grid_row}
+
+							<!--------------------------------------page summary-------------------------------------------->
+				<tr class="summaryrow summary-page">
+					
+											
+					<td class=pagesummary colspan=9>Resumen de la pagina 
+					 <span class="page-summary" data-type="summary">{$page_total_cnt}</span> - Registros totales</td>
+				</tr>
+																							</table>
+		</div>
+	</div>
+
+	</div>
+</div>
+{END pages}
+
+
+
+
+{END container_grid}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			<!--%%bottom%%-->
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

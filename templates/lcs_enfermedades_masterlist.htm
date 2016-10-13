@@ -1,0 +1,47 @@
+<div {$pageattrs}>
+
+{BEGIN container_masterlistheader}
+<div class="rnr-c rnr-ch rnr-c-masterlistheader">
+
+
+<div  class="style1 rnr-bl rnr-b-masterlistheader {$brickclass_masterlistheader}">	<h1>{$pagetitlelabel lcs_enfermedades masterlist}</h1>
+</div>
+
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_masterlistheader}
+
+
+
+{BEGIN container_mastergrid}
+
+
+
+<table class="rnr-c rnr-cont rnr-c-mastergrid rnr-b-mastergridfields rnr-gridtable" cellpadding="0" >
+	<thead>
+		<tr class="rnr-toprow style1 {$gridHeader_class}" >
+			<th class="{$idEnfermedades_class}">{$label lcs_enfermedades idEnfermedades}</th>
+			<th class="{$TipoEnfermedad_class}">{$label lcs_enfermedades TipoEnfermedad}</th>
+			<th class="{$Ingresado_class}">{$label lcs_enfermedades Ingresado}</th>
+			<th class="{$_idEstudiante_class}">{$label lcs_enfermedades _idEstudiante}</th>
+			<th class="rnr-edge">&nbsp;</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="rnr-row style1">
+			<td class="{$idEnfermedades_class}">{$idEnfermedades_mastervalue}</td>
+			<td class="{$TipoEnfermedad_class}">{$TipoEnfermedad_mastervalue}</td>
+			<td class="{$Ingresado_class}">{$Ingresado_mastervalue}</td>
+			<td class="{$_idEstudiante_class}">{$_idEstudiante_mastervalue}</td>
+			<td class="rnr-edge">&nbsp;</td>
+		</tr>
+	</tbody>
+</table> 
+
+
+
+
+{END container_mastergrid}
+
+</div>

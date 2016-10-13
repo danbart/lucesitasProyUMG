@@ -1,0 +1,816 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-list" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_master}
+<div class="rnr-c rnr-ch rnr-c-master">
+
+{BEGIN mastertable_block}
+<div  class="style1 rnr-bl rnr-b-masterinfo {$brickclass_masterinfo}">{$showmasterfile}
+<a class="runner-link" {$backtomasterlink_attrs}>
+	<b>Volver a {$backtomasterlink_caption}</b>
+</a></div>
+{END mastertable_block}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_master}
+
+
+
+
+
+{BEGIN container_hmenu}
+<div class="rnr-c rnr-ch rnr-c-hmenu">
+
+{BEGIN searchform_block}
+<div  class="style1 rnr-bl rnr-b-search {$brickclass_search}">	<span>
+		{BEGIN searchform_text}
+		<input type="text" {$searchfor_attrs} size="25">
+		{END searchform_text}
+		{BEGIN searchform_search}
+			<a href="#" class="rnr-button img" data-icon="search" {$searchbutton_attrs}></a>
+		{END searchform_search}
+		{BEGIN searchform_showall}	
+		<a href="#" class="rnr-button" {$showAllCont_attrs} {$showallbutton_attrs}>Mostrar todo</a>
+		{END searchform_showall}
+	</span>
+</div>
+{END searchform_block}
+
+
+{BEGIN searchformbuttons_block}
+<div  class="style1 rnr-bl rnr-b-search_buttons {$brickclass_search_buttons}">{BEGIN searchPanelTopButtons}
+<span>
+	<a href="#" class="rnr-button img" id="showSrchWin{$id}" data-icon="panelfloat" {$showHideSearchWin_attrs}></a>
+	<a href="#" class="rnr-button img" id="showOptPanel{$id}" data-icon="paneldown" {$showHideSearchPanel_attrs}></a>
+</span>
+{END searchPanelTopButtons}
+</div>
+{END searchformbuttons_block}
+
+
+{BEGIN searchsaving_block}
+<div  class="style1 rnr-bl rnr-b-search_saving_buttons {$brickclass_search_saving_buttons}"></div>
+{END searchsaving_block}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_hmenu}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+
+{BEGIN container_left}
+<div class="rnr-c rnr-cv rnr-c-left">
+
+{BEGIN menu_block}
+{$menu main}
+{END menu_block}
+
+
+{BEGIN searchPanel}
+<div  class="rnr-brickcontents style1 rnr-b-searchpanel {$brickclass_searchpanel}"><div class="searchPanelContainer">
+<div class="searchOptions bottomPanelBorder" {$srchOpt_attrs}>
+	
+	<!-- Search panel content -->
+	<div class="srchCritTop" style="display: none;">
+		Criterio:&nbsp;
+		<input type="radio" name="srchType{$id}" class="rnr-radio-button" {$all_checkbox}>&nbsp;{BEGIN all_checkbox_label}<span>todos</span>{END all_checkbox_label}
+		&nbsp;&nbsp;&nbsp;
+		<input type="radio" name="srchType{$id}" class="rnr-radio-button" {$any_checkbox}>&nbsp;{BEGIN any_checkbox_label}<span>alguno</span>{END any_checkbox_label}
+	</div>
+	
+	<div class="addOption">
+		<span class="rnr-buttons-group">
+			<a href="#" id="showHideControlChooseMenu{$id}" class="rnr-button" {$showHideCtrls_attrs}>Añadir campo</a>
+		</span>
+		
+		<a href="#" id="showHideSearchType{$id}" class="rnr-button" {$showHideCtrlsOpt_attrs}>{$showHideOpt_mess}</a>
+	</div>
+	
+
+	<table class="controlsBlock {$controls_block_class}">
+				{BEGIN searchCtrlBlock}
+		<tr class="srchPanelRow" {$filterRow_attrs}>
+			<td class="srchPanelCell">{$delCtrlButt}</td>	
+			<td class="srchPanelCell">{$fLabel}:&nbsp;</td>
+			<td class="srchPanelCell srchPanelCell2">
+				<div class="rnr-searchtype">{$searchtype}</div>
+				<div class="rnr-searchcontrol">{$searchcontrol}</div>
+				<div class="rnr-searchcontrol">{$searchcontrol1}</div>
+			</td>	
+		</tr>
+		{END searchCtrlBlock}
+	</table>	
+
+
+	
+	<div class="bottomSearchButt" align="left" {$bottomSearchButt_attrs}>
+		<a href="#" class="rnr-button" id="searchButton{$id}" {$searchbutton_attrs}>Buscar</a>
+	</div>
+</div>
+
+</div></div>{END searchPanel}
+
+
+{BEGIN filterPanel}
+<div  class="rnr-brickcontents  rnr-b-filterpanel {$brickclass_filterpanel}"><div class="filterPanelContainer {$filterPanelStateClass}">
+
+
+	
+	
+
+
+
+	
+	
+	
+		
+{BEGIN filter_control_Emorragias}
+	<div class="filter-field filter-Emorragias-container">
+		<div class="filter-expander rnr-bg style2">
+			<span class="filter-indicator">
+							&#x25B2;
+			</span>
+						{$label lcs_embarazo Emorragias}
+			{BEGIN clearLink_Emorragias}
+			<a href="#" class="filter-clear filter-clear-Emorragias">borrar</a>
+			{END clearLink_Emorragias}
+		</div>
+		{BEGIN filterCtrlBlock_Emorragias}
+		<div class="filter-values rnr-bg style1 {$collapsedClass_Emorragias} {$visibilityClass_Emorragias}">
+			{$Emorragias_filter}	
+		</div>
+		{END filterCtrlBlock_Emorragias}
+		
+				
+				
+			</div>
+{END filter_control_Emorragias}
+
+
+	
+	
+
+
+
+	
+	
+	
+		
+{BEGIN filter_control_infecciones}
+	<div class="filter-field filter-infecciones-container">
+		<div class="filter-expander rnr-bg style2">
+			<span class="filter-indicator">
+							&#x25B2;
+			</span>
+						{$label lcs_embarazo infecciones}
+			{BEGIN clearLink_infecciones}
+			<a href="#" class="filter-clear filter-clear-infecciones">borrar</a>
+			{END clearLink_infecciones}
+		</div>
+		{BEGIN filterCtrlBlock_infecciones}
+		<div class="filter-values rnr-bg style1 {$collapsedClass_infecciones} {$visibilityClass_infecciones}">
+			{$infecciones_filter}	
+		</div>
+		{END filterCtrlBlock_infecciones}
+		
+				
+				
+			</div>
+{END filter_control_infecciones}
+
+
+	
+	
+
+
+
+	
+	
+	
+		
+{BEGIN filter_control_LloroPronto}
+	<div class="filter-field filter-LloroPronto-container">
+		<div class="filter-expander rnr-bg style2">
+			<span class="filter-indicator">
+							&#x25B2;
+			</span>
+						{$label lcs_embarazo LloroPronto}
+			{BEGIN clearLink_LloroPronto}
+			<a href="#" class="filter-clear filter-clear-LloroPronto">borrar</a>
+			{END clearLink_LloroPronto}
+		</div>
+		{BEGIN filterCtrlBlock_LloroPronto}
+		<div class="filter-values rnr-bg style1 {$collapsedClass_LloroPronto} {$visibilityClass_LloroPronto}">
+			{$LloroPronto_filter}	
+		</div>
+		{END filterCtrlBlock_LloroPronto}
+		
+				
+				
+			</div>
+{END filter_control_LloroPronto}
+
+
+	
+	
+
+
+
+	
+	
+	
+		
+{BEGIN filter_control_RespiroPronto}
+	<div class="filter-field filter-RespiroPronto-container">
+		<div class="filter-expander rnr-bg style2">
+			<span class="filter-indicator">
+							&#x25B2;
+			</span>
+						{$label lcs_embarazo RespiroPronto}
+			{BEGIN clearLink_RespiroPronto}
+			<a href="#" class="filter-clear filter-clear-RespiroPronto">borrar</a>
+			{END clearLink_RespiroPronto}
+		</div>
+		{BEGIN filterCtrlBlock_RespiroPronto}
+		<div class="filter-values rnr-bg style1 {$collapsedClass_RespiroPronto} {$visibilityClass_RespiroPronto}">
+			{$RespiroPronto_filter}	
+		</div>
+		{END filterCtrlBlock_RespiroPronto}
+		
+				
+				
+			</div>
+{END filter_control_RespiroPronto}
+
+
+	
+	
+
+
+
+	
+	
+	
+		
+{BEGIN filter_control_SufrimientoFetal}
+	<div class="filter-field filter-SufrimientoFetal-container">
+		<div class="filter-expander rnr-bg style2">
+			<span class="filter-indicator">
+							&#x25B2;
+			</span>
+						{$label lcs_embarazo SufrimientoFetal}
+			{BEGIN clearLink_SufrimientoFetal}
+			<a href="#" class="filter-clear filter-clear-SufrimientoFetal">borrar</a>
+			{END clearLink_SufrimientoFetal}
+		</div>
+		{BEGIN filterCtrlBlock_SufrimientoFetal}
+		<div class="filter-values rnr-bg style1 {$collapsedClass_SufrimientoFetal} {$visibilityClass_SufrimientoFetal}">
+			{$SufrimientoFetal_filter}	
+		</div>
+		{END filterCtrlBlock_SufrimientoFetal}
+		
+				
+				
+			</div>
+{END filter_control_SufrimientoFetal}
+</div></div>{END filterPanel}
+
+
+</div>
+{END container_left}
+
+
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+
+{BEGIN container_recordcontrols}
+<div class="rnr-c rnr-ch rnr-c-recordcontrols">
+
+{BEGIN newrecord_controls_block}
+<div  class="style1 rnr-bl rnr-b-recordcontrols_new {$brickclass_recordcontrols_new}">		{BEGIN add_link}
+		<a href="lcs_embarazo_add.php" class="rnr-button" {$addlink_attrs}>Añadir nuevo</a>
+	{END add_link}
+
+	
+
+</div>
+{END newrecord_controls_block}
+
+
+{BEGIN record_controls_block}
+<div  class="style1 rnr-bl rnr-b-recordcontrol {$brickclass_recordcontrol}">{BEGIN widhtSelected}
+<span class="rnr-buttons-group">
+<a class="rnr-button {$withSelectedClass}" href="#" id="selectButtonsToggler{$id}">Con los seleccionados...</a>
+<ul class="rnr-list" id="selectButtonsGroup{$id}">
+
+	
+		{BEGIN deleteselected_link}
+<li>
+		<a href="#" class="rnr-button link" {$deleteselectedlink_attrs} {$deleteselectedlink_span}>Borrar</a>
+</li>
+	{END deleteselected_link}
+
+		{BEGIN exportselected_link}
+<li>
+		<a href="#" class="rnr-button link" {$exportselectedlink_attrs} {$exportselectedlink_span}>Exportar</a>
+</li>
+	{END exportselected_link}
+
+		{BEGIN printselected_link}
+<li>
+		<a href="#" class="rnr-button link" {$printselectedlink_attrs} {$printselectedlink_span}>Imprimir</a>
+</li>
+	{END printselected_link}
+</ul>
+</span>
+{END widhtSelected}
+	</div>
+{END record_controls_block}
+
+
+{BEGIN more_list}
+<div  class="style1 rnr-bl rnr-b-toplinks {$brickclass_toplinks}"><span class="rnr-buttons-group">
+{BEGIN moreButtons}
+<a class="rnr-button" id="extraButtonsToggler{$id}" href="#">Más...</a>
+<ul class="rnr-list rnr-buttons-group" id="extraButtonsGroup{$id}">
+{BEGIN print_link}
+<li>
+	<a target="_blank" href="lcs_embarazo_print.php?{$crosstable_attrs}" class="rnr-button link" {$printlink_attrs}>Imprimir esta página</a>
+</li>
+{END print_link}
+{BEGIN printall_link}
+<li>
+	<a target="_blank" href="lcs_embarazo_print.php?all=1&amp;{$crosstable_attrs}" class="rnr-button link" {$printalllink_attrs}>Imprimir todas las páginas</a>
+</li>
+{END printall_link}
+
+{BEGIN asearch_link}
+<li>
+	<a href="lcs_embarazo_search.php" class="rnr-button link" {$advsearchlink_attrs}>Búsqueda avanzada</a>
+</li>
+{END asearch_link}
+
+{BEGIN export_link}
+<li>
+	<a target="_blank" href="lcs_embarazo_export.php" class="rnr-button link" {$exportlink_attrs}>Exportar resultados</a>
+</li>
+{END export_link}
+
+{BEGIN import_link}
+<li>
+	<a href="lcs_embarazo_import.php?{$crosstable_attrs}" class="rnr-button link" {$importlink_attrs}>Importar</a>
+</li>
+{END import_link}
+</ul>
+{END moreButtons}
+</span></div>
+{END more_list}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_recordcontrols}
+
+
+
+{BEGIN container_message}
+<div class="rnr-c rnr-ch rnr-c-message">
+
+{BEGIN message_block}
+<div  class="style1 rnr-bc rnr-b-message {$brickclass_message}"><div class="rnr-message">{$message}</div></div>
+{END message_block}
+
+
+</div>
+{END container_message}
+
+
+
+{BEGIN container_pagination}
+<div class="rnr-c rnr-ch rnr-multialign rnr-c-pagination">
+
+{BEGIN pagination_block}
+<div  class="style1 rnr-bc rnr-b-pagination {$brickclass_pagination}">{$pagination}</div>
+{END pagination_block}
+
+<div class="rnr-leftbricks">
+{BEGIN details_block}
+<div  class="style1 rnr-bl rnr-b-details_found {$brickclass_details_found}">	<span {$details_attrs}>
+			Detalles encontrados: <b><span class="rnr-details_found_count">{$records_found}</span></b>
+	</span>
+</div>
+{END details_block}
+
+</div><div class="rnr-rightbricks">
+{BEGIN pages_block}
+<div  class="style1 rnr-br rnr-b-page_of {$brickclass_page_of}">	<span {$pages_attrs}>
+		Página <b>{$page}</b> / <b>{$maxpages}</b>
+	</span>
+
+</div>
+{END pages_block}
+
+
+{BEGIN recordspp_block}
+<div  class="style1 rnr-br rnr-b-recsperpage {$brickclass_recsperpage}">	<span id="recordspp_block{$id}" name="recordspp_block{$id}">
+			Resultados por página:&nbsp;{$recsPerPage}
+	</span>	
+</div>
+{END recordspp_block}
+
+</div>
+</div>
+{END container_pagination}
+
+
+
+{BEGIN container_grid}
+
+
+{BEGIN grid_block}
+						<table class="rnr-c rnr-cont rnr-c-grid rnr-b-grid rnr-gridtable  hoverable " cellpadding="0" >
+						<thead>
+															{BEGIN grid_header}
+								<tr class="rnr-toprow style1 {$gridHeader_class}" >
+									{BEGIN record_header}
+									{BEGIN listIcons_column}
+									<th iEditCont="all">&nbsp;</th>
+									{END listIcons_column}	
+
+																		{BEGIN checkbox_column}
+									<th class="rnr-bc">
+										<input type="checkbox" {$checkboxheader_attrs}>
+									</th>
+									{END checkbox_column}
+
+																																			{BEGIN idEmbarazo_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$idEmbarazo_class}">
+									{BEGIN idEmbarazo_fieldheader}
+																				<span {$idEmbarazo_orderlinkattrs}>
+											{$label lcs_embarazo idEmbarazo}
+										</span>
+									{END idEmbarazo_fieldheader}
+									</th>
+									{END idEmbarazo_fieldheadercolumn}
+
+																	{BEGIN MesesNac_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$MesesNac_class}">
+									{BEGIN MesesNac_fieldheader}
+																				<span {$MesesNac_orderlinkattrs}>
+											{$label lcs_embarazo MesesNac}
+										</span>
+									{END MesesNac_fieldheader}
+									</th>
+									{END MesesNac_fieldheadercolumn}
+
+																	{BEGIN TipoParto_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$TipoParto_class}">
+									{BEGIN TipoParto_fieldheader}
+																				<span {$TipoParto_orderlinkattrs}>
+											{$label lcs_embarazo TipoParto}
+										</span>
+									{END TipoParto_fieldheader}
+									</th>
+									{END TipoParto_fieldheadercolumn}
+
+																	{BEGIN AbortosAnt_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$AbortosAnt_class}">
+									{BEGIN AbortosAnt_fieldheader}
+																				<span {$AbortosAnt_orderlinkattrs}>
+											{$label lcs_embarazo AbortosAnt}
+										</span>
+									{END AbortosAnt_fieldheader}
+									</th>
+									{END AbortosAnt_fieldheadercolumn}
+
+																	{BEGIN Emorragias_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$Emorragias_class}">
+									{BEGIN Emorragias_fieldheader}
+																				<span {$Emorragias_orderlinkattrs}>
+											{$label lcs_embarazo Emorragias}
+										</span>
+									{END Emorragias_fieldheader}
+									</th>
+									{END Emorragias_fieldheadercolumn}
+
+																	{BEGIN infecciones_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$infecciones_class}">
+									{BEGIN infecciones_fieldheader}
+																				<span {$infecciones_orderlinkattrs}>
+											{$label lcs_embarazo infecciones}
+										</span>
+									{END infecciones_fieldheader}
+									</th>
+									{END infecciones_fieldheadercolumn}
+
+																	{BEGIN LloroPronto_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$LloroPronto_class}">
+									{BEGIN LloroPronto_fieldheader}
+																				<span {$LloroPronto_orderlinkattrs}>
+											{$label lcs_embarazo LloroPronto}
+										</span>
+									{END LloroPronto_fieldheader}
+									</th>
+									{END LloroPronto_fieldheadercolumn}
+
+																	{BEGIN RespiroPronto_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$RespiroPronto_class}">
+									{BEGIN RespiroPronto_fieldheader}
+																				<span {$RespiroPronto_orderlinkattrs}>
+											{$label lcs_embarazo RespiroPronto}
+										</span>
+									{END RespiroPronto_fieldheader}
+									</th>
+									{END RespiroPronto_fieldheadercolumn}
+
+																	{BEGIN ColorNacido_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$ColorNacido_class}">
+									{BEGIN ColorNacido_fieldheader}
+																				<span {$ColorNacido_orderlinkattrs}>
+											{$label lcs_embarazo ColorNacido}
+										</span>
+									{END ColorNacido_fieldheader}
+									</th>
+									{END ColorNacido_fieldheadercolumn}
+
+																	{BEGIN SufrimientoFetal_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$SufrimientoFetal_class}">
+									{BEGIN SufrimientoFetal_fieldheader}
+																				<span {$SufrimientoFetal_orderlinkattrs}>
+											{$label lcs_embarazo SufrimientoFetal}
+										</span>
+									{END SufrimientoFetal_fieldheader}
+									</th>
+									{END SufrimientoFetal_fieldheadercolumn}
+
+																	{BEGIN EmbDeseado_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$EmbDeseado_class}">
+									{BEGIN EmbDeseado_fieldheader}
+																				<span {$EmbDeseado_orderlinkattrs}>
+											{$label lcs_embarazo EmbDeseado}
+										</span>
+									{END EmbDeseado_fieldheader}
+									</th>
+									{END EmbDeseado_fieldheadercolumn}
+
+																	{BEGIN Embarazocol_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$Embarazocol_class}">
+									{BEGIN Embarazocol_fieldheader}
+																				<span {$Embarazocol_orderlinkattrs}>
+											{$label lcs_embarazo Embarazocol}
+										</span>
+									{END Embarazocol_fieldheader}
+									</th>
+									{END Embarazocol_fieldheadercolumn}
+
+																	{BEGIN Ingresado_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$Ingresado_class}">
+									{BEGIN Ingresado_fieldheader}
+																				<span {$Ingresado_orderlinkattrs}>
+											{$label lcs_embarazo Ingresado}
+										</span>
+									{END Ingresado_fieldheader}
+									</th>
+									{END Ingresado_fieldheadercolumn}
+
+																	{BEGIN _idEstudiante_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$_idEstudiante_class}">
+									{BEGIN _idEstudiante_fieldheader}
+																				<span {$_idEstudiante_orderlinkattrs}>
+											{$label lcs_embarazo _idEstudiante}
+										</span>
+									{END _idEstudiante_fieldheader}
+									</th>
+									{END _idEstudiante_fieldheadercolumn}
+
+
+									
+									<th class="rnr-edge">&nbsp;</th>
+									{BEGIN endrecordheader_block}
+									<th class="rnr-cs">&nbsp;</th>
+									
+									{END endrecordheader_block}
+									
+									{END record_header}
+									
+								</tr>
+								{END grid_header}
+
+						</thead>
+						<tbody>	
+															{BEGIN grid_row}
+								<tr class="rnr-row style1 {$rowclass}" {$rowattrs} {$rowstyle}>
+									{BEGIN grid_record}
+									{BEGIN listIcons_column}
+									<td class="rnr-cc rnr-bc rnr-icons" iEditCont="all" {$rowstyle} {$recordattrs}>
+																		{BEGIN edit_column}
+									{BEGIN edit_link}
+																			<a class="rnr-button-img" {$editlink_attrs} data-icon="edit" title="Editar"></a>
+									{END edit_link}
+									{END edit_column}
+
+									
+									
+																		{BEGIN view_column}
+									{BEGIN view_link}
+																			<a class="rnr-button-img" {$viewlink_attrs} data-icon="view" title="Ver"></a>
+									{END view_link}
+									{END view_column}
+									</td>	
+									{END listIcons_column}	
+
+																		{BEGIN checkbox_column}
+									<td class="rnr-bc" iEditCont="checkBox" {$rowstyle} {$recordattrs}>
+									{BEGIN checkbox}
+									<input type="checkbox" {$checkbox_attrs}>
+									{END checkbox}
+									</td>
+									{END checkbox_column}
+
+
+										{BEGIN idEmbarazo_fieldcolumn}
+	<td class="{$idEmbarazo_class}" {$idEmbarazo_style} {$recordattrs}>
+		{$idEmbarazo_value}
+	</td>
+{END idEmbarazo_fieldcolumn}
+
+	{BEGIN MesesNac_fieldcolumn}
+	<td class="{$MesesNac_class}" {$MesesNac_style} {$recordattrs}>
+		{$MesesNac_value}
+	</td>
+{END MesesNac_fieldcolumn}
+
+	{BEGIN TipoParto_fieldcolumn}
+	<td class="{$TipoParto_class}" {$TipoParto_style} {$recordattrs}>
+		{$TipoParto_value}
+	</td>
+{END TipoParto_fieldcolumn}
+
+	{BEGIN AbortosAnt_fieldcolumn}
+	<td class="{$AbortosAnt_class}" {$AbortosAnt_style} {$recordattrs}>
+		{$AbortosAnt_value}
+	</td>
+{END AbortosAnt_fieldcolumn}
+
+	{BEGIN Emorragias_fieldcolumn}
+	<td class="{$Emorragias_class}" {$Emorragias_style} {$recordattrs}>
+		{$Emorragias_value}
+	</td>
+{END Emorragias_fieldcolumn}
+
+	{BEGIN infecciones_fieldcolumn}
+	<td class="{$infecciones_class}" {$infecciones_style} {$recordattrs}>
+		{$infecciones_value}
+	</td>
+{END infecciones_fieldcolumn}
+
+	{BEGIN LloroPronto_fieldcolumn}
+	<td class="{$LloroPronto_class}" {$LloroPronto_style} {$recordattrs}>
+		{$LloroPronto_value}
+	</td>
+{END LloroPronto_fieldcolumn}
+
+	{BEGIN RespiroPronto_fieldcolumn}
+	<td class="{$RespiroPronto_class}" {$RespiroPronto_style} {$recordattrs}>
+		{$RespiroPronto_value}
+	</td>
+{END RespiroPronto_fieldcolumn}
+
+	{BEGIN ColorNacido_fieldcolumn}
+	<td class="{$ColorNacido_class}" {$ColorNacido_style} {$recordattrs}>
+		{$ColorNacido_value}
+	</td>
+{END ColorNacido_fieldcolumn}
+
+	{BEGIN SufrimientoFetal_fieldcolumn}
+	<td class="{$SufrimientoFetal_class}" {$SufrimientoFetal_style} {$recordattrs}>
+		{$SufrimientoFetal_value}
+	</td>
+{END SufrimientoFetal_fieldcolumn}
+
+	{BEGIN EmbDeseado_fieldcolumn}
+	<td class="{$EmbDeseado_class}" {$EmbDeseado_style} {$recordattrs}>
+		{$EmbDeseado_value}
+	</td>
+{END EmbDeseado_fieldcolumn}
+
+	{BEGIN Embarazocol_fieldcolumn}
+	<td class="{$Embarazocol_class}" {$Embarazocol_style} {$recordattrs}>
+		{$Embarazocol_value}
+	</td>
+{END Embarazocol_fieldcolumn}
+
+	{BEGIN Ingresado_fieldcolumn}
+	<td class="{$Ingresado_class}" {$Ingresado_style} {$recordattrs}>
+		{$Ingresado_value}
+	</td>
+{END Ingresado_fieldcolumn}
+
+	{BEGIN _idEstudiante_fieldcolumn}
+	<td class="{$_idEstudiante_class}" {$_idEstudiante_style} {$recordattrs}>
+		{$_idEstudiante_value}
+	</td>
+{END _idEstudiante_fieldcolumn}
+
+
+									<td class="rnr-edge" {$recordattrs}>&nbsp;</td>
+									{BEGIN endrecord_block}
+									<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
+									{END endrecord_block}
+																	
+									{END grid_record}
+
+								</tr>
+								{END grid_row}
+															
+						</tbody>
+					</table>
+					
+
+{END grid_block}
+
+
+
+{END container_grid}
+
+
+
+{BEGIN container_pagination_bottom}
+<div class="rnr-c rnr-ch rnr-multialign rnr-c-pagination_bottom">
+
+{BEGIN pagination_block}
+<div  class="style1 rnr-bc rnr-b-pagination {$brickclass_pagination}">{$pagination}</div>
+{END pagination_block}
+
+<div class="rnr-leftbricks">
+{BEGIN details_block}
+<div  class="style1 rnr-bl rnr-b-details_found {$brickclass_details_found}">	<span {$details_attrs}>
+			Detalles encontrados: <b><span class="rnr-details_found_count">{$records_found}</span></b>
+	</span>
+</div>
+{END details_block}
+
+</div><div class="rnr-rightbricks">
+{BEGIN pages_block}
+<div  class="style1 rnr-br rnr-b-page_of {$brickclass_page_of}">	<span {$pages_attrs}>
+		Página <b>{$page}</b> / <b>{$maxpages}</b>
+	</span>
+
+</div>
+{END pages_block}
+
+
+{BEGIN recordspp_block}
+<div  class="style1 rnr-br rnr-b-recsperpage {$brickclass_recsperpage}">	<span id="recordspp_block{$id}" name="recordspp_block{$id}">
+			Resultados por página:&nbsp;{$recsPerPage}
+	</span>	
+</div>
+{END recordspp_block}
+
+</div>
+</div>
+{END container_pagination_bottom}
+
+
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			<!--%%bottom%%-->
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

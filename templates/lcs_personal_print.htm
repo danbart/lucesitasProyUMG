@@ -1,0 +1,275 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-print" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_pdf}
+<div class="rnr-c rnr-ch rnr-c-pdf">
+
+{BEGIN printbuttons}
+<div  class="style1 rnr-bl rnr-b-printbuttons {$brickclass_printbuttons}">{BEGIN divideintopages_block}
+<a href="#" class="divideintopages rnr-button button" {$divideintopages_attrs}>Prepare for printing</a>
+{END divideintopages_block}
+{BEGIN pdflink_block}
+<a href="#" class="pdflink rnr-button button" {$pdflink_attrs}>Vista PDF</a>
+{END pdflink_block}
+</div>
+{END printbuttons}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_pdf}
+
+
+
+{BEGIN container_master}
+<div class="rnr-c rnr-ch rnr-c-master">
+
+{BEGIN mastertable_block}
+<div  class="style1 rnr-bl rnr-b-masterinfoprint {$brickclass_masterinfoprint}">{$showmasterfile}
+</div>
+{END mastertable_block}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_master}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+
+{BEGIN container_pageheader}
+<div class="rnr-c rnr-cv rnr-c-pageheader">
+
+
+<div  class="rnr-brickcontents style1 rnr-b-printheader {$brickclass_printheader}">	<h1>{$pagetitlelabel lcs_personal print}</h1>
+</div>
+
+
+{BEGIN page_number}
+<div  class="rnr-brickcontents style1 rnr-b-page_of_print {$brickclass_page_of_print}"><h1>Página <span class="rp-pageno">{$pageno}</span> / <span class="rp-pagecount">{$pagecount}</span></h1></div>{END page_number}
+
+
+</div>
+{END container_pageheader}
+
+
+
+{BEGIN container_grid}
+
+
+{BEGIN grid_block}
+	<table class="rnr-c rnr-c-grid rnr-b-grid rnr-gridtable rp-maintable" cellpadding="0">
+	<thead>
+	{BEGIN grid_header}
+<tr class="rnr-toprow style1 {$gridHeader_class}" >
+{BEGIN record_header}
+		{BEGIN idUsuario_fieldheadercolumn}
+<th class="runner-cc {$idUsuario_class}" {$idUsuario_style}>
+	{BEGIN idUsuario_fieldheader}
+	<b>{$label lcs_personal idUsuario}</b>
+	{END idUsuario_fieldheader}
+</th>
+{END idUsuario_fieldheadercolumn}
+	{BEGIN TipoUsuario_fieldheadercolumn}
+<th class="runner-cc {$TipoUsuario_class}" {$TipoUsuario_style}>
+	{BEGIN TipoUsuario_fieldheader}
+	<b>{$label lcs_personal TipoUsuario}</b>
+	{END TipoUsuario_fieldheader}
+</th>
+{END TipoUsuario_fieldheadercolumn}
+	{BEGIN Nombre_fieldheadercolumn}
+<th class="runner-cc {$Nombre_class}" {$Nombre_style}>
+	{BEGIN Nombre_fieldheader}
+	<b>{$label lcs_personal Nombre}</b>
+	{END Nombre_fieldheader}
+</th>
+{END Nombre_fieldheadercolumn}
+	{BEGIN Apellido_fieldheadercolumn}
+<th class="runner-cc {$Apellido_class}" {$Apellido_style}>
+	{BEGIN Apellido_fieldheader}
+	<b>{$label lcs_personal Apellido}</b>
+	{END Apellido_fieldheader}
+</th>
+{END Apellido_fieldheadercolumn}
+	{BEGIN Telefono_fieldheadercolumn}
+<th class="runner-cc {$Telefono_class}" {$Telefono_style}>
+	{BEGIN Telefono_fieldheader}
+	<b>{$label lcs_personal Telefono}</b>
+	{END Telefono_fieldheader}
+</th>
+{END Telefono_fieldheadercolumn}
+	{BEGIN Email_fieldheadercolumn}
+<th class="runner-cc {$Email_class}" {$Email_style}>
+	{BEGIN Email_fieldheader}
+	<b>{$label lcs_personal Email}</b>
+	{END Email_fieldheader}
+</th>
+{END Email_fieldheadercolumn}
+	{BEGIN Password_fieldheadercolumn}
+<th class="runner-cc {$Password_class}" {$Password_style}>
+	{BEGIN Password_fieldheader}
+	<b>{$label lcs_personal Password}</b>
+	{END Password_fieldheader}
+</th>
+{END Password_fieldheadercolumn}
+	{BEGIN celular_fieldheadercolumn}
+<th class="runner-cc {$celular_class}" {$celular_style}>
+	{BEGIN celular_fieldheader}
+	<b>{$label lcs_personal celular}</b>
+	{END celular_fieldheader}
+</th>
+{END celular_fieldheadercolumn}
+	{BEGIN Voluntario_fieldheadercolumn}
+<th class="runner-cc {$Voluntario_class}" {$Voluntario_style}>
+	{BEGIN Voluntario_fieldheader}
+	<b>{$label lcs_personal Voluntario}</b>
+	{END Voluntario_fieldheader}
+</th>
+{END Voluntario_fieldheadercolumn}
+	{BEGIN Ingresado_fieldheadercolumn}
+<th class="runner-cc {$Ingresado_class}" {$Ingresado_style}>
+	{BEGIN Ingresado_fieldheader}
+	<b>{$label lcs_personal Ingresado}</b>
+	{END Ingresado_fieldheader}
+</th>
+{END Ingresado_fieldheadercolumn}
+	{BEGIN _idCentro_fieldheadercolumn}
+<th class="runner-cc {$_idCentro_class}" {$_idCentro_style}>
+	{BEGIN _idCentro_fieldheader}
+	<b>{$label lcs_personal _idCentro}</b>
+	{END _idCentro_fieldheader}
+</th>
+{END _idCentro_fieldheadercolumn}
+		
+	<th class="rnr-edge">&nbsp;</th>
+	{BEGIN endrecordheader_block}
+	<th class="rnr-cs">&nbsp;</th>
+	{END endrecordheader_block}
+	{END record_header}
+</tr>
+{END grid_header}
+
+	</thead>
+	<tbody>	
+	{BEGIN grid_row}
+	<tr class="rnr-row style1 {$rowclass}" {$rowattrs} {$rowstyle}>
+		{BEGIN grid_record}
+				{BEGIN idUsuario_fieldcolumn}
+<td  class="runner-cc {$idUsuario_class}" {$idUsuario_style} {$recordattrs}>
+	{$idUsuario_value}
+</td>
+{END idUsuario_fieldcolumn}
+	{BEGIN TipoUsuario_fieldcolumn}
+<td  class="runner-cc {$TipoUsuario_class}" {$TipoUsuario_style} {$recordattrs}>
+	{$TipoUsuario_value}
+</td>
+{END TipoUsuario_fieldcolumn}
+	{BEGIN Nombre_fieldcolumn}
+<td  class="runner-cc {$Nombre_class}" {$Nombre_style} {$recordattrs}>
+	{$Nombre_value}
+</td>
+{END Nombre_fieldcolumn}
+	{BEGIN Apellido_fieldcolumn}
+<td  class="runner-cc {$Apellido_class}" {$Apellido_style} {$recordattrs}>
+	{$Apellido_value}
+</td>
+{END Apellido_fieldcolumn}
+	{BEGIN Telefono_fieldcolumn}
+<td  class="runner-cc {$Telefono_class}" {$Telefono_style} {$recordattrs}>
+	{$Telefono_value}
+</td>
+{END Telefono_fieldcolumn}
+	{BEGIN Email_fieldcolumn}
+<td  class="runner-cc {$Email_class}" {$Email_style} {$recordattrs}>
+	{$Email_value}
+</td>
+{END Email_fieldcolumn}
+	{BEGIN Password_fieldcolumn}
+<td  class="runner-cc {$Password_class}" {$Password_style} {$recordattrs}>
+	{$Password_value}
+</td>
+{END Password_fieldcolumn}
+	{BEGIN celular_fieldcolumn}
+<td  class="runner-cc {$celular_class}" {$celular_style} {$recordattrs}>
+	{$celular_value}
+</td>
+{END celular_fieldcolumn}
+	{BEGIN Voluntario_fieldcolumn}
+<td  class="runner-cc {$Voluntario_class}" {$Voluntario_style} {$recordattrs}>
+	{$Voluntario_value}
+</td>
+{END Voluntario_fieldcolumn}
+	{BEGIN Ingresado_fieldcolumn}
+<td  class="runner-cc {$Ingresado_class}" {$Ingresado_style} {$recordattrs}>
+	{$Ingresado_value}
+</td>
+{END Ingresado_fieldcolumn}
+	{BEGIN _idCentro_fieldcolumn}
+<td  class="runner-cc {$_idCentro_class}" {$_idCentro_style} {$recordattrs}>
+	{$_idCentro_value}
+</td>
+{END _idCentro_fieldcolumn}
+
+		<td class="rnr-edge" {$recordattrs}>&nbsp;</td>
+		{BEGIN endrecord_block}
+		<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
+		{END endrecord_block}
+										
+		{END grid_record}
+
+	</tr>
+{END grid_row}
+
+
+	
+	</tbody>
+</table>
+
+{END grid_block}
+
+
+
+{END container_grid}
+
+
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			<!--%%bottom%%-->
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

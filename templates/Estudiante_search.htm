@@ -1,0 +1,464 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-search" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_search}
+<div class="rnr-c rnr-cv rnr-c-search">
+
+{BEGIN searchheader}
+<div  class="rnr-brickcontents style2 rnr-b-srchheader {$brickclass_srchheader}"><span>	<h1>{$pagetitlelabel Estudiante search}</h1>
+</span></div>{END searchheader}
+
+
+{BEGIN conditions_block}
+<div  class="rnr-brickcontents style1 rnr-b-srchconditions {$brickclass_srchconditions}">	<center>
+	<span class=fieldname>Criterio:&nbsp;</span>	
+	<input type="radio" class="rnr-radio-button" name="srchType{$id}" {$all_checkbox}><label for="all_checkbox"> Todas las condiciones</label>
+	&nbsp;&nbsp;&nbsp;
+	<input type="radio" class="rnr-radio-button" name="srchType{$id}" {$any_checkbox}><label for="any_checkbox"> Ninguna condición</label>
+	</center></div>{END conditions_block}
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_fields} rnr-wrapper rnr-cbw-fields">
+
+{BEGIN container_fields}
+<div class="rnr-c rnr-cv rnr-c-fields">
+
+
+<div  class="rnr-brickcontents style1 rnr-b-srchfields {$brickclass_srchfields}"><table class="fieldGrid">
+	<tr>
+		<td>&nbsp;</td>
+		<td>NO</td>
+		<td colspan=3>&nbsp; </td>
+	</tr>
+	<tr class="{$fielddispclass_EstudHistoClin_Estudiante}">
+	{BEGIN EstudHistoClin_Estudiante_fieldblock}		
+	<td>
+		{$label Estudiante EstudHistoClin_Estudiante}
+	</td>
+	<td>
+		<input type="checkbox" {$EstudHistoClin_Estudiante_notbox}>
+	</td>
+	<td>
+		{$searchtype_EstudHistoClin_Estudiante}
+	</td>
+	<td>
+		{$EstudHistoClin_Estudiante_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$EstudHistoClin_Estudiante_editcontrol1}&nbsp;
+	</td>
+{END EstudHistoClin_Estudiante_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_EstudHistoClin_FotoRostro}">
+	{BEGIN EstudHistoClin_FotoRostro_fieldblock}		
+	<td>
+		{$label Estudiante EstudHistoClin_FotoRostro}
+	</td>
+	<td>
+		<input type="checkbox" {$EstudHistoClin_FotoRostro_notbox}>
+	</td>
+	<td>
+		{$searchtype_EstudHistoClin_FotoRostro}
+	</td>
+	<td>
+		{$EstudHistoClin_FotoRostro_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$EstudHistoClin_FotoRostro_editcontrol1}&nbsp;
+	</td>
+{END EstudHistoClin_FotoRostro_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_EstudHistoClin_edad}">
+	{BEGIN EstudHistoClin_edad_fieldblock}		
+	<td>
+		{$label Estudiante EstudHistoClin_edad}
+	</td>
+	<td>
+		<input type="checkbox" {$EstudHistoClin_edad_notbox}>
+	</td>
+	<td>
+		{$searchtype_EstudHistoClin_edad}
+	</td>
+	<td>
+		{$EstudHistoClin_edad_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$EstudHistoClin_edad_editcontrol1}&nbsp;
+	</td>
+{END EstudHistoClin_edad_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_EstudHistoClin_RelacionHermano}">
+	{BEGIN EstudHistoClin_RelacionHermano_fieldblock}		
+	<td>
+		{$label Estudiante EstudHistoClin_RelacionHermano}
+	</td>
+	<td>
+		<input type="checkbox" {$EstudHistoClin_RelacionHermano_notbox}>
+	</td>
+	<td>
+		{$searchtype_EstudHistoClin_RelacionHermano}
+	</td>
+	<td>
+		{$EstudHistoClin_RelacionHermano_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$EstudHistoClin_RelacionHermano_editcontrol1}&nbsp;
+	</td>
+{END EstudHistoClin_RelacionHermano_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_EstudHistoClin_RelacionCompaneros}">
+	{BEGIN EstudHistoClin_RelacionCompaneros_fieldblock}		
+	<td>
+		{$label Estudiante EstudHistoClin_RelacionCompaneros}
+	</td>
+	<td>
+		<input type="checkbox" {$EstudHistoClin_RelacionCompaneros_notbox}>
+	</td>
+	<td>
+		{$searchtype_EstudHistoClin_RelacionCompaneros}
+	</td>
+	<td>
+		{$EstudHistoClin_RelacionCompaneros_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$EstudHistoClin_RelacionCompaneros_editcontrol1}&nbsp;
+	</td>
+{END EstudHistoClin_RelacionCompaneros_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_EstudHistoClin_CQuinJuega}">
+	{BEGIN EstudHistoClin_CQuinJuega_fieldblock}		
+	<td>
+		{$label Estudiante EstudHistoClin_CQuinJuega}
+	</td>
+	<td>
+		<input type="checkbox" {$EstudHistoClin_CQuinJuega_notbox}>
+	</td>
+	<td>
+		{$searchtype_EstudHistoClin_CQuinJuega}
+	</td>
+	<td>
+		{$EstudHistoClin_CQuinJuega_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$EstudHistoClin_CQuinJuega_editcontrol1}&nbsp;
+	</td>
+{END EstudHistoClin_CQuinJuega_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_EstudHistoClin_CQueJuega}">
+	{BEGIN EstudHistoClin_CQueJuega_fieldblock}		
+	<td>
+		{$label Estudiante EstudHistoClin_CQueJuega}
+	</td>
+	<td>
+		<input type="checkbox" {$EstudHistoClin_CQueJuega_notbox}>
+	</td>
+	<td>
+		{$searchtype_EstudHistoClin_CQueJuega}
+	</td>
+	<td>
+		{$EstudHistoClin_CQueJuega_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$EstudHistoClin_CQueJuega_editcontrol1}&nbsp;
+	</td>
+{END EstudHistoClin_CQueJuega_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_EstudHistoClin_TipoEmocion}">
+	{BEGIN EstudHistoClin_TipoEmocion_fieldblock}		
+	<td>
+		{$label Estudiante EstudHistoClin_TipoEmocion}
+	</td>
+	<td>
+		<input type="checkbox" {$EstudHistoClin_TipoEmocion_notbox}>
+	</td>
+	<td>
+		{$searchtype_EstudHistoClin_TipoEmocion}
+	</td>
+	<td>
+		{$EstudHistoClin_TipoEmocion_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$EstudHistoClin_TipoEmocion_editcontrol1}&nbsp;
+	</td>
+{END EstudHistoClin_TipoEmocion_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_EstudHistoClin_CQNinio}">
+	{BEGIN EstudHistoClin_CQNinio_fieldblock}		
+	<td>
+		{$label Estudiante EstudHistoClin_CQNinio}
+	</td>
+	<td>
+		<input type="checkbox" {$EstudHistoClin_CQNinio_notbox}>
+	</td>
+	<td>
+		{$searchtype_EstudHistoClin_CQNinio}
+	</td>
+	<td>
+		{$EstudHistoClin_CQNinio_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$EstudHistoClin_CQNinio_editcontrol1}&nbsp;
+	</td>
+{END EstudHistoClin_CQNinio_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_EstudHistoClin_FProblematico}">
+	{BEGIN EstudHistoClin_FProblematico_fieldblock}		
+	<td>
+		{$label Estudiante EstudHistoClin_FProblematico}
+	</td>
+	<td>
+		<input type="checkbox" {$EstudHistoClin_FProblematico_notbox}>
+	</td>
+	<td>
+		{$searchtype_EstudHistoClin_FProblematico}
+	</td>
+	<td>
+		{$EstudHistoClin_FProblematico_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$EstudHistoClin_FProblematico_editcontrol1}&nbsp;
+	</td>
+{END EstudHistoClin_FProblematico_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_EstudHistoClin_DuermeSolo}">
+	{BEGIN EstudHistoClin_DuermeSolo_fieldblock}		
+	<td>
+		{$label Estudiante EstudHistoClin_DuermeSolo}
+	</td>
+	<td>
+		<input type="checkbox" {$EstudHistoClin_DuermeSolo_notbox}>
+	</td>
+	<td>
+		{$searchtype_EstudHistoClin_DuermeSolo}
+	</td>
+	<td>
+		{$EstudHistoClin_DuermeSolo_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$EstudHistoClin_DuermeSolo_editcontrol1}&nbsp;
+	</td>
+{END EstudHistoClin_DuermeSolo_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_EstudHistoClin_ComparteCuarto}">
+	{BEGIN EstudHistoClin_ComparteCuarto_fieldblock}		
+	<td>
+		{$label Estudiante EstudHistoClin_ComparteCuarto}
+	</td>
+	<td>
+		<input type="checkbox" {$EstudHistoClin_ComparteCuarto_notbox}>
+	</td>
+	<td>
+		{$searchtype_EstudHistoClin_ComparteCuarto}
+	</td>
+	<td>
+		{$EstudHistoClin_ComparteCuarto_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$EstudHistoClin_ComparteCuarto_editcontrol1}&nbsp;
+	</td>
+{END EstudHistoClin_ComparteCuarto_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_EstudHistoClin_ParineteIgual}">
+	{BEGIN EstudHistoClin_ParineteIgual_fieldblock}		
+	<td>
+		{$label Estudiante EstudHistoClin_ParineteIgual}
+	</td>
+	<td>
+		<input type="checkbox" {$EstudHistoClin_ParineteIgual_notbox}>
+	</td>
+	<td>
+		{$searchtype_EstudHistoClin_ParineteIgual}
+	</td>
+	<td>
+		{$EstudHistoClin_ParineteIgual_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$EstudHistoClin_ParineteIgual_editcontrol1}&nbsp;
+	</td>
+{END EstudHistoClin_ParineteIgual_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_EstudHistoClin_TSocial}">
+	{BEGIN EstudHistoClin_TSocial_fieldblock}		
+	<td>
+		{$label Estudiante EstudHistoClin_TSocial}
+	</td>
+	<td>
+		<input type="checkbox" {$EstudHistoClin_TSocial_notbox}>
+	</td>
+	<td>
+		{$searchtype_EstudHistoClin_TSocial}
+	</td>
+	<td>
+		{$EstudHistoClin_TSocial_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$EstudHistoClin_TSocial_editcontrol1}&nbsp;
+	</td>
+{END EstudHistoClin_TSocial_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_EstudHistoClin_Balbucea}">
+	{BEGIN EstudHistoClin_Balbucea_fieldblock}		
+	<td>
+		{$label Estudiante EstudHistoClin_Balbucea}
+	</td>
+	<td>
+		<input type="checkbox" {$EstudHistoClin_Balbucea_notbox}>
+	</td>
+	<td>
+		{$searchtype_EstudHistoClin_Balbucea}
+	</td>
+	<td>
+		{$EstudHistoClin_Balbucea_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$EstudHistoClin_Balbucea_editcontrol1}&nbsp;
+	</td>
+{END EstudHistoClin_Balbucea_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_EstudHistoClin_Edad1Palabra}">
+	{BEGIN EstudHistoClin_Edad1Palabra_fieldblock}		
+	<td>
+		{$label Estudiante EstudHistoClin_Edad1Palabra}
+	</td>
+	<td>
+		<input type="checkbox" {$EstudHistoClin_Edad1Palabra_notbox}>
+	</td>
+	<td>
+		{$searchtype_EstudHistoClin_Edad1Palabra}
+	</td>
+	<td>
+		{$EstudHistoClin_Edad1Palabra_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$EstudHistoClin_Edad1Palabra_editcontrol1}&nbsp;
+	</td>
+{END EstudHistoClin_Edad1Palabra_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_EstudHistoClin_EdadMesVocalizo}">
+	{BEGIN EstudHistoClin_EdadMesVocalizo_fieldblock}		
+	<td>
+		{$label Estudiante EstudHistoClin_EdadMesVocalizo}
+	</td>
+	<td>
+		<input type="checkbox" {$EstudHistoClin_EdadMesVocalizo_notbox}>
+	</td>
+	<td>
+		{$searchtype_EstudHistoClin_EdadMesVocalizo}
+	</td>
+	<td>
+		{$EstudHistoClin_EdadMesVocalizo_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$EstudHistoClin_EdadMesVocalizo_editcontrol1}&nbsp;
+	</td>
+{END EstudHistoClin_EdadMesVocalizo_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_EstudHistoClin_AdaptSocial}">
+	{BEGIN EstudHistoClin_AdaptSocial_fieldblock}		
+	<td>
+		{$label Estudiante EstudHistoClin_AdaptSocial}
+	</td>
+	<td>
+		<input type="checkbox" {$EstudHistoClin_AdaptSocial_notbox}>
+	</td>
+	<td>
+		{$searchtype_EstudHistoClin_AdaptSocial}
+	</td>
+	<td>
+		{$EstudHistoClin_AdaptSocial_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$EstudHistoClin_AdaptSocial_editcontrol1}&nbsp;
+	</td>
+{END EstudHistoClin_AdaptSocial_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_EstudHistoClin_Documento}">
+	{BEGIN EstudHistoClin_Documento_fieldblock}		
+	<td>
+		{$label Estudiante EstudHistoClin_Documento}
+	</td>
+	<td>
+		<input type="checkbox" {$EstudHistoClin_Documento_notbox}>
+	</td>
+	<td>
+		{$searchtype_EstudHistoClin_Documento}
+	</td>
+	<td>
+		{$EstudHistoClin_Documento_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$EstudHistoClin_Documento_editcontrol1}&nbsp;
+	</td>
+{END EstudHistoClin_Documento_fieldblock}
+	</tr>
+
+</table></div>
+
+
+{BEGIN searchbuttons}
+<div  class="rnr-brickcontents style2 rnr-b-srchbuttons {$brickclass_srchbuttons}">{BEGIN search_button}
+<a href="#" class="rnr-button main" {$searchbutton_attrs}>Buscar</a>
+{END search_button} 
+{BEGIN reset_button}
+<a href="#" class="rnr-button" {$resetbutton_attrs}>Reiniciar</a>
+{END reset_button}
+{BEGIN back_button}
+<a href="#" class="rnr-button" {$backbutton_attrs}>Back to Dashboard</a>
+{END back_button}</div>{END searchbuttons}
+
+
+</div>
+{END container_fields}
+
+</div>
+
+
+</div>
+{END container_search}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			<!--%%bottom%%-->
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

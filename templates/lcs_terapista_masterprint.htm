@@ -1,0 +1,56 @@
+<div {$pageattrs}>
+
+{BEGIN container_masterlistheader}
+<div class="rnr-c rnr-ch rnr-c-masterlistheader">
+
+
+<div  class="style1 rnr-bl rnr-b-masterprintheader {$brickclass_masterprintheader}">	<h1>{$pagetitlelabel lcs_terapista masterprint}</h1>
+</div>
+
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_masterlistheader}
+
+
+
+{BEGIN container_mastergrid}
+
+
+
+<table class="rnr-c rnr-cont rnr-c-mastergrid rnr-b-masterprintfields rnr-gridtable" cellpadding="0" >
+	<thead>
+		<tr class="rnr-toprow style1 {$gridHeader_class}" >
+			<th class="{$idterapista_class}">{$label lcs_terapista idterapista}</th>
+			<th class="{$Nombre_class}">{$label lcs_terapista Nombre}</th>
+			<th class="{$Apellido_class}">{$label lcs_terapista Apellido}</th>
+			<th class="{$Telefono_class}">{$label lcs_terapista Telefono}</th>
+			<th class="{$Email_class}">{$label lcs_terapista Email}</th>
+			<th class="{$Direccion_class}">{$label lcs_terapista Direccion}</th>
+			<th class="{$Ingresado_class}">{$label lcs_terapista Ingresado}</th>
+			<th class="{$_idEspeMed_class}">{$label lcs_terapista _idEspeMed}</th>
+			<th class="rnr-edge">&nbsp;</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="rnr-row style1">
+			<td class="{$idterapista_class}">{$idterapista_mastervalue}</td>
+			<td class="{$Nombre_class}">{$Nombre_mastervalue}</td>
+			<td class="{$Apellido_class}">{$Apellido_mastervalue}</td>
+			<td class="{$Telefono_class}">{$Telefono_mastervalue}</td>
+			<td class="{$Email_class}">{$Email_mastervalue}</td>
+			<td class="{$Direccion_class}">{$Direccion_mastervalue}</td>
+			<td class="{$Ingresado_class}">{$Ingresado_mastervalue}</td>
+			<td class="{$_idEspeMed_class}">{$_idEspeMed_mastervalue}</td>
+			<td class="rnr-edge">&nbsp;</td>
+		</tr>
+	</tbody>
+</table> 
+
+
+
+
+
+{END container_mastergrid}
+
+</div>
