@@ -53,6 +53,37 @@ if ($gSettings->getNType() == DASHBOARD_SEARCH)
     $gSettings = new ProjectSettings($strTableName, $pageType);
 }
 
+if( $strTableName != "lcs_userslogin" )
+{
+	if(!isLogged())  
+		return;	
+	
+	if(!CheckSecurity(@$_SESSION["_".$strTableName."_OwnerID"],"Edit") && !CheckSecurity(@$_SESSION["_".$strTableName."_OwnerID"],"Add") && !CheckSecurity(@$_SESSION["_".$strTableName."_OwnerID"],"Search")) 
+		return;
+}
+else 
+{
+	$checkResult = true;
+	if($field=="username")
+		$checkResult=false;
+
+	if($field=="password")
+		$checkResult=false;
+
+	if($field=="email")
+		$checkResult=false;
+
+	if($field=="fullname")
+		$checkResult=false;
+
+	if($checkResult)
+	{
+		if(!isLogged())  
+			return;	
+		if(!CheckSecurity(@$_SESSION["_".$strTableName."_OwnerID"],"Edit") && !CheckSecurity(@$_SESSION["_".$strTableName."_OwnerID"],"Add") && !CheckSecurity(@$_SESSION["_".$strTableName."_OwnerID"],"Search"))
+			return;
+	}
+}
 
 $hasWhere = false;
 $fieldsArr = $gSettings->getFieldsList();
@@ -124,6 +155,12 @@ foreach ($fieldsArr as $f)
 		}
 		
 		$strLookupWhere = GetLWWhere($f, $pageType, $strTableName);
+		if($LookupType == LT_QUERY)
+		{	
+			$secOpt = $lookupPSet->getAdvancedSecurityType();
+			if($secOpt == ADVSECURITY_VIEW_OWN)
+				$strLookupWhere = whereAdd($strLookupWhere, SecuritySQL("Search", $lookupTable));
+		}
 		if ($strLookupWhere)
 		{
 			$strLookupWhere = " (".$strLookupWhere.")  AND ";

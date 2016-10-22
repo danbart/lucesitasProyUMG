@@ -112,7 +112,7 @@ if (!isMobile())
 else 
 	$tdatalcs_estudiante[".listAjax"] = false;
 
-	$tdatalcs_estudiante[".audit"] = false;
+	$tdatalcs_estudiante[".audit"] = true;
 
 	$tdatalcs_estudiante[".locking"] = false;
 

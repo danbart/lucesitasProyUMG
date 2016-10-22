@@ -9,11 +9,13 @@ require_once("classes/sql.php");
 
 require_once("include/lcs_personal_variables.php");
 
+if( !Security::processPageSecurity( $strtablename, 'E' ) )
+	return;
 
 
 
 
-$layout = new TLayout("export2", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("export2", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["top"] = array();
 $layout->containers["export"] = array();
@@ -108,16 +110,6 @@ if( @$_REQUEST["a"] != "" )
 		{
 			$keys=array();
 			$keys["idUsuario"] = refine($_REQUEST["mdelete1"][mdeleteIndex($ind)]);
-			$keys["TipoUsuario"] = refine($_REQUEST["mdelete2"][mdeleteIndex($ind)]);
-			$keys["Nombre"] = refine($_REQUEST["mdelete3"][mdeleteIndex($ind)]);
-			$keys["Apellido"] = refine($_REQUEST["mdelete4"][mdeleteIndex($ind)]);
-			$keys["Telefono"] = refine($_REQUEST["mdelete5"][mdeleteIndex($ind)]);
-			$keys["Email"] = refine($_REQUEST["mdelete6"][mdeleteIndex($ind)]);
-			$keys["Password"] = refine($_REQUEST["mdelete7"][mdeleteIndex($ind)]);
-			$keys["celular"] = refine($_REQUEST["mdelete8"][mdeleteIndex($ind)]);
-			$keys["Voluntario"] = refine($_REQUEST["mdelete9"][mdeleteIndex($ind)]);
-			$keys["Ingresado"] = refine($_REQUEST["mdelete10"][mdeleteIndex($ind)]);
-			$keys["_idCentro"] = refine($_REQUEST["mdelete11"][mdeleteIndex($ind)]);
 			$selected_recs[] = $keys;
 		}
 	}
@@ -126,21 +118,11 @@ if( @$_REQUEST["a"] != "" )
 		foreach(@$_REQUEST["selection"] as $keyblock)
 		{
 			$arr = explode("&", refine($keyblock));
-			if( count($arr) < 11 )
+			if( count($arr) < 1 )
 				continue;
 				
 			$keys = array();
 			$keys["idUsuario"] = urldecode($arr[0]);
-			$keys["TipoUsuario"] = urldecode($arr[1]);
-			$keys["Nombre"] = urldecode($arr[2]);
-			$keys["Apellido"] = urldecode($arr[3]);
-			$keys["Telefono"] = urldecode($arr[4]);
-			$keys["Email"] = urldecode($arr[5]);
-			$keys["Password"] = urldecode($arr[6]);
-			$keys["celular"] = urldecode($arr[7]);
-			$keys["Voluntario"] = urldecode($arr[8]);
-			$keys["Ingresado"] = urldecode($arr[9]);
-			$keys["_idCentro"] = urldecode($arr[10]);
 			$selected_recs[] = $keys;
 		}
 	}

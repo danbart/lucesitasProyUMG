@@ -1,7 +1,7 @@
 <?php
 class oLocking
 {
-	var $lockTableName = "";
+	var $lockTableName = "proylucesitasv80_locking";
 	var $ConfirmTime=250;
 	var $UnlockTime=300;
 	var $ConfirmAdmin;

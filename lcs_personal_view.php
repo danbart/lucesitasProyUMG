@@ -12,11 +12,13 @@ add_nocache_headers();
 
 $pageMode = ViewPage::readViewModeFromRequest();
 
+if( !Security::processPageSecurity( $strTableName, "S", $pageMode != VIEW_SIMPLE ) )
+	return;
 
 
 
 
-$layout = new TLayout("view2", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("view2", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["top"] = array();
 $layout->containers["all"] = array();
@@ -25,16 +27,6 @@ $layout->containers["all"][] = array("name"=>"wrapper",
 	"block"=>"", "substyle"=>1 , "container"=>"main" );
 $layout->containers["main"] = array();
 $layout->container_properties["main"] = array(  );
-$layout->containers["main"][] = array("name"=>"wrapper", 
-	"block"=>"", "substyle"=>1 , "container"=>"pdf" );
-$layout->containers["pdf"] = array();
-$layout->container_properties["pdf"] = array(  );
-$layout->containers["pdf"][] = array("name"=>"viewpdf", 
-	"block"=>"", "substyle"=>1  );
-
-$layout->skins["pdf"] = "empty";
-
-
 $layout->containers["main"][] = array("name"=>"wrapper", 
 	"block"=>"", "substyle"=>1 , "container"=>"view" );
 $layout->containers["view"] = array();
@@ -80,8 +72,7 @@ $layout->skinsparams["3"] = array("button"=>"button1");
 
 
 
-	
-	
+
 
 
 $xt = new Xtempl();
@@ -93,16 +84,6 @@ $id = intval($id) == 0 ? 1 : $id;
 // $keys could not be set properly if editid params were no passed
 $keys = array();
 $keys["idUsuario"] = postvalue("editid1");
-$keys["TipoUsuario"] = postvalue("editid2");
-$keys["Nombre"] = postvalue("editid3");
-$keys["Apellido"] = postvalue("editid4");
-$keys["Telefono"] = postvalue("editid5");
-$keys["Email"] = postvalue("editid6");
-$keys["Password"] = postvalue("editid7");
-$keys["celular"] = postvalue("editid8");
-$keys["Voluntario"] = postvalue("editid9");
-$keys["Ingresado"] = postvalue("editid10");
-$keys["_idCentro"] = postvalue("editid11");
 
 //array of params for classes
 $params = array();
@@ -113,7 +94,6 @@ $params["mode"] = $pageMode;
 $params["pageType"] = PAGE_VIEW;
 $params["tName"] = $strTableName;
 $params["pdfMode"] = postvalue("pdf") !== "";
-$params["viewPdfEnabled"] = true;
 
 if( $pageMode == VIEW_DASHBOARD ) 
 {

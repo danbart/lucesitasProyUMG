@@ -111,6 +111,11 @@ class PrintPage extends RunnerPage
 				$selectionSQL[] = $this->keysSQLExpression( $keys );
 			}
 			$sWhere = implode(" or ", $selectionSQL );
+			if( $this->pSet->getAdvancedSecurityType() == ADVSECURITY_VIEW_OWN )
+			{
+				// select only owned records
+				$sWhere = whereAdd($sWhere, SecuritySQL("Search"));
+			}
 			$this->sqlParts["sql"] = $gQuery->gSQLWhere($sWhere);
 			$this->sqlParts["where"] = $sWhere;
 		
@@ -121,6 +126,10 @@ class PrintPage extends RunnerPage
 			$this->sqlParts["having"] = @$_SESSION[$this->sessionPrefix . "_having"];
 			$this->sqlParts["searchCriteria"] = @$_SESSION[$this->sessionPrefix . "_criteria"];
 			$this->sqlParts["join"] = @$_SESSION[$this->sessionPrefix . "_joinFromPart"];
+			if( !$this->sqlParts["where"] && $this->pSet->getAdvancedSecurityType() == ADVSECURITY_VIEW_OWN )
+			{
+				$this->sqlParts["where"] = SecuritySQL("Search");
+			}
 			$this->sqlParts["sql"] = SQLQuery::gSQLWhere_having($gQuery->HeadToSql(), 
 				$gQuery->FromToSql().$this->sqlParts["join"], 
 				$gQuery->WhereToSql(),

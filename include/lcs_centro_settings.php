@@ -109,7 +109,7 @@ if (!isMobile())
 else 
 	$tdatalcs_centro[".listAjax"] = false;
 
-	$tdatalcs_centro[".audit"] = false;
+	$tdatalcs_centro[".audit"] = true;
 
 	$tdatalcs_centro[".locking"] = false;
 
@@ -1180,40 +1180,11 @@ $page_titles["lcs_centro"] = &$pageTitleslcs_centro;
 // -----------------start  prepare master-details data arrays ------------------------------//
 // tables which are detail tables for current table (master)
 $detailsTablesData["lcs_centro"] = array();
-//	lcs_personal
-	
-	
-
-		$dIndex = 0;
-	$detailsParam = array();
-	$detailsParam["dDataSourceTable"]="lcs_personal";
-		$detailsParam["dOriginalTable"] = "lcs_personal";
-				$detailsParam["dType"]=PAGE_LIST;
-	$detailsParam["dShortTable"] = "lcs_personal";
-	$detailsParam["masterKeys"] =array();
-	$detailsParam["detailKeys"] =array();
-	$detailsParam["dispChildCount"] = "1";
-		$detailsParam["hideChild"] = false;
-	$detailsParam["previewOnList"] = 1;
-	$detailsParam["previewOnAdd"] = 0;
-	$detailsParam["previewOnEdit"] = 0;
-	$detailsParam["previewOnView"] = 0;
-			
-	$detailsTablesData["lcs_centro"][$dIndex] = $detailsParam;
-	
-		
-		$detailsTablesData["lcs_centro"][$dIndex]["masterKeys"] = array();
-
-	$detailsTablesData["lcs_centro"][$dIndex]["masterKeys"][]="idCentro";
-
-				$detailsTablesData["lcs_centro"][$dIndex]["detailKeys"] = array();
-
-	$detailsTablesData["lcs_centro"][$dIndex]["detailKeys"][]="_idCentro";
 //	lcs_estudiante
 	
 	
 
-		$dIndex = 1;
+		$dIndex = 0;
 	$detailsParam = array();
 	$detailsParam["dDataSourceTable"]="lcs_estudiante";
 		$detailsParam["dOriginalTable"] = "lcs_estudiante";
@@ -1242,7 +1213,7 @@ $detailsTablesData["lcs_centro"] = array();
 	
 	
 
-		$dIndex = 2;
+		$dIndex = 1;
 	$detailsParam = array();
 	$detailsParam["dDataSourceTable"]="lcs_donaciones";
 		$detailsParam["dOriginalTable"] = "lcs_donaciones";
@@ -1271,7 +1242,7 @@ $detailsTablesData["lcs_centro"] = array();
 	
 	
 
-		$dIndex = 3;
+		$dIndex = 2;
 	$detailsParam = array();
 	$detailsParam["dDataSourceTable"]="Reporte Estudiantes";
 		$detailsParam["dOriginalTable"] = "lcs_estudiante";
@@ -1300,7 +1271,7 @@ $detailsTablesData["lcs_centro"] = array();
 	
 	
 
-		$dIndex = 4;
+		$dIndex = 3;
 	$detailsParam = array();
 	$detailsParam["dDataSourceTable"]="RepEstudMed";
 		$detailsParam["dOriginalTable"] = "lcs_estudiante";
@@ -1329,7 +1300,7 @@ $detailsTablesData["lcs_centro"] = array();
 	
 	
 
-		$dIndex = 5;
+		$dIndex = 4;
 	$detailsParam = array();
 	$detailsParam["dDataSourceTable"]="EstuHistSocial";
 		$detailsParam["dOriginalTable"] = "lcs_estudiante";
@@ -1358,7 +1329,7 @@ $detailsTablesData["lcs_centro"] = array();
 	
 	
 
-		$dIndex = 6;
+		$dIndex = 5;
 	$detailsParam = array();
 	$detailsParam["dDataSourceTable"]="EstuHistLengua";
 		$detailsParam["dOriginalTable"] = "lcs_estudiante";
@@ -1387,7 +1358,7 @@ $detailsTablesData["lcs_centro"] = array();
 	
 	
 
-		$dIndex = 7;
+		$dIndex = 6;
 	$detailsParam = array();
 	$detailsParam["dDataSourceTable"]="EstuHistEmoci";
 		$detailsParam["dOriginalTable"] = "lcs_estudiante";
@@ -1416,7 +1387,7 @@ $detailsTablesData["lcs_centro"] = array();
 	
 	
 
-		$dIndex = 8;
+		$dIndex = 7;
 	$detailsParam = array();
 	$detailsParam["dDataSourceTable"]="EstuHistEmbarazo";
 		$detailsParam["dOriginalTable"] = "lcs_estudiante";
@@ -1445,12 +1416,41 @@ $detailsTablesData["lcs_centro"] = array();
 	
 	
 
-		$dIndex = 9;
+		$dIndex = 8;
 	$detailsParam = array();
 	$detailsParam["dDataSourceTable"]="EstuHistCaracter";
 		$detailsParam["dOriginalTable"] = "lcs_estudiante";
 		$detailsParam["dType"]=PAGE_REPORT;
 			$detailsParam["dShortTable"] = "EstuHistCaracter";
+	$detailsParam["masterKeys"] =array();
+	$detailsParam["detailKeys"] =array();
+	$detailsParam["dispChildCount"] = "1";
+		$detailsParam["hideChild"] = false;
+	$detailsParam["previewOnList"] = 1;
+	$detailsParam["previewOnAdd"] = 0;
+	$detailsParam["previewOnEdit"] = 0;
+	$detailsParam["previewOnView"] = 0;
+			
+	$detailsTablesData["lcs_centro"][$dIndex] = $detailsParam;
+	
+		
+		$detailsTablesData["lcs_centro"][$dIndex]["masterKeys"] = array();
+
+	$detailsTablesData["lcs_centro"][$dIndex]["masterKeys"][]="idCentro";
+
+				$detailsTablesData["lcs_centro"][$dIndex]["detailKeys"] = array();
+
+	$detailsTablesData["lcs_centro"][$dIndex]["detailKeys"][]="_idCentro";
+//	lcs_personal
+	
+	
+
+		$dIndex = 9;
+	$detailsParam = array();
+	$detailsParam["dDataSourceTable"]="lcs_personal";
+		$detailsParam["dOriginalTable"] = "lcs_personal";
+				$detailsParam["dType"]=PAGE_LIST;
+	$detailsParam["dShortTable"] = "lcs_personal";
 	$detailsParam["masterKeys"] =array();
 	$detailsParam["detailKeys"] =array();
 	$detailsParam["dispChildCount"] = "1";

@@ -29,8 +29,8 @@ if(mlang_getcurrentlang()=="Spanish")
 	$fieldToolTipslcs_embarazo["Spanish"]["TipoParto"] = "";
 	$fieldLabelslcs_embarazo["Spanish"]["AbortosAnt"] = "Abortos Anteriores";
 	$fieldToolTipslcs_embarazo["Spanish"]["AbortosAnt"] = "";
-	$fieldLabelslcs_embarazo["Spanish"]["Emorragias"] = "Emorragias";
-	$fieldToolTipslcs_embarazo["Spanish"]["Emorragias"] = "";
+	$fieldLabelslcs_embarazo["Spanish"]["Emorragias"] = "Hemorragias";
+	$fieldToolTipslcs_embarazo["Spanish"]["Emorragias"] = "Hemorragias";
 	$fieldLabelslcs_embarazo["Spanish"]["infecciones"] = "Infecciones";
 	$fieldToolTipslcs_embarazo["Spanish"]["infecciones"] = "";
 	$fieldLabelslcs_embarazo["Spanish"]["LloroPronto"] = "Lloro Pronto";
@@ -133,7 +133,7 @@ if (!isMobile())
 else 
 	$tdatalcs_embarazo[".listAjax"] = false;
 
-	$tdatalcs_embarazo[".audit"] = false;
+	$tdatalcs_embarazo[".audit"] = true;
 
 	$tdatalcs_embarazo[".locking"] = false;
 
@@ -349,6 +349,7 @@ $tdatalcs_embarazo[".viewFields"][] = "Ingresado";
 $tdatalcs_embarazo[".viewFields"][] = "_idEstudiante";
 
 $tdatalcs_embarazo[".addFields"] = array();
+$tdatalcs_embarazo[".addFields"][] = "_idEstudiante";
 $tdatalcs_embarazo[".addFields"][] = "MesesNac";
 $tdatalcs_embarazo[".addFields"][] = "TipoParto";
 $tdatalcs_embarazo[".addFields"][] = "AbortosAnt";
@@ -360,7 +361,6 @@ $tdatalcs_embarazo[".addFields"][] = "ColorNacido";
 $tdatalcs_embarazo[".addFields"][] = "SufrimientoFetal";
 $tdatalcs_embarazo[".addFields"][] = "EmbDeseado";
 $tdatalcs_embarazo[".addFields"][] = "Embarazocol";
-$tdatalcs_embarazo[".addFields"][] = "_idEstudiante";
 
 $tdatalcs_embarazo[".inlineAddFields"] = array();
 

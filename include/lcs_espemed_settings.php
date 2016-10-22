@@ -89,7 +89,7 @@ if (!isMobile())
 else 
 	$tdatalcs_espemed[".listAjax"] = false;
 
-	$tdatalcs_espemed[".audit"] = false;
+	$tdatalcs_espemed[".audit"] = true;
 
 	$tdatalcs_espemed[".locking"] = false;
 

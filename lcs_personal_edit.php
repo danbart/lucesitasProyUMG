@@ -11,6 +11,8 @@ require_once("classes/searchclause.php");
 
 add_nocache_headers();
 
+if( !EditPage::processEditPageSecurity( $strTableName ) )
+	return;
 
 EditPage::handleBrokenRequest();
 
@@ -19,7 +21,7 @@ EditPage::handleBrokenRequest();
 
 
 
-$layout = new TLayout("edit2", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("edit2", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["top"] = array();
 $layout->containers["all"] = array();
@@ -69,8 +71,7 @@ $layout->skinsparams["3"] = array("button"=>"button1");
 
 
 
-	
-	
+
 // parse control parameters
 $pageMode = EditPage::readEditModeFromRequest();
 
@@ -83,16 +84,6 @@ $id = intval($id) == 0 ? 1 : $id;
 // $keys could not be set properly if editid params were no passed
 $keys = array();
 $keys["idUsuario"] = postvalue("editid1");
-$keys["TipoUsuario"] = postvalue("editid2");
-$keys["Nombre"] = postvalue("editid3");
-$keys["Apellido"] = postvalue("editid4");
-$keys["Telefono"] = postvalue("editid5");
-$keys["Email"] = postvalue("editid6");
-$keys["Password"] = postvalue("editid7");
-$keys["celular"] = postvalue("editid8");
-$keys["Voluntario"] = postvalue("editid9");
-$keys["Ingresado"] = postvalue("editid10");
-$keys["_idCentro"] = postvalue("editid11");
 
 //array of params for classes
 $params = array();

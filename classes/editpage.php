@@ -718,6 +718,11 @@ class EditPage extends RunnerPage
 			$strWhereClause = $_SESSION[ $this->sessionPrefix."_where" ];
 		}
 		
+		if( $this->pSet->getAdvancedSecurityType() != ADVSECURITY_ALL )
+		{
+			// select only owned records
+			$strWhereClause = whereAdd($strWhereClause, SecuritySQL("Edit"));
+		}
 		return $strWhereClause;
 	}
 	

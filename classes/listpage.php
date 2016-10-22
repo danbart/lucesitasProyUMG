@@ -1682,6 +1682,8 @@ class ListPage extends RunnerPage
 		// Add cells' custom css
 		$this->addCustomCss();
 		
+		// build admin block
+		$this->assignAdmin();
 	}
 	
 	/**

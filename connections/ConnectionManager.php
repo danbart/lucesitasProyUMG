@@ -78,7 +78,7 @@ class ConnectionManager
 	 */	
 	public function getForAudit()
 	{
-		return $this->getDefault();
+		return $this->byId( "Tables" );
 	}
 	
 	/**
@@ -240,7 +240,6 @@ $data["connInfo"][4] = $sys_dbname;
 	{
 		$connectionsIds = array();
 		$connectionsIds["lcs_centro"] = "Tables";
-		$connectionsIds["lcs_personal"] = "Tables";
 		$connectionsIds["lcs_estudiante"] = "Tables";
 		$connectionsIds["lcs_terapias"] = "Tables";
 		$connectionsIds["lcs_terapista"] = "Tables";
@@ -259,7 +258,6 @@ $data["connInfo"][4] = $sys_dbname;
 		$connectionsIds["lcs_emociones"] = "Tables";
 		$connectionsIds["lcs_medicamento"] = "Tables";
 		$connectionsIds["lcs_donaciones"] = "Tables";
-		$connectionsIds["lcs_sesion"] = "Tables";
 		$connectionsIds["Reporte Estudiantes"] = "Tables";
 		$connectionsIds["RepEstudMed"] = "Tables";
 		$connectionsIds["EstuHistSocial"] = "Tables";
@@ -270,6 +268,9 @@ $data["connInfo"][4] = $sys_dbname;
 		$connectionsIds["EstuHistEmoci"] = "Tables";
 		$connectionsIds["EstuHistEmbarazo"] = "Tables";
 		$connectionsIds["EstuHistCaracter"] = "Tables";
+		$connectionsIds["lcs_userslogin"] = "Tables";
+		$connectionsIds["proylucesitasv80_audit"] = "Tables";
+		$connectionsIds["lcs_personal"] = "Tables";
 		$this->_tablesConnectionIds = $connectionsIds;
 	}
 	

@@ -34,6 +34,11 @@ function GetImageFromDB($gQuery, $forPDF = false, $params = array())
 		@ini_set("display_errors","1");
 		@ini_set("display_startup_errors","1");
 	
+		if(!isLogged() || !CheckSecurity(@$_SESSION["_".$strTableName."_OwnerID"],"Search"))
+		{ 
+			HeaderRedirect("login"); 
+			return;
+		}
 	
 		$field = postvalue("field");
 		if(!$settings->checkFieldPermissions($field))
@@ -81,6 +86,11 @@ function GetImageFromDB($gQuery, $forPDF = false, $params = array())
 	
 	$where = KeyWhere($keys);
 	
+	$secOpt = $settings->getAdvancedSecurityType();
+	if ($secOpt == ADVSECURITY_VIEW_OWN)
+	{
+		$where = whereAdd($where, SecuritySQL("Search"));
+	}
 	
 	$sql = $gQuery->gSQLWhere($where);
 	$data = $connection->query( $sql )->fetchAssoc();
@@ -251,8 +261,6 @@ function checkTableName($shortTName, $type=false)
 	
 	if ("lcs_centro" == $shortTName && ($type===false || ($type!==false && $type == 0)))
 		return true;
-	if ("lcs_personal" == $shortTName && ($type===false || ($type!==false && $type == 0)))
-		return true;
 	if ("lcs_estudiante" == $shortTName && ($type===false || ($type!==false && $type == 0)))
 		return true;
 	if ("lcs_terapias" == $shortTName && ($type===false || ($type!==false && $type == 0)))
@@ -289,8 +297,6 @@ function checkTableName($shortTName, $type=false)
 		return true;
 	if ("lcs_donaciones" == $shortTName && ($type===false || ($type!==false && $type == 0)))
 		return true;
-	if ("lcs_sesion" == $shortTName && ($type===false || ($type!==false && $type == 0)))
-		return true;
 	if ("Reporte_Estudiantes" == $shortTName && ($type===false || ($type!==false && $type == 2)))
 		return true;
 	if ("RepEstudMed" == $shortTName && ($type===false || ($type!==false && $type == 2)))
@@ -310,6 +316,12 @@ function checkTableName($shortTName, $type=false)
 	if ("EstuHistEmbarazo" == $shortTName && ($type===false || ($type!==false && $type == 2)))
 		return true;
 	if ("EstuHistCaracter" == $shortTName && ($type===false || ($type!==false && $type == 2)))
+		return true;
+	if ("lcs_userslogin" == $shortTName && ($type===false || ($type!==false && $type == 0)))
+		return true;
+	if ("proylucesitasv80_audit" == $shortTName && ($type===false || ($type!==false && $type == 0)))
+		return true;
+	if ("lcs_personal" == $shortTName && ($type===false || ($type!==false && $type == 0)))
 		return true;
 	return false;
 }
@@ -360,37 +372,166 @@ function GetEmailField($table = "")
 function GetTablesList($pdfMode = false)
 {
 	$arr = array();
+	$strPerm = GetUserPermissions("lcs_centro");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="lcs_centro";
-		$arr[]="lcs_personal";
+	}
+	$strPerm = GetUserPermissions("lcs_estudiante");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="lcs_estudiante";
+	}
+	$strPerm = GetUserPermissions("lcs_terapias");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="lcs_terapias";
+	}
+	$strPerm = GetUserPermissions("lcs_terapista");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="lcs_terapista";
+	}
+	$strPerm = GetUserPermissions("lcs_tiposocial");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="lcs_tiposocial";
+	}
+	$strPerm = GetUserPermissions("lcs_transtornoalimenticio");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="lcs_transtornoalimenticio";
+	}
+	$strPerm = GetUserPermissions("lcs_transtornoesfinteres");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="lcs_transtornoesfinteres";
+	}
+	$strPerm = GetUserPermissions("lcs_trastornosuenio");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="lcs_trastornosuenio";
+	}
+	$strPerm = GetUserPermissions("lcs_lenguaje");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="lcs_lenguaje";
+	}
+	$strPerm = GetUserPermissions("lcs_historialclinico");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="lcs_historialclinico";
+	}
+	$strPerm = GetUserPermissions("lcs_histoiralfamiliar");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="lcs_histoiralfamiliar";
+	}
+	$strPerm = GetUserPermissions("lcs_enfermedades");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="lcs_enfermedades";
+	}
+	$strPerm = GetUserPermissions("lcs_embarazo");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="lcs_embarazo";
+	}
+	$strPerm = GetUserPermissions("lcs_espemed");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="lcs_espemed";
+	}
+	$strPerm = GetUserPermissions("lcs_descsocial");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="lcs_descsocial";
+	}
+	$strPerm = GetUserPermissions("lcs_encargado");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="lcs_encargado";
+	}
+	$strPerm = GetUserPermissions("lcs_emociones");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="lcs_emociones";
+	}
+	$strPerm = GetUserPermissions("lcs_medicamento");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="lcs_medicamento";
+	}
+	$strPerm = GetUserPermissions("lcs_donaciones");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="lcs_donaciones";
-		$arr[]="lcs_sesion";
+	}
+	$strPerm = GetUserPermissions("Reporte Estudiantes");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="Reporte Estudiantes";
+	}
+	$strPerm = GetUserPermissions("RepEstudMed");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="RepEstudMed";
+	}
+	$strPerm = GetUserPermissions("EstuHistSocial");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="EstuHistSocial";
+	}
+	$strPerm = GetUserPermissions("TranstornosAlimenticio");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="TranstornosAlimenticio";
+	}
+	$strPerm = GetUserPermissions("EstuHistLengua");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="EstuHistLengua";
+	}
+	$strPerm = GetUserPermissions("TranstornosEsfinteres");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="TranstornosEsfinteres";
+	}
+	$strPerm = GetUserPermissions("TranstornosSueno");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="TranstornosSueno";
+	}
+	$strPerm = GetUserPermissions("EstuHistEmoci");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="EstuHistEmoci";
+	}
+	$strPerm = GetUserPermissions("EstuHistEmbarazo");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="EstuHistEmbarazo";
+	}
+	$strPerm = GetUserPermissions("EstuHistCaracter");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
 		$arr[]="EstuHistCaracter";
+	}
+	$strPerm = GetUserPermissions("lcs_userslogin");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
+		$arr[]="lcs_userslogin";
+	}
+	$strPerm = GetUserPermissions("proylucesitasv80_audit");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
+		$arr[]="proylucesitasv80_audit";
+	}
+	$strPerm = GetUserPermissions("lcs_personal");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
+		$arr[]="lcs_personal";
+	}
 	return $arr;
 }
 
@@ -980,6 +1121,568 @@ function IsBigInt($type)
 ////////////////////////////////////////////////////////////////////////////////
 // security functions
 ////////////////////////////////////////////////////////////////////////////////
+ //the bDynamicPermissions block
+
+/**
+ * @intellisense
+ */
+function GetUserPermissionsStatic( $table )
+{
+	if( !isLogged() ) 
+		return "";
+
+	$extraPerm = $_SESSION["AccessLevel"] == ACCESS_LEVEL_ADMINGROUP ? 'M' : '';
+	$sUserGroup=@$_SESSION["GroupID"];
+	if($table=="lcs_centro" && $sUserGroup=="admin")
+	{
+			return "AEDSPI".$extraPerm;
+	}
+	if($table=="lcs_centro" && $sUserGroup=="registrador")
+	{
+			return "ASP".$extraPerm;
+	}
+	if($table=="lcs_centro" && $sUserGroup=="voluntario")
+	{
+			return "SP".$extraPerm;
+	}
+//	default permissions	
+	if($table=="lcs_centro")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="lcs_estudiante" && $sUserGroup=="admin")
+	{
+			return "AEDSPI".$extraPerm;
+	}
+	if($table=="lcs_estudiante" && $sUserGroup=="registrador")
+	{
+			return "ASP".$extraPerm;
+	}
+	if($table=="lcs_estudiante" && $sUserGroup=="voluntario")
+	{
+			return "SP".$extraPerm;
+	}
+//	default permissions	
+	if($table=="lcs_estudiante")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="lcs_terapias" && $sUserGroup=="admin")
+	{
+			return "AEDSPI".$extraPerm;
+	}
+	if($table=="lcs_terapias" && $sUserGroup=="registrador")
+	{
+			return "ASP".$extraPerm;
+	}
+	if($table=="lcs_terapias" && $sUserGroup=="voluntario")
+	{
+			return "".$extraPerm;
+	}
+//	default permissions	
+	if($table=="lcs_terapias")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="lcs_terapista" && $sUserGroup=="admin")
+	{
+			return "AEDSPI".$extraPerm;
+	}
+	if($table=="lcs_terapista" && $sUserGroup=="registrador")
+	{
+			return "ASP".$extraPerm;
+	}
+	if($table=="lcs_terapista" && $sUserGroup=="voluntario")
+	{
+			return "".$extraPerm;
+	}
+//	default permissions	
+	if($table=="lcs_terapista")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="lcs_tiposocial" && $sUserGroup=="admin")
+	{
+			return "AEDSPI".$extraPerm;
+	}
+	if($table=="lcs_tiposocial" && $sUserGroup=="registrador")
+	{
+			return "ASP".$extraPerm;
+	}
+	if($table=="lcs_tiposocial" && $sUserGroup=="voluntario")
+	{
+			return "".$extraPerm;
+	}
+//	default permissions	
+	if($table=="lcs_tiposocial")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="lcs_transtornoalimenticio" && $sUserGroup=="admin")
+	{
+			return "AEDSPI".$extraPerm;
+	}
+	if($table=="lcs_transtornoalimenticio" && $sUserGroup=="registrador")
+	{
+			return "ASP".$extraPerm;
+	}
+	if($table=="lcs_transtornoalimenticio" && $sUserGroup=="voluntario")
+	{
+			return "".$extraPerm;
+	}
+//	default permissions	
+	if($table=="lcs_transtornoalimenticio")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="lcs_transtornoesfinteres" && $sUserGroup=="admin")
+	{
+			return "AEDSPI".$extraPerm;
+	}
+	if($table=="lcs_transtornoesfinteres" && $sUserGroup=="registrador")
+	{
+			return "ASP".$extraPerm;
+	}
+	if($table=="lcs_transtornoesfinteres" && $sUserGroup=="voluntario")
+	{
+			return "".$extraPerm;
+	}
+//	default permissions	
+	if($table=="lcs_transtornoesfinteres")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="lcs_trastornosuenio" && $sUserGroup=="admin")
+	{
+			return "AEDSPI".$extraPerm;
+	}
+	if($table=="lcs_trastornosuenio" && $sUserGroup=="registrador")
+	{
+			return "ASP".$extraPerm;
+	}
+	if($table=="lcs_trastornosuenio" && $sUserGroup=="voluntario")
+	{
+			return "".$extraPerm;
+	}
+//	default permissions	
+	if($table=="lcs_trastornosuenio")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="lcs_lenguaje" && $sUserGroup=="admin")
+	{
+			return "AEDSPI".$extraPerm;
+	}
+	if($table=="lcs_lenguaje" && $sUserGroup=="registrador")
+	{
+			return "ASP".$extraPerm;
+	}
+	if($table=="lcs_lenguaje" && $sUserGroup=="voluntario")
+	{
+			return "".$extraPerm;
+	}
+//	default permissions	
+	if($table=="lcs_lenguaje")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="lcs_historialclinico" && $sUserGroup=="admin")
+	{
+			return "AEDSPI".$extraPerm;
+	}
+	if($table=="lcs_historialclinico" && $sUserGroup=="registrador")
+	{
+			return "ASP".$extraPerm;
+	}
+	if($table=="lcs_historialclinico" && $sUserGroup=="voluntario")
+	{
+			return "".$extraPerm;
+	}
+//	default permissions	
+	if($table=="lcs_historialclinico")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="lcs_histoiralfamiliar" && $sUserGroup=="admin")
+	{
+			return "AEDSPI".$extraPerm;
+	}
+	if($table=="lcs_histoiralfamiliar" && $sUserGroup=="registrador")
+	{
+			return "ASP".$extraPerm;
+	}
+	if($table=="lcs_histoiralfamiliar" && $sUserGroup=="voluntario")
+	{
+			return "".$extraPerm;
+	}
+//	default permissions	
+	if($table=="lcs_histoiralfamiliar")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="lcs_enfermedades" && $sUserGroup=="admin")
+	{
+			return "AEDSPI".$extraPerm;
+	}
+	if($table=="lcs_enfermedades" && $sUserGroup=="registrador")
+	{
+			return "ASP".$extraPerm;
+	}
+	if($table=="lcs_enfermedades" && $sUserGroup=="voluntario")
+	{
+			return "".$extraPerm;
+	}
+//	default permissions	
+	if($table=="lcs_enfermedades")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="lcs_embarazo" && $sUserGroup=="admin")
+	{
+			return "AEDSPI".$extraPerm;
+	}
+	if($table=="lcs_embarazo" && $sUserGroup=="registrador")
+	{
+			return "ASP".$extraPerm;
+	}
+	if($table=="lcs_embarazo" && $sUserGroup=="voluntario")
+	{
+			return "".$extraPerm;
+	}
+//	default permissions	
+	if($table=="lcs_embarazo")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="lcs_espemed" && $sUserGroup=="admin")
+	{
+			return "AEDSPI".$extraPerm;
+	}
+	if($table=="lcs_espemed" && $sUserGroup=="registrador")
+	{
+			return "ASP".$extraPerm;
+	}
+	if($table=="lcs_espemed" && $sUserGroup=="voluntario")
+	{
+			return "".$extraPerm;
+	}
+//	default permissions	
+	if($table=="lcs_espemed")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="lcs_descsocial" && $sUserGroup=="admin")
+	{
+			return "AEDSPI".$extraPerm;
+	}
+	if($table=="lcs_descsocial" && $sUserGroup=="registrador")
+	{
+			return "ASP".$extraPerm;
+	}
+	if($table=="lcs_descsocial" && $sUserGroup=="voluntario")
+	{
+			return "".$extraPerm;
+	}
+//	default permissions	
+	if($table=="lcs_descsocial")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="lcs_encargado" && $sUserGroup=="admin")
+	{
+			return "AEDSPI".$extraPerm;
+	}
+	if($table=="lcs_encargado" && $sUserGroup=="registrador")
+	{
+			return "ASP".$extraPerm;
+	}
+	if($table=="lcs_encargado" && $sUserGroup=="voluntario")
+	{
+			return "".$extraPerm;
+	}
+//	default permissions	
+	if($table=="lcs_encargado")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="lcs_emociones" && $sUserGroup=="admin")
+	{
+			return "AEDSPI".$extraPerm;
+	}
+	if($table=="lcs_emociones" && $sUserGroup=="registrador")
+	{
+			return "ASP".$extraPerm;
+	}
+	if($table=="lcs_emociones" && $sUserGroup=="voluntario")
+	{
+			return "".$extraPerm;
+	}
+//	default permissions	
+	if($table=="lcs_emociones")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="lcs_medicamento" && $sUserGroup=="admin")
+	{
+			return "AEDSPI".$extraPerm;
+	}
+	if($table=="lcs_medicamento" && $sUserGroup=="registrador")
+	{
+			return "ASP".$extraPerm;
+	}
+	if($table=="lcs_medicamento" && $sUserGroup=="voluntario")
+	{
+			return "".$extraPerm;
+	}
+//	default permissions	
+	if($table=="lcs_medicamento")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="lcs_donaciones" && $sUserGroup=="admin")
+	{
+			return "AEDSPI".$extraPerm;
+	}
+	if($table=="lcs_donaciones" && $sUserGroup=="registrador")
+	{
+			return "ASP".$extraPerm;
+	}
+	if($table=="lcs_donaciones" && $sUserGroup=="voluntario")
+	{
+			return "".$extraPerm;
+	}
+//	default permissions	
+	if($table=="lcs_donaciones")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="Reporte Estudiantes" && $sUserGroup=="admin")
+	{
+			return "SP".$extraPerm;
+	}
+	if($table=="Reporte Estudiantes" && $sUserGroup=="registrador")
+	{
+			return "SP".$extraPerm;
+	}
+	if($table=="Reporte Estudiantes" && $sUserGroup=="voluntario")
+	{
+			return "SP".$extraPerm;
+	}
+//	default permissions	
+	if($table=="Reporte Estudiantes")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="RepEstudMed" && $sUserGroup=="admin")
+	{
+			return "SP".$extraPerm;
+	}
+	if($table=="RepEstudMed" && $sUserGroup=="registrador")
+	{
+			return "SP".$extraPerm;
+	}
+	if($table=="RepEstudMed" && $sUserGroup=="voluntario")
+	{
+			return "SP".$extraPerm;
+	}
+//	default permissions	
+	if($table=="RepEstudMed")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="EstuHistSocial" && $sUserGroup=="admin")
+	{
+			return "SP".$extraPerm;
+	}
+	if($table=="EstuHistSocial" && $sUserGroup=="registrador")
+	{
+			return "SP".$extraPerm;
+	}
+	if($table=="EstuHistSocial" && $sUserGroup=="voluntario")
+	{
+			return "SP".$extraPerm;
+	}
+//	default permissions	
+	if($table=="EstuHistSocial")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="TranstornosAlimenticio" && $sUserGroup=="admin")
+	{
+			return "SP".$extraPerm;
+	}
+	if($table=="TranstornosAlimenticio" && $sUserGroup=="registrador")
+	{
+			return "SP".$extraPerm;
+	}
+	if($table=="TranstornosAlimenticio" && $sUserGroup=="voluntario")
+	{
+			return "SP".$extraPerm;
+	}
+//	default permissions	
+	if($table=="TranstornosAlimenticio")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="EstuHistLengua" && $sUserGroup=="admin")
+	{
+			return "SP".$extraPerm;
+	}
+	if($table=="EstuHistLengua" && $sUserGroup=="registrador")
+	{
+			return "SP".$extraPerm;
+	}
+	if($table=="EstuHistLengua" && $sUserGroup=="voluntario")
+	{
+			return "SP".$extraPerm;
+	}
+//	default permissions	
+	if($table=="EstuHistLengua")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="TranstornosEsfinteres" && $sUserGroup=="admin")
+	{
+			return "SP".$extraPerm;
+	}
+	if($table=="TranstornosEsfinteres" && $sUserGroup=="registrador")
+	{
+			return "SP".$extraPerm;
+	}
+	if($table=="TranstornosEsfinteres" && $sUserGroup=="voluntario")
+	{
+			return "SP".$extraPerm;
+	}
+//	default permissions	
+	if($table=="TranstornosEsfinteres")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="TranstornosSueno" && $sUserGroup=="admin")
+	{
+			return "SP".$extraPerm;
+	}
+	if($table=="TranstornosSueno" && $sUserGroup=="registrador")
+	{
+			return "SP".$extraPerm;
+	}
+	if($table=="TranstornosSueno" && $sUserGroup=="voluntario")
+	{
+			return "SP".$extraPerm;
+	}
+//	default permissions	
+	if($table=="TranstornosSueno")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="EstuHistEmoci" && $sUserGroup=="admin")
+	{
+			return "SP".$extraPerm;
+	}
+	if($table=="EstuHistEmoci" && $sUserGroup=="registrador")
+	{
+			return "SP".$extraPerm;
+	}
+	if($table=="EstuHistEmoci" && $sUserGroup=="voluntario")
+	{
+			return "SP".$extraPerm;
+	}
+//	default permissions	
+	if($table=="EstuHistEmoci")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="EstuHistEmbarazo" && $sUserGroup=="admin")
+	{
+			return "SP".$extraPerm;
+	}
+	if($table=="EstuHistEmbarazo" && $sUserGroup=="registrador")
+	{
+			return "SP".$extraPerm;
+	}
+	if($table=="EstuHistEmbarazo" && $sUserGroup=="voluntario")
+	{
+			return "SP".$extraPerm;
+	}
+//	default permissions	
+	if($table=="EstuHistEmbarazo")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="EstuHistCaracter" && $sUserGroup=="admin")
+	{
+			return "SP".$extraPerm;
+	}
+	if($table=="EstuHistCaracter" && $sUserGroup=="registrador")
+	{
+			return "SP".$extraPerm;
+	}
+	if($table=="EstuHistCaracter" && $sUserGroup=="voluntario")
+	{
+			return "SP".$extraPerm;
+	}
+//	default permissions	
+	if($table=="EstuHistCaracter")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="lcs_userslogin" && $sUserGroup=="admin")
+	{
+			return "AEDSPI".$extraPerm;
+	}
+	if($table=="lcs_userslogin" && $sUserGroup=="registrador")
+	{
+			return "".$extraPerm;
+	}
+	if($table=="lcs_userslogin" && $sUserGroup=="voluntario")
+	{
+			return "".$extraPerm;
+	}
+//	default permissions	
+	if($table=="lcs_userslogin")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="proylucesitasv80_audit" && $sUserGroup=="admin")
+	{
+			return "AEDSPI".$extraPerm;
+	}
+	if($table=="proylucesitasv80_audit" && $sUserGroup=="registrador")
+	{
+			return "".$extraPerm;
+	}
+	if($table=="proylucesitasv80_audit" && $sUserGroup=="voluntario")
+	{
+			return "".$extraPerm;
+	}
+//	default permissions	
+	if($table=="proylucesitasv80_audit")
+	{
+		return "".$extraPerm;
+	}
+	if($table=="lcs_personal" && $sUserGroup=="admin")
+	{
+			return "AEDSPI".$extraPerm;
+	}
+	if($table=="lcs_personal" && $sUserGroup=="registrador")
+	{
+			return "ASP".$extraPerm;
+	}
+	if($table=="lcs_personal" && $sUserGroup=="voluntario")
+	{
+			return "".$extraPerm;
+	}
+//	default permissions	
+	if($table=="lcs_personal")
+	{
+		return "S".$extraPerm;
+	}
+	// grant nothing by default
+	return "";
+}
+
+// end of the bDynamicPermissions block
+// end of the bCreateLoginPage block
 
 
 /**
@@ -1009,130 +1712,7 @@ function GetUserPermissions($table="")
 	if(!$table)
 		$table = $strTableName;
 	$permissions = "";
-	if($table=="lcs_centro")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="lcs_personal")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="lcs_estudiante")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="lcs_terapias")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="lcs_terapista")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="lcs_tiposocial")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="lcs_transtornoalimenticio")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="lcs_transtornoesfinteres")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="lcs_trastornosuenio")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="lcs_lenguaje")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="lcs_historialclinico")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="lcs_histoiralfamiliar")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="lcs_enfermedades")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="lcs_embarazo")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="lcs_espemed")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="lcs_descsocial")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="lcs_encargado")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="lcs_emociones")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="lcs_medicamento")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="lcs_donaciones")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="lcs_sesion")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="Reporte Estudiantes")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="RepEstudMed")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="EstuHistSocial")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="TranstornosAlimenticio")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="EstuHistLengua")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="TranstornosEsfinteres")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="TranstornosSueno")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="EstuHistEmoci")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="EstuHistEmbarazo")
-	{
-			$permissions =  "ADESPIM";
-	}
-	if($table=="EstuHistCaracter")
-	{
-			$permissions =  "ADESPIM";
-	}
+	$permissions =  GetUserPermissionsStatic($table);
 	
 	if($globalEvents->exists("GetTablePermissions", $table))
 	{
@@ -1146,7 +1726,6 @@ function GetUserPermissions($table="")
  */
 function isLogged()
 {
-	return true;
 	if (@$_SESSION["UserID"])
 		return true;
 	return false;
@@ -1171,7 +1750,7 @@ function AfterFBLogIn($pUsername, $pPassword, &$pageObject = null)
 	else
 		$strUsername = (0+$strUsername);
 	
-	$strSQL = "select * from ".$connection->addTableWrappers("")
+	$strSQL = "select * from ".$connection->addTableWrappers("lcs_userslogin")
 		." where ".$connection->addFieldWrappers($cUserNameField)."=".$strUsername."";
 
  	$data = $connection->query( $strSQL )->fetchAssoc();
@@ -1196,7 +1775,7 @@ function AfterFBLogIn($pUsername, $pPassword, &$pageObject = null)
 function SetAuthSessionData($pUsername, &$data, $fromFacebook, $password, &$pageObject = null)
 {
 	global $globalEvents;
-	$_SESSION["GroupID"] = "";
+	$_SESSION["GroupID"] = $data["groupid"];
 
 
 	if($globalEvents->exists("AfterSuccessfulLogin"))
@@ -1237,6 +1816,28 @@ function DoLogin($callAfterLoginEvent = false, $userID = "Guest", $userName = ""
  */
 function CheckSecurity($strValue, $strAction)
 {
+
+	global $cAdvSecurityMethod, $strTableName;
+	$pSet = new ProjectSettings($strTableName);
+	
+	if($_SESSION["AccessLevel"]==ACCESS_LEVEL_ADMIN)
+		return true;
+
+	$strPerm = GetUserPermissions();
+	if( strpos($strPerm, "M") === false )
+	{
+	}
+	//	 check user group permissions
+	$localAction = strtolower($strAction);
+	if($localAction=="add" && !(strpos($strPerm, "A")===false) ||
+	   $localAction=="edit" && !(strpos($strPerm, "E")===false) ||
+	   $localAction=="delete" && !(strpos($strPerm, "D")===false) ||
+	   $localAction=="search" && !(strpos($strPerm, "S")===false) ||
+	   $localAction=="import" && !(strpos($strPerm, "I")===false) ||
+	   $localAction=="export" && !(strpos($strPerm, "P")===false) )
+		return true;
+	else
+		return false;
 	return true;
 }
 
@@ -1284,6 +1885,26 @@ function SecuritySQL($strAction, $table="", $strPerm="")
 	
 	$pSet = new ProjectSettings($table);
 	
+   	$ownerid=@$_SESSION["_".$table."_OwnerID"];
+	$ret="";
+	if(@$_SESSION["AccessLevel"]==ACCESS_LEVEL_ADMIN)
+		return "";
+		
+	$ret="";
+	if(!strlen($strPerm))
+		$strPerm = GetUserPermissions($table);
+
+	if( strpos($strPerm, "M") === false )
+	{
+	}
+	
+	if($strAction=="Edit" && !(strpos($strPerm, "E")===false) ||
+	   $strAction=="Delete" && !(strpos($strPerm, "D")===false) ||
+	   $strAction=="Search" && !(strpos($strPerm, "S")===false) ||
+	   $strAction=="Export" && !(strpos($strPerm, "P")===false) )
+		return $ret;
+	else
+		return "1=0";
 	return "";
 }
 
@@ -1817,7 +2438,6 @@ function GetSiteUrl()
  */
 function GetAuditObject($table="")
 {
-	return NULL;
 	
 	$linkAudit = false;
 	if(!$table)
@@ -1832,6 +2452,7 @@ function GetAuditObject($table="")
 	if ($linkAudit)
 	{	
 		require_once(getabspath("include/audit.php"));
+		return new AuditTrailTable();
 	}
 	else
 	{

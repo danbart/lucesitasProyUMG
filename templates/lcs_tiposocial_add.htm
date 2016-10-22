@@ -50,16 +50,6 @@
 
 
 <div  class="rnr-brickcontents style1 rnr-b-addfields {$brickclass_addfields}"><table class="fieldGrid">
-	{BEGIN TSocial_fieldblock}
-<tr class="{$fielddispclass_TSocial}" data-fieldname="TSocial">
-	<td class="rnr-label">
-		{BEGIN TSocial_label}{$label lcs_tiposocial TSocial}{END TSocial_label}
-	</td>
-	<td class="rnr-control style3">
-		{$TSocial_editcontrol}&nbsp;
-	</td>
-</tr>
-{END TSocial_fieldblock}
 	{BEGIN _idEstudiante_fieldblock}
 <tr class="{$fielddispclass__idEstudiante}" data-fieldname="_idEstudiante">
 	<td class="rnr-label">
@@ -70,6 +60,16 @@
 	</td>
 </tr>
 {END _idEstudiante_fieldblock}
+	{BEGIN TSocial_fieldblock}
+<tr class="{$fielddispclass_TSocial}" data-fieldname="TSocial">
+	<td class="rnr-label">
+		{BEGIN TSocial_label}{$label lcs_tiposocial TSocial}{END TSocial_label}
+	</td>
+	<td class="rnr-control style3">
+		{$TSocial_editcontrol}&nbsp;
+	</td>
+</tr>
+{END TSocial_fieldblock}
 </table></div>
 
 

@@ -50,16 +50,6 @@
 
 
 <div  class="rnr-brickcontents style1 rnr-b-addfields {$brickclass_addfields}"><table class="fieldGrid">
-	{BEGIN TipoEmocion_fieldblock}
-<tr class="{$fielddispclass_TipoEmocion}" data-fieldname="TipoEmocion">
-	<td class="rnr-label">
-		{BEGIN TipoEmocion_label}{$label lcs_emociones TipoEmocion}{END TipoEmocion_label}
-	</td>
-	<td class="rnr-control style3">
-		{$TipoEmocion_editcontrol}&nbsp;
-	</td>
-</tr>
-{END TipoEmocion_fieldblock}
 	{BEGIN _idEstudiante_fieldblock}
 <tr class="{$fielddispclass__idEstudiante}" data-fieldname="_idEstudiante">
 	<td class="rnr-label">
@@ -70,6 +60,16 @@
 	</td>
 </tr>
 {END _idEstudiante_fieldblock}
+	{BEGIN TipoEmocion_fieldblock}
+<tr class="{$fielddispclass_TipoEmocion}" data-fieldname="TipoEmocion">
+	<td class="rnr-label">
+		{BEGIN TipoEmocion_label}{$label lcs_emociones TipoEmocion}{END TipoEmocion_label}
+	</td>
+	<td class="rnr-control style3">
+		{$TipoEmocion_editcontrol}&nbsp;
+	</td>
+</tr>
+{END TipoEmocion_fieldblock}
 </table></div>
 
 

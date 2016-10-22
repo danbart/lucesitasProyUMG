@@ -9,11 +9,13 @@ require_once("classes/sql.php");
 
 require_once("include/lcs_medicamento_variables.php");
 
+if( !Security::processPageSecurity( $strtablename, 'E' ) )
+	return;
 
 
 
 
-$layout = new TLayout("export2", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("export2", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["top"] = array();
 $layout->containers["export"] = array();

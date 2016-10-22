@@ -109,7 +109,7 @@ if (!isMobile())
 else 
 	$tdatalcs_terapista[".listAjax"] = false;
 
-	$tdatalcs_terapista[".audit"] = false;
+	$tdatalcs_terapista[".audit"] = true;
 
 	$tdatalcs_terapista[".locking"] = false;
 

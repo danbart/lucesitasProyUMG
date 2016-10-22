@@ -11,6 +11,8 @@ if( @$_REQUEST["format"] != "excel" && @$_REQUEST["format"] != "word" )
 require_once("include/TranstornosSueno_variables.php");
 
 
+if( !Security::processPageSecurity( $strTableName, 'P' ) )
+	return;
 
 	
 require_once('classes/reportpage.php');
@@ -19,7 +21,7 @@ require_once('classes/reportprintpage.php');
 
 
 
-$layout = new TLayout("report_print", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("report_print", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["top"] = array();
 $layout->containers["master"] = array();
@@ -163,7 +165,7 @@ if($mastertable == "lcs_estudiante")
 	
 
 
-$layout = new TLayout("masterprint", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("masterprint", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["bare"] = array();
 $layout->containers["masterlistheader"] = array();

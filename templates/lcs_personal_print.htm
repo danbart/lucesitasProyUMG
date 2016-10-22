@@ -31,9 +31,6 @@
 <div  class="style1 rnr-bl rnr-b-printbuttons {$brickclass_printbuttons}">{BEGIN divideintopages_block}
 <a href="#" class="divideintopages rnr-button button" {$divideintopages_attrs}>Prepare for printing</a>
 {END divideintopages_block}
-{BEGIN pdflink_block}
-<a href="#" class="pdflink rnr-button button" {$pdflink_attrs}>Vista PDF</a>
-{END pdflink_block}
 </div>
 {END printbuttons}
 
@@ -97,13 +94,6 @@
 	{END idUsuario_fieldheader}
 </th>
 {END idUsuario_fieldheadercolumn}
-	{BEGIN TipoUsuario_fieldheadercolumn}
-<th class="runner-cc {$TipoUsuario_class}" {$TipoUsuario_style}>
-	{BEGIN TipoUsuario_fieldheader}
-	<b>{$label lcs_personal TipoUsuario}</b>
-	{END TipoUsuario_fieldheader}
-</th>
-{END TipoUsuario_fieldheadercolumn}
 	{BEGIN Nombre_fieldheadercolumn}
 <th class="runner-cc {$Nombre_class}" {$Nombre_style}>
 	{BEGIN Nombre_fieldheader}
@@ -132,13 +122,6 @@
 	{END Email_fieldheader}
 </th>
 {END Email_fieldheadercolumn}
-	{BEGIN Password_fieldheadercolumn}
-<th class="runner-cc {$Password_class}" {$Password_style}>
-	{BEGIN Password_fieldheader}
-	<b>{$label lcs_personal Password}</b>
-	{END Password_fieldheader}
-</th>
-{END Password_fieldheadercolumn}
 	{BEGIN celular_fieldheadercolumn}
 <th class="runner-cc {$celular_class}" {$celular_style}>
 	{BEGIN celular_fieldheader}
@@ -186,11 +169,6 @@
 	{$idUsuario_value}
 </td>
 {END idUsuario_fieldcolumn}
-	{BEGIN TipoUsuario_fieldcolumn}
-<td  class="runner-cc {$TipoUsuario_class}" {$TipoUsuario_style} {$recordattrs}>
-	{$TipoUsuario_value}
-</td>
-{END TipoUsuario_fieldcolumn}
 	{BEGIN Nombre_fieldcolumn}
 <td  class="runner-cc {$Nombre_class}" {$Nombre_style} {$recordattrs}>
 	{$Nombre_value}
@@ -211,11 +189,6 @@
 	{$Email_value}
 </td>
 {END Email_fieldcolumn}
-	{BEGIN Password_fieldcolumn}
-<td  class="runner-cc {$Password_class}" {$Password_style} {$recordattrs}>
-	{$Password_value}
-</td>
-{END Password_fieldcolumn}
 	{BEGIN celular_fieldcolumn}
 <td  class="runner-cc {$celular_class}" {$celular_style} {$recordattrs}>
 	{$celular_value}

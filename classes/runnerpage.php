@@ -962,6 +962,7 @@ class RunnerPage
 			|| ( $this->pageType == PAGE_REPORT && $this->mode === REPORT_SIMPLE || $this->pageType == PAGE_CHART && $this->mode == CHART_SIMPLE ) )
 		{
 			$this->buildFilterPanel();
+			$this->initLogin();
 		}
 	}	
 	
@@ -983,6 +984,50 @@ class RunnerPage
 		$this->cipherer = new RunnerCipherer($this->tName, $this->pSet);
 	}
 	
+	/**
+	 * Init login form
+	 */
+	function initLogin()
+	{
+		$this->settingsMap["globalSettings"]["loginFormType"] = GetGlobalData("nLoginForm", 0);
+		
+		$this->xt->assign("security_block", true);
+		// The user might rewrite $_SESSION["UserName"] value with HTML code in an event, so no encoding will be performed while printing this value.
+		$this->xt->assign("username", $_SESSION["UserName"]);
+		$this->xt->assign("logoutlink_attrs", 'id="logoutButton'.$this->id.'"');
+		
+		$loggedAsGuest = isLoggedAsGuest();
+		$this->xt->assign("loggedas_message", !$loggedAsGuest); 
+		$this->xt->assign("guestloginbutton", $loggedAsGuest);
+		$this->xt->assign("logoutbutton", isSingleSign() && !$loggedAsGuest);
+		
+		if(isMobile())
+		{
+			$this->xt->assign("guestloginlink_attrs", 'id="loginButton'.$this->id.'"');
+			return;
+		}
+		
+		$this->xt->assign("guestloginlink_attrs", 'id="loginButton'.$this->id.'"');
+			return;
+	}
+	
+	/**
+	 * Makes assigns for admin
+	 */
+	function assignAdmin() 
+	{
+		if($this->isAdminTable()) 
+		{
+			$this->xt->assign("exitadminarea_link", true);
+			$this->xt->assign("exitaalink_attrs", "id=\"exitAdminArea".$this->id."\"");
+		}
+		
+		if($this->isDynamicPerm && IsAdmin()) 
+		{
+			$this->xt->assign("adminarea_link", true);
+			$this->xt->assign("adminarealink_attrs", "id=\"adminArea".$this->id."\"");
+		}
+	}
 	
 	protected function assignSessionPrefix()
 	{
@@ -2925,7 +2970,8 @@ class RunnerPage
 			$this->AddJSFile("include/runnerJS/pages/MembersPage.js", "include/runnerJS/pages/CheckboxesPage.js");
 			$this->AddJSFile("include/runnerJS/pages/RightsPage.js", "include/runnerJS/pages/CheckboxesPage.js");
 			
-				$this->AddJSFile("include/runnerJS/pages/ExportPage.js", "include/runnerJS/pages/RunnerPage.js");
+				$this->AddJSFile("include/runnerJS/pages/ChangePwdPage.js", "include/runnerJS/pages/RunnerPage.js");
+			$this->AddJSFile("include/runnerJS/pages/ExportPage.js", "include/runnerJS/pages/RunnerPage.js");
 			$this->AddJSFile("include/runnerJS/pages/ImportPage.js", "include/runnerJS/pages/RunnerPage.js");
 			$this->AddJSFile("include/runnerJS/pages/RegisterPage.js", "include/runnerJS/pages/RunnerPage.js");
 						

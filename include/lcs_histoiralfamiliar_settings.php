@@ -23,7 +23,7 @@ if(mlang_getcurrentlang()=="Spanish")
 	$pageTitleslcs_histoiralfamiliar["Spanish"] = array();
 	$fieldLabelslcs_histoiralfamiliar["Spanish"]["idHistoiralFamiliar"] = "No.";
 	$fieldToolTipslcs_histoiralfamiliar["Spanish"]["idHistoiralFamiliar"] = "";
-	$fieldLabelslcs_histoiralfamiliar["Spanish"]["CQNinio"] = "CQNinio";
+	$fieldLabelslcs_histoiralfamiliar["Spanish"]["CQNinio"] = "Con Quien Duerme el Niño";
 	$fieldToolTipslcs_histoiralfamiliar["Spanish"]["CQNinio"] = "";
 	$fieldLabelslcs_histoiralfamiliar["Spanish"]["FProblematico"] = "Familiar Problematico";
 	$fieldToolTipslcs_histoiralfamiliar["Spanish"]["FProblematico"] = "";
@@ -109,7 +109,7 @@ if (!isMobile())
 else 
 	$tdatalcs_histoiralfamiliar[".listAjax"] = false;
 
-	$tdatalcs_histoiralfamiliar[".audit"] = false;
+	$tdatalcs_histoiralfamiliar[".audit"] = true;
 
 	$tdatalcs_histoiralfamiliar[".locking"] = false;
 
@@ -295,12 +295,12 @@ $tdatalcs_histoiralfamiliar[".viewFields"][] = "Ingresado";
 $tdatalcs_histoiralfamiliar[".viewFields"][] = "_idEstudiante";
 
 $tdatalcs_histoiralfamiliar[".addFields"] = array();
+$tdatalcs_histoiralfamiliar[".addFields"][] = "_idEstudiante";
 $tdatalcs_histoiralfamiliar[".addFields"][] = "CQNinio";
 $tdatalcs_histoiralfamiliar[".addFields"][] = "FProblematico";
 $tdatalcs_histoiralfamiliar[".addFields"][] = "DuermeSolo";
 $tdatalcs_histoiralfamiliar[".addFields"][] = "ComparteCuarto";
 $tdatalcs_histoiralfamiliar[".addFields"][] = "ParineteIgual";
-$tdatalcs_histoiralfamiliar[".addFields"][] = "_idEstudiante";
 
 $tdatalcs_histoiralfamiliar[".inlineAddFields"] = array();
 

@@ -13,6 +13,10 @@ if (!checkTableName($table))
 
 require_once("include/".$table."_variables.php");
 
+if(!isLogged())
+	return;
+if(!CheckSecurity(@$_SESSION["_".$strTableName."_OwnerID"],"Search"))
+	return;
 
 
 $searchFor = postvalue('searchFor');

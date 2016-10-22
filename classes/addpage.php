@@ -356,6 +356,14 @@ class AddPage extends RunnerPage
 			$control->readWebValue($avalues, $blobfields, NULL, NULL, $afilename_values);			
 		}		
 
+		$securityType = $this->pSet->getAdvancedSecurityType();
+		if( !$this->isAdminTable() && ($securityType == ADVSECURITY_EDIT_OWN || $securityType == ADVSECURITY_VIEW_OWN) )
+		{
+			$tableOwnerIdField = $this->pSet->getTableOwnerIdField();
+			// insert owner id value if it exists an It hasn't already set by user
+			if( $this->checkIfToAddOwnerIdValue( $tableOwnerIdField, $avalues[ $tableOwnerIdField ] ) )
+				$avalues[ $tableOwnerIdField ] = prepare_for_db( $tableOwnerIdField, $_SESSION["_".$this->tName."_OwnerID"] );		
+		}
 		$masterTables = $this->pSet->getMasterTablesArr( $this->tName );
 		// insert master key value if exists and if not specified
 		foreach( $masterTables as $mTableData )
@@ -663,7 +671,10 @@ class AddPage extends RunnerPage
 		if( count($this->keys) )
 		{
 			$where = $this->keysSQLExpression($this->keys);						
-				
+				//	select only owned records
+			if( $this->pSet->getAdvancedSecurityType() != ADVSECURITY_ALL )
+				$where = whereAdd($where, SecuritySQL("Search"));
+			
 			if( $this->mode == ADD_INLINE && $this->forListPageWithSearch )
 			{
 				$addedData = $this->GetAddedDataLookupQuery( true, $this->mainTable, $this->mainField, $this->mainPageType );
@@ -776,7 +787,10 @@ class AddPage extends RunnerPage
 				if( count($this->keys) )
 				{
 					$where = KeyWhere($this->keys);
-								$strSQL = $this->gQuery->gSQLWhere($where);
+								//	select only owned records
+					if( $this->pSet->getAdvancedSecurityType() != ADVSECURITY_ALL )
+						$where = whereAdd($where, SecuritySQL("Search"));
+					$strSQL = $this->gQuery->gSQLWhere($where);
 					LogInfo($strSQL);
 
 					$data = $this->cipherer->DecryptFetchedArray( $this->connection->query( $strSQL )->fetchAssoc() );
@@ -848,7 +862,9 @@ class AddPage extends RunnerPage
 			}
 
 			$strWhere = KeyWhere( $copykeys );
-				$strSQL = $this->gQuery->gSQLWhere( $strWhere );
+				if( $this->pSet->getAdvancedSecurityType() != ADVSECURITY_ALL )
+				$strWhere = whereAdd( $strWhere, SecuritySQL("Search") );
+			$strSQL = $this->gQuery->gSQLWhere( $strWhere );
 			
 			$this->defvalues = $this->cipherer->DecryptFetchedArray( $this->connection->query( $strSQL )->fetchAssoc() );
 			if( !$this->defvalues )
@@ -880,6 +896,14 @@ class AddPage extends RunnerPage
 			}
 		}
 
+		$securityType = $this->pSet->getAdvancedSecurityType();
+		if( !$this->isAdminTable() && ($securityType == ADVSECURITY_EDIT_OWN || $securityType == ADVSECURITY_VIEW_OWN) )
+		{
+			$tableOwnerIdField = $this->pSet->getTableOwnerIdField();
+			// insert default owner id value if exists			
+			if( $this->checkIfToAddOwnerIdValue( $tableOwnerIdField, '' ) )	
+				$this->defvalues[ $tableOwnerIdField ] = prepare_for_db( $tableOwnerIdField, $_SESSION["_".$this->tName."_OwnerID"] );		
+		}
 
 		$masterTables = $this->pSet->getMasterTablesArr( $this->tName );
 		// set default values for the foreign keys

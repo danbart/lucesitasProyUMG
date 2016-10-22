@@ -12,11 +12,13 @@ add_nocache_headers();
 
 $pageMode = ViewPage::readViewModeFromRequest();
 
+if( !Security::processPageSecurity( $strTableName, "S", $pageMode != VIEW_SIMPLE ) )
+	return;
 
 
 
 
-$layout = new TLayout("view2", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("view2", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["top"] = array();
 $layout->containers["all"] = array();

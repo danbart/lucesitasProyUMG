@@ -8,6 +8,8 @@ add_nocache_headers();
 
 require_once("include/RepEstudMed_variables.php");
 
+if( !Security::processPageSecurity( $strTableName, 'S' ) )
+	return;
 
 require_once('classes/reportpage.php');
 require_once('classes/searchclause.php');
@@ -15,7 +17,7 @@ require_once('classes/searchclause.php');
 
 
 
-$layout = new TLayout("report2", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("report2", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["center"] = array();
 $layout->containers["message"] = array();
@@ -45,6 +47,9 @@ $layout->blocks["center"][] = "pagination";
 $layout->blocks["left"] = array();
 $layout->containers["left"] = array();
 $layout->container_properties["left"] = array(  );
+$layout->containers["left"][] = array("name"=>"loggedas", 
+	"block"=>"security_block", "substyle"=>1  );
+
 $layout->containers["left"][] = array("name"=>"vmenu", 
 	"block"=>"menu_block", "substyle"=>1  );
 
@@ -119,7 +124,7 @@ $layout->skinsparams["3"] = array("button"=>"button1");
 
 
 
-$layout = new TLayout("masterlist", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("masterlist", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["bare"] = array();
 $layout->containers["masterlistheader"] = array();

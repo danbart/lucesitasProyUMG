@@ -1,0 +1,6 @@
+[13-Oct-2016 21:13:02 UTC] PHP Warning:  require_once(include/dbcommon.php): failed to open stream: No such file or directory in /home/u599985291/public_html/menu.php on line 6
+[13-Oct-2016 21:13:02 UTC] PHP Fatal error:  require_once(): Failed opening required 'include/dbcommon.php' (include_path='.:/opt/php-5.5/pear') in /home/u599985291/public_html/menu.php on line 6
+[13-Oct-2016 21:20:53 UTC] PHP Warning:  require_once(include/dbcommon.php): failed to open stream: No such file or directory in /home/u599985291/public_html/menu.php on line 6
+[13-Oct-2016 21:20:53 UTC] PHP Fatal error:  require_once(): Failed opening required 'include/dbcommon.php' (include_path='.:/opt/php-5.5/pear') in /home/u599985291/public_html/menu.php on line 6
+[13-Oct-2016 22:18:40 UTC] PHP Fatal error:  Access denied for user 'root'@'10.2.1.24' (using password: YES) in /home/u599985291/public_html/connections/MySQLiConnection.php on line 84
+[13-Oct-2016 22:40:37 UTC] PHP Fatal error:  Access denied for user 'root'@'10.2.1.24' (using password: YES) in /home/u599985291/public_html/connections/MySQLiConnection.php on line 84

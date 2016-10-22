@@ -1191,8 +1191,6 @@ class CrossTableReport
 			$isDB = true;
 		if("" == $this->xml_array['tables'][0])
 			$isDB = true;
-		if("" == $this->xml_array['tables'][0])
-			$isDB = true;
 		if("lcs_terapias" == $this->xml_array['tables'][0])
 			$isDB = true;
 		if("lcs_terapista" == $this->xml_array['tables'][0])
@@ -1227,8 +1225,6 @@ class CrossTableReport
 			$isDB = true;
 		if("lcs_donaciones" == $this->xml_array['tables'][0])
 			$isDB = true;
-		if("lcs_sesion" == $this->xml_array['tables'][0])
-			$isDB = true;
 		if("lcs_estudiante" == $this->xml_array['tables'][0])
 			$isDB = true;
 		if("lcs_estudiante" == $this->xml_array['tables'][0])
@@ -1248,6 +1244,12 @@ class CrossTableReport
 		if("lcs_estudiante" == $this->xml_array['tables'][0])
 			$isDB = true;
 		if("lcs_estudiante" == $this->xml_array['tables'][0])
+			$isDB = true;
+		if("lcs_userslogin" == $this->xml_array['tables'][0])
+			$isDB = true;
+		if("proylucesitasv80_audit" == $this->xml_array['tables'][0])
+			$isDB = true;
+		if("lcs_personal" == $this->xml_array['tables'][0])
 			$isDB = true;
 		return $isDB;
 	}

@@ -93,7 +93,7 @@ if (!isMobile())
 else 
 	$tdatalcs_enfermedades[".listAjax"] = false;
 
-	$tdatalcs_enfermedades[".audit"] = false;
+	$tdatalcs_enfermedades[".audit"] = true;
 
 	$tdatalcs_enfermedades[".locking"] = false;
 
@@ -255,8 +255,8 @@ $tdatalcs_enfermedades[".viewFields"][] = "Ingresado";
 $tdatalcs_enfermedades[".viewFields"][] = "_idEstudiante";
 
 $tdatalcs_enfermedades[".addFields"] = array();
-$tdatalcs_enfermedades[".addFields"][] = "TipoEnfermedad";
 $tdatalcs_enfermedades[".addFields"][] = "_idEstudiante";
+$tdatalcs_enfermedades[".addFields"][] = "TipoEnfermedad";
 
 $tdatalcs_enfermedades[".inlineAddFields"] = array();
 

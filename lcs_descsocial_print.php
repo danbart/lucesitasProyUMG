@@ -11,11 +11,13 @@ add_nocache_headers();
 
 require_once("include/lcs_descsocial_variables.php");
 
+if( !Security::processPageSecurity( $strtablename, 'P' ) )
+	return;
 
 
 
 
-$layout = new TLayout("print", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("print", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["center"] = array();
 $layout->containers["pageheader"] = array();
@@ -72,7 +74,7 @@ $layout->skinsparams["3"] = array("button"=>"button1");
 	
 
 
-$layout = new TLayout("masterprint", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("masterprint", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["bare"] = array();
 $layout->containers["masterlistheader"] = array();
@@ -108,7 +110,7 @@ $layout->skinsparams["3"] = array("button"=>"button1");
 	
 
 
-$layout = new TLayout("masterprint", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("masterprint", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["bare"] = array();
 $layout->containers["masterlistheader"] = array();
@@ -144,7 +146,7 @@ $layout->skinsparams["3"] = array("button"=>"button1");
 	
 
 
-$layout = new TLayout("masterprint", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("masterprint", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["bare"] = array();
 $layout->containers["masterlistheader"] = array();
@@ -180,7 +182,7 @@ $layout->skinsparams["3"] = array("button"=>"button1");
 	
 
 
-$layout = new TLayout("masterprint", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("masterprint", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["bare"] = array();
 $layout->containers["masterlistheader"] = array();
@@ -216,7 +218,7 @@ $layout->skinsparams["3"] = array("button"=>"button1");
 	
 
 
-$layout = new TLayout("masterprint", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("masterprint", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["bare"] = array();
 $layout->containers["masterlistheader"] = array();
@@ -252,7 +254,7 @@ $layout->skinsparams["3"] = array("button"=>"button1");
 	
 
 
-$layout = new TLayout("masterprint", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("masterprint", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["bare"] = array();
 $layout->containers["masterlistheader"] = array();
@@ -288,7 +290,7 @@ $layout->skinsparams["3"] = array("button"=>"button1");
 	
 
 
-$layout = new TLayout("masterprint", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("masterprint", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["bare"] = array();
 $layout->containers["masterlistheader"] = array();

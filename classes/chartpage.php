@@ -127,6 +127,14 @@ class ChartPage extends RunnerPage
 		
 		$this->assignChartElement();
 		
+		if( $this->isDynamicPerm && IsAdmin() ) 
+		{
+			$this->xt->assign("adminarea_link", true);
+			$this->xt->assign("adminarealink_attrs", "id=\"adminArea".$id."\"");
+		}
+
+		$this->xt->assign("changepwd_link", $_SESSION["AccessLevel"] != ACCESS_LEVEL_GUEST && $_SESSION["fromFacebook"] == false);
+		$this->xt->assign("changepwdlink_attrs", "onclick=\"window.location.href='".GetTableLink("changepwd")."';return false;\"");
 		
 		$this->body['begin'].= GetBaseScriptsForPage( $this->isDisplayLoading );
 		if( !isMobile() )

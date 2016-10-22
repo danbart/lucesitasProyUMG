@@ -40,7 +40,6 @@ function InitLookupLinks()
 
 	$lookupTableLinks = array();
 
-	$lookupTableLinks["lcs_centro"]["lcs_personal._idCentro"]["edit"] = array("table" => "lcs_personal", "field" => "_idCentro", "page" => "edit");
 	$lookupTableLinks["lcs_centro"]["lcs_estudiante._idCentro"]["edit"] = array("table" => "lcs_estudiante", "field" => "_idCentro", "page" => "edit");
 	$lookupTableLinks["lcs_estudiante"]["lcs_terapias._idEstudiante"]["edit"] = array("table" => "lcs_terapias", "field" => "_idEstudiante", "page" => "edit");
 	$lookupTableLinks["lcs_terapista"]["lcs_terapias._idterapista"]["edit"] = array("table" => "lcs_terapias", "field" => "_idterapista", "page" => "edit");
@@ -58,7 +57,7 @@ function InitLookupLinks()
 	$lookupTableLinks["lcs_estudiante"]["lcs_encargado._idEstudiante"]["edit"] = array("table" => "lcs_encargado", "field" => "_idEstudiante", "page" => "edit");
 	$lookupTableLinks["lcs_estudiante"]["lcs_emociones._idEstudiante"]["edit"] = array("table" => "lcs_emociones", "field" => "_idEstudiante", "page" => "edit");
 	$lookupTableLinks["lcs_enfermedades"]["lcs_medicamento._idEnfermedades"]["edit"] = array("table" => "lcs_medicamento", "field" => "_idEnfermedades", "page" => "edit");
-	$lookupTableLinks["lcs_personal"]["lcs_sesion.l_idUsuario"]["edit"] = array("table" => "lcs_sesion", "field" => "l_idUsuario", "page" => "edit");
+	$lookupTableLinks["lcs_centro"]["lcs_personal._idCentro"]["edit"] = array("table" => "lcs_personal", "field" => "_idCentro", "page" => "edit");
 }
 
 ?>

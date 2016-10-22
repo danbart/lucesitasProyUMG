@@ -93,7 +93,7 @@ if (!isMobile())
 else 
 	$tdatalcs_emociones[".listAjax"] = false;
 
-	$tdatalcs_emociones[".audit"] = false;
+	$tdatalcs_emociones[".audit"] = true;
 
 	$tdatalcs_emociones[".locking"] = false;
 
@@ -254,8 +254,8 @@ $tdatalcs_emociones[".viewFields"][] = "Ingresado";
 $tdatalcs_emociones[".viewFields"][] = "_idEstudiante";
 
 $tdatalcs_emociones[".addFields"] = array();
-$tdatalcs_emociones[".addFields"][] = "TipoEmocion";
 $tdatalcs_emociones[".addFields"][] = "_idEstudiante";
+$tdatalcs_emociones[".addFields"][] = "TipoEmocion";
 
 $tdatalcs_emociones[".inlineAddFields"] = array();
 

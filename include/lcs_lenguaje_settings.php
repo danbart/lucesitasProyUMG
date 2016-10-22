@@ -105,7 +105,7 @@ if (!isMobile())
 else 
 	$tdatalcs_lenguaje[".listAjax"] = false;
 
-	$tdatalcs_lenguaje[".audit"] = false;
+	$tdatalcs_lenguaje[".audit"] = true;
 
 	$tdatalcs_lenguaje[".locking"] = false;
 
@@ -281,11 +281,11 @@ $tdatalcs_lenguaje[".viewFields"][] = "Ingresado";
 $tdatalcs_lenguaje[".viewFields"][] = "_idEstudiante";
 
 $tdatalcs_lenguaje[".addFields"] = array();
+$tdatalcs_lenguaje[".addFields"][] = "_idEstudiante";
 $tdatalcs_lenguaje[".addFields"][] = "Balbucea";
 $tdatalcs_lenguaje[".addFields"][] = "Edad1Palabra";
 $tdatalcs_lenguaje[".addFields"][] = "EdadMesVocalizo";
 $tdatalcs_lenguaje[".addFields"][] = "AdaptSocial";
-$tdatalcs_lenguaje[".addFields"][] = "_idEstudiante";
 
 $tdatalcs_lenguaje[".inlineAddFields"] = array();
 

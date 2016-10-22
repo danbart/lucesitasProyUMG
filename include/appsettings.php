@@ -326,14 +326,21 @@ define("PDF_PAGE_WIDTH", 750);
 define("PDF_PAGE_HEIGHT", 1060);
 
 $globalSettings = array();
-$globalSettings["nLoginForm"] = 0;
-$globalSettings["nLoginMethod"] = -1;
+$globalSettings["nLoginForm"] = 1;
+$globalSettings["nLoginMethod"] = 1;
 
 $globalSettings["popupPagesLayoutNames"] = array();
+if(!isMobile())
+{
+						
+	;
+$globalSettings["popupPagesLayoutNames"]["login"] = "login2";
+}
 
 
 
 
+$globalSettings["createLoginPage"] = true;
 $globalSettings["isUseEncryption"] = 0;
 $globalSettings["encryptionKey"] = "";
 
@@ -342,6 +349,11 @@ $globalSettings["apiGoogleMapsCode"] = "";
 
 $globalSettings["useBuiltInMailer"] = false;
 
+//password global settings for register page
+$globalSettings["pwdStrong"] = true;
+$globalSettings["pwdLen"] = 8;
+$globalSettings["pwdUnique"] = 4;
+$globalSettings["pwdDigits"] = 2;
 
 /**
  * If true then detail table name will be printed before detail table on the view page 
@@ -381,16 +393,16 @@ $globalSettings["openPDFFileDirectly"] = true;
 $globalSettings["override"] = array();
 
 
-$wr_pagestylepath = "FusionAvenue";
+$wr_pagestylepath = "FancyCoral";
 $wr_is_standalone = false;
 $WRAdminPagePassword = "";
 
-$cLoginTable = "";
-$cDisplayNameField = "";
-$cUserNameField	= "";
-$cPasswordField	= "";
-$cUserGroupField = "";
-$cEmailField = "";
+$cLoginTable = "lcs_userslogin";
+$cDisplayNameField = "fullname";
+$cUserNameField	= "username";
+$cPasswordField	= "password";
+$cUserGroupField = "groupid";
+$cEmailField = "email";
 
 if ($cDisplayNameField == ''){
 	$cDisplayNameField = $cUserNameField;
@@ -402,7 +414,10 @@ $cPasswordFieldType	= 200;
 $cEmailFieldType = 200;
 $useFlashChartLibrary = true;
 
-
+												$cUserNameFieldType	= 200;
+												$cPasswordFieldType	= 200;
+												$cEmailFieldType = 200;
+																											
 
 $useAJAX = true;
 $suggestAllContent = true;
@@ -434,7 +449,6 @@ $menuStyles[] = $menuStyle;
 $tableCaptions = array();
 $tableCaptions["Spanish"] = array();
 $tableCaptions["Spanish"]["lcs_centro"] = "Centro";
-$tableCaptions["Spanish"]["lcs_personal"] = "Personal";
 $tableCaptions["Spanish"]["lcs_estudiante"] = "Estudiante";
 $tableCaptions["Spanish"][""] = "";
 $tableCaptions["Spanish"][""] = "";
@@ -455,7 +469,6 @@ $tableCaptions["Spanish"]["lcs_encargado"] = "Encargado";
 $tableCaptions["Spanish"]["lcs_emociones"] = "Emociones";
 $tableCaptions["Spanish"]["lcs_medicamento"] = "Medicamento";
 $tableCaptions["Spanish"]["lcs_donaciones"] = "Donaciones";
-$tableCaptions["Spanish"]["lcs_sesion"] = "Lcs Sesion";
 $tableCaptions["Spanish"]["Reporte_Estudiantes"] = "Reporte Estudiantes";
 $tableCaptions["Spanish"]["RepEstudMed"] = "Rep Estud Med";
 $tableCaptions["Spanish"]["EstuHistSocial"] = "Estu Hist Social";
@@ -466,11 +479,13 @@ $tableCaptions["Spanish"]["TranstornosSueno"] = "Transtornos Sueno";
 $tableCaptions["Spanish"]["EstuHistEmoci"] = "Estu Hist Emoci";
 $tableCaptions["Spanish"]["EstuHistEmbarazo"] = "Estu Hist Embarazo";
 $tableCaptions["Spanish"]["EstuHistCaracter"] = "Estu Hist Caracter";
+$tableCaptions["Spanish"]["lcs_userslogin"] = "Lcs Userslogin";
+$tableCaptions["Spanish"]["proylucesitasv80_audit"] = "Proylucesitasv80 Audit";
+$tableCaptions["Spanish"]["lcs_personal"] = "Personal";
 $tableCaptions[""] = array();
 $tableCaptions[""][""] = "";
 $tableCaptions[""]["lcs_centro"] = "Lcs Centro";
 $tableCaptions[""]["lcs_estudiante"] = "Lcs Estudiante";
-$tableCaptions[""]["lcs_personal"] = "Lcs Personal";
 $tableCaptions[""]["lcs_terapias"] = "Lcs Terapias";
 $tableCaptions[""]["lcs_terapista"] = "Lcs Terapista";
 $tableCaptions[""]["lcs_tiposocial"] = "Lcs Tiposocial";
@@ -488,7 +503,6 @@ $tableCaptions[""]["lcs_encargado"] = "Lcs Encargado";
 $tableCaptions[""]["lcs_emociones"] = "Lcs Emociones";
 $tableCaptions[""]["lcs_medicamento"] = "Lcs Medicamento";
 $tableCaptions[""]["lcs_donaciones"] = "Lcs Donaciones";
-$tableCaptions[""]["lcs_sesion"] = "Lcs Sesion";
 $tableCaptions[""]["Reporte_Estudiantes"] = "Reporte Estudiantes";
 $tableCaptions[""]["RepEstudMed"] = "Rep Estud Med";
 $tableCaptions[""]["EstuHistSocial"] = "Estu Hist Social";
@@ -499,6 +513,9 @@ $tableCaptions[""]["TranstornosSueno"] = "Transtornos Sueno";
 $tableCaptions[""]["EstuHistEmoci"] = "Estu Hist Emoci";
 $tableCaptions[""]["EstuHistEmbarazo"] = "Estu Hist Embarazo";
 $tableCaptions[""]["EstuHistCaracter"] = "Estu Hist Caracter";
+$tableCaptions[""]["lcs_userslogin"] = "Lcs Userslogin";
+$tableCaptions[""]["proylucesitasv80_audit"] = "Proylucesitasv80 Audit";
+$tableCaptions[""]["lcs_personal"] = "Lcs Personal";
 
 
 $globalEvents = new class_GlobalEvents;
@@ -523,10 +540,15 @@ $cman = new ConnectionManager();
 // default connection link #9875
 $conn = $cman->getDefault()->conn;
 
+$scriptname = getFileNameFromURL();
+	if(!isLogged() && $scriptname!="login.php" && $scriptname!="remind.php" && $scriptname!="register.php")
+{
+	Security::doGuestLogin();
+}
 
 
 
-$isGroupSecurity = false;
+$isGroupSecurity = true;
 
 $isUseRTEBasic = true;
 

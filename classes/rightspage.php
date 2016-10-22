@@ -438,6 +438,8 @@ class RightsPage extends ListPage
 		$this->addCommonHtml();
 		// Set common assign
 		$this->commonAssign();
+		// build admin block
+		$this->assignAdmin();
 
 	}
 	

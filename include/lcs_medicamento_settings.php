@@ -109,7 +109,7 @@ if (!isMobile())
 else 
 	$tdatalcs_medicamento[".listAjax"] = false;
 
-	$tdatalcs_medicamento[".audit"] = false;
+	$tdatalcs_medicamento[".audit"] = true;
 
 	$tdatalcs_medicamento[".locking"] = false;
 
@@ -291,12 +291,12 @@ $tdatalcs_medicamento[".viewFields"][] = "Ingresado";
 $tdatalcs_medicamento[".viewFields"][] = "_idEnfermedades";
 
 $tdatalcs_medicamento[".addFields"] = array();
+$tdatalcs_medicamento[".addFields"][] = "_idEnfermedades";
 $tdatalcs_medicamento[".addFields"][] = "TipoMedicamento";
 $tdatalcs_medicamento[".addFields"][] = "NombreMed";
 $tdatalcs_medicamento[".addFields"][] = "dias";
 $tdatalcs_medicamento[".addFields"][] = "Hora";
 $tdatalcs_medicamento[".addFields"][] = "Dosis";
-$tdatalcs_medicamento[".addFields"][] = "_idEnfermedades";
 
 $tdatalcs_medicamento[".inlineAddFields"] = array();
 
@@ -541,6 +541,7 @@ $tdatalcs_medicamento[".printFields"][] = "_idEnfermedades";
 		
 		
 		$edata["LookupValues"] = array();
+	$edata["LookupValues"][] = "Ninguno";
 	$edata["LookupValues"][] = "Aerosoles";
 	$edata["LookupValues"][] = "Candelillas";
 	$edata["LookupValues"][] = "Cataplasma";
@@ -689,7 +690,8 @@ $tdatalcs_medicamento[".printFields"][] = "_idEnfermedades";
 	
 
 
-		
+		$edata["IsRequired"] = true; 
+	
 		
 		
 		
@@ -712,7 +714,8 @@ $tdatalcs_medicamento[".printFields"][] = "_idEnfermedades";
 	$edata["validateAs"] = array();
 	$edata["validateAs"]["basicValidate"] = array();
 	$edata["validateAs"]["customMessages"] = array();
-		
+						$edata["validateAs"]["basicValidate"][] = "IsRequired";
+			
 		
 	//	End validation
 	
@@ -784,7 +787,7 @@ $tdatalcs_medicamento[".printFields"][] = "_idEnfermedades";
 //  Begin View Formats
 	$fdata["ViewFormats"] = array();
 	
-	$vdata = array("ViewFormat" => "Checkbox");
+	$vdata = array("ViewFormat" => "");
 	
 		
 		
@@ -797,7 +800,8 @@ $tdatalcs_medicamento[".printFields"][] = "_idEnfermedades";
 		
 		
 		
-		
+		$vdata["NeedEncode"] = true;
+	
 	$fdata["ViewFormats"]["view"] = $vdata;
 //  End View Formats
 

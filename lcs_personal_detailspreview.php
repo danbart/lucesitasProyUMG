@@ -9,6 +9,14 @@ require_once("include/lcs_personal_variables.php");
 
 $mode = postvalue("mode");
 
+if(!isLogged())
+{ 
+	return;
+}
+if(!CheckSecurity(@$_SESSION["_".$strTableName."_OwnerID"],"Search"))
+{
+	return;
+}
 
 require_once("classes/searchclause.php");
 
@@ -21,7 +29,7 @@ $xt = new Xtempl();
 
 
 
-$layout = new TLayout("detailspreview", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("detailspreview", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["bare"] = array();
 $layout->containers["dcount"] = array();
@@ -138,16 +146,6 @@ if($rowcount)
 		$row = array();
 		$keylink = "";
 		$keylink.="&key1=".runner_htmlspecialchars(rawurlencode(@$data["idUsuario"]));
-		$keylink.="&key2=".runner_htmlspecialchars(rawurlencode(@$data["TipoUsuario"]));
-		$keylink.="&key3=".runner_htmlspecialchars(rawurlencode(@$data["Nombre"]));
-		$keylink.="&key4=".runner_htmlspecialchars(rawurlencode(@$data["Apellido"]));
-		$keylink.="&key5=".runner_htmlspecialchars(rawurlencode(@$data["Telefono"]));
-		$keylink.="&key6=".runner_htmlspecialchars(rawurlencode(@$data["Email"]));
-		$keylink.="&key7=".runner_htmlspecialchars(rawurlencode(@$data["Password"]));
-		$keylink.="&key8=".runner_htmlspecialchars(rawurlencode(@$data["celular"]));
-		$keylink.="&key9=".runner_htmlspecialchars(rawurlencode(@$data["Voluntario"]));
-		$keylink.="&key10=".runner_htmlspecialchars(rawurlencode(@$data["Ingresado"]));
-		$keylink.="&key11=".runner_htmlspecialchars(rawurlencode(@$data["_idCentro"]));
 	
 	
 	//	idUsuario - 
@@ -165,21 +163,6 @@ if($rowcount)
 			if($format==FORMAT_NUMBER || IsNumberType($pSet->getFieldType("idUsuario")))
 				$class = ' rnr-field-number';
 			$row["idUsuario_class"] = $class;
-	//	TipoUsuario - 
-			$viewContainer->recId = $recordsCounter;
-		    $value = $viewContainer->showDBValue("TipoUsuario", $data, $keylink);
-			$row["TipoUsuario_value"] = $value;
-			$format = $pSet->getViewFormat("TipoUsuario");
-			$class = "rnr-field-text";
-			if($format==FORMAT_FILE) 
-				$class = ' rnr-field-file'; 
-			if($format==FORMAT_AUDIO)
-				$class = ' rnr-field-audio';
-			if($format==FORMAT_CHECKBOX)
-				$class = ' rnr-field-checkbox';
-			if($format==FORMAT_NUMBER || IsNumberType($pSet->getFieldType("TipoUsuario")))
-				$class = ' rnr-field-number';
-			$row["TipoUsuario_class"] = $class;
 	//	Nombre - 
 			$viewContainer->recId = $recordsCounter;
 		    $value = $viewContainer->showDBValue("Nombre", $data, $keylink);
@@ -240,21 +223,6 @@ if($rowcount)
 			if($format==FORMAT_NUMBER || IsNumberType($pSet->getFieldType("Email")))
 				$class = ' rnr-field-number';
 			$row["Email_class"] = $class;
-	//	Password - 
-			$viewContainer->recId = $recordsCounter;
-		    $value = $viewContainer->showDBValue("Password", $data, $keylink);
-			$row["Password_value"] = $value;
-			$format = $pSet->getViewFormat("Password");
-			$class = "rnr-field-text";
-			if($format==FORMAT_FILE) 
-				$class = ' rnr-field-file'; 
-			if($format==FORMAT_AUDIO)
-				$class = ' rnr-field-audio';
-			if($format==FORMAT_CHECKBOX)
-				$class = ' rnr-field-checkbox';
-			if($format==FORMAT_NUMBER || IsNumberType($pSet->getFieldType("Password")))
-				$class = ' rnr-field-number';
-			$row["Password_class"] = $class;
 	//	celular - 
 			$viewContainer->recId = $recordsCounter;
 		    $value = $viewContainer->showDBValue("celular", $data, $keylink);

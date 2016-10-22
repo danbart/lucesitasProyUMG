@@ -11,6 +11,8 @@ require_once("classes/searchclause.php");
 
 add_nocache_headers();
 
+if( !EditPage::processEditPageSecurity( $strTableName ) )
+	return;
 
 EditPage::handleBrokenRequest();
 
@@ -19,7 +21,7 @@ EditPage::handleBrokenRequest();
 
 
 
-$layout = new TLayout("edit2", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("edit2", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["top"] = array();
 $layout->containers["all"] = array();

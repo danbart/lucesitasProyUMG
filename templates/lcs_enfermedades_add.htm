@@ -50,16 +50,6 @@
 
 
 <div  class="rnr-brickcontents style1 rnr-b-addfields {$brickclass_addfields}"><table class="fieldGrid">
-	{BEGIN TipoEnfermedad_fieldblock}
-<tr class="{$fielddispclass_TipoEnfermedad}" data-fieldname="TipoEnfermedad">
-	<td class="rnr-label">
-		{BEGIN TipoEnfermedad_label}{$label lcs_enfermedades TipoEnfermedad}{END TipoEnfermedad_label}
-	</td>
-	<td class="rnr-control style3">
-		{$TipoEnfermedad_editcontrol}&nbsp;
-	</td>
-</tr>
-{END TipoEnfermedad_fieldblock}
 	{BEGIN _idEstudiante_fieldblock}
 <tr class="{$fielddispclass__idEstudiante}" data-fieldname="_idEstudiante">
 	<td class="rnr-label">
@@ -70,6 +60,16 @@
 	</td>
 </tr>
 {END _idEstudiante_fieldblock}
+	{BEGIN TipoEnfermedad_fieldblock}
+<tr class="{$fielddispclass_TipoEnfermedad}" data-fieldname="TipoEnfermedad">
+	<td class="rnr-label">
+		{BEGIN TipoEnfermedad_label}{$label lcs_enfermedades TipoEnfermedad}{END TipoEnfermedad_label}
+	</td>
+	<td class="rnr-control style3">
+		{$TipoEnfermedad_editcontrol}&nbsp;
+	</td>
+</tr>
+{END TipoEnfermedad_fieldblock}
 </table></div>
 
 

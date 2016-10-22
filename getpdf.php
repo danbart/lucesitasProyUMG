@@ -21,6 +21,17 @@ foreach($tables as $t)
 }
 if(!$tablename)
 	return;
+if(!isLogged())
+{ 
+	HeaderRedirect("login"); 
+	return;
+}
+$strPerm = GetUserPermissions($tablename);
+if(strpos($strPerm,"S")===false && strpos($strPerm,"E")===false)
+{ 
+	HeaderRedirect("login"); 
+	return;
+}
 
 $file = dirname(__FILE__)."/templates_c/".$table.$id.".pdf";
 if(!myfile_exists($file))

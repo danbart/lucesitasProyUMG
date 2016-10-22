@@ -215,6 +215,7 @@ class DashboardPage extends RunnerPage
 		
 		$this->xt->assign("languages_block", true);	
 	
+		$this->assignAdmin();
 	}
 	
 	/**

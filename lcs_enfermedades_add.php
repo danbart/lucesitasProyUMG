@@ -13,13 +13,15 @@ add_nocache_headers();
 
 InitLookupLinks();
 
+if( !AddPage::processAddPageSecurity( $strTableName ) )
+	return;
 
 AddPage::handleBrokenRequest();
 
 
 
 
-$layout = new TLayout("add2", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("add2", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["top"] = array();
 $layout->containers["all"] = array();

@@ -2184,7 +2184,7 @@ class ProjectSettings
 	 */
 	public static function getForLogin()
 	{
-		return null;	
+		return new ProjectSettings("lcs_userslogin", PAGE_LIST);
 	}
 	
 	/** 
@@ -2243,8 +2243,6 @@ function GetTableURL($table = "")
 		$table=$strTableName;
 	if("lcs_centro" == $table) 
 		return "lcs_centro";
-	if("lcs_personal" == $table) 
-		return "lcs_personal";
 	if("lcs_estudiante" == $table) 
 		return "lcs_estudiante";
 	if("lcs_terapias" == $table) 
@@ -2281,8 +2279,6 @@ function GetTableURL($table = "")
 		return "lcs_medicamento";
 	if("lcs_donaciones" == $table) 
 		return "lcs_donaciones";
-	if("lcs_sesion" == $table) 
-		return "lcs_sesion";
 	if("Reporte Estudiantes" == $table) 
 		return "Reporte_Estudiantes";
 	if("RepEstudMed" == $table) 
@@ -2303,6 +2299,12 @@ function GetTableURL($table = "")
 		return "EstuHistEmbarazo";
 	if("EstuHistCaracter" == $table) 
 		return "EstuHistCaracter";
+	if("lcs_userslogin" == $table) 
+		return "lcs_userslogin";
+	if("proylucesitasv80_audit" == $table) 
+		return "proylucesitasv80_audit";
+	if("lcs_personal" == $table) 
+		return "lcs_personal";
 
 	return "";
 }
@@ -2315,8 +2317,6 @@ function GetTableByShort($shortTName = "")
 		return false;
 	if("lcs_centro" == $shortTName) 
 		return "lcs_centro";
-	if("lcs_personal" == $shortTName) 
-		return "lcs_personal";
 	if("lcs_estudiante" == $shortTName) 
 		return "lcs_estudiante";
 	if("lcs_terapias" == $shortTName) 
@@ -2353,8 +2353,6 @@ function GetTableByShort($shortTName = "")
 		return "lcs_medicamento";
 	if("lcs_donaciones" == $shortTName) 
 		return "lcs_donaciones";
-	if("lcs_sesion" == $shortTName) 
-		return "lcs_sesion";
 	if("Reporte_Estudiantes" == $shortTName) 
 		return "Reporte Estudiantes";
 	if("RepEstudMed" == $shortTName) 
@@ -2375,6 +2373,12 @@ function GetTableByShort($shortTName = "")
 		return "EstuHistEmbarazo";
 	if("EstuHistCaracter" == $shortTName) 
 		return "EstuHistCaracter";
+	if("lcs_userslogin" == $shortTName) 
+		return "lcs_userslogin";
+	if("proylucesitasv80_audit" == $shortTName) 
+		return "proylucesitasv80_audit";
+	if("lcs_personal" == $shortTName) 
+		return "lcs_personal";
 }
 
 //	A

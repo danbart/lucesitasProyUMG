@@ -106,7 +106,7 @@ if (!isMobile())
 else 
 	$tdatalcs_descsocial[".listAjax"] = false;
 
-	$tdatalcs_descsocial[".audit"] = false;
+	$tdatalcs_descsocial[".audit"] = true;
 
 	$tdatalcs_descsocial[".locking"] = false;
 
@@ -282,11 +282,11 @@ $tdatalcs_descsocial[".viewFields"][] = "ingresado";
 $tdatalcs_descsocial[".viewFields"][] = "_idEstudiante";
 
 $tdatalcs_descsocial[".addFields"] = array();
+$tdatalcs_descsocial[".addFields"][] = "_idEstudiante";
 $tdatalcs_descsocial[".addFields"][] = "RelacionHermano";
 $tdatalcs_descsocial[".addFields"][] = "RelacionCompaneros";
 $tdatalcs_descsocial[".addFields"][] = "CQuinJuega";
 $tdatalcs_descsocial[".addFields"][] = "CQueJuega";
-$tdatalcs_descsocial[".addFields"][] = "_idEstudiante";
 
 $tdatalcs_descsocial[".inlineAddFields"] = array();
 

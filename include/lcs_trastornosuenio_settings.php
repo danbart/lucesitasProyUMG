@@ -94,7 +94,7 @@ if (!isMobile())
 else 
 	$tdatalcs_trastornosuenio[".listAjax"] = false;
 
-	$tdatalcs_trastornosuenio[".audit"] = false;
+	$tdatalcs_trastornosuenio[".audit"] = true;
 
 	$tdatalcs_trastornosuenio[".locking"] = false;
 
@@ -255,8 +255,8 @@ $tdatalcs_trastornosuenio[".viewFields"][] = "Ingresado";
 $tdatalcs_trastornosuenio[".viewFields"][] = "_idEstudiante";
 
 $tdatalcs_trastornosuenio[".addFields"] = array();
-$tdatalcs_trastornosuenio[".addFields"][] = "TipoTSueño";
 $tdatalcs_trastornosuenio[".addFields"][] = "_idEstudiante";
+$tdatalcs_trastornosuenio[".addFields"][] = "TipoTSueño";
 
 $tdatalcs_trastornosuenio[".inlineAddFields"] = array();
 

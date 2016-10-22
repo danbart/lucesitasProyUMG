@@ -29,6 +29,18 @@ $pSet = new ProjectSettings(GetTableByShort($table), $pageType);
 $cipherer = new RunnerCipherer(GetTableByShort($table), $pSet);
 $_connection = $cman->byTable( $strTableName );
 
+$lookupInRegisterPage = false;
+												if(!in_array($field,$pSet->getListFields()))
+{
+	$lookupInRegisterPage = false;
+}
+
+if((!isLogged() || !CheckSecurity(@$_SESSION["_".$strTableName."_OwnerID"],"Search")) && !$lookupInRegisterPage)
+{ 
+	$returnJSON = array("success"=>false, "error"=>'');
+	echo printJSON($returnJSON);
+	return;
+}
 
 if(!$pSet->checkFieldPermissions($field))
 {
@@ -52,6 +64,8 @@ foreach ($keysArr as $ind=>$k)
 
 $where = KeyWhere($keys);
 
+if ($pSet->getAdvancedSecurityType() == ADVSECURITY_VIEW_OWN)
+	$where = whereAdd($where,SecuritySQL("Search"));	
 
 $sql = $gQuery->gSQLWhere($where);
 

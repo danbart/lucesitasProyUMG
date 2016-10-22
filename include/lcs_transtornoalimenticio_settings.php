@@ -93,7 +93,7 @@ if (!isMobile())
 else 
 	$tdatalcs_transtornoalimenticio[".listAjax"] = false;
 
-	$tdatalcs_transtornoalimenticio[".audit"] = false;
+	$tdatalcs_transtornoalimenticio[".audit"] = true;
 
 	$tdatalcs_transtornoalimenticio[".locking"] = false;
 
@@ -254,8 +254,8 @@ $tdatalcs_transtornoalimenticio[".viewFields"][] = "Ingresado";
 $tdatalcs_transtornoalimenticio[".viewFields"][] = "_idEstudiante";
 
 $tdatalcs_transtornoalimenticio[".addFields"] = array();
-$tdatalcs_transtornoalimenticio[".addFields"][] = "TipoTAlimenticio";
 $tdatalcs_transtornoalimenticio[".addFields"][] = "_idEstudiante";
+$tdatalcs_transtornoalimenticio[".addFields"][] = "TipoTAlimenticio";
 
 $tdatalcs_transtornoalimenticio[".inlineAddFields"] = array();
 

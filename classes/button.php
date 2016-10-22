@@ -138,6 +138,13 @@ class Button
 			$keys = $this->currentKeys;
 		
 		$strWhereClause = KeyWhere($keys);
+		if($gSettings->getAdvancedSecurityType()!=ADVSECURITY_ALL)
+		{
+			if($this->location == PAGE_EDIT)
+				$strWhereClause = whereAdd($strWhereClause, SecuritySQL("Edit"));
+			else
+				$strWhereClause = whereAdd($strWhereClause, SecuritySQL("Search"));
+		}
 		
 		$strSQL = $gQuery->gSQLWhere($strWhereClause);
 		

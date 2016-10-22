@@ -93,7 +93,7 @@ if (!isMobile())
 else 
 	$tdatalcs_transtornoesfinteres[".listAjax"] = false;
 
-	$tdatalcs_transtornoesfinteres[".audit"] = false;
+	$tdatalcs_transtornoesfinteres[".audit"] = true;
 
 	$tdatalcs_transtornoesfinteres[".locking"] = false;
 
@@ -254,8 +254,8 @@ $tdatalcs_transtornoesfinteres[".viewFields"][] = "Ingresado";
 $tdatalcs_transtornoesfinteres[".viewFields"][] = "_idEstudiante";
 
 $tdatalcs_transtornoesfinteres[".addFields"] = array();
-$tdatalcs_transtornoesfinteres[".addFields"][] = "TipoEsfinteres";
 $tdatalcs_transtornoesfinteres[".addFields"][] = "_idEstudiante";
+$tdatalcs_transtornoesfinteres[".addFields"][] = "TipoEsfinteres";
 
 $tdatalcs_transtornoesfinteres[".inlineAddFields"] = array();
 

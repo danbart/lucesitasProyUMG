@@ -105,7 +105,7 @@ if (!isMobile())
 else 
 	$tdatalcs_terapias[".listAjax"] = false;
 
-	$tdatalcs_terapias[".audit"] = false;
+	$tdatalcs_terapias[".audit"] = true;
 
 	$tdatalcs_terapias[".locking"] = false;
 
@@ -315,12 +315,12 @@ $tdatalcs_terapias[".importFields"][] = "_idEstudiante";
 $tdatalcs_terapias[".importFields"][] = "_idterapista";
 
 $tdatalcs_terapias[".printFields"] = array();
+$tdatalcs_terapias[".printFields"][] = "_idEstudiante";
 $tdatalcs_terapias[".printFields"][] = "idterapias";
 $tdatalcs_terapias[".printFields"][] = "fecha";
 $tdatalcs_terapias[".printFields"][] = "hora";
 $tdatalcs_terapias[".printFields"][] = "TipoTerapia";
 $tdatalcs_terapias[".printFields"][] = "Ingresado";
-$tdatalcs_terapias[".printFields"][] = "_idEstudiante";
 $tdatalcs_terapias[".printFields"][] = "_idterapista";
 
 //	idterapias

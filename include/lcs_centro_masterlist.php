@@ -22,16 +22,6 @@ function DisplayMasterTableInfo_lcs_centro($params)
 	$showKeys = "";
 
 
-	if($detailtable == "lcs_personal")
-	{
-		$keysAssoc["idCentro"] = $keys[1-1];
-				$where.= RunnerPage::_getFieldSQLDecrypt("idCentro", $connection , $settings , $cipherer) . "=" . $cipherer->MakeDBValue("idCentro", $keys[1-1], "", true);
-
-				$keyValue = $viewControls->showDBValue("idCentro", $keysAssoc);
-		$showKeys.= " ".GetFieldLabel("lcs_centro","idCentro").": ".$keyValue;
-		$xt->assign('showKeys', $showKeys);
-	}
-
 	if($detailtable == "lcs_estudiante")
 	{
 		$keysAssoc["idCentro"] = $keys[1-1];
@@ -113,6 +103,16 @@ function DisplayMasterTableInfo_lcs_centro($params)
 	}
 
 	if($detailtable == "EstuHistCaracter")
+	{
+		$keysAssoc["idCentro"] = $keys[1-1];
+				$where.= RunnerPage::_getFieldSQLDecrypt("idCentro", $connection , $settings , $cipherer) . "=" . $cipherer->MakeDBValue("idCentro", $keys[1-1], "", true);
+
+				$keyValue = $viewControls->showDBValue("idCentro", $keysAssoc);
+		$showKeys.= " ".GetFieldLabel("lcs_centro","idCentro").": ".$keyValue;
+		$xt->assign('showKeys', $showKeys);
+	}
+
+	if($detailtable == "lcs_personal")
 	{
 		$keysAssoc["idCentro"] = $keys[1-1];
 				$where.= RunnerPage::_getFieldSQLDecrypt("idCentro", $connection , $settings , $cipherer) . "=" . $cipherer->MakeDBValue("idCentro", $keys[1-1], "", true);

@@ -23,8 +23,6 @@ if(mlang_getcurrentlang()=="Spanish")
 	$pageTitleslcs_personal["Spanish"] = array();
 	$fieldLabelslcs_personal["Spanish"]["idUsuario"] = "No.";
 	$fieldToolTipslcs_personal["Spanish"]["idUsuario"] = "";
-	$fieldLabelslcs_personal["Spanish"]["TipoUsuario"] = "Tipo Usuario";
-	$fieldToolTipslcs_personal["Spanish"]["TipoUsuario"] = "";
 	$fieldLabelslcs_personal["Spanish"]["Nombre"] = "Nombre";
 	$fieldToolTipslcs_personal["Spanish"]["Nombre"] = "";
 	$fieldLabelslcs_personal["Spanish"]["Apellido"] = "Apellido";
@@ -33,19 +31,14 @@ if(mlang_getcurrentlang()=="Spanish")
 	$fieldToolTipslcs_personal["Spanish"]["Telefono"] = "";
 	$fieldLabelslcs_personal["Spanish"]["Email"] = "Email";
 	$fieldToolTipslcs_personal["Spanish"]["Email"] = "";
-	$fieldLabelslcs_personal["Spanish"]["Password"] = "Password";
-	$fieldToolTipslcs_personal["Spanish"]["Password"] = "";
 	$fieldLabelslcs_personal["Spanish"]["celular"] = "Celular";
 	$fieldToolTipslcs_personal["Spanish"]["celular"] = "";
 	$fieldLabelslcs_personal["Spanish"]["Voluntario"] = "Voluntario";
 	$fieldToolTipslcs_personal["Spanish"]["Voluntario"] = "";
 	$fieldLabelslcs_personal["Spanish"]["Ingresado"] = "Ingresado";
 	$fieldToolTipslcs_personal["Spanish"]["Ingresado"] = "";
-	$fieldLabelslcs_personal["Spanish"]["_idCentro"] = "No. Centro";
+	$fieldLabelslcs_personal["Spanish"]["_idCentro"] = "Centro";
 	$fieldToolTipslcs_personal["Spanish"]["_idCentro"] = "";
-	$pageTitleslcs_personal["Spanish"]["add"] = "Personal - Añadir nuevo registro";
-	$pageTitleslcs_personal["Spanish"]["edit"] = "Personal - Editar registro";
-	$pageTitleslcs_personal["Spanish"]["view"] = "Personal, Ver registro";
 	if (count($fieldToolTipslcs_personal["Spanish"]))
 		$tdatalcs_personal[".isUseToolTips"] = true;
 }
@@ -56,8 +49,6 @@ if(mlang_getcurrentlang()=="")
 	$pageTitleslcs_personal[""] = array();
 	$fieldLabelslcs_personal[""]["idUsuario"] = "Id Usuario";
 	$fieldToolTipslcs_personal[""]["idUsuario"] = "";
-	$fieldLabelslcs_personal[""]["TipoUsuario"] = "Tipo Usuario";
-	$fieldToolTipslcs_personal[""]["TipoUsuario"] = "";
 	$fieldLabelslcs_personal[""]["Nombre"] = "Nombre";
 	$fieldToolTipslcs_personal[""]["Nombre"] = "";
 	$fieldLabelslcs_personal[""]["Apellido"] = "Apellido";
@@ -66,8 +57,6 @@ if(mlang_getcurrentlang()=="")
 	$fieldToolTipslcs_personal[""]["Telefono"] = "";
 	$fieldLabelslcs_personal[""]["Email"] = "Email";
 	$fieldToolTipslcs_personal[""]["Email"] = "";
-	$fieldLabelslcs_personal[""]["Password"] = "Password";
-	$fieldToolTipslcs_personal[""]["Password"] = "";
 	$fieldLabelslcs_personal[""]["celular"] = "Celular";
 	$fieldToolTipslcs_personal[""]["celular"] = "";
 	$fieldLabelslcs_personal[""]["Voluntario"] = "Voluntario";
@@ -167,7 +156,6 @@ $tdatalcs_personal[".isUseTimeForSearch"] = false;
 
 
 
-$tdatalcs_personal[".useDetailsPreview"] = true;
 
 
 $tdatalcs_personal[".allSearchFields"] = array();
@@ -175,12 +163,10 @@ $tdatalcs_personal[".filterFields"] = array();
 $tdatalcs_personal[".requiredSearchFields"] = array();
 
 $tdatalcs_personal[".allSearchFields"][] = "idUsuario";
-	$tdatalcs_personal[".allSearchFields"][] = "TipoUsuario";
 	$tdatalcs_personal[".allSearchFields"][] = "Nombre";
 	$tdatalcs_personal[".allSearchFields"][] = "Apellido";
 	$tdatalcs_personal[".allSearchFields"][] = "Telefono";
 	$tdatalcs_personal[".allSearchFields"][] = "Email";
-	$tdatalcs_personal[".allSearchFields"][] = "Password";
 	$tdatalcs_personal[".allSearchFields"][] = "celular";
 	$tdatalcs_personal[".allSearchFields"][] = "Voluntario";
 	$tdatalcs_personal[".allSearchFields"][] = "Ingresado";
@@ -189,12 +175,10 @@ $tdatalcs_personal[".allSearchFields"][] = "idUsuario";
 
 $tdatalcs_personal[".googleLikeFields"] = array();
 $tdatalcs_personal[".googleLikeFields"][] = "idUsuario";
-$tdatalcs_personal[".googleLikeFields"][] = "TipoUsuario";
 $tdatalcs_personal[".googleLikeFields"][] = "Nombre";
 $tdatalcs_personal[".googleLikeFields"][] = "Apellido";
 $tdatalcs_personal[".googleLikeFields"][] = "Telefono";
 $tdatalcs_personal[".googleLikeFields"][] = "Email";
-$tdatalcs_personal[".googleLikeFields"][] = "Password";
 $tdatalcs_personal[".googleLikeFields"][] = "celular";
 $tdatalcs_personal[".googleLikeFields"][] = "Voluntario";
 $tdatalcs_personal[".googleLikeFields"][] = "Ingresado";
@@ -203,12 +187,10 @@ $tdatalcs_personal[".googleLikeFields"][] = "_idCentro";
 
 $tdatalcs_personal[".advSearchFields"] = array();
 $tdatalcs_personal[".advSearchFields"][] = "idUsuario";
-$tdatalcs_personal[".advSearchFields"][] = "TipoUsuario";
 $tdatalcs_personal[".advSearchFields"][] = "Nombre";
 $tdatalcs_personal[".advSearchFields"][] = "Apellido";
 $tdatalcs_personal[".advSearchFields"][] = "Telefono";
 $tdatalcs_personal[".advSearchFields"][] = "Email";
-$tdatalcs_personal[".advSearchFields"][] = "Password";
 $tdatalcs_personal[".advSearchFields"][] = "celular";
 $tdatalcs_personal[".advSearchFields"][] = "Voluntario";
 $tdatalcs_personal[".advSearchFields"][] = "Ingresado";
@@ -230,17 +212,12 @@ $tdatalcs_personal[".nPrinterPDFSplitRecords"] = 40;
 	
 
 
-$tdatalcs_personal[".isResizeColumns"] = true;
 
 
 
 // view page pdf
-$tdatalcs_personal[".isViewPagePDF"] = true;
-$tdatalcs_personal[".nViewPagePDFScale"] = 100;
 
 // print page pdf
-$tdatalcs_personal[".isPrinterPagePDF"] = true;
-$tdatalcs_personal[".nPrinterPagePDFScale"] = 100;
 
 
 $tdatalcs_personal[".pageSize"] = 20;
@@ -256,7 +233,7 @@ $tdatalcs_personal[".strOrderBy"] = $tstrOrderBy;
 
 $tdatalcs_personal[".orderindexes"] = array();
 
-$tdatalcs_personal[".sqlHead"] = "SELECT idUsuario,   TipoUsuario,   Nombre,   Apellido,   Telefono,   Email,   Password,   celular,   Voluntario,   Ingresado,   `_idCentro`";
+$tdatalcs_personal[".sqlHead"] = "SELECT idUsuario,  Nombre,  Apellido,  Telefono,  Email,  celular,  Voluntario,  Ingresado,  `_idCentro`";
 $tdatalcs_personal[".sqlFrom"] = "FROM lcs_personal";
 $tdatalcs_personal[".sqlWhereExpr"] = "";
 $tdatalcs_personal[".sqlTail"] = "";
@@ -286,29 +263,18 @@ $arrGPP[] = 100;
 $arrGPP[] = -1;
 $tdatalcs_personal[".arrGroupsPerPage"] = $arrGPP;
 
+$tdatalcs_personal[".highlightSearchResults"] = true;
 
 $tableKeyslcs_personal = array();
 $tableKeyslcs_personal[] = "idUsuario";
-$tableKeyslcs_personal[] = "TipoUsuario";
-$tableKeyslcs_personal[] = "Nombre";
-$tableKeyslcs_personal[] = "Apellido";
-$tableKeyslcs_personal[] = "Telefono";
-$tableKeyslcs_personal[] = "Email";
-$tableKeyslcs_personal[] = "Password";
-$tableKeyslcs_personal[] = "celular";
-$tableKeyslcs_personal[] = "Voluntario";
-$tableKeyslcs_personal[] = "Ingresado";
-$tableKeyslcs_personal[] = "_idCentro";
 $tdatalcs_personal[".Keys"] = $tableKeyslcs_personal;
 
 $tdatalcs_personal[".listFields"] = array();
 $tdatalcs_personal[".listFields"][] = "idUsuario";
-$tdatalcs_personal[".listFields"][] = "TipoUsuario";
 $tdatalcs_personal[".listFields"][] = "Nombre";
 $tdatalcs_personal[".listFields"][] = "Apellido";
 $tdatalcs_personal[".listFields"][] = "Telefono";
 $tdatalcs_personal[".listFields"][] = "Email";
-$tdatalcs_personal[".listFields"][] = "Password";
 $tdatalcs_personal[".listFields"][] = "celular";
 $tdatalcs_personal[".listFields"][] = "Voluntario";
 $tdatalcs_personal[".listFields"][] = "Ingresado";
@@ -319,75 +285,77 @@ $tdatalcs_personal[".hideMobileList"] = array();
 
 $tdatalcs_personal[".viewFields"] = array();
 $tdatalcs_personal[".viewFields"][] = "idUsuario";
-$tdatalcs_personal[".viewFields"][] = "TipoUsuario";
 $tdatalcs_personal[".viewFields"][] = "Nombre";
 $tdatalcs_personal[".viewFields"][] = "Apellido";
 $tdatalcs_personal[".viewFields"][] = "Telefono";
 $tdatalcs_personal[".viewFields"][] = "Email";
-$tdatalcs_personal[".viewFields"][] = "Password";
 $tdatalcs_personal[".viewFields"][] = "celular";
 $tdatalcs_personal[".viewFields"][] = "Voluntario";
 $tdatalcs_personal[".viewFields"][] = "Ingresado";
 $tdatalcs_personal[".viewFields"][] = "_idCentro";
 
 $tdatalcs_personal[".addFields"] = array();
-$tdatalcs_personal[".addFields"][] = "TipoUsuario";
 $tdatalcs_personal[".addFields"][] = "Nombre";
 $tdatalcs_personal[".addFields"][] = "Apellido";
 $tdatalcs_personal[".addFields"][] = "Telefono";
 $tdatalcs_personal[".addFields"][] = "Email";
-$tdatalcs_personal[".addFields"][] = "Password";
 $tdatalcs_personal[".addFields"][] = "celular";
 $tdatalcs_personal[".addFields"][] = "Voluntario";
 $tdatalcs_personal[".addFields"][] = "_idCentro";
 
 $tdatalcs_personal[".inlineAddFields"] = array();
+$tdatalcs_personal[".inlineAddFields"][] = "Nombre";
+$tdatalcs_personal[".inlineAddFields"][] = "Apellido";
+$tdatalcs_personal[".inlineAddFields"][] = "Telefono";
+$tdatalcs_personal[".inlineAddFields"][] = "Email";
+$tdatalcs_personal[".inlineAddFields"][] = "celular";
+$tdatalcs_personal[".inlineAddFields"][] = "Voluntario";
+$tdatalcs_personal[".inlineAddFields"][] = "_idCentro";
 
 $tdatalcs_personal[".editFields"] = array();
-$tdatalcs_personal[".editFields"][] = "TipoUsuario";
 $tdatalcs_personal[".editFields"][] = "Nombre";
 $tdatalcs_personal[".editFields"][] = "Apellido";
 $tdatalcs_personal[".editFields"][] = "Telefono";
 $tdatalcs_personal[".editFields"][] = "Email";
-$tdatalcs_personal[".editFields"][] = "Password";
 $tdatalcs_personal[".editFields"][] = "celular";
 $tdatalcs_personal[".editFields"][] = "Voluntario";
 $tdatalcs_personal[".editFields"][] = "_idCentro";
 
 $tdatalcs_personal[".inlineEditFields"] = array();
+$tdatalcs_personal[".inlineEditFields"][] = "Nombre";
+$tdatalcs_personal[".inlineEditFields"][] = "Apellido";
+$tdatalcs_personal[".inlineEditFields"][] = "Telefono";
+$tdatalcs_personal[".inlineEditFields"][] = "Email";
+$tdatalcs_personal[".inlineEditFields"][] = "celular";
+$tdatalcs_personal[".inlineEditFields"][] = "Voluntario";
+$tdatalcs_personal[".inlineEditFields"][] = "_idCentro";
 
 $tdatalcs_personal[".exportFields"] = array();
 $tdatalcs_personal[".exportFields"][] = "idUsuario";
-$tdatalcs_personal[".exportFields"][] = "TipoUsuario";
 $tdatalcs_personal[".exportFields"][] = "Nombre";
 $tdatalcs_personal[".exportFields"][] = "Apellido";
 $tdatalcs_personal[".exportFields"][] = "Telefono";
 $tdatalcs_personal[".exportFields"][] = "Email";
-$tdatalcs_personal[".exportFields"][] = "Password";
 $tdatalcs_personal[".exportFields"][] = "celular";
 $tdatalcs_personal[".exportFields"][] = "Voluntario";
 $tdatalcs_personal[".exportFields"][] = "Ingresado";
 $tdatalcs_personal[".exportFields"][] = "_idCentro";
 
 $tdatalcs_personal[".importFields"] = array();
-$tdatalcs_personal[".importFields"][] = "TipoUsuario";
 $tdatalcs_personal[".importFields"][] = "Nombre";
 $tdatalcs_personal[".importFields"][] = "Apellido";
 $tdatalcs_personal[".importFields"][] = "Telefono";
 $tdatalcs_personal[".importFields"][] = "Email";
-$tdatalcs_personal[".importFields"][] = "Password";
 $tdatalcs_personal[".importFields"][] = "celular";
 $tdatalcs_personal[".importFields"][] = "Voluntario";
 $tdatalcs_personal[".importFields"][] = "_idCentro";
 
 $tdatalcs_personal[".printFields"] = array();
 $tdatalcs_personal[".printFields"][] = "idUsuario";
-$tdatalcs_personal[".printFields"][] = "TipoUsuario";
 $tdatalcs_personal[".printFields"][] = "Nombre";
 $tdatalcs_personal[".printFields"][] = "Apellido";
 $tdatalcs_personal[".printFields"][] = "Telefono";
 $tdatalcs_personal[".printFields"][] = "Email";
-$tdatalcs_personal[".printFields"][] = "Password";
 $tdatalcs_personal[".printFields"][] = "celular";
 $tdatalcs_personal[".printFields"][] = "Voluntario";
 $tdatalcs_personal[".printFields"][] = "Ingresado";
@@ -428,8 +396,7 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	$fdata["FullName"] = "idUsuario";
 	
 		
-		$fdata["CompatibilityMode"] = true; 
-	
+		
 				$fdata["FieldPermissions"] = true;
 	
 				$fdata["UploadFolder"] = "files";
@@ -478,11 +445,11 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 		
 		
 		
-			$edata["HTML5InuptType"] = "text";
+			$edata["HTML5InuptType"] = "number";
 	
 		$edata["EditParams"] = "";
 			
-		$edata["controlWidth"] = 300;
+		$edata["controlWidth"] = 200;
 	
 //	Begin validation
 	$edata["validateAs"] = array();
@@ -509,156 +476,19 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	
 	
 // the field's search options settings
-		$fdata["defaultSearchOption"] = "Equals";
-	
-	// the end of search options settings	
+		
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Equals", "More than", "Less than", "Between");
+// the end of search options settings	
 
 	
 
 	
 	$tdatalcs_personal["idUsuario"] = $fdata;
-//	TipoUsuario
-//	Custom field settings
-	$fdata = array();
-	$fdata["Index"] = 2;
-	$fdata["strName"] = "TipoUsuario";
-	$fdata["GoodName"] = "TipoUsuario";
-	$fdata["ownerTable"] = "lcs_personal";
-	$fdata["Label"] = GetFieldLabel("lcs_personal","TipoUsuario"); 
-	$fdata["FieldType"] = 200;
-	
-		
-		
-		
-				
-		$fdata["bListPage"] = true; 
-	
-		$fdata["bAddPage"] = true; 
-	
-		
-		$fdata["bEditPage"] = true; 
-	
-		
-		$fdata["bViewPage"] = true; 
-	
-		$fdata["bAdvancedSearch"] = true; 
-	
-		$fdata["bPrinterPage"] = true; 
-	
-		$fdata["bExportPage"] = true; 
-	
-		$fdata["strField"] = "TipoUsuario"; 
-	
-		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "TipoUsuario";
-	
-		
-		$fdata["CompatibilityMode"] = true; 
-	
-				$fdata["FieldPermissions"] = true;
-	
-				$fdata["UploadFolder"] = "files";
-		
-//  Begin View Formats
-	$fdata["ViewFormats"] = array();
-	
-	$vdata = array("ViewFormat" => "");
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		$vdata["NeedEncode"] = true;
-	
-	$fdata["ViewFormats"]["view"] = $vdata;
-//  End View Formats
-
-//	Begin Edit Formats 	
-	$fdata["EditFormats"] = array();
-	
-	$edata = array("EditFormat" => "Lookup wizard");
-	
-			
-	
-	
-// Begin Lookup settings
-		$edata["LookupType"] = 0;
-		$edata["autoCompleteFieldsOnEdit"] = 0;
-	$edata["autoCompleteFields"] = array();
-		$edata["LCType"] = 0;
-		
-		
-		
-		$edata["LookupValues"] = array();
-	$edata["LookupValues"][] = "Administrador";
-	$edata["LookupValues"][] = "Usuario";
-
-		
-		$edata["SelectSize"] = 1;
-		
-// End Lookup Settings
-
-
-		$edata["IsRequired"] = true; 
-	
-		
-		
-		
-			$edata["acceptFileTypes"] = ".+$";
-	
-		$edata["maxNumberOfFiles"] = 1;
-	
-		
-		
-		
-		
-		
-		
-		$edata["controlWidth"] = 300;
-	
-//	Begin validation
-	$edata["validateAs"] = array();
-	$edata["validateAs"]["basicValidate"] = array();
-	$edata["validateAs"]["customMessages"] = array();
-						$edata["validateAs"]["basicValidate"][] = "IsRequired";
-			
-		
-	//	End validation
-	
-		
-				
-		
-	
-		
-	$fdata["EditFormats"]["edit"] = $edata;
-//	End Edit Formats
-	
-	
-	$fdata["isSeparate"] = false;
-	
-	
-	
-	
-// the field's search options settings
-		$fdata["defaultSearchOption"] = "Equals";
-	
-	// the end of search options settings	
-
-	
-
-	
-	$tdatalcs_personal["TipoUsuario"] = $fdata;
 //	Nombre
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 3;
+	$fdata["Index"] = 2;
 	$fdata["strName"] = "Nombre";
 	$fdata["GoodName"] = "Nombre";
 	$fdata["ownerTable"] = "lcs_personal";
@@ -673,10 +503,12 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	
 		$fdata["bAddPage"] = true; 
 	
-		
+		$fdata["bInlineAdd"] = true; 
+	
 		$fdata["bEditPage"] = true; 
 	
-		
+		$fdata["bInlineEdit"] = true; 
+	
 		$fdata["bViewPage"] = true; 
 	
 		$fdata["bAdvancedSearch"] = true; 
@@ -691,8 +523,7 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	$fdata["FullName"] = "Nombre";
 	
 		
-		$fdata["CompatibilityMode"] = true; 
-	
+		
 				$fdata["FieldPermissions"] = true;
 	
 				$fdata["UploadFolder"] = "files";
@@ -728,8 +559,7 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	
 
 
-		$edata["IsRequired"] = true; 
-	
+		
 		
 		
 		
@@ -746,14 +576,13 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 		$edata["EditParams"] = "";
 			$edata["EditParams"].= " maxlength=45";
 	
-		$edata["controlWidth"] = 300;
+		$edata["controlWidth"] = 200;
 	
 //	Begin validation
 	$edata["validateAs"] = array();
 	$edata["validateAs"]["basicValidate"] = array();
 	$edata["validateAs"]["customMessages"] = array();
-						$edata["validateAs"]["basicValidate"][] = "IsRequired";
-			
+		
 		
 	//	End validation
 	
@@ -772,9 +601,10 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	
 	
 // the field's search options settings
-		$fdata["defaultSearchOption"] = "Equals";
-	
-	// the end of search options settings	
+		
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Empty");
+// the end of search options settings	
 
 	
 
@@ -783,7 +613,7 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 //	Apellido
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 4;
+	$fdata["Index"] = 3;
 	$fdata["strName"] = "Apellido";
 	$fdata["GoodName"] = "Apellido";
 	$fdata["ownerTable"] = "lcs_personal";
@@ -798,10 +628,12 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	
 		$fdata["bAddPage"] = true; 
 	
-		
+		$fdata["bInlineAdd"] = true; 
+	
 		$fdata["bEditPage"] = true; 
 	
-		
+		$fdata["bInlineEdit"] = true; 
+	
 		$fdata["bViewPage"] = true; 
 	
 		$fdata["bAdvancedSearch"] = true; 
@@ -816,8 +648,7 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	$fdata["FullName"] = "Apellido";
 	
 		
-		$fdata["CompatibilityMode"] = true; 
-	
+		
 				$fdata["FieldPermissions"] = true;
 	
 				$fdata["UploadFolder"] = "files";
@@ -853,8 +684,7 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	
 
 
-		$edata["IsRequired"] = true; 
-	
+		
 		
 		
 		
@@ -871,14 +701,13 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 		$edata["EditParams"] = "";
 			$edata["EditParams"].= " maxlength=45";
 	
-		$edata["controlWidth"] = 300;
+		$edata["controlWidth"] = 200;
 	
 //	Begin validation
 	$edata["validateAs"] = array();
 	$edata["validateAs"]["basicValidate"] = array();
 	$edata["validateAs"]["customMessages"] = array();
-						$edata["validateAs"]["basicValidate"][] = "IsRequired";
-			
+		
 		
 	//	End validation
 	
@@ -897,9 +726,10 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	
 	
 // the field's search options settings
-		$fdata["defaultSearchOption"] = "Equals";
-	
-	// the end of search options settings	
+		
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Empty");
+// the end of search options settings	
 
 	
 
@@ -908,7 +738,7 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 //	Telefono
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 5;
+	$fdata["Index"] = 4;
 	$fdata["strName"] = "Telefono";
 	$fdata["GoodName"] = "Telefono";
 	$fdata["ownerTable"] = "lcs_personal";
@@ -923,10 +753,12 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	
 		$fdata["bAddPage"] = true; 
 	
-		
+		$fdata["bInlineAdd"] = true; 
+	
 		$fdata["bEditPage"] = true; 
 	
-		
+		$fdata["bInlineEdit"] = true; 
+	
 		$fdata["bViewPage"] = true; 
 	
 		$fdata["bAdvancedSearch"] = true; 
@@ -941,8 +773,7 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	$fdata["FullName"] = "Telefono";
 	
 		
-		$fdata["CompatibilityMode"] = true; 
-	
+		
 				$fdata["FieldPermissions"] = true;
 	
 				$fdata["UploadFolder"] = "files";
@@ -978,8 +809,7 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	
 
 
-		$edata["IsRequired"] = true; 
-	
+		
 		
 		
 		
@@ -996,14 +826,13 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 		$edata["EditParams"] = "";
 			$edata["EditParams"].= " maxlength=45";
 	
-		$edata["controlWidth"] = 300;
+		$edata["controlWidth"] = 200;
 	
 //	Begin validation
 	$edata["validateAs"] = array();
 	$edata["validateAs"]["basicValidate"] = array();
 	$edata["validateAs"]["customMessages"] = array();
-						$edata["validateAs"]["basicValidate"][] = "IsRequired";
-			
+		
 		
 	//	End validation
 	
@@ -1022,9 +851,10 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	
 	
 // the field's search options settings
-		$fdata["defaultSearchOption"] = "Equals";
-	
-	// the end of search options settings	
+		
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Empty");
+// the end of search options settings	
 
 	
 
@@ -1033,7 +863,7 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 //	Email
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 6;
+	$fdata["Index"] = 5;
 	$fdata["strName"] = "Email";
 	$fdata["GoodName"] = "Email";
 	$fdata["ownerTable"] = "lcs_personal";
@@ -1048,10 +878,12 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	
 		$fdata["bAddPage"] = true; 
 	
-		
+		$fdata["bInlineAdd"] = true; 
+	
 		$fdata["bEditPage"] = true; 
 	
-		
+		$fdata["bInlineEdit"] = true; 
+	
 		$fdata["bViewPage"] = true; 
 	
 		$fdata["bAdvancedSearch"] = true; 
@@ -1066,8 +898,7 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	$fdata["FullName"] = "Email";
 	
 		
-		$fdata["CompatibilityMode"] = true; 
-	
+		
 				$fdata["FieldPermissions"] = true;
 	
 				$fdata["UploadFolder"] = "files";
@@ -1103,8 +934,7 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	
 
 
-		$edata["IsRequired"] = true; 
-	
+		
 		
 		
 		
@@ -1121,15 +951,13 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 		$edata["EditParams"] = "";
 			$edata["EditParams"].= " maxlength=45";
 	
-		$edata["controlWidth"] = 300;
+		$edata["controlWidth"] = 200;
 	
 //	Begin validation
 	$edata["validateAs"] = array();
 	$edata["validateAs"]["basicValidate"] = array();
 	$edata["validateAs"]["customMessages"] = array();
-				$edata["validateAs"]["basicValidate"][] = getJsValidatorName("Email");	
-						$edata["validateAs"]["basicValidate"][] = "IsRequired";
-			
+		
 		
 	//	End validation
 	
@@ -1148,142 +976,19 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	
 	
 // the field's search options settings
-		$fdata["defaultSearchOption"] = "Equals";
-	
-	// the end of search options settings	
+		
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Empty");
+// the end of search options settings	
 
 	
 
 	
 	$tdatalcs_personal["Email"] = $fdata;
-//	Password
-//	Custom field settings
-	$fdata = array();
-	$fdata["Index"] = 7;
-	$fdata["strName"] = "Password";
-	$fdata["GoodName"] = "Password";
-	$fdata["ownerTable"] = "lcs_personal";
-	$fdata["Label"] = GetFieldLabel("lcs_personal","Password"); 
-	$fdata["FieldType"] = 201;
-	
-		
-		
-		
-				
-		$fdata["bListPage"] = true; 
-	
-		$fdata["bAddPage"] = true; 
-	
-		
-		$fdata["bEditPage"] = true; 
-	
-		
-		$fdata["bViewPage"] = true; 
-	
-		$fdata["bAdvancedSearch"] = true; 
-	
-		$fdata["bPrinterPage"] = true; 
-	
-		$fdata["bExportPage"] = true; 
-	
-		$fdata["strField"] = "Password"; 
-	
-		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "Password";
-	
-		
-		$fdata["CompatibilityMode"] = true; 
-	
-				$fdata["FieldPermissions"] = true;
-	
-				$fdata["UploadFolder"] = "files";
-		
-//  Begin View Formats
-	$fdata["ViewFormats"] = array();
-	
-	$vdata = array("ViewFormat" => "");
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		$vdata["NeedEncode"] = true;
-	
-	$fdata["ViewFormats"]["view"] = $vdata;
-//  End View Formats
-
-//	Begin Edit Formats 	
-	$fdata["EditFormats"] = array();
-	
-	$edata = array("EditFormat" => "Password");
-	
-			
-	
-	
-
-
-		$edata["IsRequired"] = true; 
-	
-		
-		
-		
-			$edata["acceptFileTypes"] = ".+$";
-	
-		$edata["maxNumberOfFiles"] = 1;
-	
-		
-		
-		
-		
-		
-		$edata["EditParams"] = "";
-			
-		$edata["controlWidth"] = 300;
-	
-//	Begin validation
-	$edata["validateAs"] = array();
-	$edata["validateAs"]["basicValidate"] = array();
-	$edata["validateAs"]["customMessages"] = array();
-				$edata["validateAs"]["basicValidate"][] = getJsValidatorName("Password");	
-						$edata["validateAs"]["basicValidate"][] = "IsRequired";
-			
-		
-	//	End validation
-	
-		
-				
-		
-	
-		
-	$fdata["EditFormats"]["edit"] = $edata;
-//	End Edit Formats
-	
-	
-	$fdata["isSeparate"] = false;
-	
-	
-	
-	
-// the field's search options settings
-		$fdata["defaultSearchOption"] = "Equals";
-	
-	// the end of search options settings	
-
-	
-
-	
-	$tdatalcs_personal["Password"] = $fdata;
 //	celular
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 8;
+	$fdata["Index"] = 6;
 	$fdata["strName"] = "celular";
 	$fdata["GoodName"] = "celular";
 	$fdata["ownerTable"] = "lcs_personal";
@@ -1298,10 +1003,12 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	
 		$fdata["bAddPage"] = true; 
 	
-		
+		$fdata["bInlineAdd"] = true; 
+	
 		$fdata["bEditPage"] = true; 
 	
-		
+		$fdata["bInlineEdit"] = true; 
+	
 		$fdata["bViewPage"] = true; 
 	
 		$fdata["bAdvancedSearch"] = true; 
@@ -1316,8 +1023,7 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	$fdata["FullName"] = "celular";
 	
 		
-		$fdata["CompatibilityMode"] = true; 
-	
+		
 				$fdata["FieldPermissions"] = true;
 	
 				$fdata["UploadFolder"] = "files";
@@ -1353,8 +1059,7 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	
 
 
-		$edata["IsRequired"] = true; 
-	
+		
 		
 		
 		
@@ -1371,14 +1076,13 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 		$edata["EditParams"] = "";
 			$edata["EditParams"].= " maxlength=45";
 	
-		$edata["controlWidth"] = 300;
+		$edata["controlWidth"] = 200;
 	
 //	Begin validation
 	$edata["validateAs"] = array();
 	$edata["validateAs"]["basicValidate"] = array();
 	$edata["validateAs"]["customMessages"] = array();
-						$edata["validateAs"]["basicValidate"][] = "IsRequired";
-			
+		
 		
 	//	End validation
 	
@@ -1397,9 +1101,10 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	
 	
 // the field's search options settings
-		$fdata["defaultSearchOption"] = "Equals";
-	
-	// the end of search options settings	
+		
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Empty");
+// the end of search options settings	
 
 	
 
@@ -1408,7 +1113,7 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 //	Voluntario
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 9;
+	$fdata["Index"] = 7;
 	$fdata["strName"] = "Voluntario";
 	$fdata["GoodName"] = "Voluntario";
 	$fdata["ownerTable"] = "lcs_personal";
@@ -1423,10 +1128,12 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	
 		$fdata["bAddPage"] = true; 
 	
-		
+		$fdata["bInlineAdd"] = true; 
+	
 		$fdata["bEditPage"] = true; 
 	
-		
+		$fdata["bInlineEdit"] = true; 
+	
 		$fdata["bViewPage"] = true; 
 	
 		$fdata["bAdvancedSearch"] = true; 
@@ -1441,8 +1148,7 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	$fdata["FullName"] = "Voluntario";
 	
 		
-		$fdata["CompatibilityMode"] = true; 
-	
+		
 				$fdata["FieldPermissions"] = true;
 	
 				$fdata["UploadFolder"] = "files";
@@ -1477,8 +1183,7 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	
 
 
-		$edata["IsRequired"] = true; 
-	
+		
 		
 		
 		
@@ -1492,13 +1197,13 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 		
 		
 		
-		$edata["controlWidth"] = 300;
+		$edata["controlWidth"] = 200;
 	
 //	Begin validation
 	$edata["validateAs"] = array();
 	$edata["validateAs"]["basicValidate"] = array();
 	$edata["validateAs"]["customMessages"] = array();
-								
+		
 		
 	//	End validation
 	
@@ -1518,7 +1223,9 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	
 // the field's search options settings
 		
-	// the end of search options settings	
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Equals", "More than", "Less than", "Between");
+// the end of search options settings	
 
 	
 
@@ -1527,7 +1234,7 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 //	Ingresado
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 10;
+	$fdata["Index"] = 8;
 	$fdata["strName"] = "Ingresado";
 	$fdata["GoodName"] = "Ingresado";
 	$fdata["ownerTable"] = "lcs_personal";
@@ -1558,8 +1265,7 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	$fdata["FullName"] = "Ingresado";
 	
 		
-		$fdata["CompatibilityMode"] = true; 
-	
+		
 				$fdata["FieldPermissions"] = true;
 	
 				$fdata["UploadFolder"] = "files";
@@ -1590,7 +1296,8 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	
 	$edata = array("EditFormat" => "Date");
 	
-			
+		$edata["ShowTime"] = true; 
+		
 	
 	
 
@@ -1612,7 +1319,7 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 		
 		
 		
-		$edata["controlWidth"] = 300;
+		$edata["controlWidth"] = 200;
 	
 //	Begin validation
 	$edata["validateAs"] = array();
@@ -1637,9 +1344,10 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	
 	
 // the field's search options settings
-		$fdata["defaultSearchOption"] = "Equals";
-	
-	// the end of search options settings	
+		
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Equals", "More than", "Less than", "Between");
+// the end of search options settings	
 
 	
 
@@ -1648,7 +1356,7 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 //	_idCentro
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 11;
+	$fdata["Index"] = 9;
 	$fdata["strName"] = "_idCentro";
 	$fdata["GoodName"] = "_idCentro";
 	$fdata["ownerTable"] = "lcs_personal";
@@ -1663,10 +1371,12 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	
 		$fdata["bAddPage"] = true; 
 	
-		
+		$fdata["bInlineAdd"] = true; 
+	
 		$fdata["bEditPage"] = true; 
 	
-		
+		$fdata["bInlineEdit"] = true; 
+	
 		$fdata["bViewPage"] = true; 
 	
 		$fdata["bAdvancedSearch"] = true; 
@@ -1681,8 +1391,7 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	$fdata["FullName"] = "`_idCentro`";
 	
 		
-		$fdata["CompatibilityMode"] = true; 
-	
+		
 				$fdata["FieldPermissions"] = true;
 	
 				$fdata["UploadFolder"] = "files";
@@ -1721,16 +1430,16 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	$edata["LookupTable"] = "lcs_centro";
 		$edata["autoCompleteFieldsOnEdit"] = 0;
 	$edata["autoCompleteFields"] = array();
-		$edata["LCType"] = 2;
+		$edata["LCType"] = 0;
 		
 		
 			
-	$edata["LinkField"] = "Nombre";
+	$edata["LinkField"] = "idCentro";
 	$edata["LinkFieldType"] = 3;
 	$edata["DisplayField"] = "Nombre";
 	
 		
-	$edata["LookupOrderBy"] = "Nombre";
+	$edata["LookupOrderBy"] = "idCentro";
 	
 		
 			
@@ -1739,6 +1448,7 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	
 	
 		
+		$edata["SelectSize"] = 1;
 		
 // End Lookup Settings
 
@@ -1758,7 +1468,7 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 		
 		
 		
-		$edata["controlWidth"] = 300;
+		$edata["controlWidth"] = 200;
 	
 //	Begin validation
 	$edata["validateAs"] = array();
@@ -1784,9 +1494,10 @@ $tdatalcs_personal[".printFields"][] = "_idCentro";
 	
 	
 // the field's search options settings
-		$fdata["defaultSearchOption"] = "Equals";
-	
-	// the end of search options settings	
+		
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Equals", "More than", "Less than", "Between");
+// the end of search options settings	
 
 	
 
@@ -1802,35 +1513,6 @@ $page_titles["lcs_personal"] = &$pageTitleslcs_personal;
 // -----------------start  prepare master-details data arrays ------------------------------//
 // tables which are detail tables for current table (master)
 $detailsTablesData["lcs_personal"] = array();
-//	lcs_sesion
-	
-	
-
-		$dIndex = 0;
-	$detailsParam = array();
-	$detailsParam["dDataSourceTable"]="lcs_sesion";
-		$detailsParam["dOriginalTable"] = "lcs_sesion";
-				$detailsParam["dType"]=PAGE_LIST;
-	$detailsParam["dShortTable"] = "lcs_sesion";
-	$detailsParam["masterKeys"] =array();
-	$detailsParam["detailKeys"] =array();
-	$detailsParam["dispChildCount"] = "1";
-		$detailsParam["hideChild"] = false;
-	$detailsParam["previewOnList"] = 1;
-	$detailsParam["previewOnAdd"] = 0;
-	$detailsParam["previewOnEdit"] = 0;
-	$detailsParam["previewOnView"] = 0;
-			
-	$detailsTablesData["lcs_personal"][$dIndex] = $detailsParam;
-	
-		
-		$detailsTablesData["lcs_personal"][$dIndex]["masterKeys"] = array();
-
-	$detailsTablesData["lcs_personal"][$dIndex]["masterKeys"][]="idUsuario";
-
-				$detailsTablesData["lcs_personal"][$dIndex]["detailKeys"] = array();
-
-	$detailsTablesData["lcs_personal"][$dIndex]["detailKeys"][]="l_idUsuario";
 	
 // tables which are master tables for current table (detail)
 $masterTablesData["lcs_personal"] = array();
@@ -1875,7 +1557,7 @@ function createSqlQuery_lcs_personal()
 {
 $proto3=array();
 $proto3["m_strHead"] = "SELECT";
-$proto3["m_strFieldList"] = "idUsuario,   TipoUsuario,   Nombre,   Apellido,   Telefono,   Email,   Password,   celular,   Voluntario,   Ingresado,   `_idCentro`";
+$proto3["m_strFieldList"] = "idUsuario,  Nombre,  Apellido,  Telefono,  Email,  celular,  Voluntario,  Ingresado,  `_idCentro`";
 $proto3["m_strFrom"] = "FROM lcs_personal";
 $proto3["m_strWhere"] = "";
 $proto3["m_strOrderBy"] = "";
@@ -1930,12 +1612,12 @@ $obj = new SQLFieldListItem($proto8);
 $proto3["m_fieldlist"][]=$obj;
 						$proto10=array();
 			$obj = new SQLField(array(
-	"m_strName" => "TipoUsuario",
+	"m_strName" => "Nombre",
 	"m_strTable" => "lcs_personal",
 	"m_srcTableName" => "lcs_personal"
 ));
 
-$proto10["m_sql"] = "TipoUsuario";
+$proto10["m_sql"] = "Nombre";
 $proto10["m_srcTableName"] = "lcs_personal";
 $proto10["m_expr"]=$obj;
 $proto10["m_alias"] = "";
@@ -1944,12 +1626,12 @@ $obj = new SQLFieldListItem($proto10);
 $proto3["m_fieldlist"][]=$obj;
 						$proto12=array();
 			$obj = new SQLField(array(
-	"m_strName" => "Nombre",
+	"m_strName" => "Apellido",
 	"m_strTable" => "lcs_personal",
 	"m_srcTableName" => "lcs_personal"
 ));
 
-$proto12["m_sql"] = "Nombre";
+$proto12["m_sql"] = "Apellido";
 $proto12["m_srcTableName"] = "lcs_personal";
 $proto12["m_expr"]=$obj;
 $proto12["m_alias"] = "";
@@ -1958,12 +1640,12 @@ $obj = new SQLFieldListItem($proto12);
 $proto3["m_fieldlist"][]=$obj;
 						$proto14=array();
 			$obj = new SQLField(array(
-	"m_strName" => "Apellido",
+	"m_strName" => "Telefono",
 	"m_strTable" => "lcs_personal",
 	"m_srcTableName" => "lcs_personal"
 ));
 
-$proto14["m_sql"] = "Apellido";
+$proto14["m_sql"] = "Telefono";
 $proto14["m_srcTableName"] = "lcs_personal";
 $proto14["m_expr"]=$obj;
 $proto14["m_alias"] = "";
@@ -1972,12 +1654,12 @@ $obj = new SQLFieldListItem($proto14);
 $proto3["m_fieldlist"][]=$obj;
 						$proto16=array();
 			$obj = new SQLField(array(
-	"m_strName" => "Telefono",
+	"m_strName" => "Email",
 	"m_strTable" => "lcs_personal",
 	"m_srcTableName" => "lcs_personal"
 ));
 
-$proto16["m_sql"] = "Telefono";
+$proto16["m_sql"] = "Email";
 $proto16["m_srcTableName"] = "lcs_personal";
 $proto16["m_expr"]=$obj;
 $proto16["m_alias"] = "";
@@ -1986,12 +1668,12 @@ $obj = new SQLFieldListItem($proto16);
 $proto3["m_fieldlist"][]=$obj;
 						$proto18=array();
 			$obj = new SQLField(array(
-	"m_strName" => "Email",
+	"m_strName" => "celular",
 	"m_strTable" => "lcs_personal",
 	"m_srcTableName" => "lcs_personal"
 ));
 
-$proto18["m_sql"] = "Email";
+$proto18["m_sql"] = "celular";
 $proto18["m_srcTableName"] = "lcs_personal";
 $proto18["m_expr"]=$obj;
 $proto18["m_alias"] = "";
@@ -2000,12 +1682,12 @@ $obj = new SQLFieldListItem($proto18);
 $proto3["m_fieldlist"][]=$obj;
 						$proto20=array();
 			$obj = new SQLField(array(
-	"m_strName" => "Password",
+	"m_strName" => "Voluntario",
 	"m_strTable" => "lcs_personal",
 	"m_srcTableName" => "lcs_personal"
 ));
 
-$proto20["m_sql"] = "Password";
+$proto20["m_sql"] = "Voluntario";
 $proto20["m_srcTableName"] = "lcs_personal";
 $proto20["m_expr"]=$obj;
 $proto20["m_alias"] = "";
@@ -2014,12 +1696,12 @@ $obj = new SQLFieldListItem($proto20);
 $proto3["m_fieldlist"][]=$obj;
 						$proto22=array();
 			$obj = new SQLField(array(
-	"m_strName" => "celular",
+	"m_strName" => "Ingresado",
 	"m_strTable" => "lcs_personal",
 	"m_srcTableName" => "lcs_personal"
 ));
 
-$proto22["m_sql"] = "celular";
+$proto22["m_sql"] = "Ingresado";
 $proto22["m_srcTableName"] = "lcs_personal";
 $proto22["m_expr"]=$obj;
 $proto22["m_alias"] = "";
@@ -2028,87 +1710,57 @@ $obj = new SQLFieldListItem($proto22);
 $proto3["m_fieldlist"][]=$obj;
 						$proto24=array();
 			$obj = new SQLField(array(
-	"m_strName" => "Voluntario",
+	"m_strName" => "_idCentro",
 	"m_strTable" => "lcs_personal",
 	"m_srcTableName" => "lcs_personal"
 ));
 
-$proto24["m_sql"] = "Voluntario";
+$proto24["m_sql"] = "`_idCentro`";
 $proto24["m_srcTableName"] = "lcs_personal";
 $proto24["m_expr"]=$obj;
 $proto24["m_alias"] = "";
 $obj = new SQLFieldListItem($proto24);
 
 $proto3["m_fieldlist"][]=$obj;
-						$proto26=array();
-			$obj = new SQLField(array(
-	"m_strName" => "Ingresado",
-	"m_strTable" => "lcs_personal",
-	"m_srcTableName" => "lcs_personal"
-));
-
-$proto26["m_sql"] = "Ingresado";
-$proto26["m_srcTableName"] = "lcs_personal";
-$proto26["m_expr"]=$obj;
-$proto26["m_alias"] = "";
-$obj = new SQLFieldListItem($proto26);
-
-$proto3["m_fieldlist"][]=$obj;
-						$proto28=array();
-			$obj = new SQLField(array(
-	"m_strName" => "_idCentro",
-	"m_strTable" => "lcs_personal",
-	"m_srcTableName" => "lcs_personal"
-));
-
-$proto28["m_sql"] = "`_idCentro`";
-$proto28["m_srcTableName"] = "lcs_personal";
-$proto28["m_expr"]=$obj;
-$proto28["m_alias"] = "";
-$obj = new SQLFieldListItem($proto28);
-
-$proto3["m_fieldlist"][]=$obj;
 $proto3["m_fromlist"] = array();
-												$proto30=array();
-$proto30["m_link"] = "SQLL_MAIN";
-			$proto31=array();
-$proto31["m_strName"] = "lcs_personal";
-$proto31["m_srcTableName"] = "lcs_personal";
-$proto31["m_columns"] = array();
-$proto31["m_columns"][] = "idUsuario";
-$proto31["m_columns"][] = "TipoUsuario";
-$proto31["m_columns"][] = "Nombre";
-$proto31["m_columns"][] = "Apellido";
-$proto31["m_columns"][] = "Telefono";
-$proto31["m_columns"][] = "Email";
-$proto31["m_columns"][] = "Password";
-$proto31["m_columns"][] = "celular";
-$proto31["m_columns"][] = "Voluntario";
-$proto31["m_columns"][] = "Ingresado";
-$proto31["m_columns"][] = "_idCentro";
-$obj = new SQLTable($proto31);
+												$proto26=array();
+$proto26["m_link"] = "SQLL_MAIN";
+			$proto27=array();
+$proto27["m_strName"] = "lcs_personal";
+$proto27["m_srcTableName"] = "lcs_personal";
+$proto27["m_columns"] = array();
+$proto27["m_columns"][] = "idUsuario";
+$proto27["m_columns"][] = "Nombre";
+$proto27["m_columns"][] = "Apellido";
+$proto27["m_columns"][] = "Telefono";
+$proto27["m_columns"][] = "Email";
+$proto27["m_columns"][] = "celular";
+$proto27["m_columns"][] = "Voluntario";
+$proto27["m_columns"][] = "Ingresado";
+$proto27["m_columns"][] = "_idCentro";
+$obj = new SQLTable($proto27);
 
-$proto30["m_table"] = $obj;
-$proto30["m_sql"] = "lcs_personal";
-$proto30["m_alias"] = "";
-$proto30["m_srcTableName"] = "lcs_personal";
-$proto32=array();
-$proto32["m_sql"] = "";
-$proto32["m_uniontype"] = "SQLL_UNKNOWN";
+$proto26["m_table"] = $obj;
+$proto26["m_sql"] = "lcs_personal";
+$proto26["m_alias"] = "";
+$proto26["m_srcTableName"] = "lcs_personal";
+$proto28=array();
+$proto28["m_sql"] = "";
+$proto28["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto32["m_column"]=$obj;
-$proto32["m_contained"] = array();
-$proto32["m_strCase"] = "";
-$proto32["m_havingmode"] = false;
-$proto32["m_inBrackets"] = false;
-$proto32["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto32);
+$proto28["m_column"]=$obj;
+$proto28["m_contained"] = array();
+$proto28["m_strCase"] = "";
+$proto28["m_havingmode"] = false;
+$proto28["m_inBrackets"] = false;
+$proto28["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto28);
 
-$proto30["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto30);
+$proto26["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto26);
 
 $proto3["m_fromlist"][]=$obj;
 $proto3["m_groupby"] = array();
@@ -2122,7 +1774,7 @@ $queryData_lcs_personal = createSqlQuery_lcs_personal();
 
 
 	
-											
+									
 	
 $tdatalcs_personal[".sqlquery"] = $queryData_lcs_personal;
 

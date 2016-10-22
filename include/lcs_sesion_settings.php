@@ -84,7 +84,7 @@ if (!isMobile())
 else 
 	$tdatalcs_sesion[".listAjax"] = false;
 
-	$tdatalcs_sesion[".audit"] = false;
+	$tdatalcs_sesion[".audit"] = true;
 
 	$tdatalcs_sesion[".locking"] = false;
 

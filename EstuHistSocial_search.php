@@ -12,12 +12,26 @@ require_once("classes/panelsearchcontrol.php");
 require_once("classes/searchclause.php");
 
 
+if( !isLogged() )
+{ 
+	Security::saveRedirectURL();
+	redirectToLogin();
+}
+
+$cname = postvalue("cname");
+$rname = postvalue("rname");
+
+$accessGranted = CheckTablePermissions($strTableName, "S");
+if(!$accessGranted)
+{
+	HeaderRedirect("menu");
+}
 
 
 
 
 
-$layout = new TLayout("search2", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("search2", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["top"] = array();
 $layout->containers["search"] = array();

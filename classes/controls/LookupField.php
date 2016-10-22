@@ -1402,6 +1402,11 @@ class LookupField extends EditControl
 	protected function getLookupWhere()
 	{
 		$lookupWhere = GetLWWhere($this->field, $this->lookupPageType, $this->tName);		
+		if( $this->lookupType == LT_QUERY )
+		{
+			if( $this->lookupPSet->getAdvancedSecurityType() == ADVSECURITY_VIEW_OWN )
+				$lookupWhere = whereAdd( $lookupWhere, SecuritySQL("Search", $this->lookupTable) );
+		}
 		return $lookupWhere;
 	}
 	

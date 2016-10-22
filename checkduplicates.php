@@ -17,6 +17,12 @@ if( !checkTableName($tableName) )
 
 require_once("include/".$tableName."_variables.php");
 
+if($pageType != PAGE_REGISTER && ( !isLogged() || !CheckSecurity(@$_SESSION["_".$strTableName."_OwnerID"], "Search") ))
+{ 
+	$returnJSON = array("success" => false, "error" => "Error: You have not permissions to read the ".$tableName." table's data");
+	echo printJSON($returnJSON);
+	return;
+}
 
 // set db connection
 $_connection = $cman->byTable( $strTableName );

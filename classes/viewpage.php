@@ -141,6 +141,8 @@ class ViewPage extends RunnerPage
 			$strWhereClause = $_SESSION[ $this->sessionPrefix."_where" ];
 		}
 		
+		if( $this->pSet->getAdvancedSecurityType() != ADVSECURITY_ALL )
+			$strWhereClause = whereAdd($strWhereClause, SecuritySQL("Search"));
 		$strSQL = $this->gQuery->gSQLWhere( $strWhereClause );
 		if( !$keysSet )
 			$strSQL = applyDBrecordLimit($strSQL.$orderClause, 1, $this->connection->dbType);

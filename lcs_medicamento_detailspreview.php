@@ -9,6 +9,14 @@ require_once("include/lcs_medicamento_variables.php");
 
 $mode = postvalue("mode");
 
+if(!isLogged())
+{ 
+	return;
+}
+if(!CheckSecurity(@$_SESSION["_".$strTableName."_OwnerID"],"Search"))
+{
+	return;
+}
 
 require_once("classes/searchclause.php");
 
@@ -21,7 +29,7 @@ $xt = new Xtempl();
 
 
 
-$layout = new TLayout("detailspreview", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("detailspreview", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["bare"] = array();
 $layout->containers["dcount"] = array();
@@ -185,7 +193,7 @@ if($rowcount)
 			if($format==FORMAT_NUMBER || IsNumberType($pSet->getFieldType("NombreMed")))
 				$class = ' rnr-field-number';
 			$row["NombreMed_class"] = $class;
-	//	dias - Checkbox
+	//	dias - 
 			$viewContainer->recId = $recordsCounter;
 		    $value = $viewContainer->showDBValue("dias", $data, $keylink);
 			$row["dias_value"] = $value;

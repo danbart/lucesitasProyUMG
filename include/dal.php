@@ -10,7 +10,7 @@ function UsersTableName()
 {
 	global $cman;
 	$connection = $cman->getForLogin();
-	return $connection->addTableWrappers("");
+	return $connection->addTableWrappers("lcs_userslogin");
 }
 
 /**
@@ -59,13 +59,14 @@ class tDAL
 	var $lcs_lenguaje;
 	var $lcs_medicamento;
 	var $lcs_personal;
-	var $lcs_sesion;
 	var $lcs_terapias;
 	var $lcs_terapista;
 	var $lcs_tiposocial;
 	var $lcs_transtornoalimenticio;
 	var $lcs_transtornoesfinteres;
 	var $lcs_trastornosuenio;
+	var $lcs_userslogin;
+	var $proylucesitasv80_audit;
 	var $lstTables;
 	var $Table = array();
 
@@ -87,13 +88,14 @@ class tDAL
 		$this->lstTables[] = array("name" => "lcs_lenguaje", "varname" => "lcs_lenguaje", "connId" => "Tables");
 		$this->lstTables[] = array("name" => "lcs_medicamento", "varname" => "lcs_medicamento", "connId" => "Tables");
 		$this->lstTables[] = array("name" => "lcs_personal", "varname" => "lcs_personal", "connId" => "Tables");
-		$this->lstTables[] = array("name" => "lcs_sesion", "varname" => "lcs_sesion", "connId" => "Tables");
 		$this->lstTables[] = array("name" => "lcs_terapias", "varname" => "lcs_terapias", "connId" => "Tables");
 		$this->lstTables[] = array("name" => "lcs_terapista", "varname" => "lcs_terapista", "connId" => "Tables");
 		$this->lstTables[] = array("name" => "lcs_tiposocial", "varname" => "lcs_tiposocial", "connId" => "Tables");
 		$this->lstTables[] = array("name" => "lcs_transtornoalimenticio", "varname" => "lcs_transtornoalimenticio", "connId" => "Tables");
 		$this->lstTables[] = array("name" => "lcs_transtornoesfinteres", "varname" => "lcs_transtornoesfinteres", "connId" => "Tables");
 		$this->lstTables[] = array("name" => "lcs_trastornosuenio", "varname" => "lcs_trastornosuenio", "connId" => "Tables");
+		$this->lstTables[] = array("name" => "lcs_userslogin", "varname" => "lcs_userslogin", "connId" => "Tables");
+		$this->lstTables[] = array("name" => "proylucesitasv80_audit", "varname" => "proylucesitasv80_audit", "connId" => "Tables");
 	}
 
 	/**

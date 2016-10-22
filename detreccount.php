@@ -23,6 +23,12 @@ if(!checkTableName($dSTable)){
 }	
 require_once("include/".$dSTable."_variables.php");
 
+if(!isLogged() || !CheckSecurity(@$_SESSION["_".$strTableName."_OwnerID"],"Search"))
+{ 
+	$respObj = array("success"=>false, "error"=>'');
+	echo (my_json_encode($respObj));
+	return;
+}
 
 require_once('include/xtempl.php');
 

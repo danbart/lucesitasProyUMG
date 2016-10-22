@@ -97,7 +97,7 @@ if (!isMobile())
 else 
 	$tdatalcs_donaciones[".listAjax"] = false;
 
-	$tdatalcs_donaciones[".audit"] = false;
+	$tdatalcs_donaciones[".audit"] = true;
 
 	$tdatalcs_donaciones[".locking"] = false;
 

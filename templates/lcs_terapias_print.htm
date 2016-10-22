@@ -90,7 +90,14 @@
 	{BEGIN grid_header}
 <tr class="rnr-toprow style1 {$gridHeader_class}" >
 {BEGIN record_header}
-		{BEGIN idterapias_fieldheadercolumn}
+		{BEGIN _idEstudiante_fieldheadercolumn}
+<th class="runner-cc {$_idEstudiante_class}" {$_idEstudiante_style}>
+	{BEGIN _idEstudiante_fieldheader}
+	<b>{$label lcs_terapias _idEstudiante}</b>
+	{END _idEstudiante_fieldheader}
+</th>
+{END _idEstudiante_fieldheadercolumn}
+	{BEGIN idterapias_fieldheadercolumn}
 <th class="runner-cc {$idterapias_class}" {$idterapias_style}>
 	{BEGIN idterapias_fieldheader}
 	<b>{$label lcs_terapias idterapias}</b>
@@ -125,13 +132,6 @@
 	{END Ingresado_fieldheader}
 </th>
 {END Ingresado_fieldheadercolumn}
-	{BEGIN _idEstudiante_fieldheadercolumn}
-<th class="runner-cc {$_idEstudiante_class}" {$_idEstudiante_style}>
-	{BEGIN _idEstudiante_fieldheader}
-	<b>{$label lcs_terapias _idEstudiante}</b>
-	{END _idEstudiante_fieldheader}
-</th>
-{END _idEstudiante_fieldheadercolumn}
 	{BEGIN _idterapista_fieldheadercolumn}
 <th class="runner-cc {$_idterapista_class}" {$_idterapista_style}>
 	{BEGIN _idterapista_fieldheader}
@@ -153,7 +153,12 @@
 	{BEGIN grid_row}
 	<tr class="rnr-row style1 {$rowclass}" {$rowattrs} {$rowstyle}>
 		{BEGIN grid_record}
-				{BEGIN idterapias_fieldcolumn}
+				{BEGIN _idEstudiante_fieldcolumn}
+<td  class="runner-cc {$_idEstudiante_class}" {$_idEstudiante_style} {$recordattrs}>
+	{$_idEstudiante_value}
+</td>
+{END _idEstudiante_fieldcolumn}
+	{BEGIN idterapias_fieldcolumn}
 <td  class="runner-cc {$idterapias_class}" {$idterapias_style} {$recordattrs}>
 	{$idterapias_value}
 </td>
@@ -178,11 +183,6 @@
 	{$Ingresado_value}
 </td>
 {END Ingresado_fieldcolumn}
-	{BEGIN _idEstudiante_fieldcolumn}
-<td  class="runner-cc {$_idEstudiante_class}" {$_idEstudiante_style} {$recordattrs}>
-	{$_idEstudiante_value}
-</td>
-{END _idEstudiante_fieldcolumn}
 	{BEGIN _idterapista_fieldcolumn}
 <td  class="runner-cc {$_idterapista_class}" {$_idterapista_style} {$recordattrs}>
 	{$_idterapista_value}

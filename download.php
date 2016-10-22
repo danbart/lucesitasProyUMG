@@ -15,6 +15,11 @@ if (!checkTableName($table))
 require_once("include/".$table."_variables.php");
 
 
+if(!isLogged() || !CheckSecurity(@$_SESSION["_".$strTableName."_OwnerID"],"Search"))
+{ 
+	HeaderRedirect("login"); 
+	return;
+}
 
 $field = postvalue("field");
 
@@ -45,6 +50,10 @@ foreach ($keysArr as $ind=>$k)
 $where = KeyWhere($keys);
 
 
+if ($gSettings->getAdvancedSecurityType() == ADVSECURITY_VIEW_OWN)
+{
+	$where=whereAdd($where,SecuritySQL("Search"));	
+}
 
 $sql = $gQuery->gSQLWhere($where);
 $qResult = $_connection->query( $sql );

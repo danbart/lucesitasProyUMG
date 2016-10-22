@@ -155,6 +155,29 @@
 <div class="rnr-c rnr-cv rnr-c-left">
 
 
+{BEGIN security_block}
+<div  class="rnr-brickcontents style1 rnr-b-loggedas {$brickclass_loggedas}"><div id="login_block{$id}">
+	{BEGIN loggedas_message}
+	<span>Conectado como&nbsp;<b>{$username}</b><br><br>
+	</span>
+	{END loggedas_message}
+	{BEGIN guestloginbutton}
+	<span>
+	<a href="#" class="rnr-button" {$guestloginlink_attrs}>Conectar</a>
+	</span>
+	{END guestloginbutton}
+	{BEGIN logoutbutton}
+	<a class="rnr-button" href="login.php?a=logout" {$logoutlink_attrs}>Desconectarse</a>
+	{END logoutbutton}
+<!-- Permissions -->
+{BEGIN changepwd_link}
+<div>
+	<a class="rnr-button" href="changepwd.php" {$changepwdlink_attrs}>Cambiar contraseña</a>
+</div>
+{END changepwd_link}
+</div>
+</div>{END security_block}
+
 
 {BEGIN menu_block}
 {$menu main}

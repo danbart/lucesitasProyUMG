@@ -1,7 +1,7 @@
 <?php
 class AuditTrailTable
 {
-	var $logTableName="";
+	var $logTableName="proylucesitasv80_audit";
 	var $params;
 	
 	var $strLogin="login";
@@ -47,18 +47,69 @@ class AuditTrailTable
 	
     function LogLogin($pUsername)
     {
+		global $globalEvents;
+		$retval=true;
+		$table="lcs_userslogin";
+		$this->params[1]=$pUsername;
+		$arr=array();
+		$this->params=array($_SERVER["REMOTE_ADDR"],$_SESSION["UserID"]);
+		if($globalEvents->exists("OnAuditLog"))
+			$retval=$globalEvents->OnAuditLog($this->strLogin, $this->params, $table, $arr, $arr, $arr);
+		if($retval)
+		{
+			$this->insert(now(), $this->params[0], $this->params[1], $table, $this->strLogin, "");
+		}
+		return $retval;
     }
 	
     function LogLoginFailed($pUsername)
     {
+		global $globalEvents;
+		$retval=true;
+		$table="lcs_userslogin";
+		$this->params[1]=$pUsername;
+		$arr=array();
+		if($globalEvents->exists("OnAuditLog"))
+			$retval=$globalEvents->OnAuditLog($this->strFailLogin, $this->params, $table, $arr, $arr, $arr);
+		if($retval)
+		{
+			$this->insert(now(), $this->params[0], $this->params[1], $table, $this->strFailLogin, "");
+		}
+		$this->params=array($_SERVER["REMOTE_ADDR"],"");
+		return $retval;
     }
 	
     function LogLogout()
     {
+	global $globalEvents;
+	if($_SESSION["UserID"]!="")
+	{
+		$retval=true;
+		$table="lcs_userslogin";
+		$arr=array();
+		if($globalEvents->exists("OnAuditLog"))
+			$retval=$globalEvents->OnAuditLog($this->strLogout, $this->params, $table, $arr, $arr, $arr);
+		if($retval)
+		{
+			$this->insert(now(), $this->params[0], $this->params[1], $table, $this->strLogout, "");
+		}
+		return $retval;
+	}
     }
 	
     function LogChPassword()
     {
+		global $globalEvents;
+		$retval=true;
+		$table="lcs_userslogin";
+		$arr=array();
+		if($globalEvents->exists("OnAuditLog"))
+			$retval=$globalEvents->OnAuditLog($this->strChPass, $this->params, $table, $arr, $arr, $arr);
+		if($retval)
+		{
+			$this->insert(now(), $this->params[0], $this->params[1], $table, $this->strChPass, "");
+		}
+		return $retval;
     }
 	
     function LogAdd($str_table,$values,$keys)
@@ -305,87 +356,79 @@ class AuditTrailTable
 	{
 		if($table=="lcs_centro")
 		{
-			return false;
-		}
-		if($table=="lcs_personal")
-		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_estudiante")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_terapias")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_terapista")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_tiposocial")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_transtornoalimenticio")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_transtornoesfinteres")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_trastornosuenio")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_lenguaje")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_historialclinico")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_histoiralfamiliar")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_enfermedades")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_embarazo")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_espemed")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_descsocial")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_encargado")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_emociones")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_medicamento")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_donaciones")
 		{
-			return false;
-		}
-		if($table=="lcs_sesion")
-		{
-			return false;
+			return true;
 		}
 		if($table=="Reporte Estudiantes")
 		{
@@ -424,6 +467,18 @@ class AuditTrailTable
 			return false;
 		}
 		if($table=="EstuHistCaracter")
+		{
+			return false;
+		}
+		if($table=="lcs_userslogin")
+		{
+			return false;
+		}
+		if($table=="proylucesitasv80_audit")
+		{
+			return false;
+		}
+		if($table=="lcs_personal")
 		{
 			return false;
 		}
@@ -486,18 +541,91 @@ class AuditTrailFile
 	
     function LogLogin($pUsername)
     {
-		    }
+				global $globalEvents;
+		$retval=true;
+		$table="lcs_userslogin";
+		$this->params[1]=$pUsername;
+		$arr=array();
+		if($globalEvents->exists("OnAuditLog"))
+			$retval=$globalEvents->OnAuditLog($this->strLogin, $this->params, $table, $arr, $arr, $arr);
+		if($retval)
+		{
+			$fp=$this->CreateLogFile();
+			$str=format_datetime_custom(db2time(now()),"MMM dd,yyyy").chr(9).format_datetime_custom(db2time(now()),"HH:mm:ss").chr(9).$this->params[0].chr(9).$this->params[1].chr(9).$table.chr(9).$this->strLogin."\r\n";
+			if($fp)
+			{
+				fputs($fp,$str);
+				fclose($fp);
+			}
+		}
+		return $retval;
+    }
 	
     function LogLoginFailed($pUsername)
     {
-		    }
+				global $globalEvents;
+		$retval=true;
+		$table="lcs_userslogin";
+		$this->params[1]=$pUsername;
+		$arr=array();
+		if($globalEvents->exists("OnAuditLog"))
+			$retval=$globalEvents->OnAuditLog($this->strFailLogin, $this->params, $table, $arr, $arr, $arr);
+		if($retval)
+		{
+			$fp=$this->CreateLogFile();
+			$str=format_datetime_custom(db2time(now()),"MMM dd,yyyy").chr(9).format_datetime_custom(db2time(now()),"HH:mm:ss").chr(9).$this->params[0].chr(9).$this->params[1].chr(9).$table.chr(9).$this->strFailLogin."\r\n";
+			if($fp)
+			{
+				fputs($fp,$str);
+				fclose($fp);
+			}
+		}
+		return $retval;
+    }
 	
     function LogLogout()
     {
+		global $globalEvents;
+		if($_SESSION["UserID"]!="")
+		{
+			$retval=true;
+			$table="lcs_userslogin";
+			$arr=array();
+			if($globalEvents->exists("OnAuditLog"))
+				$retval=$globalEvents->OnAuditLog($this->strLogout, $this->params, $table, $arr, $arr, $arr);
+			if($retval)
+			{
+				$fp=$this->CreateLogFile();
+				$str=format_datetime_custom(db2time(now()),"MMM dd,yyyy").chr(9).format_datetime_custom(db2time(now()),"HH:mm:ss").chr(9).$this->params[0].chr(9).$this->params[1].chr(9).$table.chr(9).$this->strLogout."\r\n";
+				if($fp)
+				{
+					fputs($fp,$str);
+					fclose($fp);
+				}
+			}
+			return $retval;
+		}
     }
 	
     function LogChPassword()
     {
+		global $globalEvents;
+		$retval=true;
+		$table="lcs_userslogin";
+		$arr=array();
+		if($globalEvents->exists("OnAuditLog"))
+			$retval=$globalEvents->OnAuditLog($this->strChPass, $this->params, $table, $arr, $arr, $arr);
+		if($retval)
+		{
+			$fp=$this->CreateLogFile();
+			$str=format_datetime_custom(db2time(now()),"MMM dd,yyyy").chr(9).format_datetime_custom(db2time(now()),"HH:mm:ss").chr(9).$this->params[0].chr(9).$this->params[1].chr(9).$table.chr(9).$this->strChPass."\r\n";
+			if($fp)
+			{
+				fputs($fp,$str);
+				fclose($fp);
+			}
+		}
+		return $retval;
     }
 	
     function LogAdd($str_table,$values,$keys)
@@ -753,87 +881,79 @@ class AuditTrailFile
 	{
 		if($table=="lcs_centro")
 		{
-			return false;
-		}
-		if($table=="lcs_personal")
-		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_estudiante")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_terapias")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_terapista")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_tiposocial")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_transtornoalimenticio")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_transtornoesfinteres")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_trastornosuenio")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_lenguaje")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_historialclinico")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_histoiralfamiliar")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_enfermedades")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_embarazo")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_espemed")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_descsocial")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_encargado")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_emociones")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_medicamento")
 		{
-			return false;
+			return true;
 		}
 		if($table=="lcs_donaciones")
 		{
-			return false;
-		}
-		if($table=="lcs_sesion")
-		{
-			return false;
+			return true;
 		}
 		if($table=="Reporte Estudiantes")
 		{
@@ -872,6 +992,18 @@ class AuditTrailFile
 			return false;
 		}
 		if($table=="EstuHistCaracter")
+		{
+			return false;
+		}
+		if($table=="lcs_userslogin")
+		{
+			return false;
+		}
+		if($table=="proylucesitasv80_audit")
+		{
+			return false;
+		}
+		if($table=="lcs_personal")
 		{
 			return false;
 		}

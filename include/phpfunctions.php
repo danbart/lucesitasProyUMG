@@ -768,10 +768,6 @@ function GetDefaultValue($field, $ptype, $table="")
 	global $strTableName;
 	if(!$table)
 		$table=$strTableName;
-				if($table=="lcs_personal" && $field=="Voluntario") 
-	{
-		return 0;
-	}
 				if($table=="lcs_estudiante" && $field=="Ingresado") 
 	{
 		return 300;

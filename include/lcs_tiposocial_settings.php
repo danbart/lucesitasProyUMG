@@ -94,7 +94,7 @@ if (!isMobile())
 else 
 	$tdatalcs_tiposocial[".listAjax"] = false;
 
-	$tdatalcs_tiposocial[".audit"] = false;
+	$tdatalcs_tiposocial[".audit"] = true;
 
 	$tdatalcs_tiposocial[".locking"] = false;
 
@@ -255,8 +255,8 @@ $tdatalcs_tiposocial[".viewFields"][] = "Ingresado";
 $tdatalcs_tiposocial[".viewFields"][] = "_idEstudiante";
 
 $tdatalcs_tiposocial[".addFields"] = array();
-$tdatalcs_tiposocial[".addFields"][] = "TSocial";
 $tdatalcs_tiposocial[".addFields"][] = "_idEstudiante";
+$tdatalcs_tiposocial[".addFields"][] = "TSocial";
 
 $tdatalcs_tiposocial[".inlineAddFields"] = array();
 

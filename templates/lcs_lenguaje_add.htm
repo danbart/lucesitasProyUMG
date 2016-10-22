@@ -50,6 +50,16 @@
 
 
 <div  class="rnr-brickcontents style1 rnr-b-addfields {$brickclass_addfields}"><table class="fieldGrid">
+	{BEGIN _idEstudiante_fieldblock}
+<tr class="{$fielddispclass__idEstudiante}" data-fieldname="_idEstudiante">
+	<td class="rnr-label">
+		{BEGIN _idEstudiante_label}{$label lcs_lenguaje _idEstudiante}{END _idEstudiante_label}
+	</td>
+	<td class="rnr-control style3">
+		{$_idEstudiante_editcontrol}&nbsp;
+	</td>
+</tr>
+{END _idEstudiante_fieldblock}
 	{BEGIN Balbucea_fieldblock}
 <tr class="{$fielddispclass_Balbucea}" data-fieldname="Balbucea">
 	<td class="rnr-label">
@@ -90,16 +100,6 @@
 	</td>
 </tr>
 {END AdaptSocial_fieldblock}
-	{BEGIN _idEstudiante_fieldblock}
-<tr class="{$fielddispclass__idEstudiante}" data-fieldname="_idEstudiante">
-	<td class="rnr-label">
-		{BEGIN _idEstudiante_label}{$label lcs_lenguaje _idEstudiante}{END _idEstudiante_label}
-	</td>
-	<td class="rnr-control style3">
-		{$_idEstudiante_editcontrol}&nbsp;
-	</td>
-</tr>
-{END _idEstudiante_fieldblock}
 </table></div>
 
 

@@ -113,7 +113,7 @@ if (!isMobile())
 else 
 	$tdatalcs_encargado[".listAjax"] = false;
 
-	$tdatalcs_encargado[".audit"] = false;
+	$tdatalcs_encargado[".audit"] = true;
 
 	$tdatalcs_encargado[".locking"] = false;
 
@@ -299,13 +299,13 @@ $tdatalcs_encargado[".viewFields"][] = "Ingresado";
 $tdatalcs_encargado[".viewFields"][] = "_idEstudiante";
 
 $tdatalcs_encargado[".addFields"] = array();
+$tdatalcs_encargado[".addFields"][] = "_idEstudiante";
 $tdatalcs_encargado[".addFields"][] = "Nombre";
 $tdatalcs_encargado[".addFields"][] = "Apellido";
 $tdatalcs_encargado[".addFields"][] = "Direccion";
 $tdatalcs_encargado[".addFields"][] = "Telefono";
 $tdatalcs_encargado[".addFields"][] = "Ocupacion";
 $tdatalcs_encargado[".addFields"][] = "Fnac";
-$tdatalcs_encargado[".addFields"][] = "_idEstudiante";
 
 $tdatalcs_encargado[".inlineAddFields"] = array();
 
@@ -918,7 +918,7 @@ $tdatalcs_encargado[".printFields"][] = "_idEstudiante";
 	$edata = array("EditFormat" => "Text field");
 	
 			
-		$edata["strEditMask"] = "999-999-9999"; 
+		$edata["strEditMask"] = "99999999"; 
 
 	
 

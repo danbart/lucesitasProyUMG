@@ -93,7 +93,7 @@ if (!isMobile())
 else 
 	$tdatalcs_historialclinico[".listAjax"] = false;
 
-	$tdatalcs_historialclinico[".audit"] = false;
+	$tdatalcs_historialclinico[".audit"] = true;
 
 	$tdatalcs_historialclinico[".locking"] = false;
 
@@ -254,8 +254,8 @@ $tdatalcs_historialclinico[".viewFields"][] = "Ingresado";
 $tdatalcs_historialclinico[".viewFields"][] = "_idEstudiante";
 
 $tdatalcs_historialclinico[".addFields"] = array();
-$tdatalcs_historialclinico[".addFields"][] = "Documento";
 $tdatalcs_historialclinico[".addFields"][] = "_idEstudiante";
+$tdatalcs_historialclinico[".addFields"][] = "Documento";
 
 $tdatalcs_historialclinico[".inlineAddFields"] = array();
 

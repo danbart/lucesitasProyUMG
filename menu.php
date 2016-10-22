@@ -6,6 +6,11 @@
 require_once("include/dbcommon.php");
 
 
+if(!isLogged())
+{
+	HeaderRedirect("login");
+	return;
+}
 
 if (($_SESSION["MyURL"] == "") || (!isLoggedAsGuest())) {
 	Security::saveRedirectURL();
@@ -14,11 +19,14 @@ if (($_SESSION["MyURL"] == "") || (!isLoggedAsGuest())) {
 
 
 
-$layout = new TLayout("menu2", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("menu2", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["top"] = array();
 $layout->containers["menu"] = array();
 $layout->container_properties["menu"] = array(  );
+$layout->containers["menu"][] = array("name"=>"login_menu", 
+	"block"=>"loggedas_block", "substyle"=>2  );
+
 $layout->containers["menu"][] = array("name"=>"vmenu", 
 	"block"=>"menu_block", "substyle"=>1  );
 
@@ -83,6 +91,22 @@ $pageObject->body['end'] .= "window.settings = ".my_json_encode($pageObject->jsS
 $pageObject->body["end"] .= "<script type=\"text/javascript\" src=\"".GetRootPathForResources("include/runnerJS/RunnerAll.js")."\"></script>";
 $pageObject->body["end"] .= '<script>'.$pageObject->PrepareJS()."</script>";
 $xt->assignbyref("body",$pageObject->body);
+
+// The user might rewrite $_SESSION["UserName"] value with HTML code in an event, so no encoding will be performed while printing this value.
+$xt->assign("username", $_SESSION["UserName"]);
+$xt->assign("changepwd_link",$_SESSION["AccessLevel"] != ACCESS_LEVEL_GUEST && $_SESSION["fromFacebook"] == false);
+$xt->assign("changepwdlink_attrs","onclick=\"window.location.href='".GetTableLink("changepwd")."';return false;\"");
+
+$xt->assign("logoutlink_attrs","onclick=\"window.location.href='".GetTableLink("login", "", "a=logout")."';return false;\"");
+
+$xt->assign("guestloginlink_attrs","onclick=\"window.location.href='".GetTableLink("login")."';return false;\"");
+
+$xt->assign("loggedas_block", !isLoggedAsGuest());
+$xt->assign("loggedas_message", !isLoggedAsGuest());
+
+$xt->assign("logout_link", true);
+$xt->assign("guestloginbutton", isLoggedAsGuest());
+$xt->assign("logoutbutton", isSingleSign() && !isLoggedAsGuest());
 
 
 // get redirect location for menu page

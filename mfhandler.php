@@ -74,6 +74,19 @@ if(!$isPDF)
 include_once("include/".GetTableURL($strTableName)."_variables.php");
 
 
+//	check if logged in
+if($requestAction == 'POST')
+	$havePermission = CheckSecurity(@$_SESSION["_".$strTableName."_OwnerID"], "Add") 
+		|| CheckSecurity(@$_SESSION["_".$strTableName."_OwnerID"], "Edit");
+else
+	$havePermission = CheckSecurity(@$_SESSION["_".$strTableName."_OwnerID"], "Search");
+	
+if(!isLogged() && $pageType != PAGE_REGISTER || !$havePermission)
+{ 
+	HeaderRedirect("login", "", "message=expired"); 
+	return;
+}
+
 
 require_once getabspath('classes/uploadhandler.php');
 
@@ -133,6 +146,9 @@ switch ($requestAction) {
 					$keys[$tKeys[$i]] = postvalue("key".($i+1));
 			}
 			$strWhereClause = KeyWhere($keys);
+	
+			if($pSet->getAdvancedSecurityType()!=ADVSECURITY_ALL)
+				$strWhereClause = whereAdd($strWhereClause, SecuritySQL("Search"));
 	
 			$queryObj = $pSet->getQueryObject();
     		if($queryObj->HasGroupBy())

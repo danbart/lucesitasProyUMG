@@ -441,8 +441,6 @@ class Chart
 			return true;
 		if("" == $this->chrt_array['tables'][0])
 			return true;
-		if("" == $this->chrt_array['tables'][0])
-			return true;
 		if("lcs_terapias" == $this->chrt_array['tables'][0])
 			return true;
 		if("lcs_terapista" == $this->chrt_array['tables'][0])
@@ -477,8 +475,6 @@ class Chart
 			return true;
 		if("lcs_donaciones" == $this->chrt_array['tables'][0])
 			return true;
-		if("lcs_sesion" == $this->chrt_array['tables'][0])
-			return true;
 		if("lcs_estudiante" == $this->chrt_array['tables'][0])
 			return true;
 		if("lcs_estudiante" == $this->chrt_array['tables'][0])
@@ -498,6 +494,12 @@ class Chart
 		if("lcs_estudiante" == $this->chrt_array['tables'][0])
 			return true;
 		if("lcs_estudiante" == $this->chrt_array['tables'][0])
+			return true;
+		if("lcs_userslogin" == $this->chrt_array['tables'][0])
+			return true;
+		if("proylucesitasv80_audit" == $this->chrt_array['tables'][0])
+			return true;
+		if("lcs_personal" == $this->chrt_array['tables'][0])
 			return true;
 		return false;
 	}

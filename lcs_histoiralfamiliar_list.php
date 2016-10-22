@@ -18,11 +18,13 @@ require_once('include/lookuplinks.php');
 //  Verify the eligibility of such a call.
 
 InitLookupLinks();
+if( !ListPage::processListPageSecurity( $strTableName ) )
+	return;
 
 
 
 
-$layout = new TLayout("list_centered_vert", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("list_centered_vert", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["center"] = array();
 $layout->containers["recordcontrols"] = array();
@@ -113,6 +115,11 @@ $layout->containers["master"][] = array("name"=>"masterinfo",
 $layout->skins["master"] = "empty";
 
 $layout->blocks["top"][] = "master";
+$layout->containers["toplinks"] = array();
+$layout->container_properties["toplinks"] = array(  );
+$layout->containers["toplinks"][] = array("name"=>"loggedas", 
+	"block"=>"security_block", "substyle"=>1  );
+
 $layout->skins["toplinks"] = "empty";
 
 $layout->blocks["top"][] = "toplinks";
@@ -149,7 +156,7 @@ $layout->skinsparams["3"] = array("button"=>"button1");
 
 
 
-$layout = new TLayout("masterreport", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("masterreport", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["bare"] = array();
 $layout->containers["masterlistheader"] = array();
@@ -186,7 +193,7 @@ $layout->skinsparams["3"] = array("button"=>"button1");
 
 
 
-$layout = new TLayout("masterreport", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("masterreport", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["bare"] = array();
 $layout->containers["masterlistheader"] = array();
@@ -223,7 +230,7 @@ $layout->skinsparams["3"] = array("button"=>"button1");
 
 
 
-$layout = new TLayout("masterreport", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("masterreport", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["bare"] = array();
 $layout->containers["masterlistheader"] = array();
@@ -260,7 +267,7 @@ $layout->skinsparams["3"] = array("button"=>"button1");
 
 
 
-$layout = new TLayout("masterreport", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("masterreport", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["bare"] = array();
 $layout->containers["masterlistheader"] = array();
@@ -297,7 +304,7 @@ $layout->skinsparams["3"] = array("button"=>"button1");
 
 
 
-$layout = new TLayout("masterreport", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("masterreport", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["bare"] = array();
 $layout->containers["masterlistheader"] = array();
@@ -334,7 +341,7 @@ $layout->skinsparams["3"] = array("button"=>"button1");
 
 
 
-$layout = new TLayout("masterreport", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("masterreport", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["bare"] = array();
 $layout->containers["masterlistheader"] = array();
@@ -371,7 +378,7 @@ $layout->skinsparams["3"] = array("button"=>"button1");
 
 
 
-$layout = new TLayout("masterreport", "FusionAvenue", "MobileAvenue");
+$layout = new TLayout("masterreport", "FancyCoral", "MobileCoral");
 $layout->version = 2;
 $layout->blocks["bare"] = array();
 $layout->containers["masterlistheader"] = array();
