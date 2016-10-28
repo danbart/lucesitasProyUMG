@@ -92,9 +92,9 @@
 			{BEGIN Estudiante_newgroup}
 								<tr class="group-headers">
 					<td class="blackshade">{$label TranstornosAlimenticio Estudiante}</td>
-										<td class="blackshade">{$label TranstornosAlimenticio Ingresado}</td>
-					<td class="blackshade">{$label TranstornosAlimenticio TipoTAlimenticio}</td>
+										<td class="blackshade">{$label TranstornosAlimenticio TipoTAlimenticio}</td>
 					<td class="blackshade">{$label TranstornosAlimenticio FotoRostro}</td>
+					<td class="blackshade">{$label TranstornosAlimenticio Ingresado}</td>
 					<td class="blackshade">{$label TranstornosAlimenticio edad}</td>
 				</tr>
 				<tr class="group-spliter-1" {$rowattrs}>
@@ -109,9 +109,9 @@
 			{BEGIN row_data}
 				<tr >
 										<td class=" group_1" >&nbsp;</td>
-									<td class=data>{$Ingresado_value}</td>
-					<td class=data>{$TipoTAlimenticio_value}</td>
+									<td class=data>{$TipoTAlimenticio_value}</td>
 					<td class=data>{$FotoRostro_value}</td>
+					<td class=data>{$Ingresado_value}</td>
 					<td class=data>{$edad_value}</td>
 				</tr>
 			{END row_data}
@@ -124,8 +124,8 @@
 				</tr>
 												<!--  Min -->
 				<tr class="grouptotalsrow" >
-										<td class=group_1>&nbsp;</td>
 										<td class=group_1>Min</td>
+										<td class=group_1>&nbsp;</td>
 										<td class=group_1>&nbsp;</td>
 										<td class=group_1>&nbsp;</td>
 										<td class=group_1><span class="summary-1" data-type="min" data-value="{$groupEstudiante_totaledad_min}" data-field="edad">{$groupEstudiante_totaledad_min}</span></td>

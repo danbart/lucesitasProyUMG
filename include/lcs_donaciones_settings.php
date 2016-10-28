@@ -501,7 +501,7 @@ $tdatalcs_donaciones[".printFields"][] = "_idCentro";
 		
 		
 		
-			$edata["HTML5InuptType"] = "number";
+			$edata["HTML5InuptType"] = "text";
 	
 		$edata["EditParams"] = "";
 			
@@ -511,7 +511,6 @@ $tdatalcs_donaciones[".printFields"][] = "_idCentro";
 	$edata["validateAs"] = array();
 	$edata["validateAs"]["basicValidate"] = array();
 	$edata["validateAs"]["customMessages"] = array();
-				$edata["validateAs"]["basicValidate"][] = getJsValidatorName("Number");	
 						$edata["validateAs"]["basicValidate"][] = "IsRequired";
 			
 		
@@ -852,11 +851,37 @@ $tdatalcs_donaciones[".printFields"][] = "_idCentro";
 //	Begin Edit Formats 	
 	$fdata["EditFormats"] = array();
 	
-	$edata = array("EditFormat" => "Text field");
+	$edata = array("EditFormat" => "Lookup wizard");
 	
 			
 	
 	
+// Begin Lookup settings
+				$edata["LookupType"] = 2;
+	$edata["LookupTable"] = "lcs_centro";
+		$edata["autoCompleteFieldsOnEdit"] = 0;
+	$edata["autoCompleteFields"] = array();
+		$edata["LCType"] = 0;
+		
+		
+			
+	$edata["LinkField"] = "idCentro";
+	$edata["LinkFieldType"] = 0;
+	$edata["DisplayField"] = "Nombre";
+	
+		
+	$edata["LookupOrderBy"] = "Nombre";
+	
+		
+			
+		
+				
+	
+	
+		
+		$edata["SelectSize"] = 1;
+		
+// End Lookup Settings
 
 
 		$edata["IsRequired"] = true; 
@@ -872,17 +897,14 @@ $tdatalcs_donaciones[".printFields"][] = "_idCentro";
 		
 		
 		
-			$edata["HTML5InuptType"] = "number";
-	
-		$edata["EditParams"] = "";
-			
+		
+		
 		$edata["controlWidth"] = 200;
 	
 //	Begin validation
 	$edata["validateAs"] = array();
 	$edata["validateAs"]["basicValidate"] = array();
 	$edata["validateAs"]["customMessages"] = array();
-				$edata["validateAs"]["basicValidate"][] = getJsValidatorName("Number");	
 						$edata["validateAs"]["basicValidate"][] = "IsRequired";
 			
 		

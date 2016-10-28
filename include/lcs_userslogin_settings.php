@@ -35,6 +35,8 @@ if(mlang_getcurrentlang()=="Spanish")
 	$fieldToolTipslcs_userslogin["Spanish"]["groupid"] = "";
 	$fieldLabelslcs_userslogin["Spanish"]["active"] = "Active";
 	$fieldToolTipslcs_userslogin["Spanish"]["active"] = "";
+	$pageTitleslcs_userslogin["Spanish"]["edit"] = "Userslogin, Editar registro [ID:{%ID}]";
+	$pageTitleslcs_userslogin["Spanish"]["add"] = "Userslogin, Añadir nuevo registro";
 	if (count($fieldToolTipslcs_userslogin["Spanish"]))
 		$tdatalcs_userslogin[".isUseToolTips"] = true;
 }
@@ -156,7 +158,6 @@ $tdatalcs_userslogin[".requiredSearchFields"] = array();
 
 $tdatalcs_userslogin[".allSearchFields"][] = "ID";
 	$tdatalcs_userslogin[".allSearchFields"][] = "username";
-	$tdatalcs_userslogin[".allSearchFields"][] = "password";
 	$tdatalcs_userslogin[".allSearchFields"][] = "email";
 	$tdatalcs_userslogin[".allSearchFields"][] = "fullname";
 	$tdatalcs_userslogin[".allSearchFields"][] = "groupid";
@@ -176,7 +177,6 @@ $tdatalcs_userslogin[".googleLikeFields"][] = "active";
 $tdatalcs_userslogin[".advSearchFields"] = array();
 $tdatalcs_userslogin[".advSearchFields"][] = "ID";
 $tdatalcs_userslogin[".advSearchFields"][] = "username";
-$tdatalcs_userslogin[".advSearchFields"][] = "password";
 $tdatalcs_userslogin[".advSearchFields"][] = "email";
 $tdatalcs_userslogin[".advSearchFields"][] = "fullname";
 $tdatalcs_userslogin[".advSearchFields"][] = "groupid";
@@ -259,7 +259,6 @@ $tdatalcs_userslogin[".Keys"] = $tableKeyslcs_userslogin;
 $tdatalcs_userslogin[".listFields"] = array();
 $tdatalcs_userslogin[".listFields"][] = "ID";
 $tdatalcs_userslogin[".listFields"][] = "username";
-$tdatalcs_userslogin[".listFields"][] = "password";
 $tdatalcs_userslogin[".listFields"][] = "email";
 $tdatalcs_userslogin[".listFields"][] = "fullname";
 $tdatalcs_userslogin[".listFields"][] = "groupid";
@@ -271,7 +270,6 @@ $tdatalcs_userslogin[".hideMobileList"] = array();
 $tdatalcs_userslogin[".viewFields"] = array();
 $tdatalcs_userslogin[".viewFields"][] = "ID";
 $tdatalcs_userslogin[".viewFields"][] = "username";
-$tdatalcs_userslogin[".viewFields"][] = "password";
 $tdatalcs_userslogin[".viewFields"][] = "email";
 $tdatalcs_userslogin[".viewFields"][] = "fullname";
 $tdatalcs_userslogin[".viewFields"][] = "groupid";
@@ -286,12 +284,6 @@ $tdatalcs_userslogin[".addFields"][] = "groupid";
 $tdatalcs_userslogin[".addFields"][] = "active";
 
 $tdatalcs_userslogin[".inlineAddFields"] = array();
-$tdatalcs_userslogin[".inlineAddFields"][] = "username";
-$tdatalcs_userslogin[".inlineAddFields"][] = "password";
-$tdatalcs_userslogin[".inlineAddFields"][] = "email";
-$tdatalcs_userslogin[".inlineAddFields"][] = "fullname";
-$tdatalcs_userslogin[".inlineAddFields"][] = "groupid";
-$tdatalcs_userslogin[".inlineAddFields"][] = "active";
 
 $tdatalcs_userslogin[".editFields"] = array();
 $tdatalcs_userslogin[".editFields"][] = "username";
@@ -302,17 +294,10 @@ $tdatalcs_userslogin[".editFields"][] = "groupid";
 $tdatalcs_userslogin[".editFields"][] = "active";
 
 $tdatalcs_userslogin[".inlineEditFields"] = array();
-$tdatalcs_userslogin[".inlineEditFields"][] = "username";
-$tdatalcs_userslogin[".inlineEditFields"][] = "password";
-$tdatalcs_userslogin[".inlineEditFields"][] = "email";
-$tdatalcs_userslogin[".inlineEditFields"][] = "fullname";
-$tdatalcs_userslogin[".inlineEditFields"][] = "groupid";
-$tdatalcs_userslogin[".inlineEditFields"][] = "active";
 
 $tdatalcs_userslogin[".exportFields"] = array();
 $tdatalcs_userslogin[".exportFields"][] = "ID";
 $tdatalcs_userslogin[".exportFields"][] = "username";
-$tdatalcs_userslogin[".exportFields"][] = "password";
 $tdatalcs_userslogin[".exportFields"][] = "email";
 $tdatalcs_userslogin[".exportFields"][] = "fullname";
 $tdatalcs_userslogin[".exportFields"][] = "groupid";
@@ -320,7 +305,6 @@ $tdatalcs_userslogin[".exportFields"][] = "active";
 
 $tdatalcs_userslogin[".importFields"] = array();
 $tdatalcs_userslogin[".importFields"][] = "username";
-$tdatalcs_userslogin[".importFields"][] = "password";
 $tdatalcs_userslogin[".importFields"][] = "email";
 $tdatalcs_userslogin[".importFields"][] = "fullname";
 $tdatalcs_userslogin[".importFields"][] = "groupid";
@@ -329,7 +313,6 @@ $tdatalcs_userslogin[".importFields"][] = "active";
 $tdatalcs_userslogin[".printFields"] = array();
 $tdatalcs_userslogin[".printFields"][] = "ID";
 $tdatalcs_userslogin[".printFields"][] = "username";
-$tdatalcs_userslogin[".printFields"][] = "password";
 $tdatalcs_userslogin[".printFields"][] = "email";
 $tdatalcs_userslogin[".printFields"][] = "fullname";
 $tdatalcs_userslogin[".printFields"][] = "groupid";
@@ -477,12 +460,10 @@ $tdatalcs_userslogin[".printFields"][] = "active";
 	
 		$fdata["bAddPage"] = true; 
 	
-		$fdata["bInlineAdd"] = true; 
-	
+		
 		$fdata["bEditPage"] = true; 
 	
-		$fdata["bInlineEdit"] = true; 
-	
+		
 		$fdata["bViewPage"] = true; 
 	
 		$fdata["bAdvancedSearch"] = true; 
@@ -598,24 +579,17 @@ $tdatalcs_userslogin[".printFields"][] = "active";
 		
 		
 				
-		$fdata["bListPage"] = true; 
-	
+		
 		$fdata["bAddPage"] = true; 
 	
-		$fdata["bInlineAdd"] = true; 
-	
+		
 		$fdata["bEditPage"] = true; 
 	
-		$fdata["bInlineEdit"] = true; 
-	
-		$fdata["bViewPage"] = true; 
-	
-		$fdata["bAdvancedSearch"] = true; 
-	
-		$fdata["bPrinterPage"] = true; 
-	
-		$fdata["bExportPage"] = true; 
-	
+		
+		
+		
+		
+		
 		$fdata["strField"] = "password"; 
 	
 		$fdata["isSQLExpression"] = true;
@@ -651,7 +625,7 @@ $tdatalcs_userslogin[".printFields"][] = "active";
 //	Begin Edit Formats 	
 	$fdata["EditFormats"] = array();
 	
-	$edata = array("EditFormat" => "Text field");
+	$edata = array("EditFormat" => "Password");
 	
 			
 	
@@ -670,8 +644,7 @@ $tdatalcs_userslogin[".printFields"][] = "active";
 		
 		
 		
-			$edata["HTML5InuptType"] = "text";
-	
+		
 		$edata["EditParams"] = "";
 			$edata["EditParams"].= " maxlength=300";
 	
@@ -681,7 +654,8 @@ $tdatalcs_userslogin[".printFields"][] = "active";
 	$edata["validateAs"] = array();
 	$edata["validateAs"]["basicValidate"] = array();
 	$edata["validateAs"]["customMessages"] = array();
-		
+				$edata["validateAs"]["basicValidate"][] = getJsValidatorName("Password");	
+								
 		
 	//	End validation
 	
@@ -699,11 +673,6 @@ $tdatalcs_userslogin[".printFields"][] = "active";
 	
 	
 	
-// the field's search options settings
-		
-			// the default search options list
-				$fdata["searchOptionsList"] = array("Contains", "Equals", "Empty");
-// the end of search options settings	
 
 	
 
@@ -727,12 +696,10 @@ $tdatalcs_userslogin[".printFields"][] = "active";
 	
 		$fdata["bAddPage"] = true; 
 	
-		$fdata["bInlineAdd"] = true; 
-	
+		
 		$fdata["bEditPage"] = true; 
 	
-		$fdata["bInlineEdit"] = true; 
-	
+		
 		$fdata["bViewPage"] = true; 
 	
 		$fdata["bAdvancedSearch"] = true; 
@@ -852,12 +819,10 @@ $tdatalcs_userslogin[".printFields"][] = "active";
 	
 		$fdata["bAddPage"] = true; 
 	
-		$fdata["bInlineAdd"] = true; 
-	
+		
 		$fdata["bEditPage"] = true; 
 	
-		$fdata["bInlineEdit"] = true; 
-	
+		
 		$fdata["bViewPage"] = true; 
 	
 		$fdata["bAdvancedSearch"] = true; 
@@ -977,12 +942,10 @@ $tdatalcs_userslogin[".printFields"][] = "active";
 	
 		$fdata["bAddPage"] = true; 
 	
-		$fdata["bInlineAdd"] = true; 
-	
+		
 		$fdata["bEditPage"] = true; 
 	
-		$fdata["bInlineEdit"] = true; 
-	
+		
 		$fdata["bViewPage"] = true; 
 	
 		$fdata["bAdvancedSearch"] = true; 
@@ -1117,12 +1080,10 @@ $tdatalcs_userslogin[".printFields"][] = "active";
 	
 		$fdata["bAddPage"] = true; 
 	
-		$fdata["bInlineAdd"] = true; 
-	
+		
 		$fdata["bEditPage"] = true; 
 	
-		$fdata["bInlineEdit"] = true; 
-	
+		
 		$fdata["bViewPage"] = true; 
 	
 		$fdata["bAdvancedSearch"] = true; 

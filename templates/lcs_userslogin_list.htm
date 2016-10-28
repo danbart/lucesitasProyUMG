@@ -341,16 +341,6 @@
 									</th>
 									{END username_fieldheadercolumn}
 
-																	{BEGIN password_fieldheadercolumn}
-									<th class="rnr-gridfieldlabel {$password_class}">
-									{BEGIN password_fieldheader}
-																				<span {$password_orderlinkattrs}>
-											{$label lcs_userslogin password}
-										</span>
-									{END password_fieldheader}
-									</th>
-									{END password_fieldheadercolumn}
-
 																	{BEGIN email_fieldheadercolumn}
 									<th class="rnr-gridfieldlabel {$email_class}">
 									{BEGIN email_fieldheader}
@@ -447,12 +437,6 @@
 		{$username_value}
 	</td>
 {END username_fieldcolumn}
-
-	{BEGIN password_fieldcolumn}
-	<td class="{$password_class}" {$password_style} {$recordattrs}>
-		{$password_value}
-	</td>
-{END password_fieldcolumn}
 
 	{BEGIN email_fieldcolumn}
 	<td class="{$email_class}" {$email_style} {$recordattrs}>

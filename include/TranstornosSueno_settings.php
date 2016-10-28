@@ -25,11 +25,11 @@ if(mlang_getcurrentlang()=="Spanish")
 	$fieldToolTipsTranstornosSueno["Spanish"]["Estudiante"] = "";
 	$fieldLabelsTranstornosSueno["Spanish"]["edad"] = "Edad";
 	$fieldToolTipsTranstornosSueno["Spanish"]["edad"] = "";
-	$fieldLabelsTranstornosSueno["Spanish"]["FotoRostro"] = "Foto Rostro";
-	$fieldToolTipsTranstornosSueno["Spanish"]["FotoRostro"] = "";
 	$fieldLabelsTranstornosSueno["Spanish"]["Ingresado"] = "Ingresado";
 	$fieldToolTipsTranstornosSueno["Spanish"]["Ingresado"] = "";
-	$fieldLabelsTranstornosSueno["Spanish"]["TipoTSue_o"] = "Tipo TSueño";
+	$fieldLabelsTranstornosSueno["Spanish"]["FotoRostro"] = "Foto Rostro";
+	$fieldToolTipsTranstornosSueno["Spanish"]["FotoRostro"] = "";
+	$fieldLabelsTranstornosSueno["Spanish"]["TipoTSue_o"] = "Sueño";
 	$fieldToolTipsTranstornosSueno["Spanish"]["TipoTSueño"] = "";
 	if (count($fieldToolTipsTranstornosSueno["Spanish"]))
 		$tdataTranstornosSueno[".isUseToolTips"] = true;
@@ -43,10 +43,10 @@ if(mlang_getcurrentlang()=="")
 	$fieldToolTipsTranstornosSueno[""]["Estudiante"] = "";
 	$fieldLabelsTranstornosSueno[""]["edad"] = "Edad";
 	$fieldToolTipsTranstornosSueno[""]["edad"] = "";
-	$fieldLabelsTranstornosSueno[""]["FotoRostro"] = "Foto Rostro";
-	$fieldToolTipsTranstornosSueno[""]["FotoRostro"] = "";
 	$fieldLabelsTranstornosSueno[""]["Ingresado"] = "Ingresado";
 	$fieldToolTipsTranstornosSueno[""]["Ingresado"] = "";
+	$fieldLabelsTranstornosSueno[""]["FotoRostro"] = "Foto Rostro";
+	$fieldToolTipsTranstornosSueno[""]["FotoRostro"] = "";
 	$fieldLabelsTranstornosSueno[""]["TipoTSue_o"] = "Tipo TSueño";
 	$fieldToolTipsTranstornosSueno[""]["TipoTSueño"] = "";
 	if (count($fieldToolTipsTranstornosSueno[""]))
@@ -216,7 +216,7 @@ $tdataTranstornosSueno[".strOrderBy"] = $tstrOrderBy;
 $tdataTranstornosSueno[".orderindexes"] = array();
 
 $tdataTranstornosSueno[".sqlHead"] = "SELECT concat(lcs_estudiante.Nombre, ' ', lcs_estudiante.Apellido) AS Estudiante,  year(curdate())-year(lcs_estudiante.FNacimiento) + if(date_format(curdate(), '%m-%d')>date_format(lcs_estudiante.FNacimiento, '%m-%d'),0,-1) AS edad,  lcs_estudiante.FotoRostro,  lcs_trastornosuenio.Ingresado,  lcs_trastornosuenio.`TipoTSueño`";
-$tdataTranstornosSueno[".sqlFrom"] = "FROM lcs_estudiante  LEFT OUTER JOIN lcs_trastornosuenio ON lcs_estudiante.idEstudiante = lcs_trastornosuenio.`_idEstudiante`";
+$tdataTranstornosSueno[".sqlFrom"] = "FROM lcs_estudiante  INNER JOIN lcs_trastornosuenio ON lcs_estudiante.idEstudiante = lcs_trastornosuenio.`_idEstudiante`";
 $tdataTranstornosSueno[".sqlWhereExpr"] = "";
 $tdataTranstornosSueno[".sqlTail"] = "";
 
@@ -979,7 +979,7 @@ function createSqlQuery_TranstornosSueno()
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
 $proto0["m_strFieldList"] = "concat(lcs_estudiante.Nombre, ' ', lcs_estudiante.Apellido) AS Estudiante,  year(curdate())-year(lcs_estudiante.FNacimiento) + if(date_format(curdate(), '%m-%d')>date_format(lcs_estudiante.FNacimiento, '%m-%d'),0,-1) AS edad,  lcs_estudiante.FotoRostro,  lcs_trastornosuenio.Ingresado,  lcs_trastornosuenio.`TipoTSueño`";
-$proto0["m_strFrom"] = "FROM lcs_estudiante  LEFT OUTER JOIN lcs_trastornosuenio ON lcs_estudiante.idEstudiante = lcs_trastornosuenio.`_idEstudiante`";
+$proto0["m_strFrom"] = "FROM lcs_estudiante  INNER JOIN lcs_trastornosuenio ON lcs_estudiante.idEstudiante = lcs_trastornosuenio.`_idEstudiante`";
 $proto0["m_strWhere"] = "";
 $proto0["m_strOrderBy"] = "";
 $proto0["m_strTail"] = "";
@@ -1141,7 +1141,7 @@ $obj = new SQLFromListItem($proto18);
 
 $proto0["m_fromlist"][]=$obj;
 												$proto22=array();
-$proto22["m_link"] = "SQLL_LEFTJOIN";
+$proto22["m_link"] = "SQLL_INNERJOIN";
 			$proto23=array();
 $proto23["m_strName"] = "lcs_trastornosuenio";
 $proto23["m_srcTableName"] = "TranstornosSueno";
@@ -1153,7 +1153,7 @@ $proto23["m_columns"][] = "_idEstudiante";
 $obj = new SQLTable($proto23);
 
 $proto22["m_table"] = $obj;
-$proto22["m_sql"] = "LEFT OUTER JOIN lcs_trastornosuenio ON lcs_estudiante.idEstudiante = lcs_trastornosuenio.`_idEstudiante`";
+$proto22["m_sql"] = "INNER JOIN lcs_trastornosuenio ON lcs_estudiante.idEstudiante = lcs_trastornosuenio.`_idEstudiante`";
 $proto22["m_alias"] = "";
 $proto22["m_srcTableName"] = "TranstornosSueno";
 $proto24=array();

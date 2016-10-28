@@ -57,6 +57,7 @@ function InitLookupLinks()
 	$lookupTableLinks["lcs_estudiante"]["lcs_encargado._idEstudiante"]["edit"] = array("table" => "lcs_encargado", "field" => "_idEstudiante", "page" => "edit");
 	$lookupTableLinks["lcs_estudiante"]["lcs_emociones._idEstudiante"]["edit"] = array("table" => "lcs_emociones", "field" => "_idEstudiante", "page" => "edit");
 	$lookupTableLinks["lcs_enfermedades"]["lcs_medicamento._idEnfermedades"]["edit"] = array("table" => "lcs_medicamento", "field" => "_idEnfermedades", "page" => "edit");
+	$lookupTableLinks["lcs_centro"]["lcs_donaciones._idCentro"]["edit"] = array("table" => "lcs_donaciones", "field" => "_idCentro", "page" => "edit");
 	$lookupTableLinks["lcs_centro"]["lcs_personal._idCentro"]["edit"] = array("table" => "lcs_personal", "field" => "_idCentro", "page" => "edit");
 }
 

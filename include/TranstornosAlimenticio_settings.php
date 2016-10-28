@@ -21,16 +21,16 @@ if(mlang_getcurrentlang()=="Spanish")
 	$fieldLabelsTranstornosAlimenticio["Spanish"] = array();
 	$fieldToolTipsTranstornosAlimenticio["Spanish"] = array();
 	$pageTitlesTranstornosAlimenticio["Spanish"] = array();
-	$fieldLabelsTranstornosAlimenticio["Spanish"]["TipoTAlimenticio"] = "Tipo TAlimenticio";
-	$fieldToolTipsTranstornosAlimenticio["Spanish"]["TipoTAlimenticio"] = "";
 	$fieldLabelsTranstornosAlimenticio["Spanish"]["Estudiante"] = "Estudiante";
 	$fieldToolTipsTranstornosAlimenticio["Spanish"]["Estudiante"] = "";
 	$fieldLabelsTranstornosAlimenticio["Spanish"]["edad"] = "Edad";
 	$fieldToolTipsTranstornosAlimenticio["Spanish"]["edad"] = "";
-	$fieldLabelsTranstornosAlimenticio["Spanish"]["FotoRostro"] = "Foto Rostro";
-	$fieldToolTipsTranstornosAlimenticio["Spanish"]["FotoRostro"] = "";
 	$fieldLabelsTranstornosAlimenticio["Spanish"]["Ingresado"] = "Ingresado";
 	$fieldToolTipsTranstornosAlimenticio["Spanish"]["Ingresado"] = "";
+	$fieldLabelsTranstornosAlimenticio["Spanish"]["FotoRostro"] = "Foto Rostro";
+	$fieldToolTipsTranstornosAlimenticio["Spanish"]["FotoRostro"] = "";
+	$fieldLabelsTranstornosAlimenticio["Spanish"]["TipoTAlimenticio"] = "Alimenticio";
+	$fieldToolTipsTranstornosAlimenticio["Spanish"]["TipoTAlimenticio"] = "";
 	if (count($fieldToolTipsTranstornosAlimenticio["Spanish"]))
 		$tdataTranstornosAlimenticio[".isUseToolTips"] = true;
 }
@@ -39,16 +39,16 @@ if(mlang_getcurrentlang()=="")
 	$fieldLabelsTranstornosAlimenticio[""] = array();
 	$fieldToolTipsTranstornosAlimenticio[""] = array();
 	$pageTitlesTranstornosAlimenticio[""] = array();
-	$fieldLabelsTranstornosAlimenticio[""]["TipoTAlimenticio"] = "Tipo TAlimenticio";
-	$fieldToolTipsTranstornosAlimenticio[""]["TipoTAlimenticio"] = "";
 	$fieldLabelsTranstornosAlimenticio[""]["Estudiante"] = "Estudiante";
 	$fieldToolTipsTranstornosAlimenticio[""]["Estudiante"] = "";
 	$fieldLabelsTranstornosAlimenticio[""]["edad"] = "Edad";
 	$fieldToolTipsTranstornosAlimenticio[""]["edad"] = "";
-	$fieldLabelsTranstornosAlimenticio[""]["FotoRostro"] = "Foto Rostro";
-	$fieldToolTipsTranstornosAlimenticio[""]["FotoRostro"] = "";
 	$fieldLabelsTranstornosAlimenticio[""]["Ingresado"] = "Ingresado";
 	$fieldToolTipsTranstornosAlimenticio[""]["Ingresado"] = "";
+	$fieldLabelsTranstornosAlimenticio[""]["FotoRostro"] = "Foto Rostro";
+	$fieldToolTipsTranstornosAlimenticio[""]["FotoRostro"] = "";
+	$fieldLabelsTranstornosAlimenticio[""]["TipoTAlimenticio"] = "Tipo TAlimenticio";
+	$fieldToolTipsTranstornosAlimenticio[""]["TipoTAlimenticio"] = "";
 	if (count($fieldToolTipsTranstornosAlimenticio[""]))
 		$tdataTranstornosAlimenticio[".isUseToolTips"] = true;
 }

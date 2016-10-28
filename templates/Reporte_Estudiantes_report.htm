@@ -327,15 +327,15 @@
 			{BEGIN grid_row}<TBODY>
   {BEGIN Nombre_Terapista_newgroup}<tr class="group-headers">
 					<td class="blackshade">{$label Reporte_Estudiantes Nombre_Terapista}</td>
-					<td class="blackshade">{$label Reporte_Estudiantes TipoTerapia}</td>
 					<td class="blackshade">{$label Reporte_Estudiantes fecha}</td>
 										<td class="blackshade"></td>
+					<td class="blackshade">{$label Reporte_Estudiantes hora}</td>
 					<td class="blackshade">{$label Reporte_Estudiantes edad}</td>
+					<td class="blackshade">{$label Reporte_Estudiantes Rostro}</td>
+					<td class="blackshade">{$label Reporte_Estudiantes Terapia}</td>
 					<td class="blackshade">{$label Reporte_Estudiantes Direccion}</td>
 					<td class="blackshade">{$label Reporte_Estudiantes Estudiante}</td>
-					<td class="blackshade">{$label Reporte_Estudiantes FotoRostro}</td>
 					<td class="blackshade">{$label Reporte_Estudiantes Telefono}</td>
-					<td class="blackshade">{$label Reporte_Estudiantes hora}</td>
 				</tr>
 				<tr class="group-spliter-1" >
 																				<td colspan=10 class=header_1><font >{$Nombre_Terapista_grval}</font></td>
@@ -398,12 +398,13 @@
 					</span>
 					{END lcs_trastornosuenio_dtable_link}
 				</td>
+					<td class=data>{$hora_value}</td>
 					<td class=data>{$edad_value}</td>
+					<td class=data>{$Rostro_value}</td>
+					<td class=data>{$Terapia_value}</td>
 					<td class=data>{$Direccion_value}</td>
 					<td class=data>{$Estudiante_value}</td>
-					<td class=data>{$FotoRostro_value}</td>
 					<td class=data>{$Telefono_value}</td>
-					<td class=data>{$hora_value}</td>
 				</tr>
 			{END row_data}
 			
@@ -417,9 +418,6 @@
 															{END fecha_endgroup}
 						{BEGIN TipoTerapia_endgroup}<tr class="summaryrow" >
 					<td class=group_1 style="border-top: none;"></td>
-										<td  class="group_2" colspan=9 >
-				Resumen de {$label Reporte_Estudiantes TipoTerapia} {$TipoTerapia_grval}
-					- <span class="summary-2" data-type="summary" data-value="{$groupTipoTerapia_total_cnt}">{$groupTipoTerapia_total_cnt}</span> Registros totales</td>
 				</tr>
 															{END TipoTerapia_endgroup}
 						{BEGIN Nombre_Terapista_endgroup}<tr class="summaryrow" >

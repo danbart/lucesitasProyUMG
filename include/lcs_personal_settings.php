@@ -233,7 +233,7 @@ $tdatalcs_personal[".strOrderBy"] = $tstrOrderBy;
 
 $tdatalcs_personal[".orderindexes"] = array();
 
-$tdatalcs_personal[".sqlHead"] = "SELECT idUsuario,  Nombre,  Apellido,  Telefono,  Email,  celular,  Voluntario,  Ingresado,  `_idCentro`";
+$tdatalcs_personal[".sqlHead"] = "SELECT idUsuario,   Nombre,   Apellido,   Telefono,   Email,   celular,   Voluntario,   Ingresado,   `_idCentro`";
 $tdatalcs_personal[".sqlFrom"] = "FROM lcs_personal";
 $tdatalcs_personal[".sqlWhereExpr"] = "";
 $tdatalcs_personal[".sqlTail"] = "";
@@ -1557,7 +1557,7 @@ function createSqlQuery_lcs_personal()
 {
 $proto3=array();
 $proto3["m_strHead"] = "SELECT";
-$proto3["m_strFieldList"] = "idUsuario,  Nombre,  Apellido,  Telefono,  Email,  celular,  Voluntario,  Ingresado,  `_idCentro`";
+$proto3["m_strFieldList"] = "idUsuario,   Nombre,   Apellido,   Telefono,   Email,   celular,   Voluntario,   Ingresado,   `_idCentro`";
 $proto3["m_strFrom"] = "FROM lcs_personal";
 $proto3["m_strWhere"] = "";
 $proto3["m_strOrderBy"] = "";

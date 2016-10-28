@@ -216,7 +216,7 @@ $tdataTranstornosEsfinteres[".strOrderBy"] = $tstrOrderBy;
 $tdataTranstornosEsfinteres[".orderindexes"] = array();
 
 $tdataTranstornosEsfinteres[".sqlHead"] = "SELECT concat(lcs_estudiante.Nombre, ' ', lcs_estudiante.Apellido) AS Estudiante,  year(curdate())-year(lcs_estudiante.FNacimiento) + if(date_format(curdate(), '%m-%d')>date_format(lcs_estudiante.FNacimiento, '%m-%d'),0,-1) AS edad,  lcs_estudiante.FotoRostro,  lcs_transtornoesfinteres.TipoEsfinteres,  lcs_transtornoesfinteres.Ingresado";
-$tdataTranstornosEsfinteres[".sqlFrom"] = "FROM lcs_estudiante  LEFT OUTER JOIN lcs_transtornoesfinteres ON lcs_estudiante.idEstudiante = lcs_transtornoesfinteres.`_idEstudiante`";
+$tdataTranstornosEsfinteres[".sqlFrom"] = "FROM lcs_estudiante  INNER JOIN lcs_transtornoesfinteres ON lcs_estudiante.idEstudiante = lcs_transtornoesfinteres.`_idEstudiante`";
 $tdataTranstornosEsfinteres[".sqlWhereExpr"] = "";
 $tdataTranstornosEsfinteres[".sqlTail"] = "";
 
@@ -979,7 +979,7 @@ function createSqlQuery_TranstornosEsfinteres()
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
 $proto0["m_strFieldList"] = "concat(lcs_estudiante.Nombre, ' ', lcs_estudiante.Apellido) AS Estudiante,  year(curdate())-year(lcs_estudiante.FNacimiento) + if(date_format(curdate(), '%m-%d')>date_format(lcs_estudiante.FNacimiento, '%m-%d'),0,-1) AS edad,  lcs_estudiante.FotoRostro,  lcs_transtornoesfinteres.TipoEsfinteres,  lcs_transtornoesfinteres.Ingresado";
-$proto0["m_strFrom"] = "FROM lcs_estudiante  LEFT OUTER JOIN lcs_transtornoesfinteres ON lcs_estudiante.idEstudiante = lcs_transtornoesfinteres.`_idEstudiante`";
+$proto0["m_strFrom"] = "FROM lcs_estudiante  INNER JOIN lcs_transtornoesfinteres ON lcs_estudiante.idEstudiante = lcs_transtornoesfinteres.`_idEstudiante`";
 $proto0["m_strWhere"] = "";
 $proto0["m_strOrderBy"] = "";
 $proto0["m_strTail"] = "";
@@ -1141,7 +1141,7 @@ $obj = new SQLFromListItem($proto18);
 
 $proto0["m_fromlist"][]=$obj;
 												$proto22=array();
-$proto22["m_link"] = "SQLL_LEFTJOIN";
+$proto22["m_link"] = "SQLL_INNERJOIN";
 			$proto23=array();
 $proto23["m_strName"] = "lcs_transtornoesfinteres";
 $proto23["m_srcTableName"] = "TranstornosEsfinteres";
@@ -1153,7 +1153,7 @@ $proto23["m_columns"][] = "_idEstudiante";
 $obj = new SQLTable($proto23);
 
 $proto22["m_table"] = $obj;
-$proto22["m_sql"] = "LEFT OUTER JOIN lcs_transtornoesfinteres ON lcs_estudiante.idEstudiante = lcs_transtornoesfinteres.`_idEstudiante`";
+$proto22["m_sql"] = "INNER JOIN lcs_transtornoesfinteres ON lcs_estudiante.idEstudiante = lcs_transtornoesfinteres.`_idEstudiante`";
 $proto22["m_alias"] = "";
 $proto22["m_srcTableName"] = "TranstornosEsfinteres";
 $proto24=array();

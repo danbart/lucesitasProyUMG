@@ -21,16 +21,12 @@ if(mlang_getcurrentlang()=="Spanish")
 	$fieldLabelsReporte_Estudiantes["Spanish"] = array();
 	$fieldToolTipsReporte_Estudiantes["Spanish"] = array();
 	$pageTitlesReporte_Estudiantes["Spanish"] = array();
-	$fieldLabelsReporte_Estudiantes["Spanish"]["FotoRostro"] = "Foto Rostro";
-	$fieldToolTipsReporte_Estudiantes["Spanish"]["FotoRostro"] = "";
 	$fieldLabelsReporte_Estudiantes["Spanish"]["Telefono"] = "Telefono";
 	$fieldToolTipsReporte_Estudiantes["Spanish"]["Telefono"] = "";
 	$fieldLabelsReporte_Estudiantes["Spanish"]["fecha"] = "Fecha";
 	$fieldToolTipsReporte_Estudiantes["Spanish"]["fecha"] = "";
 	$fieldLabelsReporte_Estudiantes["Spanish"]["hora"] = "Hora";
 	$fieldToolTipsReporte_Estudiantes["Spanish"]["hora"] = "";
-	$fieldLabelsReporte_Estudiantes["Spanish"]["TipoTerapia"] = "Tipo Terapia";
-	$fieldToolTipsReporte_Estudiantes["Spanish"]["TipoTerapia"] = "";
 	$fieldLabelsReporte_Estudiantes["Spanish"]["Estudiante"] = "Estudiante";
 	$fieldToolTipsReporte_Estudiantes["Spanish"]["Estudiante"] = "";
 	$fieldLabelsReporte_Estudiantes["Spanish"]["Nombre_Terapista"] = "Nombre Terapista";
@@ -39,6 +35,10 @@ if(mlang_getcurrentlang()=="Spanish")
 	$fieldToolTipsReporte_Estudiantes["Spanish"]["edad"] = "";
 	$fieldLabelsReporte_Estudiantes["Spanish"]["Direccion"] = "Direccion";
 	$fieldToolTipsReporte_Estudiantes["Spanish"]["Direccion"] = "";
+	$fieldLabelsReporte_Estudiantes["Spanish"]["Rostro"] = "Sueño";
+	$fieldToolTipsReporte_Estudiantes["Spanish"]["Rostro"] = "";
+	$fieldLabelsReporte_Estudiantes["Spanish"]["Terapia"] = "Terapia";
+	$fieldToolTipsReporte_Estudiantes["Spanish"]["Terapia"] = "";
 	if (count($fieldToolTipsReporte_Estudiantes["Spanish"]))
 		$tdataReporte_Estudiantes[".isUseToolTips"] = true;
 }
@@ -47,16 +47,12 @@ if(mlang_getcurrentlang()=="")
 	$fieldLabelsReporte_Estudiantes[""] = array();
 	$fieldToolTipsReporte_Estudiantes[""] = array();
 	$pageTitlesReporte_Estudiantes[""] = array();
-	$fieldLabelsReporte_Estudiantes[""]["FotoRostro"] = "Foto Rostro";
-	$fieldToolTipsReporte_Estudiantes[""]["FotoRostro"] = "";
 	$fieldLabelsReporte_Estudiantes[""]["Telefono"] = "Telefono";
 	$fieldToolTipsReporte_Estudiantes[""]["Telefono"] = "";
 	$fieldLabelsReporte_Estudiantes[""]["fecha"] = "Fecha";
 	$fieldToolTipsReporte_Estudiantes[""]["fecha"] = "";
 	$fieldLabelsReporte_Estudiantes[""]["hora"] = "Hora";
 	$fieldToolTipsReporte_Estudiantes[""]["hora"] = "";
-	$fieldLabelsReporte_Estudiantes[""]["TipoTerapia"] = "Tipo Terapia";
-	$fieldToolTipsReporte_Estudiantes[""]["TipoTerapia"] = "";
 	$fieldLabelsReporte_Estudiantes[""]["Estudiante"] = "Estudiante";
 	$fieldToolTipsReporte_Estudiantes[""]["Estudiante"] = "";
 	$fieldLabelsReporte_Estudiantes[""]["Nombre_Terapista"] = "Nombre Terapista";
@@ -65,6 +61,10 @@ if(mlang_getcurrentlang()=="")
 	$fieldToolTipsReporte_Estudiantes[""]["edad"] = "";
 	$fieldLabelsReporte_Estudiantes[""]["Direccion"] = "Direccion";
 	$fieldToolTipsReporte_Estudiantes[""]["Direccion"] = "";
+	$fieldLabelsReporte_Estudiantes[""]["Rostro"] = "Rostro";
+	$fieldToolTipsReporte_Estudiantes[""]["Rostro"] = "";
+	$fieldLabelsReporte_Estudiantes[""]["Terapia"] = "Terapia";
+	$fieldToolTipsReporte_Estudiantes[""]["Terapia"] = "";
 	if (count($fieldToolTipsReporte_Estudiantes[""]))
 		$tdataReporte_Estudiantes[".isUseToolTips"] = true;
 }
@@ -151,8 +151,8 @@ $tdataReporte_Estudiantes[".allSearchFields"][] = "fecha";
 	$tdataReporte_Estudiantes[".allSearchFields"][] = "hora";
 	$tdataReporte_Estudiantes[".allSearchFields"][] = "Estudiante";
 	$tdataReporte_Estudiantes[".allSearchFields"][] = "edad";
-	$tdataReporte_Estudiantes[".allSearchFields"][] = "FotoRostro";
-	$tdataReporte_Estudiantes[".allSearchFields"][] = "TipoTerapia";
+	$tdataReporte_Estudiantes[".allSearchFields"][] = "Rostro";
+	$tdataReporte_Estudiantes[".allSearchFields"][] = "Terapia";
 	$tdataReporte_Estudiantes[".allSearchFields"][] = "Nombre Terapista";
 	$tdataReporte_Estudiantes[".allSearchFields"][] = "Telefono";
 	$tdataReporte_Estudiantes[".allSearchFields"][] = "Direccion";
@@ -163,8 +163,8 @@ $tdataReporte_Estudiantes[".googleLikeFields"][] = "fecha";
 $tdataReporte_Estudiantes[".googleLikeFields"][] = "hora";
 $tdataReporte_Estudiantes[".googleLikeFields"][] = "Estudiante";
 $tdataReporte_Estudiantes[".googleLikeFields"][] = "edad";
-$tdataReporte_Estudiantes[".googleLikeFields"][] = "FotoRostro";
-$tdataReporte_Estudiantes[".googleLikeFields"][] = "TipoTerapia";
+$tdataReporte_Estudiantes[".googleLikeFields"][] = "Rostro";
+$tdataReporte_Estudiantes[".googleLikeFields"][] = "Terapia";
 $tdataReporte_Estudiantes[".googleLikeFields"][] = "Nombre Terapista";
 $tdataReporte_Estudiantes[".googleLikeFields"][] = "Telefono";
 $tdataReporte_Estudiantes[".googleLikeFields"][] = "Direccion";
@@ -175,8 +175,8 @@ $tdataReporte_Estudiantes[".advSearchFields"][] = "fecha";
 $tdataReporte_Estudiantes[".advSearchFields"][] = "hora";
 $tdataReporte_Estudiantes[".advSearchFields"][] = "Estudiante";
 $tdataReporte_Estudiantes[".advSearchFields"][] = "edad";
-$tdataReporte_Estudiantes[".advSearchFields"][] = "FotoRostro";
-$tdataReporte_Estudiantes[".advSearchFields"][] = "TipoTerapia";
+$tdataReporte_Estudiantes[".advSearchFields"][] = "Rostro";
+$tdataReporte_Estudiantes[".advSearchFields"][] = "Terapia";
 $tdataReporte_Estudiantes[".advSearchFields"][] = "Nombre Terapista";
 $tdataReporte_Estudiantes[".advSearchFields"][] = "Telefono";
 $tdataReporte_Estudiantes[".advSearchFields"][] = "Direccion";
@@ -258,7 +258,7 @@ $tdataReporte_Estudiantes[".strOrderBy"] = $tstrOrderBy;
 $tdataReporte_Estudiantes[".orderindexes"] = array();
 $tdataReporte_Estudiantes[".orderindexes"][] = array(1, (0 ? "ASC" : "DESC"), "lcs_terapias.fecha");
 
-$tdataReporte_Estudiantes[".sqlHead"] = "SELECT lcs_terapias.fecha,  lcs_terapias.hora,  concat(lcs_estudiante.Nombre, ' ', lcs_estudiante.Apellido) AS Estudiante,  year(curdate())-year(lcs_estudiante.FNacimiento) + if(date_format(curdate(), '%m-%d')>date_format(lcs_estudiante.FNacimiento, '%m-%d'),0,-1) AS edad,  lcs_estudiante.FotoRostro,  lcs_terapias.TipoTerapia,  concat(lcs_terapista.Nombre, ' ', lcs_terapista.Apellido) AS `Nombre Terapista`,  lcs_terapista.Telefono,  lcs_terapista.Direccion";
+$tdataReporte_Estudiantes[".sqlHead"] = "SELECT lcs_terapias.fecha,  lcs_terapias.hora,  concat(lcs_estudiante.Nombre, ' ', lcs_estudiante.Apellido) AS Estudiante,  year(curdate())-year(lcs_estudiante.FNacimiento) + if(date_format(curdate(), '%m-%d')>date_format(lcs_estudiante.FNacimiento, '%m-%d'),0,-1) AS edad,  lcs_estudiante.FotoRostro AS Rostro,  lcs_terapias.TipoTerapia AS Terapia,  concat(lcs_terapista.Nombre, ' ', lcs_terapista.Apellido) AS `Nombre Terapista`,  lcs_terapista.Telefono,  lcs_terapista.Direccion";
 $tdataReporte_Estudiantes[".sqlFrom"] = "FROM lcs_estudiante  LEFT OUTER JOIN lcs_terapias ON lcs_estudiante.idEstudiante = lcs_terapias.`_idEstudiante`  INNER JOIN lcs_terapista ON lcs_terapias.`_idterapista` = lcs_terapista.idterapista";
 $tdataReporte_Estudiantes[".sqlWhereExpr"] = "";
 $tdataReporte_Estudiantes[".sqlTail"] = "";
@@ -298,8 +298,8 @@ $tdataReporte_Estudiantes[".listFields"][] = "fecha";
 $tdataReporte_Estudiantes[".listFields"][] = "hora";
 $tdataReporte_Estudiantes[".listFields"][] = "Estudiante";
 $tdataReporte_Estudiantes[".listFields"][] = "edad";
-$tdataReporte_Estudiantes[".listFields"][] = "FotoRostro";
-$tdataReporte_Estudiantes[".listFields"][] = "TipoTerapia";
+$tdataReporte_Estudiantes[".listFields"][] = "Rostro";
+$tdataReporte_Estudiantes[".listFields"][] = "Terapia";
 $tdataReporte_Estudiantes[".listFields"][] = "Nombre Terapista";
 $tdataReporte_Estudiantes[".listFields"][] = "Telefono";
 $tdataReporte_Estudiantes[".listFields"][] = "Direccion";
@@ -312,31 +312,27 @@ $tdataReporte_Estudiantes[".viewFields"][] = "fecha";
 $tdataReporte_Estudiantes[".viewFields"][] = "hora";
 $tdataReporte_Estudiantes[".viewFields"][] = "Estudiante";
 $tdataReporte_Estudiantes[".viewFields"][] = "edad";
-$tdataReporte_Estudiantes[".viewFields"][] = "FotoRostro";
-$tdataReporte_Estudiantes[".viewFields"][] = "TipoTerapia";
+$tdataReporte_Estudiantes[".viewFields"][] = "Rostro";
+$tdataReporte_Estudiantes[".viewFields"][] = "Terapia";
 $tdataReporte_Estudiantes[".viewFields"][] = "Nombre Terapista";
 $tdataReporte_Estudiantes[".viewFields"][] = "Telefono";
 $tdataReporte_Estudiantes[".viewFields"][] = "Direccion";
 
 $tdataReporte_Estudiantes[".addFields"] = array();
-$tdataReporte_Estudiantes[".addFields"][] = "FotoRostro";
 
 $tdataReporte_Estudiantes[".inlineAddFields"] = array();
-$tdataReporte_Estudiantes[".inlineAddFields"][] = "FotoRostro";
 
 $tdataReporte_Estudiantes[".editFields"] = array();
-$tdataReporte_Estudiantes[".editFields"][] = "FotoRostro";
 
 $tdataReporte_Estudiantes[".inlineEditFields"] = array();
-$tdataReporte_Estudiantes[".inlineEditFields"][] = "FotoRostro";
 
 $tdataReporte_Estudiantes[".exportFields"] = array();
 $tdataReporte_Estudiantes[".exportFields"][] = "fecha";
 $tdataReporte_Estudiantes[".exportFields"][] = "hora";
 $tdataReporte_Estudiantes[".exportFields"][] = "Estudiante";
 $tdataReporte_Estudiantes[".exportFields"][] = "edad";
-$tdataReporte_Estudiantes[".exportFields"][] = "FotoRostro";
-$tdataReporte_Estudiantes[".exportFields"][] = "TipoTerapia";
+$tdataReporte_Estudiantes[".exportFields"][] = "Rostro";
+$tdataReporte_Estudiantes[".exportFields"][] = "Terapia";
 $tdataReporte_Estudiantes[".exportFields"][] = "Nombre Terapista";
 $tdataReporte_Estudiantes[".exportFields"][] = "Telefono";
 $tdataReporte_Estudiantes[".exportFields"][] = "Direccion";
@@ -346,8 +342,8 @@ $tdataReporte_Estudiantes[".importFields"][] = "fecha";
 $tdataReporte_Estudiantes[".importFields"][] = "hora";
 $tdataReporte_Estudiantes[".importFields"][] = "Estudiante";
 $tdataReporte_Estudiantes[".importFields"][] = "edad";
-$tdataReporte_Estudiantes[".importFields"][] = "FotoRostro";
-$tdataReporte_Estudiantes[".importFields"][] = "TipoTerapia";
+$tdataReporte_Estudiantes[".importFields"][] = "Rostro";
+$tdataReporte_Estudiantes[".importFields"][] = "Terapia";
 $tdataReporte_Estudiantes[".importFields"][] = "Nombre Terapista";
 $tdataReporte_Estudiantes[".importFields"][] = "Telefono";
 $tdataReporte_Estudiantes[".importFields"][] = "Direccion";
@@ -357,8 +353,8 @@ $tdataReporte_Estudiantes[".printFields"][] = "fecha";
 $tdataReporte_Estudiantes[".printFields"][] = "hora";
 $tdataReporte_Estudiantes[".printFields"][] = "Estudiante";
 $tdataReporte_Estudiantes[".printFields"][] = "edad";
-$tdataReporte_Estudiantes[".printFields"][] = "FotoRostro";
-$tdataReporte_Estudiantes[".printFields"][] = "TipoTerapia";
+$tdataReporte_Estudiantes[".printFields"][] = "Rostro";
+$tdataReporte_Estudiantes[".printFields"][] = "Terapia";
 $tdataReporte_Estudiantes[".printFields"][] = "Nombre Terapista";
 $tdataReporte_Estudiantes[".printFields"][] = "Telefono";
 $tdataReporte_Estudiantes[".printFields"][] = "Direccion";
@@ -863,14 +859,14 @@ $tdataReporte_Estudiantes[".printFields"][] = "Direccion";
 
 	
 	$tdataReporte_Estudiantes["edad"] = $fdata;
-//	FotoRostro
+//	Rostro
 //	Custom field settings
 	$fdata = array();
 	$fdata["Index"] = 5;
-	$fdata["strName"] = "FotoRostro";
-	$fdata["GoodName"] = "FotoRostro";
+	$fdata["strName"] = "Rostro";
+	$fdata["GoodName"] = "Rostro";
 	$fdata["ownerTable"] = "lcs_estudiante";
-	$fdata["Label"] = GetFieldLabel("Reporte_Estudiantes","FotoRostro"); 
+	$fdata["Label"] = GetFieldLabel("Reporte_Estudiantes","Rostro"); 
 	$fdata["FieldType"] = 201;
 	
 		// report field settings
@@ -881,14 +877,10 @@ $tdataReporte_Estudiantes[".printFields"][] = "Direccion";
 				
 		$fdata["bListPage"] = true; 
 	
-		$fdata["bAddPage"] = true; 
-	
-		$fdata["bInlineAdd"] = true; 
-	
-		$fdata["bEditPage"] = true; 
-	
-		$fdata["bInlineEdit"] = true; 
-	
+		
+		
+		
+		
 		$fdata["bViewPage"] = true; 
 	
 		$fdata["bAdvancedSearch"] = true; 
@@ -911,15 +903,7 @@ $tdataReporte_Estudiantes[".printFields"][] = "Direccion";
 //  Begin View Formats
 	$fdata["ViewFormats"] = array();
 	
-	$vdata = array("ViewFormat" => "File-based Image");
-	
-		
-		
-				$vdata["ShowThumbnail"] = true;
-	$vdata["ThumbWidth"] = 72;
-	$vdata["ThumbHeight"] = 72;	
-			$vdata["ImageWidth"] = 457;
-	$vdata["ImageHeight"] = 150;
+	$vdata = array("ViewFormat" => "");
 	
 		
 		
@@ -930,53 +914,50 @@ $tdataReporte_Estudiantes[".printFields"][] = "Direccion";
 		
 		
 		
+		
+		
+		$vdata["NeedEncode"] = true;
+	
 	$fdata["ViewFormats"]["report"] = $vdata;
 //  End View Formats
 
 //	Begin Edit Formats 	
 	$fdata["EditFormats"] = array();
 	
-	$edata = array("EditFormat" => "Document upload");
+	$edata = array("EditFormat" => "Text area");
 	
 			
 	
 	
 
 
-		$edata["IsRequired"] = true; 
-	
 		
 		
 		
-							$edata["acceptFileTypes"] = "jpg";
-						$edata["acceptFileTypes"] .= "|png";
-		$edata["acceptFileTypes"] = "(".$edata["acceptFileTypes"].")$";
+		
+			$edata["acceptFileTypes"] = ".+$";
 	
 		$edata["maxNumberOfFiles"] = 1;
 	
-		$edata["maxFileSize"] = 300;
+		
+		
+		
+				$edata["nRows"] = 100;
+			$edata["nCols"] = 200;
 	
-		$edata["maxTotalFilesSize"] = 500;
-	
 		
 		
-		
-		
-		$edata["controlWidth"] = 300;
+		$edata["controlWidth"] = 200;
 	
 //	Begin validation
 	$edata["validateAs"] = array();
 	$edata["validateAs"]["basicValidate"] = array();
 	$edata["validateAs"]["customMessages"] = array();
-						$edata["validateAs"]["basicValidate"][] = "IsRequired";
-			
+		
 		
 	//	End validation
 	
-		$edata["CreateThumbnail"] = true;
-	$edata["StrThumbnail"] = "th";
-			$edata["ThumbnailSize"] = 150;
-	
+		
 		
 		
 	
@@ -991,22 +972,23 @@ $tdataReporte_Estudiantes[".printFields"][] = "Direccion";
 	
 	
 // the field's search options settings
-		$fdata["defaultSearchOption"] = "Equals";
-	
-	// the end of search options settings	
+		
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Empty");
+// the end of search options settings	
 
 	
 
 	
-	$tdataReporte_Estudiantes["FotoRostro"] = $fdata;
-//	TipoTerapia
+	$tdataReporte_Estudiantes["Rostro"] = $fdata;
+//	Terapia
 //	Custom field settings
 	$fdata = array();
 	$fdata["Index"] = 6;
-	$fdata["strName"] = "TipoTerapia";
-	$fdata["GoodName"] = "TipoTerapia";
+	$fdata["strName"] = "Terapia";
+	$fdata["GoodName"] = "Terapia";
 	$fdata["ownerTable"] = "lcs_terapias";
-	$fdata["Label"] = GetFieldLabel("Reporte_Estudiantes","TipoTerapia"); 
+	$fdata["Label"] = GetFieldLabel("Reporte_Estudiantes","Terapia"); 
 	$fdata["FieldType"] = 200;
 	
 		// report field settings
@@ -1120,7 +1102,7 @@ $tdataReporte_Estudiantes[".printFields"][] = "Direccion";
 	
 
 	
-	$tdataReporte_Estudiantes["TipoTerapia"] = $fdata;
+	$tdataReporte_Estudiantes["Terapia"] = $fdata;
 //	Nombre Terapista
 //	Custom field settings
 	$fdata = array();
@@ -1923,7 +1905,7 @@ function createSqlQuery_Reporte_Estudiantes()
 {
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
-$proto0["m_strFieldList"] = "lcs_terapias.fecha,  lcs_terapias.hora,  concat(lcs_estudiante.Nombre, ' ', lcs_estudiante.Apellido) AS Estudiante,  year(curdate())-year(lcs_estudiante.FNacimiento) + if(date_format(curdate(), '%m-%d')>date_format(lcs_estudiante.FNacimiento, '%m-%d'),0,-1) AS edad,  lcs_estudiante.FotoRostro,  lcs_terapias.TipoTerapia,  concat(lcs_terapista.Nombre, ' ', lcs_terapista.Apellido) AS `Nombre Terapista`,  lcs_terapista.Telefono,  lcs_terapista.Direccion";
+$proto0["m_strFieldList"] = "lcs_terapias.fecha,  lcs_terapias.hora,  concat(lcs_estudiante.Nombre, ' ', lcs_estudiante.Apellido) AS Estudiante,  year(curdate())-year(lcs_estudiante.FNacimiento) + if(date_format(curdate(), '%m-%d')>date_format(lcs_estudiante.FNacimiento, '%m-%d'),0,-1) AS edad,  lcs_estudiante.FotoRostro AS Rostro,  lcs_terapias.TipoTerapia AS Terapia,  concat(lcs_terapista.Nombre, ' ', lcs_terapista.Apellido) AS `Nombre Terapista`,  lcs_terapista.Telefono,  lcs_terapista.Direccion";
 $proto0["m_strFrom"] = "FROM lcs_estudiante  LEFT OUTER JOIN lcs_terapias ON lcs_estudiante.idEstudiante = lcs_terapias.`_idEstudiante`  INNER JOIN lcs_terapista ON lcs_terapias.`_idterapista` = lcs_terapista.idterapista";
 $proto0["m_strWhere"] = "";
 $proto0["m_strOrderBy"] = "ORDER BY lcs_terapias.fecha DESC";
@@ -2041,7 +2023,7 @@ $proto0["m_fieldlist"][]=$obj;
 $proto16["m_sql"] = "lcs_estudiante.FotoRostro";
 $proto16["m_srcTableName"] = "Reporte Estudiantes";
 $proto16["m_expr"]=$obj;
-$proto16["m_alias"] = "";
+$proto16["m_alias"] = "Rostro";
 $obj = new SQLFieldListItem($proto16);
 
 $proto0["m_fieldlist"][]=$obj;
@@ -2055,7 +2037,7 @@ $proto0["m_fieldlist"][]=$obj;
 $proto18["m_sql"] = "lcs_terapias.TipoTerapia";
 $proto18["m_srcTableName"] = "Reporte Estudiantes";
 $proto18["m_expr"]=$obj;
-$proto18["m_alias"] = "";
+$proto18["m_alias"] = "Terapia";
 $obj = new SQLFieldListItem($proto18);
 
 $proto0["m_fieldlist"][]=$obj;

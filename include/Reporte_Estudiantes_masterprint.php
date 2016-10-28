@@ -233,8 +233,8 @@ function DisplayMasterTableInfoForPrint_Reporte_Estudiantes($params)
 		$class = ' rnr-field-number';
 		
 	$xt->assign("edad_class", $class); // add class for field header as field value
-	$xt->assign("FotoRostro_mastervalue", $viewControls->showDBValue("FotoRostro", $data, $keylink));
-	$format = $settings->getViewFormat("FotoRostro");
+	$xt->assign("Rostro_mastervalue", $viewControls->showDBValue("Rostro", $data, $keylink));
+	$format = $settings->getViewFormat("Rostro");
 	$class = " rnr-field-text";
 	if($format == FORMAT_FILE) 
 		$class = ' rnr-field-file'; 
@@ -242,12 +242,12 @@ function DisplayMasterTableInfoForPrint_Reporte_Estudiantes($params)
 		$class = ' rnr-field-audio';
 	if($format == FORMAT_CHECKBOX)
 		$class = ' rnr-field-checkbox';
-	if($format == FORMAT_NUMBER || IsNumberType($settings->getFieldType("FotoRostro")))
+	if($format == FORMAT_NUMBER || IsNumberType($settings->getFieldType("Rostro")))
 		$class = ' rnr-field-number';
 		
-	$xt->assign("FotoRostro_class", $class); // add class for field header as field value
-	$xt->assign("TipoTerapia_mastervalue", $viewControls->showDBValue("TipoTerapia", $data, $keylink));
-	$format = $settings->getViewFormat("TipoTerapia");
+	$xt->assign("Rostro_class", $class); // add class for field header as field value
+	$xt->assign("Terapia_mastervalue", $viewControls->showDBValue("Terapia", $data, $keylink));
+	$format = $settings->getViewFormat("Terapia");
 	$class = " rnr-field-text";
 	if($format == FORMAT_FILE) 
 		$class = ' rnr-field-file'; 
@@ -255,10 +255,10 @@ function DisplayMasterTableInfoForPrint_Reporte_Estudiantes($params)
 		$class = ' rnr-field-audio';
 	if($format == FORMAT_CHECKBOX)
 		$class = ' rnr-field-checkbox';
-	if($format == FORMAT_NUMBER || IsNumberType($settings->getFieldType("TipoTerapia")))
+	if($format == FORMAT_NUMBER || IsNumberType($settings->getFieldType("Terapia")))
 		$class = ' rnr-field-number';
 		
-	$xt->assign("TipoTerapia_class", $class); // add class for field header as field value
+	$xt->assign("Terapia_class", $class); // add class for field header as field value
 	$xt->assign("Nombre_Terapista_mastervalue", $viewControls->showDBValue("Nombre Terapista", $data, $keylink));
 	$format = $settings->getViewFormat("Nombre Terapista");
 	$class = " rnr-field-text";
