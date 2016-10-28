@@ -5,8 +5,10 @@ Proyecto de seminario 2016
 --------------------------
 
 Realiado por:
-+ DANILO SOLÓRZANO
-+ BAYRON
-+ SERGIO MORA
++ Danilo Antonio Solórzano Rodas
++ Byron Alexis Gómez Cardona
++ Sergio Javier Mora Torres
 + PATY
 + ARACELY
++ Heynner Yolvin Barrios De León 
++ Jose Luis Morales Vasquez
