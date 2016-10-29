@@ -8,7 +8,7 @@ Realiado por:
 + Danilo Antonio Solórzano Rodas
 + Byron Alexis Gómez Cardona
 + Sergio Javier Mora Torres
-+ PATY
-+ ARACELY
++ Patricia Beatriz Baquiax Alvarado
++ Lesbia Aracely Cuyuch Perez
 + Heynner Yolvin Barrios De León 
 + Jose Luis Morales Vasquez
